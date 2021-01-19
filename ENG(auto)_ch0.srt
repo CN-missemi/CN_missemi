@@ -1,0 +1,4732 @@
+1
+00:00:00,650 --> 00:00:07,799
+all right everyone thanks for coming in
+
+3
+00:00:04,589 --> 00:00:09,960
+this is the missing semester of your CSN
+
+5
+00:00:07,799 --> 00:00:11,519
+at least that's what we chose to call
+
+7
+00:00:09,960 --> 00:00:13,679
+the class if you're not here for this
+
+9
+00:00:11,519 --> 00:00:15,900
+class then you're in the wrong room we
+
+11
+00:00:13,679 --> 00:00:19,590
+will be here for about an hour just to
+
+13
+00:00:15,900 --> 00:00:21,180
+set your expectations and I want to talk
+
+15
+00:00:19,590 --> 00:00:23,789
+to you a little bit first about why
+
+17
+00:00:21,180 --> 00:00:25,980
+we're doing this class so this class
+
+19
+00:00:23,789 --> 00:00:29,670
+stems out of an observation that Anish
+
+21
+00:00:25,980 --> 00:00:33,030
+and Jose and I have made while ta arias
+
+23
+00:00:29,670 --> 00:00:34,710
+classes at MIT which is that basically
+
+25
+00:00:33,030 --> 00:00:36,420
+all of us computer scientists we know
+
+27
+00:00:34,710 --> 00:00:38,370
+that computers are great at doing these
+
+29
+00:00:36,420 --> 00:00:41,250
+repetitive tasks and automating things
+
+31
+00:00:38,370 --> 00:00:43,020
+but we often fail to realize that there
+
+33
+00:00:41,250 --> 00:00:45,930
+are lots of tools that can make our own
+
+35
+00:00:43,020 --> 00:00:47,520
+development processes better we can be a
+
+37
+00:00:45,930 --> 00:00:49,620
+lot more efficient about how we use our
+
+39
+00:00:47,520 --> 00:00:51,989
+computers because we can use the
+
+41
+00:00:49,620 --> 00:00:54,360
+computer as a tool for ourselves not
+
+43
+00:00:51,989 --> 00:00:57,809
+just for building websites or software
+
+45
+00:00:54,360 --> 00:00:59,670
+those sorts of things and this class is
+
+47
+00:00:57,809 --> 00:01:03,000
+an attempt to address this is an attempt
+
+49
+00:00:59,670 --> 00:01:05,220
+to show you some of the tools that you
+
+51
+00:01:03,000 --> 00:01:07,640
+can use to great effect in your day to
+
+53
+00:01:05,220 --> 00:01:11,670
+day in your research and in your studies
+
+55
+00:01:07,640 --> 00:01:15,150
+and it's going to be a class where we
+
+57
+00:01:11,670 --> 00:01:16,439
+want you to teach you both how to make
+
+59
+00:01:15,150 --> 00:01:19,200
+the most of the tools that you already
+
+61
+00:01:16,439 --> 00:01:20,909
+know but also hopefully teach you about
+
+63
+00:01:19,200 --> 00:01:23,520
+some tools so you don't know from before
+
+65
+00:01:20,909 --> 00:01:26,250
+and how to combine those tools to
+
+67
+00:01:23,520 --> 00:01:28,140
+produce more powerful things than you
+
+69
+00:01:26,250 --> 00:01:31,049
+think you might be able to do with what
+
+71
+00:01:28,140 --> 00:01:33,420
+you know today the class is going to be
+
+73
+00:01:31,049 --> 00:01:36,630
+structured as a series of 11 one-hour
+
+75
+00:01:33,420 --> 00:01:38,880
+lectures and each one is going to cover
+
+77
+00:01:36,630 --> 00:01:40,920
+a particular topic you can see the
+
+79
+00:01:38,880 --> 00:01:43,439
+website which is also listed there for
+
+81
+00:01:40,920 --> 00:01:45,990
+the list of lecture topics and what date
+
+83
+00:01:43,439 --> 00:01:48,210
+will do each one they will mostly be
+
+85
+00:01:45,990 --> 00:01:49,350
+independent and so you can sort of show
+
+87
+00:01:48,210 --> 00:01:51,450
+up for the ones that you're interested
+
+89
+00:01:49,350 --> 00:01:53,610
+in but we will sort of assume that
+
+91
+00:01:51,450 --> 00:01:55,649
+you've been following along so that as
+
+93
+00:01:53,610 --> 00:01:57,030
+we get to later lectures I'm not going
+
+95
+00:01:55,649 --> 00:02:02,280
+to be teaching you bash all over again
+
+97
+00:01:57,030 --> 00:02:05,310
+for example we we are also going to post
+
+99
+00:02:02,280 --> 00:02:08,459
+both the lecture notes and recordings of
+
+101
+00:02:05,310 --> 00:02:10,110
+the lectures online exactly when we do
+
+103
+00:02:08,459 --> 00:02:12,330
+that we haven't established yet but it
+
+105
+00:02:10,110 --> 00:02:14,280
+will be after the lectures obviously the
+
+107
+00:02:12,330 --> 00:02:16,620
+videos have to be posted after
+
+109
+00:02:14,280 --> 00:02:19,380
+the class is gonna be run by me John and
+
+111
+00:02:16,620 --> 00:02:21,120
+Anne each sitting over there and Jose
+
+113
+00:02:19,380 --> 00:02:24,090
+who is not currently here but we'll be
+
+115
+00:02:21,120 --> 00:02:25,740
+holding tomorrow's lecture and keep in
+
+117
+00:02:24,090 --> 00:02:27,990
+mind that we're trying to cover a lot of
+
+119
+00:02:25,740 --> 00:02:30,720
+ground over the course of just 11
+
+121
+00:02:27,990 --> 00:02:33,240
+one-hour lectures and so we will be
+
+123
+00:02:30,720 --> 00:02:35,460
+moving relatively rapidly but please do
+
+125
+00:02:33,240 --> 00:02:37,080
+stop us if there's anything where you
+
+127
+00:02:35,460 --> 00:02:38,430
+feel like you're not following along if
+
+129
+00:02:37,080 --> 00:02:40,290
+you feel like there's something you wish
+
+131
+00:02:38,430 --> 00:02:41,730
+we would spend more time on just let us
+
+133
+00:02:40,290 --> 00:02:45,240
+know please interrupt us with questions
+
+135
+00:02:41,730 --> 00:02:47,220
+and also after each lecture we're going
+
+137
+00:02:45,240 --> 00:02:49,650
+to hold office hours on the ninth floor
+
+139
+00:02:47,220 --> 00:02:51,570
+of building 30 to the Stata Center of
+
+141
+00:02:49,650 --> 00:02:53,220
+the computer science building as if you
+
+143
+00:02:51,570 --> 00:02:55,980
+show up up in the ninth floor lounge
+
+145
+00:02:53,220 --> 00:02:58,140
+there and the gates tower then you can
+
+147
+00:02:55,980 --> 00:03:00,750
+come and try some of the exercises that
+
+149
+00:02:58,140 --> 00:03:02,940
+we give for each lecture or just ask us
+
+151
+00:03:00,750 --> 00:03:04,440
+other questions about things we've
+
+153
+00:03:02,940 --> 00:03:08,000
+talked about in lecturer or other things
+
+155
+00:03:04,440 --> 00:03:08,000
+about using your computer efficiently
+
+157
+00:03:08,150 --> 00:03:13,740
+due to the limited time that we have
+
+159
+00:03:11,640 --> 00:03:16,530
+available we're not going to be able to
+
+161
+00:03:13,740 --> 00:03:19,080
+cover all tools and full detail and so
+
+163
+00:03:16,530 --> 00:03:21,240
+we'll try to do is highlight interesting
+
+165
+00:03:19,080 --> 00:03:23,430
+tools and interesting ways to use them
+
+167
+00:03:21,240 --> 00:03:25,110
+we won't necessarily dig into the deep
+
+169
+00:03:23,430 --> 00:03:27,540
+details about how all of it works or
+
+171
+00:03:25,110 --> 00:03:29,070
+more elaborate use cases but if you have
+
+173
+00:03:27,540 --> 00:03:31,050
+questions about them please come ask us
+
+175
+00:03:29,070 --> 00:03:33,690
+about that too many of these tools are
+
+177
+00:03:31,050 --> 00:03:34,860
+tools that we have used for years and we
+
+179
+00:03:33,690 --> 00:03:36,680
+might be able to point you to additional
+
+181
+00:03:34,860 --> 00:03:39,060
+interesting things you can do with them
+
+183
+00:03:36,680 --> 00:03:42,990
+sort of like take advantage of the fact
+
+185
+00:03:39,060 --> 00:03:45,210
+that we're here this class is going to I
+
+187
+00:03:42,990 --> 00:03:46,980
+don't wanna say ramped up quickly but
+
+189
+00:03:45,210 --> 00:03:49,050
+what's going to happen over the course
+
+191
+00:03:46,980 --> 00:03:51,330
+of this particular lecture is that we'll
+
+193
+00:03:49,050 --> 00:03:52,530
+cover many of the basics that we assume
+
+195
+00:03:51,330 --> 00:03:54,480
+that you will know for the rest of the
+
+197
+00:03:52,530 --> 00:03:56,010
+semester things like how to use your
+
+199
+00:03:54,480 --> 00:03:57,210
+shell and your terminal and I'll explain
+
+201
+00:03:56,010 --> 00:03:59,850
+what those are - those who you're not
+
+203
+00:03:57,210 --> 00:04:01,890
+familiar with them and then will pretty
+
+205
+00:03:59,850 --> 00:04:03,840
+quickly ramp up into more advanced tools
+
+207
+00:04:01,890 --> 00:04:05,250
+and how to use them you can already see
+
+209
+00:04:03,840 --> 00:04:07,490
+from the lecture notes the kind of
+
+211
+00:04:05,250 --> 00:04:10,110
+topics that we're going to be covering
+
+213
+00:04:07,490 --> 00:04:12,120
+and so that brings us to today's lecture
+
+215
+00:04:10,110 --> 00:04:14,640
+in which we are going to cover the shell
+
+217
+00:04:12,120 --> 00:04:16,950
+and the shell is going to be one of the
+
+219
+00:04:14,640 --> 00:04:19,290
+primary ways that you interact with your
+
+221
+00:04:16,950 --> 00:04:21,299
+computer once you want to do more things
+
+223
+00:04:19,290 --> 00:04:24,540
+than what the sort of visual interfaces
+
+225
+00:04:21,299 --> 00:04:26,370
+you might be used to allow you to do the
+
+227
+00:04:24,540 --> 00:04:26,550
+visual interfaces are sort of limited in
+
+229
+00:04:26,370 --> 00:04:28,560
+what
+
+231
+00:04:26,550 --> 00:04:29,669
+they allow you to do because you can
+
+233
+00:04:28,560 --> 00:04:32,009
+only do the things that there are
+
+235
+00:04:29,669 --> 00:04:34,919
+buttons for sliders for input fields for
+
+237
+00:04:32,009 --> 00:04:37,470
+often these textual tools are built to
+
+239
+00:04:34,919 --> 00:04:39,900
+be both composable with one another but
+
+241
+00:04:37,470 --> 00:04:41,430
+also to have tons of different ways to
+
+243
+00:04:39,900 --> 00:04:42,960
+combine them or ways to program and
+
+245
+00:04:41,430 --> 00:04:44,940
+automate them and that is why in this
+
+247
+00:04:42,960 --> 00:04:48,060
+class we will be focusing on these
+
+249
+00:04:44,940 --> 00:04:49,860
+command line or text-based tools and the
+
+251
+00:04:48,060 --> 00:04:51,870
+shell is the place that you would do
+
+253
+00:04:49,860 --> 00:04:53,849
+most of this work so for those of you
+
+255
+00:04:51,870 --> 00:04:56,729
+are not familiar with the shell most
+
+257
+00:04:53,849 --> 00:04:59,219
+platform provides some kind of shell on
+
+259
+00:04:56,729 --> 00:05:00,780
+Windows this is often PowerShell but
+
+261
+00:04:59,219 --> 00:05:04,139
+there are also other shells available on
+
+263
+00:05:00,780 --> 00:05:06,389
+Windows on Linux you will find tons of
+
+265
+00:05:04,139 --> 00:05:08,219
+terminals these are windows that allow
+
+267
+00:05:06,389 --> 00:05:10,500
+you to display shells and you'll also
+
+269
+00:05:08,219 --> 00:05:13,229
+find many different types of shells the
+
+271
+00:05:10,500 --> 00:05:15,810
+most common of which is bash or the born
+
+273
+00:05:13,229 --> 00:05:17,460
+again shell because it's such a common
+
+275
+00:05:15,810 --> 00:05:18,990
+shell it is the one we're primarily
+
+277
+00:05:17,460 --> 00:05:21,300
+going to be covering in these lectures
+
+279
+00:05:18,990 --> 00:05:23,580
+if you're on Mac OS you will probably
+
+281
+00:05:21,300 --> 00:05:26,159
+also have bash maybe an older version of
+
+283
+00:05:23,580 --> 00:05:27,479
+it if you open the terminal app and so
+
+285
+00:05:26,159 --> 00:05:29,190
+if you want to follow along on any of
+
+287
+00:05:27,479 --> 00:05:30,210
+these platforms feel free but keep in
+
+289
+00:05:29,190 --> 00:05:32,520
+mind that most of this is going to be
+
+291
+00:05:30,210 --> 00:05:34,229
+sort of Linux centric in terms of how we
+
+293
+00:05:32,520 --> 00:05:39,000
+teach it even though most of these tools
+
+295
+00:05:34,229 --> 00:05:40,409
+work on all the platforms if you want to
+
+297
+00:05:39,000 --> 00:05:42,539
+install a terminal and a shell and you
+
+299
+00:05:40,409 --> 00:05:45,330
+don't know how to do it well we're happy
+
+301
+00:05:42,539 --> 00:05:47,400
+to show you at office hours or it's
+
+303
+00:05:45,330 --> 00:05:51,599
+usually very easy to just Google like
+
+305
+00:05:47,400 --> 00:05:57,060
+your platform plus like terminal and you
+
+307
+00:05:51,599 --> 00:05:59,039
+will get one now when you open a
+
+309
+00:05:57,060 --> 00:06:01,169
+terminal you get something that looks a
+
+311
+00:05:59,039 --> 00:06:04,229
+little bit like this so it will usually
+
+313
+00:06:01,169 --> 00:06:06,000
+have just a single line at the top and
+
+315
+00:06:04,229 --> 00:06:07,710
+this is what's known as the shell prompt
+
+317
+00:06:06,000 --> 00:06:10,020
+you can see that my shell prompt looks
+
+319
+00:06:07,710 --> 00:06:12,090
+like this it has my user name the name
+
+321
+00:06:10,020 --> 00:06:14,219
+of the machine that I'm on the current
+
+323
+00:06:12,090 --> 00:06:16,770
+path I'm on and we will talk about paths
+
+325
+00:06:14,219 --> 00:06:18,719
+a little bit later and then it's really
+
+327
+00:06:16,770 --> 00:06:20,969
+just sort of blinking they're asking me
+
+329
+00:06:18,719 --> 00:06:22,440
+for input and this is the shell prompt
+
+331
+00:06:20,969 --> 00:06:25,860
+where you tell the shell what you want
+
+333
+00:06:22,440 --> 00:06:27,479
+it to do and you can customize this
+
+335
+00:06:25,860 --> 00:06:28,620
+prompt a lot and when you open it on
+
+337
+00:06:27,479 --> 00:06:31,139
+your machine it might not look exactly
+
+339
+00:06:28,620 --> 00:06:33,840
+like this it might look something like
+
+341
+00:06:31,139 --> 00:06:35,399
+this if you've configured it a little or
+
+343
+00:06:33,840 --> 00:06:38,279
+it might look all sorts of different
+
+345
+00:06:35,399 --> 00:06:39,779
+ways we won't go too much into
+
+347
+00:06:38,279 --> 00:06:40,350
+customizing your shell in this
+
+349
+00:06:39,779 --> 00:06:41,910
+particularly
+
+351
+00:06:40,350 --> 00:06:43,710
+we'll do that later here we're just
+
+353
+00:06:41,910 --> 00:06:47,790
+going to talk about how do you use this
+
+355
+00:06:43,710 --> 00:06:49,860
+shell to do useful things and this is
+
+357
+00:06:47,790 --> 00:06:51,750
+our the main textual interface you have
+
+359
+00:06:49,860 --> 00:06:53,430
+to your computer's through this shell on
+
+361
+00:06:51,750 --> 00:06:55,950
+the shell prompt you get to write
+
+363
+00:06:53,430 --> 00:06:58,920
+commands and commands can be relatively
+
+365
+00:06:55,950 --> 00:07:00,570
+straightforward things usually it'll be
+
+367
+00:06:58,920 --> 00:07:02,550
+something like executing programs with
+
+369
+00:07:00,570 --> 00:07:04,470
+arguments what does that look like well
+
+371
+00:07:02,550 --> 00:07:06,210
+one program we can execute is the date
+
+373
+00:07:04,470 --> 00:07:07,380
+program we just type date and press
+
+375
+00:07:06,210 --> 00:07:10,290
+enter and then it will show you
+
+377
+00:07:07,380 --> 00:07:12,330
+unsurprisingly the date and time you can
+
+379
+00:07:10,290 --> 00:07:14,850
+also execute a program with arguments
+
+381
+00:07:12,330 --> 00:07:17,790
+this is one way to modify the behavior
+
+383
+00:07:14,850 --> 00:07:20,760
+of the program so for example there is a
+
+385
+00:07:17,790 --> 00:07:22,410
+program called echo and echo just prints
+
+387
+00:07:20,760 --> 00:07:25,050
+out the arguments that you give it and
+
+389
+00:07:22,410 --> 00:07:27,330
+arguments are just white space separated
+
+391
+00:07:25,050 --> 00:07:29,820
+things that follow the program name so
+
+393
+00:07:27,330 --> 00:07:30,720
+we can say hello and then it will print
+
+395
+00:07:29,820 --> 00:07:32,940
+hello back
+
+397
+00:07:30,720 --> 00:07:35,610
+perhaps not terribly surprising but this
+
+399
+00:07:32,940 --> 00:07:37,050
+is the very basics of arguments one
+
+401
+00:07:35,610 --> 00:07:38,550
+thing that you'll notice is that I said
+
+403
+00:07:37,050 --> 00:07:40,380
+that arguments are separated by
+
+405
+00:07:38,550 --> 00:07:42,060
+whitespace and you might wonder well
+
+407
+00:07:40,380 --> 00:07:44,310
+what if I want an argument as multiple
+
+409
+00:07:42,060 --> 00:07:47,220
+words you can also quote things so you
+
+411
+00:07:44,310 --> 00:07:50,310
+can do things like echo hello space
+
+413
+00:07:47,220 --> 00:07:52,710
+world and now the echo program receives
+
+415
+00:07:50,310 --> 00:07:55,380
+one argument that contains the string
+
+417
+00:07:52,710 --> 00:07:57,540
+hello world with a space well you can
+
+419
+00:07:55,380 --> 00:07:58,770
+also use single quotes for this and the
+
+421
+00:07:57,540 --> 00:08:00,480
+difference between single quotes and
+
+423
+00:07:58,770 --> 00:08:03,420
+double quotes will get back to and when
+
+425
+00:08:00,480 --> 00:08:06,120
+we talk about bash scripting you can
+
+427
+00:08:03,420 --> 00:08:09,000
+also just escape single characters so
+
+429
+00:08:06,120 --> 00:08:12,150
+for example hello world this will also
+
+431
+00:08:09,000 --> 00:08:15,720
+work just fine all of these rules about
+
+433
+00:08:12,150 --> 00:08:17,340
+how you escape and how you parse and
+
+435
+00:08:15,720 --> 00:08:19,590
+quote various arguments and variables
+
+437
+00:08:17,340 --> 00:08:21,330
+we'll cover a little bit later hopefully
+
+439
+00:08:19,590 --> 00:08:23,520
+you won't run into too many we oughta
+
+441
+00:08:21,330 --> 00:08:26,070
+tease about this just keep in mind at
+
+443
+00:08:23,520 --> 00:08:27,930
+least that spaces separate arguments so
+
+445
+00:08:26,070 --> 00:08:29,610
+if you want to do something like make a
+
+447
+00:08:27,930 --> 00:08:31,920
+directory called my photos
+
+449
+00:08:29,610 --> 00:08:33,780
+you can't just type like make directory
+
+451
+00:08:31,920 --> 00:08:35,880
+my photos it will create two directories
+
+453
+00:08:33,780 --> 00:08:40,010
+one called my and one called photos and
+
+455
+00:08:35,880 --> 00:08:43,229
+that is probably not what you want now
+
+457
+00:08:40,010 --> 00:08:45,600
+one thing you might ask is how does the
+
+459
+00:08:43,229 --> 00:08:48,839
+shell know what these programs are when
+
+461
+00:08:45,600 --> 00:08:50,700
+I type date or when I type echo how does
+
+463
+00:08:48,839 --> 00:08:53,190
+it know what these programs are supposed
+
+465
+00:08:50,700 --> 00:08:54,000
+to do and the answer to this is your
+
+467
+00:08:53,190 --> 00:08:55,439
+program your
+
+469
+00:08:54,000 --> 00:08:57,000
+computer has a bunch of built-in
+
+471
+00:08:55,439 --> 00:08:59,759
+programs that comes with the machine
+
+473
+00:08:57,000 --> 00:09:02,579
+just like you your machine my chip with
+
+475
+00:08:59,759 --> 00:09:05,339
+like the terminal app or it might chip
+
+477
+00:09:02,579 --> 00:09:07,800
+with like Windows Explorer or at my chip
+
+479
+00:09:05,339 --> 00:09:09,569
+with some kind of browser it also ships
+
+481
+00:09:07,800 --> 00:09:11,639
+with a bunch of terminal centric
+
+483
+00:09:09,569 --> 00:09:14,819
+applications and these are stored on
+
+485
+00:09:11,639 --> 00:09:18,209
+your file system and your shell has a
+
+487
+00:09:14,819 --> 00:09:19,949
+way to determine where a program is
+
+489
+00:09:18,209 --> 00:09:22,459
+located basically has a way to search
+
+491
+00:09:19,949 --> 00:09:24,620
+for programs it does this through
+
+493
+00:09:22,459 --> 00:09:27,389
+something called an invariant
+
+495
+00:09:24,620 --> 00:09:29,970
+environment variable an environment
+
+497
+00:09:27,389 --> 00:09:31,560
+variable is a variable like you might be
+
+499
+00:09:29,970 --> 00:09:33,899
+used to for programming languages it
+
+501
+00:09:31,560 --> 00:09:35,160
+turns out that the shell and the
+
+503
+00:09:33,899 --> 00:09:37,350
+bourne-again shell in particular is
+
+505
+00:09:35,160 --> 00:09:39,420
+really a programming language this
+
+507
+00:09:37,350 --> 00:09:41,550
+prompt that you're given here is not
+
+509
+00:09:39,420 --> 00:09:43,470
+just able to run a program with
+
+511
+00:09:41,550 --> 00:09:46,470
+arguments you can also do things like
+
+513
+00:09:43,470 --> 00:09:47,910
+while loops for loops conditionals
+
+515
+00:09:46,470 --> 00:09:49,860
+all of these that you can define
+
+517
+00:09:47,910 --> 00:09:51,000
+functions you can of variables and all
+
+519
+00:09:49,860 --> 00:09:52,860
+of these things you can do in the shell
+
+521
+00:09:51,000 --> 00:09:56,399
+will cover a lot of that in the next
+
+523
+00:09:52,860 --> 00:09:57,990
+lecture on shell scripting for now
+
+525
+00:09:56,399 --> 00:09:59,790
+though let's just look at this
+
+527
+00:09:57,990 --> 00:10:01,199
+particular environment variable
+
+529
+00:09:59,790 --> 00:10:02,699
+environment variables are things that
+
+531
+00:10:01,199 --> 00:10:04,829
+are set whenever you start your shell
+
+533
+00:10:02,699 --> 00:10:06,600
+they're not things you have to set every
+
+535
+00:10:04,829 --> 00:10:08,160
+time you run your shell there are a
+
+537
+00:10:06,600 --> 00:10:09,750
+bunch of these that are set things like
+
+539
+00:10:08,160 --> 00:10:11,850
+where is your home directory what is
+
+541
+00:10:09,750 --> 00:10:13,079
+your username and there's also one
+
+543
+00:10:11,850 --> 00:10:16,170
+that's critical for this particular
+
+545
+00:10:13,079 --> 00:10:18,930
+purpose which is the path variable so if
+
+547
+00:10:16,170 --> 00:10:22,589
+I echo out dollar path this is going to
+
+549
+00:10:18,930 --> 00:10:25,100
+show me all of the paths on my machine
+
+551
+00:10:22,589 --> 00:10:27,930
+that the shell will search for programs
+
+553
+00:10:25,100 --> 00:10:30,870
+you'll notice that this is a list that
+
+555
+00:10:27,930 --> 00:10:33,000
+is colon separated it might be kind of
+
+557
+00:10:30,870 --> 00:10:36,000
+long and hard to read but the essentials
+
+559
+00:10:33,000 --> 00:10:38,279
+is that - whenever you type the name of
+
+561
+00:10:36,000 --> 00:10:41,610
+a program is gonna search through this
+
+563
+00:10:38,279 --> 00:10:43,769
+list of paths on your machine and it's
+
+565
+00:10:41,610 --> 00:10:46,920
+gonna look in each directory for a
+
+567
+00:10:43,769 --> 00:10:49,110
+program or a file whose name matches the
+
+569
+00:10:46,920 --> 00:10:51,029
+command you try to run so in my case
+
+571
+00:10:49,110 --> 00:10:52,800
+when I try to run date or echo it's
+
+573
+00:10:51,029 --> 00:10:54,509
+gonna walk through these one at a time
+
+575
+00:10:52,800 --> 00:10:56,370
+until it finds one that contains the
+
+577
+00:10:54,509 --> 00:10:58,410
+program called date or echo and then
+
+579
+00:10:56,370 --> 00:11:00,000
+it's gonna run it if we want to know
+
+581
+00:10:58,410 --> 00:11:01,649
+which one it actually runs there's a
+
+583
+00:11:00,000 --> 00:11:04,620
+command called which which lets us do
+
+585
+00:11:01,649 --> 00:11:07,500
+that so I can type which echo and will
+
+587
+00:11:04,620 --> 00:11:10,830
+tell me that if I were to run a program
+
+589
+00:11:07,500 --> 00:11:12,720
+called echo I would run this one it's
+
+591
+00:11:10,830 --> 00:11:16,350
+worth pausing here to talk about what
+
+593
+00:11:12,720 --> 00:11:18,620
+paths are so paths are a way to name the
+
+595
+00:11:16,350 --> 00:11:21,630
+location of a file on your computer on
+
+597
+00:11:18,620 --> 00:11:24,780
+Linux and Oh Mac OS these paths are
+
+599
+00:11:21,630 --> 00:11:28,170
+separated by slashes forward slashes so
+
+601
+00:11:24,780 --> 00:11:30,930
+you'll see here that this is in the in
+
+603
+00:11:28,170 --> 00:11:32,760
+the root directory so the slash at the
+
+605
+00:11:30,930 --> 00:11:34,850
+very beginning indicates that this is
+
+607
+00:11:32,760 --> 00:11:37,710
+starting from the top of the file system
+
+609
+00:11:34,850 --> 00:11:40,980
+then look inside the directory called
+
+611
+00:11:37,710 --> 00:11:43,580
+USR then look inside the directory bin
+
+613
+00:11:40,980 --> 00:11:46,440
+and then look for the file called echo
+
+615
+00:11:43,580 --> 00:11:48,620
+on windows paths like this are usually
+
+617
+00:11:46,440 --> 00:11:51,900
+separated by back slashes instead and
+
+619
+00:11:48,620 --> 00:11:53,640
+we're on Linux and Mac OS everything
+
+621
+00:11:51,900 --> 00:11:56,370
+lives under the root name space so all
+
+623
+00:11:53,640 --> 00:12:00,270
+paths start with a slash or all absolute
+
+625
+00:11:56,370 --> 00:12:02,070
+paths on Windows there is one root for
+
+627
+00:12:00,270 --> 00:12:05,130
+every partition so you might have seen
+
+629
+00:12:02,070 --> 00:12:08,220
+things like C colon backslash or D colon
+
+631
+00:12:05,130 --> 00:12:11,340
+backslash so Windows has separate sort
+
+633
+00:12:08,220 --> 00:12:13,050
+of file system path hierarchies for each
+
+635
+00:12:11,340 --> 00:12:14,850
+each Drive that you have
+
+637
+00:12:13,050 --> 00:12:18,540
+whereas on Linux and Mac OS these are
+
+639
+00:12:14,850 --> 00:12:20,010
+all mounted under one namespace you'll
+
+641
+00:12:18,540 --> 00:12:21,690
+notice that I said the word absolute
+
+643
+00:12:20,010 --> 00:12:27,360
+path and you might not know what that
+
+645
+00:12:21,690 --> 00:12:29,460
+means so absolute paths are paths that
+
+647
+00:12:27,360 --> 00:12:31,890
+fully determine the location of a file
+
+649
+00:12:29,460 --> 00:12:33,720
+so in this case this is saying this is
+
+651
+00:12:31,890 --> 00:12:36,540
+talking only about a specific echo file
+
+653
+00:12:33,720 --> 00:12:39,030
+and it's giving you the the full path to
+
+655
+00:12:36,540 --> 00:12:42,839
+that file but there are also things
+
+657
+00:12:39,030 --> 00:12:45,240
+known as relative paths so a relative
+
+659
+00:12:42,839 --> 00:12:49,320
+path is relative to where you currently
+
+661
+00:12:45,240 --> 00:12:52,490
+are and so the way we find out where we
+
+663
+00:12:49,320 --> 00:12:56,190
+currently are is you can type PWD for
+
+665
+00:12:52,490 --> 00:13:00,060
+present working directory present print
+
+667
+00:12:56,190 --> 00:13:02,700
+working directory so if I type PWD it
+
+669
+00:13:00,060 --> 00:13:05,790
+will print out the current path that I'm
+
+671
+00:13:02,700 --> 00:13:08,220
+in right so currently I'm in the home
+
+673
+00:13:05,790 --> 00:13:11,030
+directory under the root and then John
+
+675
+00:13:08,220 --> 00:13:14,730
+under that and then dev under that etc
+
+677
+00:13:11,030 --> 00:13:16,770
+from here I can then choose to change my
+
+679
+00:13:14,730 --> 00:13:18,540
+current working directory and all
+
+681
+00:13:16,770 --> 00:13:20,190
+relative paths are relative to the
+
+683
+00:13:18,540 --> 00:13:21,329
+current working directory which is
+
+685
+00:13:20,190 --> 00:13:24,629
+basically where you
+
+687
+00:13:21,329 --> 00:13:28,709
+they are in this case for example I can
+
+689
+00:13:24,629 --> 00:13:30,449
+do CD / home CDs change directory this
+
+691
+00:13:28,709 --> 00:13:32,610
+is the way that I change what my current
+
+693
+00:13:30,449 --> 00:13:34,829
+working directory is in this case I
+
+695
+00:13:32,610 --> 00:13:37,889
+change to home and I am now you'll see
+
+697
+00:13:34,829 --> 00:13:40,619
+my my shell prompt change to say that I
+
+699
+00:13:37,889 --> 00:13:42,660
+am now in home it just gives me the name
+
+701
+00:13:40,619 --> 00:13:44,220
+of the last segment of the path but you
+
+703
+00:13:42,660 --> 00:13:45,509
+can also configure your terminal to give
+
+705
+00:13:44,220 --> 00:13:50,309
+you the full path whenever you're
+
+707
+00:13:45,509 --> 00:13:53,100
+anywhere and now if I type PWD again it
+
+709
+00:13:50,309 --> 00:13:54,869
+will tell me I'm in slash home there are
+
+711
+00:13:53,100 --> 00:13:59,100
+also a couple of special directories
+
+713
+00:13:54,869 --> 00:14:03,149
+that exist there is dot and dot dot dot
+
+715
+00:13:59,100 --> 00:14:05,129
+means the current directory dot dot
+
+717
+00:14:03,149 --> 00:14:06,749
+means the parent directory so this is a
+
+719
+00:14:05,129 --> 00:14:09,540
+way that you can easily navigate around
+
+721
+00:14:06,749 --> 00:14:13,079
+the system for example here if I type CD
+
+723
+00:14:09,540 --> 00:14:15,179
+dot dot it will tell me that I am now in
+
+725
+00:14:13,079 --> 00:14:17,639
+slash so I'm now in the root of the file
+
+727
+00:14:15,179 --> 00:14:22,139
+system I was in slash home now I'm in
+
+729
+00:14:17,639 --> 00:14:24,869
+slash and indeed if I type PWD well it
+
+731
+00:14:22,139 --> 00:14:26,790
+will do that right thing and I can also
+
+733
+00:14:24,869 --> 00:14:28,980
+then use relative paths to go down into
+
+735
+00:14:26,790 --> 00:14:31,769
+the file system right so I can do CD dot
+
+737
+00:14:28,980 --> 00:14:34,079
+slash home and this is gonna CD into the
+
+739
+00:14:31,769 --> 00:14:36,899
+home directory under the current
+
+741
+00:14:34,079 --> 00:14:39,839
+directory right so this will bring me
+
+743
+00:14:36,899 --> 00:14:42,119
+back to slash home if I now tried CD dot
+
+745
+00:14:39,839 --> 00:14:44,100
+slash home again it will say there's no
+
+747
+00:14:42,119 --> 00:14:45,569
+such directory because there is no home
+
+749
+00:14:44,100 --> 00:14:49,429
+directory under the current directory
+
+751
+00:14:45,569 --> 00:14:53,699
+I'm on which I changed by doing CD right
+
+753
+00:14:49,429 --> 00:14:57,509
+and I can sort of see de all the way
+
+755
+00:14:53,699 --> 00:15:01,110
+back to the place that I was using
+
+757
+00:14:57,509 --> 00:15:07,040
+relative paths and I can also do things
+
+759
+00:15:01,110 --> 00:15:09,059
+like dot dot dot dot dot to get back to
+
+761
+00:15:07,040 --> 00:15:10,649
+somewhere deep in my file system this
+
+763
+00:15:09,059 --> 00:15:13,019
+happens to be all the way back to the
+
+765
+00:15:10,649 --> 00:15:15,629
+root so here there's a bin directory and
+
+767
+00:15:13,019 --> 00:15:17,850
+another bin there's an echo file and so
+
+769
+00:15:15,629 --> 00:15:20,309
+then I could do world and that runs the
+
+771
+00:15:17,850 --> 00:15:22,079
+echo program under bin alright so this
+
+773
+00:15:20,309 --> 00:15:24,439
+is a way that you can construct paths to
+
+775
+00:15:22,079 --> 00:15:26,579
+arbitrarily traverse your filesystem
+
+777
+00:15:24,439 --> 00:15:28,379
+sometimes you want to absolute paths and
+
+779
+00:15:26,579 --> 00:15:29,789
+sometimes you want relative ones usually
+
+781
+00:15:28,379 --> 00:15:33,179
+you want to use whichever one is shorter
+
+783
+00:15:29,789 --> 00:15:34,390
+but if you want to for example run a
+
+785
+00:15:33,179 --> 00:15:36,940
+program or right
+
+787
+00:15:34,390 --> 00:15:38,980
+a program that runs the program like
+
+789
+00:15:36,940 --> 00:15:41,830
+echo or date and you want it to be able
+
+791
+00:15:38,980 --> 00:15:43,660
+to run be run from anywhere you either
+
+793
+00:15:41,830 --> 00:15:45,640
+want to just give the name of the
+
+795
+00:15:43,660 --> 00:15:47,770
+program like data echo and let the the
+
+797
+00:15:45,640 --> 00:15:49,720
+shell use the path to figure out where
+
+799
+00:15:47,770 --> 00:15:51,670
+it is or you want to give its absolute
+
+801
+00:15:49,720 --> 00:15:53,500
+path because if you gave a relative path
+
+803
+00:15:51,670 --> 00:15:55,840
+then if I ran it in my home directory
+
+805
+00:15:53,500 --> 00:16:01,720
+and you ran it in some other directory
+
+807
+00:15:55,840 --> 00:16:04,600
+it might work for me but not for you in
+
+809
+00:16:01,720 --> 00:16:06,340
+general when we run a program it is
+
+811
+00:16:04,600 --> 00:16:08,320
+going to be operating on the current
+
+813
+00:16:06,340 --> 00:16:09,910
+working directory at least by default
+
+815
+00:16:08,320 --> 00:16:11,980
+unless we give it any other arguments
+
+817
+00:16:09,910 --> 00:16:13,750
+and this is really handy because it
+
+819
+00:16:11,980 --> 00:16:15,730
+means that often we don't have to give
+
+821
+00:16:13,750 --> 00:16:17,680
+full paths for things we can just use
+
+823
+00:16:15,730 --> 00:16:20,050
+the name of files and in the directory
+
+825
+00:16:17,680 --> 00:16:22,570
+that we're currently in one thing that's
+
+827
+00:16:20,050 --> 00:16:24,280
+really useful is to figure out what is
+
+829
+00:16:22,570 --> 00:16:26,410
+in the current directory we're in so we
+
+831
+00:16:24,280 --> 00:16:28,060
+already saw PWD which prints where you
+
+833
+00:16:26,410 --> 00:16:31,090
+currently are there's a command called
+
+835
+00:16:28,060 --> 00:16:33,310
+LS which will show you it will list the
+
+837
+00:16:31,090 --> 00:16:35,980
+files in the current directory so if i
+
+839
+00:16:33,310 --> 00:16:38,050
+type LS here this is all the files in
+
+841
+00:16:35,980 --> 00:16:39,850
+the current directory right and this is
+
+843
+00:16:38,050 --> 00:16:43,420
+a handy way to just quickly navigate
+
+845
+00:16:39,850 --> 00:16:46,930
+through the filesystem you'll see that
+
+847
+00:16:43,420 --> 00:16:48,490
+if I sort of CD dot and then do LS it'll
+
+849
+00:16:46,930 --> 00:16:53,370
+show me the files in that directory
+
+851
+00:16:48,490 --> 00:16:56,260
+instead but with LS I can also give it
+
+853
+00:16:53,370 --> 00:16:58,360
+LS dot dot like I can give it a path and
+
+855
+00:16:56,260 --> 00:16:59,920
+then will LS that file instead of the
+
+857
+00:16:58,360 --> 00:17:04,270
+one that I'm currently in or LS that
+
+859
+00:16:59,920 --> 00:17:05,829
+directory and you can see this if I go
+
+861
+00:17:04,270 --> 00:17:09,220
+all the way to the root as well right
+
+863
+00:17:05,829 --> 00:17:11,560
+root has different files one handy trick
+
+865
+00:17:09,220 --> 00:17:13,570
+you might not know about here is there
+
+867
+00:17:11,560 --> 00:17:16,570
+are two other special things you can do
+
+869
+00:17:13,570 --> 00:17:18,339
+one is the tilde character this
+
+871
+00:17:16,570 --> 00:17:21,130
+character brings you to your home
+
+873
+00:17:18,339 --> 00:17:23,140
+directory so tilde always expands to the
+
+875
+00:17:21,130 --> 00:17:25,780
+home directory and you can do relative
+
+877
+00:17:23,140 --> 00:17:30,040
+paths to it so I can do tilde slash dev
+
+879
+00:17:25,780 --> 00:17:32,980
+slash P DOS classes missing semester and
+
+881
+00:17:30,040 --> 00:17:36,670
+now I'm there because tilde expanded to
+
+883
+00:17:32,980 --> 00:17:39,460
+slash home slash John there is also for
+
+885
+00:17:36,670 --> 00:17:42,250
+CD in particular a really handy argument
+
+887
+00:17:39,460 --> 00:17:44,530
+you can give which is - if you do CD -
+
+889
+00:17:42,250 --> 00:17:47,380
+it will CD to the directory you were
+
+891
+00:17:44,530 --> 00:17:48,180
+previously in so if I do CD - I go back
+
+893
+00:17:47,380 --> 00:17:52,230
+to root
+
+895
+00:17:48,180 --> 00:17:53,880
+if I do CD - again I go back to missing
+
+897
+00:17:52,230 --> 00:17:55,080
+semester so this is a handy way if you
+
+899
+00:17:53,880 --> 00:18:01,290
+want to toggle between two different
+
+901
+00:17:55,080 --> 00:18:03,570
+directories in the case of LS or in the
+
+903
+00:18:01,290 --> 00:18:06,180
+case of CD there might be arguments do
+
+905
+00:18:03,570 --> 00:18:07,560
+you don't know about right currently we
+
+907
+00:18:06,180 --> 00:18:09,510
+haven't really been doing anything
+
+909
+00:18:07,560 --> 00:18:11,520
+except giving paths but how do you even
+
+911
+00:18:09,510 --> 00:18:14,250
+discover that you can give a path to LS
+
+913
+00:18:11,520 --> 00:18:16,530
+in the first place well most programs
+
+915
+00:18:14,250 --> 00:18:18,840
+take what are known as arguments like
+
+917
+00:18:16,530 --> 00:18:21,570
+flags and options these are things that
+
+919
+00:18:18,840 --> 00:18:24,810
+usually start with a - one of the Hemi
+
+921
+00:18:21,570 --> 00:18:26,880
+is one of these is - help most programs
+
+923
+00:18:24,810 --> 00:18:30,000
+implement this and if you run for
+
+925
+00:18:26,880 --> 00:18:34,020
+example LS - help it all helpfully print
+
+927
+00:18:30,000 --> 00:18:36,000
+out a bunch of information about that
+
+929
+00:18:34,020 --> 00:18:38,400
+command and you'll see here that it says
+
+931
+00:18:36,000 --> 00:18:40,260
+the usage is LS and you can give some
+
+933
+00:18:38,400 --> 00:18:42,030
+number of options and you can give some
+
+935
+00:18:40,260 --> 00:18:46,350
+number of files the way to read that
+
+937
+00:18:42,030 --> 00:18:48,600
+usage line is triple dot means one like
+
+939
+00:18:46,350 --> 00:18:50,850
+zero or one or more and the square
+
+941
+00:18:48,600 --> 00:18:52,890
+bracket means optional so in this case
+
+943
+00:18:50,850 --> 00:18:54,300
+there's an optional number of options
+
+945
+00:18:52,890 --> 00:18:56,790
+and there's an optional number of files
+
+947
+00:18:54,300 --> 00:18:58,740
+and you'll see that it says what the
+
+949
+00:18:56,790 --> 00:19:00,720
+program does and also specifies a number
+
+951
+00:18:58,740 --> 00:19:03,000
+of different types of flags and options
+
+953
+00:19:00,720 --> 00:19:04,950
+you can give usually we call things that
+
+955
+00:19:03,000 --> 00:19:07,830
+are a single dash in a single letter a
+
+957
+00:19:04,950 --> 00:19:09,900
+flag and anything that or anything that
+
+959
+00:19:07,830 --> 00:19:11,730
+doesn't take a value a flag and anything
+
+961
+00:19:09,900 --> 00:19:16,640
+that does take a value an option so for
+
+963
+00:19:11,730 --> 00:19:22,260
+example - a and - all are both flags and
+
+965
+00:19:16,640 --> 00:19:24,180
+- C or - color R is an option one thing
+
+967
+00:19:22,260 --> 00:19:30,330
+you'll see under here if you scroll down
+
+969
+00:19:24,180 --> 00:19:37,140
+far enough is the - L flag and that's
+
+971
+00:19:30,330 --> 00:19:39,480
+unhelpful the - L flag the - L flag uses
+
+973
+00:19:37,140 --> 00:19:40,860
+a long listing format now that's
+
+975
+00:19:39,480 --> 00:19:43,350
+particularly helpful in and of itself
+
+977
+00:19:40,860 --> 00:19:46,890
+but let's see what it actually does so
+
+979
+00:19:43,350 --> 00:19:48,450
+if I do LS dash L it still prints the
+
+981
+00:19:46,890 --> 00:19:49,890
+files in the current directory but it
+
+983
+00:19:48,450 --> 00:19:52,170
+gives me a lot more information about
+
+985
+00:19:49,890 --> 00:19:54,600
+those files and this is something you'll
+
+987
+00:19:52,170 --> 00:19:56,280
+find yourself using quite a lot because
+
+989
+00:19:54,600 --> 00:20:00,810
+the additional information it gives you
+
+991
+00:19:56,280 --> 00:20:02,010
+is often quite handy let's look at what
+
+993
+00:20:00,810 --> 00:20:09,030
+some of that information
+
+995
+00:20:02,010 --> 00:20:10,110
+ah so first of all the D at the
+
+997
+00:20:09,030 --> 00:20:11,760
+beginning of some of these entries
+
+999
+00:20:10,110 --> 00:20:14,820
+indicate that something is a directory
+
+1001
+00:20:11,760 --> 00:20:16,020
+so the underscore data entry here for
+
+1003
+00:20:14,820 --> 00:20:18,690
+example is a directory
+
+1005
+00:20:16,020 --> 00:20:22,650
+whereas for for hTML is not a directory
+
+1007
+00:20:18,690 --> 00:20:25,410
+it's a file the following letters after
+
+1009
+00:20:22,650 --> 00:20:28,650
+that indicate the permissions that are
+
+1011
+00:20:25,410 --> 00:20:30,810
+set for that file so this like we saw
+
+1013
+00:20:28,650 --> 00:20:32,640
+earlier I might not be able to open a
+
+1015
+00:20:30,810 --> 00:20:34,170
+given file or I might not be able to CD
+
+1017
+00:20:32,640 --> 00:20:35,760
+into a given directory and this is all
+
+1019
+00:20:34,170 --> 00:20:37,980
+dictated by the permissions on that
+
+1021
+00:20:35,760 --> 00:20:41,430
+particular file or directory the way to
+
+1023
+00:20:37,980 --> 00:20:43,500
+read these is that the the first group
+
+1025
+00:20:41,430 --> 00:20:45,810
+of three are the permissions are set for
+
+1027
+00:20:43,500 --> 00:20:49,560
+the owner of the file all of these files
+
+1029
+00:20:45,810 --> 00:20:52,020
+you'll see are owned by me the second
+
+1031
+00:20:49,560 --> 00:20:53,880
+group of three characters is for the
+
+1033
+00:20:52,020 --> 00:20:56,100
+permissions for the group that owns this
+
+1035
+00:20:53,880 --> 00:20:58,650
+file in this case all of these files are
+
+1037
+00:20:56,100 --> 00:21:01,770
+also known by the john group and a final
+
+1039
+00:20:58,650 --> 00:21:03,900
+group of three is a list of the
+
+1041
+00:21:01,770 --> 00:21:06,290
+permissions for everyone else so anyone
+
+1043
+00:21:03,900 --> 00:21:08,550
+who's not a user owner or a group owner
+
+1045
+00:21:06,290 --> 00:21:10,980
+this directory is perhaps kind of boring
+
+1047
+00:21:08,550 --> 00:21:14,190
+because all of the things are owned by
+
+1049
+00:21:10,980 --> 00:21:17,490
+me but if we do something like CD to
+
+1051
+00:21:14,190 --> 00:21:20,280
+slash and do LS dash L you'll see that
+
+1053
+00:21:17,490 --> 00:21:22,800
+here all of them are owned by root we'll
+
+1055
+00:21:20,280 --> 00:21:24,090
+get back to what the root user is but
+
+1057
+00:21:22,800 --> 00:21:26,400
+here you see some of the permissions are
+
+1059
+00:21:24,090 --> 00:21:31,410
+a little bit more interesting the groups
+
+1061
+00:21:26,400 --> 00:21:34,290
+of three are read write and execute what
+
+1063
+00:21:31,410 --> 00:21:36,450
+these mean differs for files and for
+
+1065
+00:21:34,290 --> 00:21:37,980
+directories for files it's pretty
+
+1067
+00:21:36,450 --> 00:21:40,170
+straightforward if you have read
+
+1069
+00:21:37,980 --> 00:21:41,820
+permissions on a file then you can read
+
+1071
+00:21:40,170 --> 00:21:43,950
+its contents if you have write
+
+1073
+00:21:41,820 --> 00:21:46,200
+permissions on a file then you can save
+
+1075
+00:21:43,950 --> 00:21:48,270
+the file you can add more to it or you
+
+1077
+00:21:46,200 --> 00:21:50,670
+can replace it entirely and if you have
+
+1079
+00:21:48,270 --> 00:21:52,620
+execute to the X bit on a file then
+
+1081
+00:21:50,670 --> 00:21:57,390
+you're allowed to execute that file so
+
+1083
+00:21:52,620 --> 00:22:00,030
+if we do LS al in slash bin that's a
+
+1085
+00:21:57,390 --> 00:22:02,640
+novel and user bin you'll see that all
+
+1087
+00:22:00,030 --> 00:22:04,590
+of them have the execute bit set even
+
+1089
+00:22:02,640 --> 00:22:06,480
+for people who are not the owner of the
+
+1091
+00:22:04,590 --> 00:22:08,280
+file and this is because the echo
+
+1093
+00:22:06,480 --> 00:22:09,420
+program for example we want everyone on
+
+1095
+00:22:08,280 --> 00:22:11,700
+the computer to be able to execute
+
+1097
+00:22:09,420 --> 00:22:13,920
+there's no reason to say only certain
+
+1099
+00:22:11,700 --> 00:22:15,570
+users can run echo that doesn't really
+
+1101
+00:22:13,920 --> 00:22:18,420
+make any make any sense
+
+1103
+00:22:15,570 --> 00:22:20,960
+for directories though these permissions
+
+1105
+00:22:18,420 --> 00:22:23,550
+are a little bit different so read
+
+1107
+00:22:20,960 --> 00:22:26,460
+translates - are you allowed to see
+
+1109
+00:22:23,550 --> 00:22:28,770
+which files are inside this directory so
+
+1111
+00:22:26,460 --> 00:22:30,530
+think of read as lists for a directory
+
+1113
+00:22:28,770 --> 00:22:33,420
+are you allowed to list its contents
+
+1115
+00:22:30,530 --> 00:22:36,210
+write for a directory is whether you are
+
+1117
+00:22:33,420 --> 00:22:39,090
+allowed to rename create or remove files
+
+1119
+00:22:36,210 --> 00:22:42,030
+within that directory so it's still kind
+
+1121
+00:22:39,090 --> 00:22:45,240
+of right but notice that this means that
+
+1123
+00:22:42,030 --> 00:22:47,580
+if you have write permissions on a file
+
+1125
+00:22:45,240 --> 00:22:49,950
+but you do not have write permissions on
+
+1127
+00:22:47,580 --> 00:22:52,080
+its directory you cannot delete the file
+
+1129
+00:22:49,950 --> 00:22:54,420
+you can empty it but you cannot delete
+
+1131
+00:22:52,080 --> 00:22:57,660
+it because that would require writing to
+
+1133
+00:22:54,420 --> 00:22:59,130
+the directory itself and finally execute
+
+1135
+00:22:57,660 --> 00:23:01,950
+on directories is something that trips
+
+1137
+00:22:59,130 --> 00:23:04,650
+people up a lot execute on a directory
+
+1139
+00:23:01,950 --> 00:23:07,230
+is what's known as search and that's not
+
+1141
+00:23:04,650 --> 00:23:10,200
+terribly helpful a name but what that
+
+1143
+00:23:07,230 --> 00:23:13,470
+means is are you allowed to enter this
+
+1145
+00:23:10,200 --> 00:23:15,240
+directory if you want to get to a file
+
+1147
+00:23:13,470 --> 00:23:16,670
+if you want to open it or read it or
+
+1149
+00:23:15,240 --> 00:23:20,310
+write it whatever you want to do
+
+1151
+00:23:16,670 --> 00:23:22,710
+basically to CD into a directory you
+
+1153
+00:23:20,310 --> 00:23:25,050
+must have the execute permission on all
+
+1155
+00:23:22,710 --> 00:23:28,170
+parent directories of that directory and
+
+1157
+00:23:25,050 --> 00:23:30,480
+the directory itself so for example for
+
+1159
+00:23:28,170 --> 00:23:34,080
+me to access a file inside slash user
+
+1161
+00:23:30,480 --> 00:23:35,820
+slash bin such as user bin echo I must
+
+1163
+00:23:34,080 --> 00:23:38,100
+have executed on route I must have
+
+1165
+00:23:35,820 --> 00:23:40,380
+execute on user and I must have execute
+
+1167
+00:23:38,100 --> 00:23:42,120
+on bin if I do not have all those
+
+1169
+00:23:40,380 --> 00:23:44,790
+execute bits I will not be allowed to
+
+1171
+00:23:42,120 --> 00:23:48,410
+access that file because I won't be able
+
+1173
+00:23:44,790 --> 00:23:50,670
+to enter the directories along the way
+
+1175
+00:23:48,410 --> 00:23:52,560
+there are a number of other bits that
+
+1177
+00:23:50,670 --> 00:23:55,320
+you might come across like you might see
+
+1179
+00:23:52,560 --> 00:23:58,020
+esses or T's in these lists you might
+
+1181
+00:23:55,320 --> 00:23:58,950
+see LS those we can talk about in office
+
+1183
+00:23:58,020 --> 00:24:01,260
+hours if you're curious
+
+1185
+00:23:58,950 --> 00:24:04,260
+they will mostly not matter for anything
+
+1187
+00:24:01,260 --> 00:24:05,670
+you will do in this class but they are
+
+1189
+00:24:04,260 --> 00:24:08,100
+handy to know about so if you're curious
+
+1191
+00:24:05,670 --> 00:24:11,340
+about them look them up on your own or
+
+1193
+00:24:08,100 --> 00:24:13,080
+come ask us in office hours there are
+
+1195
+00:24:11,340 --> 00:24:14,580
+some other programs that are handy to
+
+1197
+00:24:13,080 --> 00:24:16,200
+know about oh sorry there's one more
+
+1199
+00:24:14,580 --> 00:24:17,400
+thing as I mentioned if you just have a
+
+1201
+00:24:16,200 --> 00:24:19,470
+dash it means you do not have that
+
+1203
+00:24:17,400 --> 00:24:21,810
+permission right so if it says for
+
+1205
+00:24:19,470 --> 00:24:23,190
+example our dash X it means that you
+
+1207
+00:24:21,810 --> 00:24:27,390
+have read and execute but you do not
+
+1209
+00:24:23,190 --> 00:24:29,240
+have right there are some other handy
+
+1211
+00:24:27,390 --> 00:24:32,360
+programs to know about at this point
+
+1213
+00:24:29,240 --> 00:24:35,450
+one of them is move or the MV command so
+
+1215
+00:24:32,360 --> 00:24:39,350
+if I CD back to missing semester here MV
+
+1217
+00:24:35,450 --> 00:24:42,950
+lets me rename a file and rename here
+
+1219
+00:24:39,350 --> 00:24:45,320
+takes two paths it takes the old path in
+
+1221
+00:24:42,950 --> 00:24:47,870
+the new path this is means that move
+
+1223
+00:24:45,320 --> 00:24:49,970
+lets you both rename a file like if you
+
+1225
+00:24:47,870 --> 00:24:52,130
+change the name of the file but not the
+
+1227
+00:24:49,970 --> 00:24:54,290
+directory or it lets you move a file to
+
+1229
+00:24:52,130 --> 00:24:56,360
+a completely different directory it just
+
+1231
+00:24:54,290 --> 00:24:57,890
+you give the path to the current file
+
+1233
+00:24:56,360 --> 00:24:59,720
+and the path to where you want that file
+
+1235
+00:24:57,890 --> 00:25:02,720
+to be and that can change its location
+
+1237
+00:24:59,720 --> 00:25:05,480
+and its name so for example I can move
+
+1239
+00:25:02,720 --> 00:25:09,020
+dot files dot MD to be food MD
+
+1241
+00:25:05,480 --> 00:25:16,280
+unhelpfully right and similarly I can
+
+1243
+00:25:09,020 --> 00:25:19,370
+move it back there's also the CP command
+
+1245
+00:25:16,280 --> 00:25:21,860
+the CP or copy is very similar it lets
+
+1247
+00:25:19,370 --> 00:25:23,750
+you copy a file CP also takes two
+
+1249
+00:25:21,860 --> 00:25:25,610
+arguments it takes the path you want to
+
+1251
+00:25:23,750 --> 00:25:28,340
+copy from and the path you want to copy
+
+1253
+00:25:25,610 --> 00:25:30,890
+to and these are full paths so I could
+
+1255
+00:25:28,340 --> 00:25:32,960
+use this for example to say I want to
+
+1257
+00:25:30,890 --> 00:25:37,550
+copy dot files out MD - dot dot slash
+
+1259
+00:25:32,960 --> 00:25:39,710
+food MD sure food MD and now if I do LS
+
+1261
+00:25:37,550 --> 00:25:42,800
+dot you'll see that there's a food MD
+
+1263
+00:25:39,710 --> 00:25:44,600
+file in that directory so CP as well
+
+1265
+00:25:42,800 --> 00:25:47,780
+take two paths it does not have to be in
+
+1267
+00:25:44,600 --> 00:25:49,700
+the same directory and similarly there's
+
+1269
+00:25:47,780 --> 00:25:52,070
+the RM command which lets you remove a
+
+1271
+00:25:49,700 --> 00:25:54,050
+file and there - you can give paths in
+
+1273
+00:25:52,070 --> 00:25:56,750
+this case I'm removing dot dot slash
+
+1275
+00:25:54,050 --> 00:25:59,480
+food you should be aware for removing
+
+1277
+00:25:56,750 --> 00:26:01,940
+especially on Linux removal is by
+
+1279
+00:25:59,480 --> 00:26:05,000
+default not recursive so you cannot
+
+1281
+00:26:01,940 --> 00:26:07,100
+remove a directory using RM you can pass
+
+1283
+00:26:05,000 --> 00:26:09,320
+the - our flag which lets you do a
+
+1285
+00:26:07,100 --> 00:26:10,550
+recursive remove and then give a path
+
+1287
+00:26:09,320 --> 00:26:12,890
+that you want to remove and it will
+
+1289
+00:26:10,550 --> 00:26:16,370
+remove everything below it there is also
+
+1291
+00:26:12,890 --> 00:26:18,290
+the RM dr dir command which lets you
+
+1293
+00:26:16,370 --> 00:26:21,230
+remove a directory but it only lets you
+
+1295
+00:26:18,290 --> 00:26:22,970
+remove that directory if it is empty so
+
+1297
+00:26:21,230 --> 00:26:23,960
+the idea here is to sort of be a safety
+
+1299
+00:26:22,970 --> 00:26:25,429
+mechanism for you so you don't
+
+1301
+00:26:23,960 --> 00:26:28,610
+accidentally throw away a bunch of your
+
+1303
+00:26:25,429 --> 00:26:31,040
+files and the final little command
+
+1305
+00:26:28,610 --> 00:26:32,540
+that's handy to use is make there which
+
+1307
+00:26:31,040 --> 00:26:34,429
+lets you create a new directory and as
+
+1309
+00:26:32,540 --> 00:26:36,110
+we talked about before you don't want to
+
+1311
+00:26:34,429 --> 00:26:37,940
+do something like this because it will
+
+1313
+00:26:36,110 --> 00:26:40,580
+create two directories for you one
+
+1315
+00:26:37,940 --> 00:26:42,140
+called my and one called photos if you
+
+1317
+00:26:40,580 --> 00:26:42,980
+actually want to create a directory like
+
+1319
+00:26:42,140 --> 00:26:50,120
+this you would either
+
+1321
+00:26:42,980 --> 00:26:52,519
+escape the space or quote the string if
+
+1323
+00:26:50,120 --> 00:26:54,919
+you ever want more information about how
+
+1325
+00:26:52,519 --> 00:26:57,049
+any command to basically on these
+
+1327
+00:26:54,919 --> 00:26:58,220
+platforms work there's a really handy
+
+1329
+00:26:57,049 --> 00:27:00,649
+command for that as well
+
+1331
+00:26:58,220 --> 00:27:04,610
+there is the program called man for
+
+1333
+00:27:00,649 --> 00:27:06,409
+manual pages this program takes as an
+
+1335
+00:27:04,610 --> 00:27:09,080
+argument the name of another program and
+
+1337
+00:27:06,409 --> 00:27:12,019
+gives you its manual page so for example
+
+1339
+00:27:09,080 --> 00:27:14,990
+we could do man LS and this shows us a
+
+1341
+00:27:12,019 --> 00:27:16,730
+manual page for LS you'll notice that in
+
+1343
+00:27:14,990 --> 00:27:19,250
+the case of LS it is fairly similar to
+
+1345
+00:27:16,730 --> 00:27:20,870
+what we got with LS - help but it's a
+
+1347
+00:27:19,250 --> 00:27:23,570
+little easier to navigate a little
+
+1349
+00:27:20,870 --> 00:27:26,269
+easier to read usually towards the
+
+1351
+00:27:23,570 --> 00:27:28,639
+bottom you will also get examples
+
+1353
+00:27:26,269 --> 00:27:29,899
+information about who wrote it where you
+
+1355
+00:27:28,639 --> 00:27:32,389
+can find more information and that sort
+
+1357
+00:27:29,899 --> 00:27:32,990
+of stuff one thing that can be confusing
+
+1359
+00:27:32,389 --> 00:27:35,330
+sometimes
+
+1361
+00:27:32,990 --> 00:27:36,289
+at least until a recent version where
+
+1363
+00:27:35,330 --> 00:27:38,779
+they added this three at the bottom
+
+1365
+00:27:36,289 --> 00:27:41,389
+which says Q to quit they do not use to
+
+1367
+00:27:38,779 --> 00:27:43,279
+say this you press Q to quit this
+
+1369
+00:27:41,389 --> 00:27:48,169
+program it can be really hard to quit it
+
+1371
+00:27:43,279 --> 00:27:50,750
+if you do not know that a handy keyboard
+
+1373
+00:27:48,169 --> 00:27:52,970
+shortcut here by the way is ctrl L which
+
+1375
+00:27:50,750 --> 00:27:56,990
+lets you clear your terminal and go back
+
+1377
+00:27:52,970 --> 00:27:59,330
+to the top so so far we've only talked
+
+1379
+00:27:56,990 --> 00:28:01,370
+about programs in isolation but where
+
+1381
+00:27:59,330 --> 00:28:03,019
+much of the power of the shell really
+
+1383
+00:28:01,370 --> 00:28:06,380
+comes through is once you start
+
+1385
+00:28:03,019 --> 00:28:08,419
+combining different programs right so
+
+1387
+00:28:06,380 --> 00:28:10,789
+rather than just like running CDE
+
+1389
+00:28:08,419 --> 00:28:12,500
+running LS and etc you might want to
+
+1391
+00:28:10,789 --> 00:28:13,940
+chain multiple programs together you
+
+1393
+00:28:12,500 --> 00:28:15,980
+might want to interact with files and
+
+1395
+00:28:13,940 --> 00:28:19,309
+have files operate in between programs
+
+1397
+00:28:15,980 --> 00:28:21,200
+and the way we can do this is using this
+
+1399
+00:28:19,309 --> 00:28:24,620
+notion of streams that the shell gives
+
+1401
+00:28:21,200 --> 00:28:25,940
+us every program by default has I'm
+
+1403
+00:28:24,620 --> 00:28:28,610
+gonna simplify a little and say two
+
+1405
+00:28:25,940 --> 00:28:31,820
+primary streams it has an input stream
+
+1407
+00:28:28,610 --> 00:28:33,950
+and an output stream by default the
+
+1409
+00:28:31,820 --> 00:28:35,419
+input stream is your keyboard basically
+
+1411
+00:28:33,950 --> 00:28:36,860
+the input stream is your terminal and
+
+1413
+00:28:35,419 --> 00:28:38,929
+whatever you type into your terminal is
+
+1415
+00:28:36,860 --> 00:28:40,610
+going to end up into the program and it
+
+1417
+00:28:38,929 --> 00:28:42,049
+has a default output stream which is
+
+1419
+00:28:40,610 --> 00:28:44,330
+whenever the program prints something
+
+1421
+00:28:42,049 --> 00:28:46,279
+it's gonna print to that stream and by
+
+1423
+00:28:44,330 --> 00:28:48,470
+default that is also your terminal this
+
+1425
+00:28:46,279 --> 00:28:50,690
+is why when I type echo hello it gets
+
+1427
+00:28:48,470 --> 00:28:54,200
+printed back to my terminal but the
+
+1429
+00:28:50,690 --> 00:28:56,360
+shell gives you a way to rewire these
+
+1431
+00:28:54,200 --> 00:28:59,120
+streams to change where the input
+
+1433
+00:28:56,360 --> 00:29:00,980
+output of a programmer pointed the way
+
+1435
+00:28:59,120 --> 00:29:06,200
+the most straightforward way you do this
+
+1437
+00:29:00,980 --> 00:29:08,210
+is using the angle bracket signs so you
+
+1439
+00:29:06,200 --> 00:29:11,570
+can write something like this or you can
+
+1441
+00:29:08,210 --> 00:29:14,299
+write something like this the left angle
+
+1443
+00:29:11,570 --> 00:29:16,340
+bracket indicates rewire the input for
+
+1445
+00:29:14,299 --> 00:29:21,040
+this program to be the contents of this
+
+1447
+00:29:16,340 --> 00:29:23,600
+file and the end angle bracket means
+
+1449
+00:29:21,040 --> 00:29:27,559
+rewire the output of the preceding
+
+1451
+00:29:23,600 --> 00:29:28,580
+program into this file so let's look at
+
+1453
+00:29:27,559 --> 00:29:32,240
+an example of what that would look like
+
+1455
+00:29:28,580 --> 00:29:34,280
+if I do echo hello I can say I want that
+
+1457
+00:29:32,240 --> 00:29:36,710
+context the content to be stored in a
+
+1459
+00:29:34,280 --> 00:29:39,049
+file called hello dot text and because I
+
+1461
+00:29:36,710 --> 00:29:40,520
+gave this is a relative path right this
+
+1463
+00:29:39,049 --> 00:29:42,980
+will construct a file in the current
+
+1465
+00:29:40,520 --> 00:29:45,440
+directory called hello text and at least
+
+1467
+00:29:42,980 --> 00:29:47,780
+in theory its contents should be the
+
+1469
+00:29:45,440 --> 00:29:50,360
+word hello so if I run this notice that
+
+1471
+00:29:47,780 --> 00:29:52,100
+nothing got printed to my output the
+
+1473
+00:29:50,360 --> 00:29:52,700
+previous time when I ran echo hello it
+
+1475
+00:29:52,100 --> 00:29:55,340
+printed hello
+
+1477
+00:29:52,700 --> 00:29:57,799
+now that hello is going gone into a file
+
+1479
+00:29:55,340 --> 00:30:00,610
+called hello text and I can verify this
+
+1481
+00:29:57,799 --> 00:30:03,860
+by using the program called cat so cat
+
+1483
+00:30:00,610 --> 00:30:07,280
+prints the contents of a file so I can
+
+1485
+00:30:03,860 --> 00:30:11,059
+do cat hello dot txt and there it shows
+
+1487
+00:30:07,280 --> 00:30:13,220
+me hello but cat is a is also something
+
+1489
+00:30:11,059 --> 00:30:16,220
+that supports this kind of wiring so I
+
+1491
+00:30:13,220 --> 00:30:17,990
+can say cat which by default just prints
+
+1493
+00:30:16,220 --> 00:30:20,720
+its input it just duplicates its input
+
+1495
+00:30:17,990 --> 00:30:23,809
+to its output I can say I want you to
+
+1497
+00:30:20,720 --> 00:30:25,160
+take your input from Hello text what
+
+1499
+00:30:23,809 --> 00:30:26,990
+will happen in this case is that the
+
+1501
+00:30:25,160 --> 00:30:29,840
+shell is going to open hello dot txt
+
+1503
+00:30:26,990 --> 00:30:32,540
+take its contents and set that to be the
+
+1505
+00:30:29,840 --> 00:30:34,370
+input of cat and then cat is going to
+
+1507
+00:30:32,540 --> 00:30:36,500
+just print that to its output which
+
+1509
+00:30:34,370 --> 00:30:38,179
+since I haven't rewired it is gonna be
+
+1511
+00:30:36,500 --> 00:30:41,870
+my terminal so this will just print
+
+1513
+00:30:38,179 --> 00:30:43,549
+hello to the output and I can use both
+
+1515
+00:30:41,870 --> 00:30:45,470
+of these at the same time so for example
+
+1517
+00:30:43,549 --> 00:30:47,000
+if I want to copy a file and I don't
+
+1519
+00:30:45,470 --> 00:30:51,500
+want to use the CP command for some
+
+1521
+00:30:47,000 --> 00:30:54,470
+reason I can do this and in this case
+
+1523
+00:30:51,500 --> 00:30:56,540
+I'm telling the cat program nothing at
+
+1525
+00:30:54,470 --> 00:30:58,010
+all I'm just saying do your normal thing
+
+1527
+00:30:56,540 --> 00:30:59,960
+right the cat program does not know
+
+1529
+00:30:58,010 --> 00:31:02,150
+anything about this redirection but I'm
+
+1531
+00:30:59,960 --> 00:31:04,190
+telling the shell to use hello dot X as
+
+1533
+00:31:02,150 --> 00:31:08,120
+the input for cat and to write anything
+
+1535
+00:31:04,190 --> 00:31:09,470
+that cat prints - hello - dot txt again
+
+1537
+00:31:08,120 --> 00:31:10,010
+this prints nothing to my terminal
+
+1539
+00:31:09,470 --> 00:31:13,340
+but if
+
+1541
+00:31:10,010 --> 00:31:15,620
+cat hello to text I get the output as I
+
+1543
+00:31:13,340 --> 00:31:20,630
+would have expected which is a copy of
+
+1545
+00:31:15,620 --> 00:31:23,390
+the original file there is also a double
+
+1547
+00:31:20,630 --> 00:31:26,570
+end bracket which is append instead of
+
+1549
+00:31:23,390 --> 00:31:27,380
+just overwrite so you'll notice that I
+
+1551
+00:31:26,570 --> 00:31:29,870
+if I do
+
+1553
+00:31:27,380 --> 00:31:32,300
+cat hello dot txt - hello - dot txt
+
+1555
+00:31:29,870 --> 00:31:34,160
+again and then I cat hello to text it
+
+1557
+00:31:32,300 --> 00:31:36,500
+still just contains a low even though it
+
+1559
+00:31:34,160 --> 00:31:38,750
+already contained a low if I switch that
+
+1561
+00:31:36,500 --> 00:31:41,090
+to instead be a double end bracket it
+
+1563
+00:31:38,750 --> 00:31:45,890
+means append and if I now cut that file
+
+1565
+00:31:41,090 --> 00:31:47,570
+it has a low twice these are pretty
+
+1567
+00:31:45,890 --> 00:31:49,850
+straightforward they're usually just
+
+1569
+00:31:47,570 --> 00:31:51,590
+ways to interact with files but where it
+
+1571
+00:31:49,850 --> 00:31:53,420
+gets really interesting is an additional
+
+1573
+00:31:51,590 --> 00:31:56,150
+operator the shell gives you called the
+
+1575
+00:31:53,420 --> 00:32:00,020
+pipe character so pipe is just a
+
+1577
+00:31:56,150 --> 00:32:02,900
+vertical bar and what pipe means is take
+
+1579
+00:32:00,020 --> 00:32:05,300
+the output of the program to the left
+
+1581
+00:32:02,900 --> 00:32:09,650
+and make it the input of the program to
+
+1583
+00:32:05,300 --> 00:32:13,940
+the right right so what does this look
+
+1585
+00:32:09,650 --> 00:32:17,450
+like well let's take the example of LS /
+
+1587
+00:32:13,940 --> 00:32:19,550
+or LS dash L / this prints a bunch of
+
+1589
+00:32:17,450 --> 00:32:22,460
+things let's say that I only wanted the
+
+1591
+00:32:19,550 --> 00:32:25,670
+last line of this output well there's a
+
+1593
+00:32:22,460 --> 00:32:28,940
+command called tail and tail prints the
+
+1595
+00:32:25,670 --> 00:32:32,420
+last end lines of its input and I can do
+
+1597
+00:32:28,940 --> 00:32:34,520
+- and one so this is a flag called n you
+
+1599
+00:32:32,420 --> 00:32:36,890
+can also use dash dash lines if you want
+
+1601
+00:32:34,520 --> 00:32:38,660
+to use it as a longer option but in this
+
+1603
+00:32:36,890 --> 00:32:42,260
+case this is saying just print the last
+
+1605
+00:32:38,660 --> 00:32:46,640
+line and I can wire these together so I
+
+1607
+00:32:42,260 --> 00:32:50,840
+can say LS dash L slash pipe tail - n 1
+
+1609
+00:32:46,640 --> 00:32:53,060
+and notice here that LS does not know
+
+1611
+00:32:50,840 --> 00:32:55,340
+about tail and tail does not know about
+
+1613
+00:32:53,060 --> 00:32:56,870
+LS they are different programs and have
+
+1615
+00:32:55,340 --> 00:32:59,120
+never been programmed to be compatible
+
+1617
+00:32:56,870 --> 00:33:00,650
+with one another all they know how to do
+
+1619
+00:32:59,120 --> 00:33:02,900
+is read from input and write to output
+
+1621
+00:33:00,650 --> 00:33:05,360
+and then the pipe is what wires them
+
+1623
+00:33:02,900 --> 00:33:07,670
+together and in this particular case I'm
+
+1625
+00:33:05,360 --> 00:33:09,380
+saying I want the output of LS to be the
+
+1627
+00:33:07,670 --> 00:33:10,850
+input to tail and then I want the output
+
+1629
+00:33:09,380 --> 00:33:12,140
+of tail to just go to my terminal
+
+1631
+00:33:10,850 --> 00:33:14,240
+because I haven't rewired it
+
+1633
+00:33:12,140 --> 00:33:16,730
+I could also rewire this to say I want
+
+1635
+00:33:14,240 --> 00:33:18,770
+the output to go to LS text and in this
+
+1637
+00:33:16,730 --> 00:33:20,990
+case if I cat L is the text I would get
+
+1639
+00:33:18,770 --> 00:33:22,640
+the appropriate output and it turns out
+
+1641
+00:33:20,990 --> 00:33:23,340
+you can do some really neat things with
+
+1643
+00:33:22,640 --> 00:33:25,110
+this
+
+1645
+00:33:23,340 --> 00:33:27,720
+gonna cover this a lot more in the data
+
+1647
+00:33:25,110 --> 00:33:30,720
+wrangling lecture there will be in like
+
+1649
+00:33:27,720 --> 00:33:32,490
+four days or something on the kind of
+
+1651
+00:33:30,720 --> 00:33:36,060
+fancy stuff you can do when you start
+
+1653
+00:33:32,490 --> 00:33:37,560
+building more advanced pipelines one to
+
+1655
+00:33:36,060 --> 00:33:42,300
+give you one example we can do something
+
+1657
+00:33:37,560 --> 00:33:46,320
+like curl - Josh heads silent little
+
+1659
+00:33:42,300 --> 00:33:48,870
+calm so just to show you what that looks
+
+1661
+00:33:46,320 --> 00:33:52,680
+like this gives me all the HTTP headers
+
+1663
+00:33:48,870 --> 00:33:56,520
+for accessing google.com and I can pipe
+
+1665
+00:33:52,680 --> 00:34:01,260
+that to grep a - like a Dutch - ignore
+
+1667
+00:33:56,520 --> 00:34:04,230
+case or just - I if I want content
+
+1669
+00:34:01,260 --> 00:34:06,120
+length so this is gonna print the
+
+1671
+00:34:04,230 --> 00:34:07,500
+content length header grep is a program
+
+1673
+00:34:06,120 --> 00:34:09,090
+that we'll talk about later they'll let
+
+1675
+00:34:07,500 --> 00:34:12,660
+you search in an input stream for a
+
+1677
+00:34:09,090 --> 00:34:15,560
+given keyword we can pipe that through
+
+1679
+00:34:12,660 --> 00:34:20,190
+say the cup command which takes a
+
+1681
+00:34:15,560 --> 00:34:22,260
+delimiter set that to be space and I
+
+1683
+00:34:20,190 --> 00:34:24,420
+want the second field and this prints
+
+1685
+00:34:22,260 --> 00:34:25,950
+just the content length this is sort of
+
+1687
+00:34:24,420 --> 00:34:28,380
+a silly example right like this just
+
+1689
+00:34:25,950 --> 00:34:30,180
+lets you extract the content length in
+
+1691
+00:34:28,380 --> 00:34:32,700
+bytes of google.com from the command
+
+1693
+00:34:30,180 --> 00:34:34,740
+line it's not a very useful thing to do
+
+1695
+00:34:32,700 --> 00:34:36,300
+but you can see how by chaining these
+
+1697
+00:34:34,740 --> 00:34:38,330
+together you can achieve a bunch of
+
+1699
+00:34:36,300 --> 00:34:40,980
+really interesting text manipulation
+
+1701
+00:34:38,330 --> 00:34:43,290
+effects and it turns out pipes are not
+
+1703
+00:34:40,980 --> 00:34:45,330
+just for textual data you can do this
+
+1705
+00:34:43,290 --> 00:34:47,850
+for things like images as well you can
+
+1707
+00:34:45,330 --> 00:34:49,590
+have a program that manipulates a binary
+
+1709
+00:34:47,850 --> 00:34:51,450
+image on its input and writes a binary
+
+1711
+00:34:49,590 --> 00:34:53,400
+image to its output and you can chain
+
+1713
+00:34:51,450 --> 00:34:54,840
+them together in this way and we'll talk
+
+1715
+00:34:53,400 --> 00:34:57,000
+about some of those kinds of examples
+
+1717
+00:34:54,840 --> 00:34:59,430
+later on - you can even do this for
+
+1719
+00:34:57,000 --> 00:35:00,900
+video if you want you can stream this is
+
+1721
+00:34:59,430 --> 00:35:02,940
+for example a great way if you have a
+
+1723
+00:35:00,900 --> 00:35:05,790
+chromecast at home you can stream a
+
+1725
+00:35:02,940 --> 00:35:07,920
+video file like this by having the last
+
+1727
+00:35:05,790 --> 00:35:11,160
+program in your pipe be a chromecast
+
+1729
+00:35:07,920 --> 00:35:13,050
+send program so you stream a video file
+
+1731
+00:35:11,160 --> 00:35:19,140
+into it and it streams or HTTP to your
+
+1733
+00:35:13,050 --> 00:35:20,370
+chromecast we'll take we'll talk a lot
+
+1735
+00:35:19,140 --> 00:35:22,410
+more about this in the data wrangling
+
+1737
+00:35:20,370 --> 00:35:25,110
+lecture but there's one more thing that
+
+1739
+00:35:22,410 --> 00:35:27,800
+I wanted to talk to you about about sort
+
+1741
+00:35:25,110 --> 00:35:30,390
+of how to use the terminal and a more
+
+1743
+00:35:27,800 --> 00:35:31,920
+interesting and perhaps more powerful
+
+1745
+00:35:30,390 --> 00:35:33,840
+way that you might be used to and this
+
+1747
+00:35:31,920 --> 00:35:35,640
+is perhaps even going to be interesting
+
+1749
+00:35:33,840 --> 00:35:37,720
+for the ones of you who feel like you're
+
+1751
+00:35:35,640 --> 00:35:41,020
+already comfortable with the term
+
+1753
+00:35:37,720 --> 00:35:43,030
+but first we need to cover a important
+
+1755
+00:35:41,020 --> 00:35:44,890
+topic when it comes to Linux systems and
+
+1757
+00:35:43,030 --> 00:35:47,620
+Mac OS testers in particular which is
+
+1759
+00:35:44,890 --> 00:35:49,300
+the notion of the root user the root
+
+1761
+00:35:47,620 --> 00:35:52,480
+user is sort of like the administrator
+
+1763
+00:35:49,300 --> 00:35:55,000
+user on Windows and it has user IDs zero
+
+1765
+00:35:52,480 --> 00:35:56,830
+the root user is special because it is
+
+1767
+00:35:55,000 --> 00:35:59,680
+allowed to do whatever it wants on your
+
+1769
+00:35:56,830 --> 00:36:01,540
+system even if a file is like not
+
+1771
+00:35:59,680 --> 00:36:03,790
+readable by anyone or if it's not
+
+1773
+00:36:01,540 --> 00:36:06,010
+writable by anyone root can still access
+
+1775
+00:36:03,790 --> 00:36:09,000
+that file root is sort of a super user
+
+1777
+00:36:06,010 --> 00:36:11,260
+that gets to do whatever they want and
+
+1779
+00:36:09,000 --> 00:36:13,330
+most of the time you will not be
+
+1781
+00:36:11,260 --> 00:36:15,550
+operating as the super user you will not
+
+1783
+00:36:13,330 --> 00:36:17,350
+be root you will be a user like John or
+
+1785
+00:36:15,550 --> 00:36:19,660
+whatever your name is and that's going
+
+1787
+00:36:17,350 --> 00:36:21,370
+to be the user you act with because if
+
+1789
+00:36:19,660 --> 00:36:23,470
+you were operating your computer as the
+
+1791
+00:36:21,370 --> 00:36:24,700
+root user at all times if you ran the
+
+1793
+00:36:23,470 --> 00:36:26,710
+wrong program they could just completely
+
+1795
+00:36:24,700 --> 00:36:29,950
+destroy your computer and you don't want
+
+1797
+00:36:26,710 --> 00:36:31,810
+that right but every now and again you
+
+1799
+00:36:29,950 --> 00:36:34,450
+want to do something that requires that
+
+1801
+00:36:31,810 --> 00:36:38,580
+you are root usually for these cases you
+
+1803
+00:36:34,450 --> 00:36:42,790
+will use a program called sudo su do or
+
+1805
+00:36:38,580 --> 00:36:44,740
+do as Sue and Sue in this case is Super
+
+1807
+00:36:42,790 --> 00:36:46,590
+User so this is a way to do the
+
+1809
+00:36:44,740 --> 00:36:49,750
+following thing as the super user
+
+1811
+00:36:46,590 --> 00:36:51,490
+usually the way sudo works is you write
+
+1813
+00:36:49,750 --> 00:36:53,020
+sudo and then a command like you would
+
+1815
+00:36:51,490 --> 00:36:54,580
+normally on your terminal and it will
+
+1817
+00:36:53,020 --> 00:36:56,230
+just run that command as if you were
+
+1819
+00:36:54,580 --> 00:37:01,180
+root as opposed to the user you actually
+
+1821
+00:36:56,230 --> 00:37:04,540
+are where might you need something like
+
+1823
+00:37:01,180 --> 00:37:05,800
+this well there is a special there are
+
+1825
+00:37:04,540 --> 00:37:07,510
+many special file system on your
+
+1827
+00:37:05,800 --> 00:37:11,070
+computer but in particular there's one
+
+1829
+00:37:07,510 --> 00:37:14,800
+called sis FS if you CD to slash sis
+
+1831
+00:37:11,070 --> 00:37:17,320
+this is a whole new world this file
+
+1833
+00:37:14,800 --> 00:37:19,720
+system is are not actually files on your
+
+1835
+00:37:17,320 --> 00:37:22,120
+computer instead these are various
+
+1837
+00:37:19,720 --> 00:37:24,180
+kernel parameters so the kernel is like
+
+1839
+00:37:22,120 --> 00:37:26,680
+basically the the core of your computer
+
+1841
+00:37:24,180 --> 00:37:29,560
+this is a way for you to access various
+
+1843
+00:37:26,680 --> 00:37:32,680
+kernel parameters through what looks
+
+1845
+00:37:29,560 --> 00:37:35,950
+like a file system you'll see here that
+
+1847
+00:37:32,680 --> 00:37:37,690
+if I CD into class for example it has
+
+1849
+00:37:35,950 --> 00:37:39,880
+directories for a bunch of different
+
+1851
+00:37:37,690 --> 00:37:43,750
+types of devices that I can interact
+
+1853
+00:37:39,880 --> 00:37:47,920
+with or various cues I can access or all
+
+1855
+00:37:43,750 --> 00:37:49,990
+sorts of weird knobs internally and
+
+1857
+00:37:47,920 --> 00:37:50,410
+because they're exposed as files it
+
+1859
+00:37:49,990 --> 00:37:52,030
+means
+
+1861
+00:37:50,410 --> 00:37:54,280
+we can also use all the tools have been
+
+1863
+00:37:52,030 --> 00:37:57,579
+using so far in order to manipulate them
+
+1865
+00:37:54,280 --> 00:38:01,420
+one example of this is if you go into
+
+1867
+00:37:57,579 --> 00:38:02,440
+sis class backlight so this backlight
+
+1869
+00:38:01,420 --> 00:38:04,180
+directly and lets you configure the
+
+1871
+00:38:02,440 --> 00:38:06,760
+backlight on your laptop if you have one
+
+1873
+00:38:04,180 --> 00:38:08,920
+so I can CD in to intel backlight this
+
+1875
+00:38:06,760 --> 00:38:10,990
+is an Intel laptop inside here you'll
+
+1877
+00:38:08,920 --> 00:38:12,760
+see there's a file called brightness and
+
+1879
+00:38:10,990 --> 00:38:16,089
+I can cat the brightness this is the
+
+1881
+00:38:12,760 --> 00:38:18,880
+current brightness of my screen but not
+
+1883
+00:38:16,089 --> 00:38:21,460
+only that I can modify this too in order
+
+1885
+00:38:18,880 --> 00:38:23,740
+to change the brightness of my screen so
+
+1887
+00:38:21,460 --> 00:38:25,750
+you might think that I could do let's
+
+1889
+00:38:23,740 --> 00:38:26,799
+see what the max brightness is here okay
+
+1891
+00:38:25,750 --> 00:38:29,589
+so it's currently set to the max
+
+1893
+00:38:26,799 --> 00:38:32,319
+brightness you might imagine that I
+
+1895
+00:38:29,589 --> 00:38:35,410
+could do something like if I do echo
+
+1897
+00:38:32,319 --> 00:38:39,010
+let's do half or something
+
+1899
+00:38:35,410 --> 00:38:40,839
+echo 502 brightness if I do this it says
+
+1901
+00:38:39,010 --> 00:38:43,089
+permission denied I'm not allowed to
+
+1903
+00:38:40,839 --> 00:38:45,220
+modify brightness because in order to
+
+1905
+00:38:43,089 --> 00:38:46,599
+basically in order to change things than
+
+1907
+00:38:45,220 --> 00:38:48,460
+the kernel you need to be the
+
+1909
+00:38:46,599 --> 00:38:50,619
+administrator and you might imagine that
+
+1911
+00:38:48,460 --> 00:38:52,960
+the way to solve this is to write sudo
+
+1913
+00:38:50,619 --> 00:38:55,779
+echo 500 but I still get a permission
+
+1915
+00:38:52,960 --> 00:38:58,260
+denied error but why is that it's
+
+1917
+00:38:55,779 --> 00:39:00,549
+because as I mentioned before these
+
+1919
+00:38:58,260 --> 00:39:03,069
+redirections of input and output is not
+
+1921
+00:39:00,549 --> 00:39:05,470
+something the programs know about when
+
+1923
+00:39:03,069 --> 00:39:07,240
+we piped Elison to tail tail did not
+
+1925
+00:39:05,470 --> 00:39:09,609
+know about LS and LS did not know about
+
+1927
+00:39:07,240 --> 00:39:11,859
+tail the pipe and the redirection was
+
+1929
+00:39:09,609 --> 00:39:14,079
+set up by the shell so in this case
+
+1931
+00:39:11,859 --> 00:39:18,039
+what's happening is I'm telling my shell
+
+1933
+00:39:14,079 --> 00:39:21,220
+run the program sudo with the arguments
+
+1935
+00:39:18,039 --> 00:39:24,130
+echo and 500 and send its output to the
+
+1937
+00:39:21,220 --> 00:39:25,930
+file called brightness but the shell is
+
+1939
+00:39:24,130 --> 00:39:29,410
+what is opening the brightness file it
+
+1941
+00:39:25,930 --> 00:39:32,380
+is not the sudo program so in this case
+
+1943
+00:39:29,410 --> 00:39:33,789
+the shell which is running as me tries
+
+1945
+00:39:32,380 --> 00:39:35,470
+to open the brightness file for writing
+
+1947
+00:39:33,789 --> 00:39:37,079
+and it's not allowed to do that and
+
+1949
+00:39:35,470 --> 00:39:39,779
+therefore I get a permission down error
+
+1951
+00:39:37,079 --> 00:39:42,339
+you might have seen this if you like
+
+1953
+00:39:39,779 --> 00:39:43,750
+search for something end up on Stack
+
+1955
+00:39:42,339 --> 00:39:45,400
+Overflow and it tells just run this
+
+1957
+00:39:43,750 --> 00:39:47,440
+command and you'll see that it does
+
+1959
+00:39:45,400 --> 00:39:52,930
+something like they give you
+
+1961
+00:39:47,440 --> 00:39:57,970
+instructions like one two sis what's an
+
+1963
+00:39:52,930 --> 00:39:59,559
+example net ipv4 for word for example
+
+1965
+00:39:57,970 --> 00:40:02,589
+this is something you may have seen if
+
+1967
+00:39:59,559 --> 00:40:04,240
+you're setting up a firewall and this
+
+1969
+00:40:02,589 --> 00:40:05,680
+command is intended to work
+
+1971
+00:40:04,240 --> 00:40:08,200
+because this little pound symbol
+
+1973
+00:40:05,680 --> 00:40:09,640
+indicates run this as route this is
+
+1975
+00:40:08,200 --> 00:40:11,170
+something that is very rarely explained
+
+1977
+00:40:09,640 --> 00:40:12,970
+but that is what the pound symbol means
+
+1979
+00:40:11,170 --> 00:40:15,099
+you'll see on my prompt there's a dollar
+
+1981
+00:40:12,970 --> 00:40:17,710
+symbol instead and the dollar indicates
+
+1983
+00:40:15,099 --> 00:40:18,819
+you are not running as root so the
+
+1985
+00:40:17,710 --> 00:40:22,270
+question is how do I get around this
+
+1987
+00:40:18,819 --> 00:40:24,690
+well I could switch into a root terminal
+
+1989
+00:40:22,270 --> 00:40:27,369
+so one way to do this is to run sudo su
+
+1991
+00:40:24,690 --> 00:40:32,140
+sudo su is saying run the following
+
+1993
+00:40:27,369 --> 00:40:34,329
+command s root and su is a complicated
+
+1995
+00:40:32,140 --> 00:40:37,290
+command that effectively gets you a
+
+1997
+00:40:34,329 --> 00:40:40,599
+shell as the super user so if I do this
+
+1999
+00:40:37,290 --> 00:40:42,010
+type of password then now you'll see
+
+2001
+00:40:40,599 --> 00:40:44,530
+that the username at the beginning
+
+2003
+00:40:42,010 --> 00:40:47,109
+changed from jon to root and the prompt
+
+2005
+00:40:44,530 --> 00:40:49,390
+changed from a dollar to a pound if I
+
+2007
+00:40:47,109 --> 00:40:52,240
+now I come in to that file if I do echo
+
+2009
+00:40:49,390 --> 00:40:54,010
+502 brightness my screen got a little
+
+2011
+00:40:52,240 --> 00:40:57,040
+dimmer but you can't see it you just
+
+2013
+00:40:54,010 --> 00:40:58,990
+have to trust me and now I didn't get an
+
+2015
+00:40:57,040 --> 00:41:01,630
+error and this is because the shell is
+
+2017
+00:40:58,990 --> 00:41:04,540
+now running as root it is not running as
+
+2019
+00:41:01,630 --> 00:41:07,359
+Jon and the root user is allowed to open
+
+2021
+00:41:04,540 --> 00:41:09,760
+this file but given our knowledge that
+
+2023
+00:41:07,359 --> 00:41:11,349
+we have of the terminal now there's
+
+2025
+00:41:09,760 --> 00:41:13,720
+actually a way for us to do this without
+
+2027
+00:41:11,349 --> 00:41:19,119
+having to drop to a root shell and that
+
+2029
+00:41:13,720 --> 00:41:22,990
+is as follows that's I guess restore it
+
+2031
+00:41:19,119 --> 00:41:26,589
+to 1060 so do you see why this is
+
+2033
+00:41:22,990 --> 00:41:29,020
+different here I'm telling my shell to
+
+2035
+00:41:26,589 --> 00:41:31,270
+run the echo 1060 command which is gonna
+
+2037
+00:41:29,020 --> 00:41:33,369
+echo 1060 and I'm telling it to run the
+
+2039
+00:41:31,270 --> 00:41:35,890
+sudo tea brightness command and I'm
+
+2041
+00:41:33,369 --> 00:41:39,160
+telling you to send the output of echo
+
+2043
+00:41:35,890 --> 00:41:40,540
+into sudo T in order to understand this
+
+2045
+00:41:39,160 --> 00:41:43,450
+you need to know what the T command does
+
+2047
+00:41:40,540 --> 00:41:47,079
+the T command takes its input and writes
+
+2049
+00:41:43,450 --> 00:41:49,540
+it to a file but also to standard out so
+
+2051
+00:41:47,079 --> 00:41:52,329
+T is a convenient way if you have say a
+
+2053
+00:41:49,540 --> 00:41:54,160
+log file that you want to like send to a
+
+2055
+00:41:52,329 --> 00:41:56,230
+file to store for later but you also
+
+2057
+00:41:54,160 --> 00:41:58,059
+want to see it to yourself then you can
+
+2059
+00:41:56,230 --> 00:41:59,770
+pipe it through T give it the name of a
+
+2061
+00:41:58,059 --> 00:42:01,809
+file and it will write whatever its
+
+2063
+00:41:59,770 --> 00:42:04,270
+input is both to that file and to your
+
+2065
+00:42:01,809 --> 00:42:07,630
+screen and here I'm taking advantage of
+
+2067
+00:42:04,270 --> 00:42:09,940
+that program I'm saying run T as route
+
+2069
+00:42:07,630 --> 00:42:12,970
+and have T right into the brightness
+
+2071
+00:42:09,940 --> 00:42:14,380
+file and so in this case the T program
+
+2073
+00:42:12,970 --> 00:42:16,150
+which is what is opening the brightness
+
+2075
+00:42:14,380 --> 00:42:17,370
+file is running as root and so it is
+
+2077
+00:42:16,150 --> 00:42:20,190
+allowed to do
+
+2079
+00:42:17,370 --> 00:42:21,390
+if I run this it will now again you
+
+2081
+00:42:20,190 --> 00:42:23,850
+can't see but the brightness and I've
+
+2083
+00:42:21,390 --> 00:42:25,770
+been turned on by a laptop and I don't
+
+2085
+00:42:23,850 --> 00:42:27,390
+get any errors and I never had to drop
+
+2087
+00:42:25,770 --> 00:42:30,930
+into a root shell and run commands there
+
+2089
+00:42:27,390 --> 00:42:32,160
+which can often be somewhat dangerous if
+
+2091
+00:42:30,930 --> 00:42:33,450
+you want to explore this filesystem a
+
+2093
+00:42:32,160 --> 00:42:35,940
+little bit more there's a lot of
+
+2095
+00:42:33,450 --> 00:42:39,450
+interesting stuff in here if you just
+
+2097
+00:42:35,940 --> 00:42:41,430
+sort of start browsing around you can
+
+2099
+00:42:39,450 --> 00:42:42,930
+find all sorts of fun things so for
+
+2101
+00:42:41,430 --> 00:42:45,090
+example we noticed that there was a fun
+
+2103
+00:42:42,930 --> 00:42:48,540
+brightness command here I wonder what
+
+2105
+00:42:45,090 --> 00:42:49,980
+other kinds of brightness I can set so I
+
+2107
+00:42:48,540 --> 00:42:51,860
+can use the find command which we will
+
+2109
+00:42:49,980 --> 00:42:56,000
+also talk about in a coming lecture I
+
+2111
+00:42:51,860 --> 00:42:58,860
+wouldn't look on any file whose name
+
+2113
+00:42:56,000 --> 00:43:01,890
+it's a little like brightness in the
+
+2115
+00:42:58,860 --> 00:43:05,070
+current directory that's unhelpful maybe
+
+2117
+00:43:01,890 --> 00:43:08,850
+they're not files did I misspell
+
+2119
+00:43:05,070 --> 00:43:17,010
+brightness yeah why is it being annoying
+
+2121
+00:43:08,850 --> 00:43:20,460
+Oh apparently it does not want to search
+
+2123
+00:43:17,010 --> 00:43:23,910
+for brightness for me how well luckily
+
+2125
+00:43:20,460 --> 00:43:27,480
+for you I know of one already handy that
+
+2127
+00:43:23,910 --> 00:43:30,090
+there is a subdirectory called LEDs and
+
+2129
+00:43:27,480 --> 00:43:32,400
+LEDs have brightness too what kind of
+
+2131
+00:43:30,090 --> 00:43:36,960
+LEDs are there ooh lots of things for
+
+2133
+00:43:32,400 --> 00:43:38,280
+example the scroll lock led now most of
+
+2135
+00:43:36,960 --> 00:43:40,290
+you probably don't know what the scroll
+
+2137
+00:43:38,280 --> 00:43:42,780
+lock LED is or much less what scroll
+
+2139
+00:43:40,290 --> 00:43:45,770
+lock is you might have seen a key on
+
+2141
+00:43:42,780 --> 00:43:47,670
+your keyboard neighbor named scroll lock
+
+2143
+00:43:45,770 --> 00:43:49,650
+basically no one knows what it means
+
+2145
+00:43:47,670 --> 00:43:51,750
+anymore no one really uses it for
+
+2147
+00:43:49,650 --> 00:43:55,680
+anything it's mostly just a dead key and
+
+2149
+00:43:51,750 --> 00:43:57,240
+also a dead LED what if you wanted to
+
+2151
+00:43:55,680 --> 00:43:59,220
+configure it so that every time you get
+
+2153
+00:43:57,240 --> 00:44:00,960
+email your scroll lock LED lights up
+
+2155
+00:43:59,220 --> 00:44:03,270
+because there's no other reason why it
+
+2157
+00:44:00,960 --> 00:44:06,000
+would light up well if we seed you into
+
+2159
+00:44:03,270 --> 00:44:08,130
+this particular directory that has a
+
+2161
+00:44:06,000 --> 00:44:12,320
+brightness place and it's set to zero
+
+2163
+00:44:08,130 --> 00:44:12,320
+well what happens if I write one into it
+
+2165
+00:44:12,590 --> 00:44:17,220
+you probably should not just be writing
+
+2167
+00:44:15,330 --> 00:44:18,720
+random numbers into random files in this
+
+2169
+00:44:17,220 --> 00:44:20,310
+directory because you are affecting your
+
+2171
+00:44:18,720 --> 00:44:22,560
+kernel directly like look up what the
+
+2173
+00:44:20,310 --> 00:44:24,240
+files do in this particular case I have
+
+2175
+00:44:22,560 --> 00:44:28,050
+warned safety goggles and I've done my
+
+2177
+00:44:24,240 --> 00:44:30,630
+research so now you can't tell but on my
+
+2179
+00:44:28,050 --> 00:44:33,509
+keyboard the scroll lock LED is now lit
+
+2181
+00:44:30,630 --> 00:44:35,400
+so now if I wrote a program that like
+
+2183
+00:44:33,509 --> 00:44:37,829
+did some checking of mail and stuff I
+
+2185
+00:44:35,400 --> 00:44:40,229
+could have it at the end run a program
+
+2187
+00:44:37,829 --> 00:44:43,499
+that echoes one into this file and now I
+
+2189
+00:44:40,229 --> 00:44:47,460
+have a way for my led to my keyboard to
+
+2191
+00:44:43,499 --> 00:44:49,680
+indicate when I've new email at this
+
+2193
+00:44:47,460 --> 00:44:50,940
+point you should know roughly your way
+
+2195
+00:44:49,680 --> 00:44:54,269
+around
+
+2197
+00:44:50,940 --> 00:44:56,249
+the terminal around the shell and and
+
+2199
+00:44:54,269 --> 00:44:58,920
+know enough to accomplish these basic
+
+2201
+00:44:56,249 --> 00:45:01,289
+tasks at least in theory now you
+
+2203
+00:44:58,920 --> 00:45:02,819
+shouldn't need to use like
+
+2205
+00:45:01,289 --> 00:45:03,420
+point-and-click interfaces to find files
+
+2207
+00:45:02,819 --> 00:45:05,279
+anymore
+
+2209
+00:45:03,420 --> 00:45:07,470
+there's one remaining trick you might
+
+2211
+00:45:05,279 --> 00:45:10,529
+need and that is the ability to open a
+
+2213
+00:45:07,470 --> 00:45:13,950
+file so far I've only really given you
+
+2215
+00:45:10,529 --> 00:45:17,690
+ways to find files but one thing you
+
+2217
+00:45:13,950 --> 00:45:21,420
+should know about is amazing semester
+
+2219
+00:45:17,690 --> 00:45:23,640
+xdg - open this will probably only work
+
+2221
+00:45:21,420 --> 00:45:27,119
+on Linux on Mac OS I think it's just
+
+2223
+00:45:23,640 --> 00:45:29,430
+called open on Windows who knows xyg
+
+2225
+00:45:27,119 --> 00:45:31,739
+open you give the name of a file and it
+
+2227
+00:45:29,430 --> 00:45:34,769
+will open it in the appropriate program
+
+2229
+00:45:31,739 --> 00:45:36,180
+so if you open if you do xdg open an
+
+2231
+00:45:34,769 --> 00:45:39,269
+HTML file that will open your browser
+
+2233
+00:45:36,180 --> 00:45:41,039
+and open that file and once you have
+
+2235
+00:45:39,269 --> 00:45:42,869
+that program in theory you should no
+
+2237
+00:45:41,039 --> 00:45:45,059
+longer need to open like a Finder window
+
+2239
+00:45:42,869 --> 00:45:46,799
+ever again you might want to for other
+
+2241
+00:45:45,059 --> 00:45:48,180
+reasons but in theory you can accomplish
+
+2243
+00:45:46,799 --> 00:45:50,789
+at all using the tools that we've
+
+2245
+00:45:48,180 --> 00:45:53,849
+learned today this might all seem
+
+2247
+00:45:50,789 --> 00:45:55,589
+relatively basic for some of you but as
+
+2249
+00:45:53,849 --> 00:45:57,479
+I mentioned this is sort of the ramp-up
+
+2251
+00:45:55,589 --> 00:45:59,460
+period of now we all know how the shell
+
+2253
+00:45:57,479 --> 00:46:01,979
+works and a lot of what we'll be doing
+
+2255
+00:45:59,460 --> 00:46:03,450
+in future lectures is using this
+
+2257
+00:46:01,979 --> 00:46:07,019
+knowledge to do really interesting
+
+2259
+00:46:03,450 --> 00:46:09,450
+things using the shell that sort of this
+
+2261
+00:46:07,019 --> 00:46:10,979
+is learning the the interface that we're
+
+2263
+00:46:09,450 --> 00:46:14,849
+going to be using and so it's important
+
+2265
+00:46:10,979 --> 00:46:16,650
+we all know it we're gonna talk a lot
+
+2267
+00:46:14,849 --> 00:46:18,269
+more in the next lecture about how to
+
+2269
+00:46:16,650 --> 00:46:20,309
+automate tasks like this how to write
+
+2271
+00:46:18,269 --> 00:46:22,140
+scripts that run a bunch of programs for
+
+2273
+00:46:20,309 --> 00:46:24,390
+you and have to do things like
+
+2275
+00:46:22,140 --> 00:46:26,700
+conditionals and loops and stuff in your
+
+2277
+00:46:24,390 --> 00:46:29,009
+terminal and do things like run a
+
+2279
+00:46:26,700 --> 00:46:30,390
+program until it fails which can be
+
+2281
+00:46:29,009 --> 00:46:31,979
+handy in classes where you want to run
+
+2283
+00:46:30,390 --> 00:46:35,369
+something until your test suite fails
+
+2285
+00:46:31,979 --> 00:46:38,550
+for example so that's the topic for next
+
+2287
+00:46:35,369 --> 00:46:39,900
+week's lecture did you have a question
+
+2289
+00:46:38,550 --> 00:46:42,420
+it's what you've been demoing this
+
+2291
+00:46:39,900 --> 00:46:49,770
+assist directory that presumably will
+
+2293
+00:46:42,420 --> 00:46:52,530
+only work if you're running that is a
+
+2295
+00:46:49,770 --> 00:46:55,440
+good question I don't know whether the
+
+2297
+00:46:52,530 --> 00:46:57,570
+windows subsystem for Linux will expose
+
+2299
+00:46:55,440 --> 00:46:59,280
+the sis file system if it does it
+
+2301
+00:46:57,570 --> 00:47:03,180
+probably only exposes a very small
+
+2303
+00:46:59,280 --> 00:47:08,490
+number of things it might because there
+
+2305
+00:47:03,180 --> 00:47:10,320
+are I don't know check it out
+
+2307
+00:47:08,490 --> 00:47:11,610
+one thing you'll see is the lecture
+
+2309
+00:47:10,320 --> 00:47:14,370
+notes for this lecture are already
+
+2311
+00:47:11,610 --> 00:47:16,770
+online and at the very bottom of the
+
+2313
+00:47:14,370 --> 00:47:18,420
+file there are a bunch of exercises some
+
+2315
+00:47:16,770 --> 00:47:20,190
+of them are relatively easy some of them
+
+2317
+00:47:18,420 --> 00:47:22,560
+are a little bit harder and what we
+
+2319
+00:47:20,190 --> 00:47:24,060
+encourage you to do is to take a stab at
+
+2321
+00:47:22,560 --> 00:47:25,410
+going through them if you know this
+
+2323
+00:47:24,060 --> 00:47:27,660
+stuff already it should go really
+
+2325
+00:47:25,410 --> 00:47:29,400
+quickly if you don't it might teach you
+
+2327
+00:47:27,660 --> 00:47:31,740
+a bunch of things that you might not
+
+2329
+00:47:29,400 --> 00:47:33,150
+realize you didn't know and for the
+
+2331
+00:47:31,740 --> 00:47:35,190
+office hours that we're gonna do right
+
+2333
+00:47:33,150 --> 00:47:36,840
+after this lecture we will happily help
+
+2335
+00:47:35,190 --> 00:47:38,160
+you get through all of those or if there
+
+2337
+00:47:36,840 --> 00:47:39,540
+are other commands and you learn in the
+
+2339
+00:47:38,160 --> 00:47:42,300
+process you want to know how to use more
+
+2341
+00:47:39,540 --> 00:47:44,910
+efficiently and then in next lecture
+
+2343
+00:47:42,300 --> 00:47:46,710
+which is tomorrow will basically be
+
+2345
+00:47:44,910 --> 00:47:48,290
+assuming that you know the kind of stuff
+
+2347
+00:47:46,710 --> 00:47:51,750
+that the exercise is going to teach you
+
+2349
+00:47:48,290 --> 00:47:53,030
+there's also a an email address on the
+
+2351
+00:47:51,750 --> 00:47:56,100
+website where you can send us questions
+
+2353
+00:47:53,030 --> 00:47:58,860
+if you think of something like after the
+
+2355
+00:47:56,100 --> 00:48:05,160
+office hours are finished are there any
+
+2357
+00:47:58,860 --> 00:48:07,050
+questions before we end today no no all
+
+2359
+00:48:05,160 --> 00:48:09,480
+right well we will have office hours on
+
+2361
+00:48:07,050 --> 00:48:12,150
+the ninth floor of the gates building of
+
+2363
+00:48:09,480 --> 00:48:15,830
+building 32 in like five minutes
+
+2365
+00:48:12,150 --> 00:48:15,830
+sweet see you there
+
