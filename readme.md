@@ -7,4 +7,6 @@
 
 进度：
 
-- NULL
+**[第一节 课程概览与 shell](https://missing-semester-cn.github.io/2020/course-shell/)**
+
+- 第 1 行 —— 第 274 行 | GNAQ | 2021/1/20
