@@ -11,4 +11,8 @@
 ```
 
 ## 运行
-在```render_subtitle.py```内，修改```FILENAME```为使用的字幕文件后运行```render_subtitle.py```，等待完成后运行```render_image.py```，最后运行```generate_final_video.py```生成最终视频。
+在```render_subtitle.py```内，修改```FILENAME```为使用的字幕文件后运行```render_subtitle.py```。
+
+在```render_image.py```内，根据提示修改第```68```行。
+
+等待完成后运行```render_image.py```，最后运行```generate_final_video.py```生成最终视频。
