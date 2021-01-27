@@ -1,0 +1,5060 @@
+1
+00:00:00,030 --> 00:00:03,360
+okay cool so welcome to the third
+
+2
+00:00:03,360 --> 00:00:05,339
+lecture of the missing semester of your
+
+3
+00:00:05,339 --> 00:00:07,500
+si a second today we're going to be
+
+4
+00:00:07,500 --> 00:00:09,990
+talking about text editors this is a
+
+5
+00:00:09,990 --> 00:00:11,759
+topic that I really like I think it's
+
+6
+00:00:11,759 --> 00:00:13,259
+one of the most valuable topics that
+
+7
+00:00:13,259 --> 00:00:14,940
+we're teaching in this class because as
+
+8
+00:00:14,940 --> 00:00:17,130
+programmers you spend so much of your
+
+9
+00:00:17,130 --> 00:00:19,619
+time editing text editing programs that
+
+10
+00:00:19,619 --> 00:00:21,840
+if you invest time into making yourself
+
+11
+00:00:21,840 --> 00:00:23,609
+more efficient at doing this you'll save
+
+12
+00:00:23,609 --> 00:00:25,580
+a ton of time probably hundreds of hours
+
+13
+00:00:25,580 --> 00:00:27,990
+over the course of your undergrad or
+
+14
+00:00:27,990 --> 00:00:31,980
+over the course of your career so text
+
+15
+00:00:31,980 --> 00:00:33,510
+editors are a little bit different than
+
+16
+00:00:33,510 --> 00:00:36,480
+other programs you might use to edit say
+
+17
+00:00:36,480 --> 00:00:38,280
+things like English prose because
+
+18
+00:00:38,280 --> 00:00:39,750
+programming is different than writing
+
+19
+00:00:39,750 --> 00:00:41,760
+English prose when you're programming
+
+20
+00:00:41,760 --> 00:00:44,160
+you spend a lot of time reading what
+
+21
+00:00:44,160 --> 00:00:45,600
+you've written you spend a lot of time
+
+22
+00:00:45,600 --> 00:00:47,579
+navigating around a buffer and you spend
+
+23
+00:00:47,579 --> 00:00:49,079
+a lot of time making little edits to
+
+24
+00:00:49,079 --> 00:00:51,030
+code all over the place rather than just
+
+25
+00:00:51,030 --> 00:00:52,860
+writing in a long stream like you do
+
+26
+00:00:52,860 --> 00:00:53,789
+when you're writing an essay or
+
+27
+00:00:53,789 --> 00:00:55,289
+something and so it makes sense that
+
+28
+00:00:55,289 --> 00:00:56,460
+there different programs for these
+
+29
+00:00:56,460 --> 00:00:57,899
+different purposes right so yeah things
+
+30
+00:00:57,899 --> 00:00:59,309
+like Microsoft Word for writing essays
+
+31
+00:00:59,309 --> 00:01:01,440
+and things like vim and Emacs and vs
+
+32
+00:01:01,440 --> 00:01:05,820
+code and sublime for writing code so the
+
+33
+00:01:05,820 --> 00:01:07,409
+way you learn a text editor and become
+
+34
+00:01:07,409 --> 00:01:09,180
+really good at it is you start with a
+
+35
+00:01:09,180 --> 00:01:11,130
+tutorial and so that's basically going
+
+36
+00:01:11,130 --> 00:01:12,840
+to be the function of today's lecture
+
+37
+00:01:12,840 --> 00:01:15,720
+plus the exercises we've given you and
+
+38
+00:01:15,720 --> 00:01:17,759
+then after the tutorial you need to
+
+39
+00:01:17,759 --> 00:01:19,950
+stick with the editor for all your
+
+40
+00:01:19,950 --> 00:01:22,020
+editing tasks and when you're learning a
+
+41
+00:01:22,020 --> 00:01:24,000
+sophisticated tool so today we're going
+
+42
+00:01:24,000 --> 00:01:25,380
+to teach you vim which is one powerful
+
+43
+00:01:25,380 --> 00:01:26,850
+editor that a lot of programmers use
+
+44
+00:01:26,850 --> 00:01:28,229
+when you're learning such a
+
+45
+00:01:28,229 --> 00:01:30,240
+sophisticated tool it may be the case
+
+46
+00:01:30,240 --> 00:01:32,400
+that initially switching to this tool
+
+47
+00:01:32,400 --> 00:01:33,750
+slows you down a little bit when you're
+
+48
+00:01:33,750 --> 00:01:35,850
+programming but stick with it because
+
+49
+00:01:35,850 --> 00:01:38,729
+I'd say that in about 20 hours of
+
+50
+00:01:38,729 --> 00:01:41,340
+programming using a new editor you'll be
+
+51
+00:01:41,340 --> 00:01:42,990
+back to the same speed at which you
+
+52
+00:01:42,990 --> 00:01:44,790
+programmed using your old tool and then
+
+53
+00:01:44,790 --> 00:01:46,350
+after that the benefits will start and
+
+54
+00:01:46,350 --> 00:01:47,759
+you'll get faster and faster as you
+
+55
+00:01:47,759 --> 00:01:50,189
+learn more with these sophisticated
+
+56
+00:01:50,189 --> 00:01:53,579
+programs like them it takes not way too
+
+57
+00:01:53,579 --> 00:01:55,079
+long to learn the basics but a lifetime
+
+58
+00:01:55,079 --> 00:01:58,200
+to master and so throughout the time
+
+59
+00:01:58,200 --> 00:01:59,759
+you're using this tool make sure you
+
+60
+00:01:59,759 --> 00:02:01,649
+look things up as you go if you ever get
+
+61
+00:02:01,649 --> 00:02:03,240
+to a point where you're like oh this is
+
+62
+00:02:03,240 --> 00:02:04,710
+a really inefficient way of doing things
+
+63
+00:02:04,710 --> 00:02:06,420
+is there a better way the answer is
+
+64
+00:02:06,420 --> 00:02:09,660
+almost always yes because these text
+
+65
+00:02:09,660 --> 00:02:11,730
+editors were written by programmers for
+
+66
+00:02:11,730 --> 00:02:13,709
+programmers and so of course like the
+
+67
+00:02:13,709 --> 00:02:13,970
+peep
+
+68
+00:02:13,970 --> 00:02:15,200
+I wrote these tolls ran into the same
+
+69
+00:02:15,200 --> 00:02:17,330
+kinds of issues and fixed them so that
+
+70
+00:02:17,330 --> 00:02:18,080
+you don't need to deal with these
+
+71
+00:02:18,080 --> 00:02:19,760
+anymore and so yeah as you're learning
+
+72
+00:02:19,760 --> 00:02:21,860
+make sure you look things up as you go
+
+73
+00:02:21,860 --> 00:02:23,870
+either use Google or feel free to send
+
+74
+00:02:23,870 --> 00:02:25,370
+us emails if you have questions or come
+
+75
+00:02:25,370 --> 00:02:27,320
+to office hours and we'll help you
+
+76
+00:02:27,320 --> 00:02:29,590
+figure out how to do things really fast
+
+77
+00:02:29,590 --> 00:02:32,300
+so as far as which editor to learn in
+
+78
+00:02:32,300 --> 00:02:34,130
+previous iterations of this class we
+
+79
+00:02:34,130 --> 00:02:35,510
+actually avoided teaching a specific
+
+80
+00:02:35,510 --> 00:02:36,890
+editor because we didn't want to enforce
+
+81
+00:02:36,890 --> 00:02:39,050
+our opinions on you guys but we actually
+
+82
+00:02:39,050 --> 00:02:40,430
+think that it's really useful to teach
+
+83
+00:02:40,430 --> 00:02:42,050
+you how to use one particular tool and
+
+84
+00:02:42,050 --> 00:02:44,900
+use it well and so people have really
+
+85
+00:02:44,900 --> 00:02:46,459
+strong opinions about editor so you can
+
+86
+00:02:46,459 --> 00:02:48,500
+see the course notes for more links on
+
+87
+00:02:48,500 --> 00:02:52,040
+this topic looking at which editors have
+
+88
+00:02:52,040 --> 00:02:54,080
+been popular over the years Stack
+
+89
+00:02:54,080 --> 00:02:56,660
+Overflow I'm sure you've all heard of
+
+90
+00:02:56,660 --> 00:02:59,090
+that does a survey every year asking
+
+91
+00:02:59,090 --> 00:03:00,320
+developers various questions and one
+
+92
+00:03:00,320 --> 00:03:02,000
+thing to ask is which TextEdit Derk do
+
+93
+00:03:02,000 --> 00:03:03,440
+you use and it seems to be that
+
+94
+00:03:03,440 --> 00:03:05,300
+currently the most popular kind of
+
+95
+00:03:05,300 --> 00:03:07,730
+graphical editor is vs code and the most
+
+96
+00:03:07,730 --> 00:03:10,160
+popular editor that is based within a
+
+97
+00:03:10,160 --> 00:03:12,440
+command line interface is vim and so
+
+98
+00:03:12,440 --> 00:03:13,910
+we're going to be teaching you vim and
+
+99
+00:03:13,910 --> 00:03:16,040
+there a couple reasons for this one is
+
+100
+00:03:16,040 --> 00:03:17,810
+that all the instructors so me John and
+
+101
+00:03:17,810 --> 00:03:19,970
+Jose use vim as our primary editor and
+
+102
+00:03:19,970 --> 00:03:21,320
+we've been doing this for many years and
+
+103
+00:03:21,320 --> 00:03:23,150
+we've been very happy with it
+
+104
+00:03:23,150 --> 00:03:25,010
+and we think that there are a lot of
+
+105
+00:03:25,010 --> 00:03:28,820
+interesting ideas behind them so even if
+
+106
+00:03:28,820 --> 00:03:30,500
+you don't end up using this particular
+
+107
+00:03:30,500 --> 00:03:32,450
+tool in the long term I think it's
+
+108
+00:03:32,450 --> 00:03:35,540
+valuable to learn these ideas and also a
+
+109
+00:03:35,540 --> 00:03:37,280
+lot of tools have actually been really
+
+110
+00:03:37,280 --> 00:03:39,200
+excited about the ideas in vim and so
+
+111
+00:03:39,200 --> 00:03:42,200
+they support a vim emulation mode for
+
+112
+00:03:42,200 --> 00:03:44,360
+example vs code what's apparently the
+
+113
+00:03:44,360 --> 00:03:45,820
+most popular editor in use today
+
+114
+00:03:45,820 --> 00:03:48,170
+supports vim bindings and this vim
+
+115
+00:03:48,170 --> 00:03:50,660
+emulation mode as of now has like 1.4
+
+116
+00:03:50,660 --> 00:03:53,630
+million downloads and as you'll see over
+
+117
+00:03:53,630 --> 00:03:56,450
+the course of this lecture a lot of
+
+118
+00:03:56,450 --> 00:03:57,830
+different tools like including your
+
+119
+00:03:57,830 --> 00:03:59,570
+shell including things like the Python
+
+120
+00:03:59,570 --> 00:04:01,730
+repple and like Jupiter notebook and all
+
+121
+00:04:01,730 --> 00:04:03,200
+sorts of other things even your web
+
+122
+00:04:03,200 --> 00:04:04,940
+browser can support of emulation mode
+
+123
+00:04:04,940 --> 00:04:06,890
+and so yeah we're going to be teaching
+
+124
+00:04:06,890 --> 00:04:10,400
+you this really neat tool today and in
+
+125
+00:04:10,400 --> 00:04:12,140
+this lecture we can't really cover all
+
+126
+00:04:12,140 --> 00:04:14,390
+of them right it's a very powerful tool
+
+127
+00:04:14,390 --> 00:04:17,029
+but our goal is to teach you and the
+
+128
+00:04:17,029 --> 00:04:18,769
+core philosophy of them like the really
+
+129
+00:04:18,769 --> 00:04:20,720
+neat ideas behind it and then in
+
+130
+00:04:20,720 --> 00:04:22,370
+addition to that some of the basics like
+
+131
+00:04:22,370 --> 00:04:23,750
+how do you open a file close a file
+
+132
+00:04:23,750 --> 00:04:25,490
+navigate around a file make edits and
+
+133
+00:04:25,490 --> 00:04:27,010
+things like that and
+
+134
+00:04:27,010 --> 00:04:28,630
+you may not remember every single little
+
+135
+00:04:28,630 --> 00:04:29,950
+detail from this lecture because we're
+
+136
+00:04:29,950 --> 00:04:31,030
+gonna go pretty fast through some of the
+
+137
+00:04:31,030 --> 00:04:32,860
+material but it's all in the lecture
+
+138
+00:04:32,860 --> 00:04:34,510
+notes and then the exercises actually
+
+139
+00:04:34,510 --> 00:04:36,640
+give you links to some tutorials and
+
+140
+00:04:36,640 --> 00:04:37,900
+things so I highly recommend that you
+
+141
+00:04:37,900 --> 00:04:40,030
+actually go through all the exercises at
+
+142
+00:04:40,030 --> 00:04:43,840
+least the non advanced exercises any
+
+143
+00:04:43,840 --> 00:04:49,450
+questions so far great okay so one of
+
+144
+00:04:49,450 --> 00:04:51,250
+the really cool ideas behind them is
+
+145
+00:04:51,250 --> 00:04:54,160
+that vim is a modal editor what does
+
+146
+00:04:54,160 --> 00:04:56,080
+this mean modal comes from the word mode
+
+147
+00:04:56,080 --> 00:04:58,450
+and this means that vim has multiple
+
+148
+00:04:58,450 --> 00:05:00,970
+operating modes and this is kind of
+
+149
+00:05:00,970 --> 00:05:02,920
+developed from the idea that when you're
+
+150
+00:05:02,920 --> 00:05:04,570
+programming there often times where
+
+151
+00:05:04,570 --> 00:05:05,950
+you're doing different types of things
+
+152
+00:05:05,950 --> 00:05:07,420
+like sometimes you're reading code
+
+153
+00:05:07,420 --> 00:05:09,220
+sometimes you're making small edits to
+
+154
+00:05:09,220 --> 00:05:10,960
+code like you're finding a particular
+
+155
+00:05:10,960 --> 00:05:12,340
+point like changing a little thing
+
+156
+00:05:12,340 --> 00:05:15,040
+somewhere sometimes you're just writing
+
+157
+00:05:15,040 --> 00:05:16,540
+a lot of code in one go like suppose
+
+158
+00:05:16,540 --> 00:05:17,470
+you're just writing a function from
+
+159
+00:05:17,470 --> 00:05:19,090
+scratch and so there's different
+
+160
+00:05:19,090 --> 00:05:20,380
+operating modes for doing these
+
+161
+00:05:20,380 --> 00:05:24,070
+different types of things and so I'm
+
+162
+00:05:24,070 --> 00:05:25,180
+actually want to write this down on the
+
+163
+00:05:25,180 --> 00:05:26,470
+blackboard so I'll have a useful thing
+
+164
+00:05:26,470 --> 00:05:28,780
+to refer to later so when you start vim
+
+165
+00:05:28,780 --> 00:05:33,280
+up it starts up in what's called normal
+
+166
+00:05:33,280 --> 00:05:35,260
+mode and in this mode all the different
+
+167
+00:05:35,260 --> 00:05:37,270
+key combinations behave in one way and
+
+168
+00:05:37,270 --> 00:05:38,650
+then there are different key
+
+169
+00:05:38,650 --> 00:05:40,030
+combinations that switch you between
+
+170
+00:05:40,030 --> 00:05:42,400
+normal mode and other modes which change
+
+171
+00:05:42,400 --> 00:05:45,880
+the meaning of different keys so for the
+
+172
+00:05:45,880 --> 00:05:47,950
+most part you'll be spending most of
+
+173
+00:05:47,950 --> 00:05:49,870
+your time in vim in normal mode or what
+
+174
+00:05:49,870 --> 00:05:55,420
+is called insert mode and to go to
+
+175
+00:05:55,420 --> 00:05:57,400
+insert mode you press the key I for
+
+176
+00:05:57,400 --> 00:05:59,530
+normal mode and to go from insert mode
+
+177
+00:05:59,530 --> 00:06:01,600
+back to normal mode you press the Escape
+
+178
+00:06:01,600 --> 00:06:06,700
+key a little note on notation because
+
+179
+00:06:06,700 --> 00:06:09,580
+we'll need this later in the notation
+
+180
+00:06:09,580 --> 00:06:11,020
+I'm going to be using in this lecture
+
+181
+00:06:11,020 --> 00:06:12,610
+and what's also in the lecture notes and
+
+182
+00:06:12,610 --> 00:06:15,100
+what vim uses to give you feedback they
+
+183
+00:06:15,100 --> 00:06:16,150
+have a couple different ways of talking
+
+184
+00:06:16,150 --> 00:06:17,740
+about different keys so when they're
+
+185
+00:06:17,740 --> 00:06:19,270
+talking about bare keys like just the
+
+186
+00:06:19,270 --> 00:06:20,440
+eye key on your keyboard they'll just
+
+187
+00:06:20,440 --> 00:06:22,660
+say eye but for a different key
+
+188
+00:06:22,660 --> 00:06:24,310
+combinations like when you press control
+
+189
+00:06:24,310 --> 00:06:27,130
+and something like say control V it's
+
+190
+00:06:27,130 --> 00:06:29,920
+notated in one of like approximately
+
+191
+00:06:29,920 --> 00:06:32,350
+three ways one way that can be notated
+
+192
+00:06:32,350 --> 00:06:34,600
+is a caret and then the control
+
+193
+00:06:34,600 --> 00:06:37,480
+character so this is control V another
+
+194
+00:06:37,480 --> 00:06:39,580
+way this might be written I think we've
+
+195
+00:06:39,580 --> 00:06:40,660
+written it this way in
+
+196
+00:06:40,660 --> 00:06:42,250
+lecture notes as control-v this is
+
+197
+00:06:42,250 --> 00:06:43,150
+probably the one you're more used to
+
+198
+00:06:43,150 --> 00:06:46,060
+seeing and then in some parts of them
+
+199
+00:06:46,060 --> 00:06:48,880
+this is written as angle brackets C - V
+
+200
+00:06:48,880 --> 00:06:51,010
+close angle bracket so just a little bit
+
+201
+00:06:51,010 --> 00:06:54,210
+of notation that will be useful later
+
+202
+00:06:54,220 --> 00:06:56,950
+so yeah vim has a couple different modes
+
+203
+00:06:56,950 --> 00:06:59,350
+where normal mode is designed for
+
+204
+00:06:59,350 --> 00:07:01,540
+navigating around a file reading things
+
+205
+00:07:01,540 --> 00:07:03,520
+going from file to file things like that
+
+206
+00:07:03,520 --> 00:07:05,620
+and then insert mode is where you type
+
+207
+00:07:05,620 --> 00:07:08,380
+in text so most keys that you press here
+
+208
+00:07:08,380 --> 00:07:10,330
+will just go into your text buffer where
+
+209
+00:07:10,330 --> 00:07:12,040
+as keys that you press here are not
+
+210
+00:07:12,040 --> 00:07:13,780
+being put into the buffer and instead
+
+211
+00:07:13,780 --> 00:07:15,190
+are used for things like navigation or
+
+212
+00:07:15,190 --> 00:07:20,380
+making edits and actually the picture is
+
+213
+00:07:20,380 --> 00:07:21,520
+a little bit more complicated than this
+
+214
+00:07:21,520 --> 00:07:23,200
+there are a whole bunch of other modes
+
+215
+00:07:23,200 --> 00:07:24,370
+and I'm just gonna write them down here
+
+216
+00:07:24,370 --> 00:07:25,900
+because we'll have them here to refer to
+
+217
+00:07:25,900 --> 00:07:29,050
+later and so if it also has a replace
+
+218
+00:07:29,050 --> 00:07:33,100
+mode for rather than inserting text and
+
+219
+00:07:33,100 --> 00:07:34,030
+kind of pushing what's ahead of it
+
+220
+00:07:34,030 --> 00:07:36,160
+forward it will overwrite text and then
+
+221
+00:07:36,160 --> 00:07:37,810
+it has a bunch of different modes for
+
+222
+00:07:37,810 --> 00:07:44,920
+selection so it has a mode called visual
+
+223
+00:07:44,920 --> 00:07:48,040
+mode and then it has visual line and
+
+224
+00:07:48,040 --> 00:07:53,710
+visual block this one is enter via the R
+
+225
+00:07:53,710 --> 00:07:57,040
+key this was entered via the V key this
+
+226
+00:07:57,040 --> 00:08:01,810
+one is entered via shift B and this one
+
+227
+00:08:01,810 --> 00:08:05,680
+is entered via control V and then
+
+228
+00:08:05,680 --> 00:08:13,300
+there's the command line mode which is
+
+229
+00:08:13,300 --> 00:08:17,430
+entered via the colon key
+
+230
+00:08:19,180 --> 00:08:21,070
+okay so now that we have that on the
+
+231
+00:08:21,070 --> 00:08:31,300
+board to refer to later we can actually
+
+232
+00:08:31,300 --> 00:08:35,230
+try some of this out all right so one
+
+233
+00:08:35,230 --> 00:08:36,340
+thing we noticed looking at that picture
+
+234
+00:08:36,340 --> 00:08:38,559
+is that to go from normal mode to any of
+
+235
+00:08:38,559 --> 00:08:40,390
+the other modes we press some key but to
+
+236
+00:08:40,390 --> 00:08:41,799
+go from any of the other modes back to
+
+237
+00:08:41,799 --> 00:08:43,330
+normal mode where we spend a lot of our
+
+238
+00:08:43,330 --> 00:08:45,190
+time we use the Escape key on our
+
+239
+00:08:45,190 --> 00:08:48,640
+keyboard so for this reason since you
+
+240
+00:08:48,640 --> 00:08:49,960
+under pressing the Escape key a lot when
+
+241
+00:08:49,960 --> 00:08:51,970
+using vim a lot of programmers rebind
+
+242
+00:08:51,970 --> 00:08:53,650
+one of the keys on their keyboard to be
+
+243
+00:08:53,650 --> 00:08:55,180
+escape because it's really inconvenient
+
+244
+00:08:55,180 --> 00:08:56,620
+to reach up with your left pinkie to
+
+245
+00:08:56,620 --> 00:08:58,060
+press that tiny little Escape key in the
+
+246
+00:08:58,060 --> 00:08:59,920
+corner of your keyboard and so a lot of
+
+247
+00:08:59,920 --> 00:09:01,870
+people use the caps lock key instead so
+
+248
+00:09:01,870 --> 00:09:04,540
+it's right there in the home row and we
+
+249
+00:09:04,540 --> 00:09:06,580
+have some links in the lecture notes for
+
+250
+00:09:06,580 --> 00:09:14,380
+how you can do this key rebinding okay
+
+251
+00:09:14,380 --> 00:09:15,730
+so now that we've talked about kind of
+
+252
+00:09:15,730 --> 00:09:17,500
+one of the core ideas of vim the idea of
+
+253
+00:09:17,500 --> 00:09:19,300
+modal editing we can talk about some of
+
+254
+00:09:19,300 --> 00:09:20,830
+the basics like how do you open up this
+
+255
+00:09:20,830 --> 00:09:23,080
+text editor how do you open file save
+
+256
+00:09:23,080 --> 00:09:25,870
+files and things like that and so this
+
+257
+00:09:25,870 --> 00:09:28,240
+is a command line based program although
+
+258
+00:09:28,240 --> 00:09:29,740
+there are some graphical variants and
+
+259
+00:09:29,740 --> 00:09:31,900
+the way you start this program is by
+
+260
+00:09:31,900 --> 00:09:34,420
+running vim one thing you might notice
+
+261
+00:09:34,420 --> 00:09:35,800
+is that in the bottom left corner of my
+
+262
+00:09:35,800 --> 00:09:37,510
+screen they actually saw what I just
+
+263
+00:09:37,510 --> 00:09:40,090
+typed this will be useful later in this
+
+264
+00:09:40,090 --> 00:09:41,530
+lecture where I'm actually typing in
+
+265
+00:09:41,530 --> 00:09:44,020
+commands for vim and I'll be saying what
+
+266
+00:09:44,020 --> 00:09:45,370
+I'm typing but you'll also see it on the
+
+267
+00:09:45,370 --> 00:09:47,890
+screen so if I press ctrl C see it says
+
+268
+00:09:47,890 --> 00:09:50,380
+ctrl C over there is that text big
+
+269
+00:09:50,380 --> 00:09:55,510
+enough for everybody to read great okay
+
+270
+00:09:55,510 --> 00:09:57,610
+so the way we open vim is just by
+
+271
+00:09:57,610 --> 00:09:59,800
+running the program vim on our command
+
+272
+00:09:59,800 --> 00:10:02,470
+line and this comes pre-installed on
+
+273
+00:10:02,470 --> 00:10:03,790
+most systems and if you don't have it
+
+274
+00:10:03,790 --> 00:10:05,020
+you can install it using your package
+
+275
+00:10:05,020 --> 00:10:07,600
+manager vim can also take an argument if
+
+276
+00:10:07,600 --> 00:10:08,560
+we want to use it to edit a particular
+
+277
+00:10:08,560 --> 00:10:10,570
+file instead of just opening up the
+
+278
+00:10:10,570 --> 00:10:12,850
+program then later opening a file so for
+
+279
+00:10:12,850 --> 00:10:15,310
+example I have a file in this directory
+
+280
+00:10:15,310 --> 00:10:17,140
+this is actually the lecture notes for
+
+281
+00:10:17,140 --> 00:10:19,690
+this lecture so I can do vim editors MD
+
+282
+00:10:19,690 --> 00:10:21,940
+and press ENTER and then boom them is
+
+283
+00:10:21,940 --> 00:10:25,690
+started and then in this lecture I'm not
+
+284
+00:10:25,690 --> 00:10:29,820
+running vim in the completely Exton I've
+
+285
+00:10:29,820 --> 00:10:32,860
+configured a couple of things that
+
+286
+00:10:32,860 --> 00:10:34,930
+behave a little bit nicer by defaults
+
+287
+00:10:34,930 --> 00:10:36,940
+little things like having line numbers
+
+288
+00:10:36,940 --> 00:10:38,410
+on the left or having some more status
+
+289
+00:10:38,410 --> 00:10:40,210
+information on the bottom and if you
+
+290
+00:10:40,210 --> 00:10:41,140
+want to start with this default
+
+291
+00:10:41,140 --> 00:10:42,850
+configuration we have a link to this in
+
+292
+00:10:42,850 --> 00:10:43,930
+the lecture notes so you can get a
+
+293
+00:10:43,930 --> 00:10:49,270
+slightly more sane config by default so
+
+294
+00:10:49,270 --> 00:10:51,250
+once you've opened them what do you do
+
+295
+00:10:51,250 --> 00:10:53,290
+well as I said earlier vim starts in
+
+296
+00:10:53,290 --> 00:10:54,580
+normal mode so if I just start typing
+
+297
+00:10:54,580 --> 00:10:57,880
+letters like say type X it didn't insert
+
+298
+00:10:57,880 --> 00:10:59,650
+X into the buffer you can see the cursor
+
+299
+00:10:59,650 --> 00:11:01,660
+up in the top left it actually deleted
+
+300
+00:11:01,660 --> 00:11:03,610
+one of the characters that's because I'm
+
+301
+00:11:03,610 --> 00:11:07,300
+in normal mode not insert mode so insert
+
+302
+00:11:07,300 --> 00:11:08,620
+mode is basically what you used to with
+
+303
+00:11:08,620 --> 00:11:09,850
+all the other text editors you've used
+
+304
+00:11:09,850 --> 00:11:10,900
+in the past where there's a cursor
+
+305
+00:11:10,900 --> 00:11:12,310
+somewhere you press the character and it
+
+306
+00:11:12,310 --> 00:11:15,310
+just goes into your buffer I'm instead
+
+307
+00:11:15,310 --> 00:11:18,130
+in vim you start a normal mode and you
+
+308
+00:11:18,130 --> 00:11:19,900
+can press I to go into insert mode so
+
+309
+00:11:19,900 --> 00:11:21,610
+see I've pressed I and then in the
+
+310
+00:11:21,610 --> 00:11:23,980
+bottom left notice that it says - -
+
+311
+00:11:23,980 --> 00:11:26,500
+insert the bottom left always tells you
+
+312
+00:11:26,500 --> 00:11:27,850
+what mode you're in unless this normal
+
+313
+00:11:27,850 --> 00:11:29,650
+mode in which case it's blank and now
+
+314
+00:11:29,650 --> 00:11:31,270
+that I'm an insert mode if I press the X
+
+315
+00:11:31,270 --> 00:11:33,250
+character for example see it just gets
+
+316
+00:11:33,250 --> 00:11:35,740
+inserted into my text buffer and I can
+
+317
+00:11:35,740 --> 00:11:37,450
+backspace over at type other stuff and
+
+318
+00:11:37,450 --> 00:11:39,580
+now my text editor kind of behaves like
+
+319
+00:11:39,580 --> 00:11:41,400
+you'd expect any other program to behave
+
+320
+00:11:41,400 --> 00:11:43,780
+so from this point how to go back to
+
+321
+00:11:43,780 --> 00:11:45,520
+normal mode if I want to stop inserting
+
+322
+00:11:45,520 --> 00:11:48,910
+characters yes exactly I press escape
+
+323
+00:11:48,910 --> 00:11:51,670
+and that's the symbol my keystroke
+
+324
+00:11:51,670 --> 00:11:53,830
+visuals I visualizer uses for escape so
+
+325
+00:11:53,830 --> 00:11:58,960
+just be aware of that and then vim has
+
+326
+00:11:58,960 --> 00:12:01,150
+this idea that using the mouse is
+
+327
+00:12:01,150 --> 00:12:02,890
+inefficient like your hands are on the
+
+328
+00:12:02,890 --> 00:12:04,570
+keyboard moving your hand over to the
+
+329
+00:12:04,570 --> 00:12:06,460
+mouse takes a lot of time right like you
+
+330
+00:12:06,460 --> 00:12:08,290
+don't want to waste those couple of
+
+331
+00:12:08,290 --> 00:12:09,610
+milliseconds while you're programming
+
+332
+00:12:09,610 --> 00:12:11,410
+like in the middle of things so instead
+
+333
+00:12:11,410 --> 00:12:13,990
+all vim functionality can be accessed
+
+334
+00:12:13,990 --> 00:12:15,700
+just through the keyboard and it's all
+
+335
+00:12:15,700 --> 00:12:16,780
+sorts of things you might be used to
+
+336
+00:12:16,780 --> 00:12:19,330
+doing like opening files by going like
+
+337
+00:12:19,330 --> 00:12:21,460
+file open or file save or things like
+
+338
+00:12:21,460 --> 00:12:23,050
+that or instead access through the
+
+339
+00:12:23,050 --> 00:12:25,450
+keyboard and how is that done that's
+
+340
+00:12:25,450 --> 00:12:27,520
+done through one of the other vim modes
+
+341
+00:12:27,520 --> 00:12:28,690
+that are on the board over there in
+
+342
+00:12:28,690 --> 00:12:31,960
+particular through command line mode so
+
+343
+00:12:31,960 --> 00:12:33,850
+if you're in normal mode and you press
+
+344
+00:12:33,850 --> 00:12:36,370
+the colon key you'll notice that the
+
+345
+00:12:36,370 --> 00:12:39,370
+cursor I guess my visualizer is covering
+
+346
+00:12:39,370 --> 00:12:41,320
+the thing right now but it's gone the
+
+347
+00:12:41,320 --> 00:12:43,060
+cursor jumps to the bottom the bottom
+
+348
+00:12:43,060 --> 00:12:46,110
+left and it shows that : I just typed
+
+349
+00:12:46,110 --> 00:12:48,510
+now I can type in a command so you can
+
+350
+00:12:48,510 --> 00:12:50,220
+think of this almost like the command
+
+351
+00:12:50,220 --> 00:12:51,570
+shell that we've talked been talking
+
+352
+00:12:51,570 --> 00:12:53,160
+about over the last few days except this
+
+353
+00:12:53,160 --> 00:12:54,029
+is VIMS
+
+354
+00:12:54,029 --> 00:12:55,800
+command shell so you give vim commands
+
+355
+00:12:55,800 --> 00:12:57,200
+here instead of shell commands and
+
+356
+00:12:57,200 --> 00:12:59,339
+they're a bunch of built-in commands
+
+357
+00:12:59,339 --> 00:13:00,600
+that do all the things that you're used
+
+358
+00:13:00,600 --> 00:13:02,820
+to like for example one command that you
+
+359
+00:13:02,820 --> 00:13:04,260
+might want to know is how to quit this
+
+360
+00:13:04,260 --> 00:13:05,670
+editor you might notice that if your
+
+361
+00:13:05,670 --> 00:13:07,440
+normal mode I can press escape to go
+
+362
+00:13:07,440 --> 00:13:08,730
+back from command line mode to normal
+
+363
+00:13:08,730 --> 00:13:11,940
+mode and I press control C I'm like what
+
+364
+00:13:11,940 --> 00:13:13,560
+happens the lot of programs this doesn't
+
+365
+00:13:13,560 --> 00:13:16,019
+quit them so how do I quit vim I can
+
+366
+00:13:16,019 --> 00:13:18,360
+press colon and then go into command
+
+367
+00:13:18,360 --> 00:13:19,860
+line mode and then I can type in the
+
+368
+00:13:19,860 --> 00:13:23,430
+command quit key uit you'll see that I
+
+369
+00:13:23,430 --> 00:13:24,870
+maybe I should move this over to the
+
+370
+00:13:24,870 --> 00:13:28,560
+middle or something ceases colon quit
+
+371
+00:13:28,560 --> 00:13:31,350
+and I press ENTER and it quits bin I can
+
+372
+00:13:31,350 --> 00:13:32,910
+open him up again there's actually a
+
+373
+00:13:32,910 --> 00:13:35,490
+short form for this command just : Q and
+
+374
+00:13:35,490 --> 00:13:38,430
+that'll do the same thing and there a
+
+375
+00:13:38,430 --> 00:13:40,019
+bunch of other useful commands like this
+
+376
+00:13:40,019 --> 00:13:42,839
+so some other handy wants to know are
+
+377
+00:13:42,839 --> 00:13:45,149
+how do you save a file so suppose I make
+
+378
+00:13:45,149 --> 00:13:47,790
+some edits here like hello world
+
+379
+00:13:47,790 --> 00:13:51,420
+so I pressed I to go into insert mode or
+
+380
+00:13:51,420 --> 00:13:53,970
+let me redo that I press I to go into
+
+381
+00:13:53,970 --> 00:13:55,560
+insert mode right now I can use the down
+
+382
+00:13:55,560 --> 00:14:02,010
+arrow to oh hey I think I've slightly I
+
+383
+00:14:02,010 --> 00:14:03,240
+should fix that can you fix the config
+
+384
+00:14:03,240 --> 00:14:07,019
+actually John never mind that
+
+385
+00:14:07,019 --> 00:14:11,730
+okay so I suppose I go down to this line
+
+386
+00:14:11,730 --> 00:14:14,820
+and I press I to go into insert mode and
+
+387
+00:14:14,820 --> 00:14:17,010
+type in some text and then press escape
+
+388
+00:14:17,010 --> 00:14:18,930
+to go back to normal mode now how do I
+
+389
+00:14:18,930 --> 00:14:20,610
+actually save this file well there's
+
+390
+00:14:20,610 --> 00:14:22,680
+another command for that so colon to go
+
+391
+00:14:22,680 --> 00:14:25,550
+into command mode and then I can type W
+
+392
+00:14:25,550 --> 00:14:30,480
+and press Enter w stands for write and
+
+393
+00:14:30,480 --> 00:14:33,240
+it says in the bottom editors MD
+
+394
+00:14:33,240 --> 00:14:35,699
+whatever blah blah written and so this
+
+395
+00:14:35,699 --> 00:14:37,829
+means it saved the file and so now if I
+
+396
+00:14:37,829 --> 00:14:40,320
+colon Q to quit and open the same file
+
+397
+00:14:40,320 --> 00:14:42,209
+again you'll see that the changes have
+
+398
+00:14:42,209 --> 00:14:46,850
+been persisted there are a couple other
+
+399
+00:14:46,850 --> 00:14:49,019
+there's so there's a ton of different
+
+400
+00:14:49,019 --> 00:14:50,130
+vim commands that are useful for
+
+401
+00:14:50,130 --> 00:14:53,070
+different reasons but I'll just explain
+
+402
+00:14:53,070 --> 00:14:56,100
+a couple more to you now one command
+
+403
+00:14:56,100 --> 00:14:59,070
+that's really useful is help colon help
+
+404
+00:14:59,070 --> 00:15:01,500
+and you can do : help and then type in a
+
+405
+00:15:01,500 --> 00:15:04,080
+particular key or a particular command
+
+406
+00:15:04,080 --> 00:15:06,090
+and get help for that keystroke or that
+
+407
+00:15:06,090 --> 00:15:08,580
+command so if I want to know what : that
+
+408
+00:15:08,580 --> 00:15:10,950
+was if I want to know what : w does I
+
+409
+00:15:10,950 --> 00:15:15,420
+can do : help : W and that'll give me
+
+410
+00:15:15,420 --> 00:15:21,300
+the documentation on : w or : right if I
+
+411
+00:15:21,300 --> 00:15:23,160
+do : q it'll close this window and bring
+
+412
+00:15:23,160 --> 00:15:25,560
+me back to where I was before
+
+413
+00:15:25,560 --> 00:15:28,530
+and notice that : help : w is different
+
+414
+00:15:28,530 --> 00:15:35,340
+from : help W because the W key is the W
+
+415
+00:15:35,340 --> 00:15:38,190
+that like when you're normal mode and
+
+416
+00:15:38,190 --> 00:15:40,590
+press W what happens is just the W key
+
+417
+00:15:40,590 --> 00:15:41,670
+here without the :
+
+418
+00:15:41,670 --> 00:15:43,530
+and if I look for help for : W that's
+
+419
+00:15:43,530 --> 00:15:50,340
+the help for the W command so now you
+
+420
+00:15:50,340 --> 00:15:56,040
+basically have the bare fundamentals
+
+421
+00:15:56,040 --> 00:15:58,110
+needed to use them right you can open
+
+422
+00:15:58,110 --> 00:16:00,720
+the editor use it to edit a particular
+
+423
+00:16:00,720 --> 00:16:03,180
+file press I to go into insert mode and
+
+424
+00:16:03,180 --> 00:16:05,010
+type in some text press escape to go
+
+425
+00:16:05,010 --> 00:16:06,840
+back to normal mode and then : W to save
+
+426
+00:16:06,840 --> 00:16:09,630
+your changes : W to quit so like already
+
+427
+00:16:09,630 --> 00:16:11,460
+you have the bare fundamentals necessary
+
+428
+00:16:11,460 --> 00:16:13,920
+to edit files using them albeit somewhat
+
+429
+00:16:13,920 --> 00:16:17,210
+inefficiently so any questions so far
+
+430
+00:16:17,210 --> 00:16:23,700
+yeah in the back yeah so the question is
+
+431
+00:16:23,700 --> 00:16:25,470
+what's the benefit of the nura of the
+
+432
+00:16:25,470 --> 00:16:27,060
+normal mode and we'll talk about that in
+
+433
+00:16:27,060 --> 00:16:28,590
+more detail in like five minutes
+
+434
+00:16:28,590 --> 00:16:31,560
+but in short insert mode is just for
+
+435
+00:16:31,560 --> 00:16:33,030
+typing in text so I'm an insert mode I
+
+436
+00:16:33,030 --> 00:16:34,920
+can type in text but when I'm
+
+437
+00:16:34,920 --> 00:16:36,270
+programming I actually spend a lot of
+
+438
+00:16:36,270 --> 00:16:39,000
+time moving around my file making small
+
+439
+00:16:39,000 --> 00:16:40,590
+little changes so I go here and like oh
+
+440
+00:16:40,590 --> 00:16:42,210
+maybe I want to change this HTTP link to
+
+441
+00:16:42,210 --> 00:16:45,390
+an HD HTTP to HTTP
+
+442
+00:16:45,390 --> 00:16:48,120
+I can make like small point edits things
+
+443
+00:16:48,120 --> 00:16:49,920
+like that in normal mode and we'll see a
+
+444
+00:16:49,920 --> 00:16:51,120
+whole lot more of that in about five
+
+445
+00:16:51,120 --> 00:16:52,920
+minutes good question
+
+446
+00:16:52,920 --> 00:16:59,130
+any other questions okay cool so moving
+
+447
+00:16:59,130 --> 00:17:05,069
+along one other thing that's kind of
+
+448
+00:17:05,069 --> 00:17:11,099
+useful to know I think is at a high
+
+449
+00:17:11,099 --> 00:17:12,720
+level VIMS model
+
+450
+00:17:12,720 --> 00:17:15,479
+buffers versus windows versus tabs so
+
+451
+00:17:15,479 --> 00:17:16,470
+it's probably the case that whatever
+
+452
+00:17:16,470 --> 00:17:17,939
+program you were using before like
+
+453
+00:17:17,939 --> 00:17:19,829
+sublime text or vs code or whatever
+
+454
+00:17:19,829 --> 00:17:21,898
+you could open multiple files in it
+
+455
+00:17:21,898 --> 00:17:23,249
+right and you could probably have
+
+456
+00:17:23,249 --> 00:17:24,898
+multiple tabs open and have multiple
+
+457
+00:17:24,898 --> 00:17:27,449
+windows open of your editor so vim also
+
+458
+00:17:27,449 --> 00:17:29,129
+has a notion of those different things
+
+459
+00:17:29,129 --> 00:17:31,200
+but it's models a little bit different
+
+460
+00:17:31,200 --> 00:17:34,379
+than most other programs so vim
+
+461
+00:17:34,379 --> 00:17:36,359
+maintains a set of open buffers that's
+
+462
+00:17:36,359 --> 00:17:38,340
+the word it uses for open files and so
+
+463
+00:17:38,340 --> 00:17:40,320
+it has a set of open files and then kind
+
+464
+00:17:40,320 --> 00:17:42,239
+of separately from that you can have a
+
+465
+00:17:42,239 --> 00:17:44,489
+number of tabs and tabs can have windows
+
+466
+00:17:44,489 --> 00:17:46,619
+the kind of weird thing which makes them
+
+467
+00:17:46,619 --> 00:17:47,460
+a little bit different than the
+
+468
+00:17:47,460 --> 00:17:48,899
+programming probably used in the past is
+
+469
+00:17:48,899 --> 00:17:50,729
+that there isn't necessarily a
+
+470
+00:17:50,729 --> 00:17:52,049
+one-to-one correspondence between
+
+471
+00:17:52,049 --> 00:17:55,200
+buffers and windows so one thing I can
+
+472
+00:17:55,200 --> 00:17:56,669
+do for example here and we'll show you
+
+473
+00:17:56,669 --> 00:17:58,259
+the key combinations and stuff for this
+
+474
+00:17:58,259 --> 00:18:00,989
+later but one thing you can do is create
+
+475
+00:18:00,989 --> 00:18:02,220
+two different windows so I have one
+
+476
+00:18:02,220 --> 00:18:04,109
+window up here and then one window down
+
+477
+00:18:04,109 --> 00:18:07,139
+here and notice that the same files open
+
+478
+00:18:07,139 --> 00:18:08,609
+in both windows so if I make some edits
+
+479
+00:18:08,609 --> 00:18:10,529
+over here they actually happen in the
+
+480
+00:18:10,529 --> 00:18:11,759
+bottom window as well because it's the
+
+481
+00:18:11,759 --> 00:18:13,729
+same buffer that's open in both windows
+
+482
+00:18:13,729 --> 00:18:16,590
+and this is kind of useful for say
+
+483
+00:18:16,590 --> 00:18:18,269
+looking at two different parts of a
+
+484
+00:18:18,269 --> 00:18:19,830
+single file at the same time like so you
+
+485
+00:18:19,830 --> 00:18:20,940
+want to be able to look at the top of a
+
+486
+00:18:20,940 --> 00:18:22,919
+file say at an import to your program
+
+487
+00:18:22,919 --> 00:18:25,049
+while you're down below working
+
+488
+00:18:25,049 --> 00:18:27,809
+somewhere else so this is one helpful
+
+489
+00:18:27,809 --> 00:18:29,129
+thing to keep in mind that vim has this
+
+490
+00:18:29,129 --> 00:18:32,999
+idea of they're a number of tabs and
+
+491
+00:18:32,999 --> 00:18:35,729
+each tab has some number of Windows and
+
+492
+00:18:35,729 --> 00:18:38,159
+then each window has a corresponds to
+
+493
+00:18:38,159 --> 00:18:40,649
+some buffer but a particular buffer can
+
+494
+00:18:40,649 --> 00:18:42,269
+be open in zero or more windows at a
+
+495
+00:18:42,269 --> 00:18:44,399
+time just one thing that confused me
+
+496
+00:18:44,399 --> 00:18:45,809
+when I was initially learning BIM so I
+
+497
+00:18:45,809 --> 00:18:48,049
+want to explain that early on and then
+
+498
+00:18:48,049 --> 00:18:50,669
+the : Q command which we talked about
+
+499
+00:18:50,669 --> 00:18:53,580
+earlier is not exactly quit it's kind of
+
+500
+00:18:53,580 --> 00:18:55,349
+closed the current window and then when
+
+501
+00:18:55,349 --> 00:18:56,729
+they're no more open windows then we'll
+
+502
+00:18:56,729 --> 00:18:59,460
+quit so here if I do : Q it'll only
+
+503
+00:18:59,460 --> 00:19:01,320
+close the window I think on the top here
+
+504
+00:19:01,320 --> 00:19:03,570
+because that's the one I was in and now
+
+505
+00:19:03,570 --> 00:19:05,609
+the remaining window becomes fullscreen
+
+506
+00:19:05,609 --> 00:19:08,159
+I can do : Q again to close this now in
+
+507
+00:19:08,159 --> 00:19:10,379
+the second tab that I'd open if I do : Q
+
+508
+00:19:10,379 --> 00:19:14,879
+a final time okay now vim exits and if
+
+509
+00:19:14,879 --> 00:19:16,229
+you don't want to press : Q way too many
+
+510
+00:19:16,229 --> 00:19:17,940
+times okay so here I have three split
+
+511
+00:19:17,940 --> 00:19:21,419
+windows if I do : QA for quit all it
+
+512
+00:19:21,419 --> 00:19:24,589
+closes all the open windows
+
+513
+00:19:25,370 --> 00:19:28,650
+all right so now answer your question of
+
+514
+00:19:28,650 --> 00:19:30,660
+what is normal mode actually for this is
+
+515
+00:19:30,660 --> 00:19:32,610
+another really cool idea in them and I
+
+516
+00:19:32,610 --> 00:19:34,080
+think this is actually like the most
+
+517
+00:19:34,080 --> 00:19:36,030
+fundamentally interesting idea of this
+
+518
+00:19:36,030 --> 00:19:38,550
+program it's that like you're all
+
+519
+00:19:38,550 --> 00:19:42,000
+programmers you like programming vim has
+
+520
+00:19:42,000 --> 00:19:44,370
+this idea that VIMS normal mode like
+
+521
+00:19:44,370 --> 00:19:47,220
+VIMS interface itself is a programming
+
+522
+00:19:47,220 --> 00:19:49,740
+language well and let me repeat that
+
+523
+00:19:49,740 --> 00:19:51,060
+that's like a kind of fundamentally
+
+524
+00:19:51,060 --> 00:19:52,860
+interesting idea the interface is a
+
+525
+00:19:52,860 --> 00:19:54,020
+programming language
+
+526
+00:19:54,020 --> 00:19:56,250
+what does that mean it means that
+
+527
+00:19:56,250 --> 00:19:57,570
+different key combinations have
+
+528
+00:19:57,570 --> 00:19:59,280
+different effects and once you learn the
+
+529
+00:19:59,280 --> 00:20:00,150
+different effects you can actually
+
+530
+00:20:00,150 --> 00:20:02,400
+combine them together just like in a
+
+531
+00:20:02,400 --> 00:20:03,390
+programming language you can learn
+
+532
+00:20:03,390 --> 00:20:04,770
+different functions and stuff and then
+
+533
+00:20:04,770 --> 00:20:05,880
+glue them all together to make an
+
+534
+00:20:05,880 --> 00:20:08,070
+interesting program in the same way once
+
+535
+00:20:08,070 --> 00:20:09,870
+you learn them's different movement and
+
+536
+00:20:09,870 --> 00:20:10,980
+editing commands and things like that
+
+537
+00:20:10,980 --> 00:20:13,890
+you can talk to them by programming vim
+
+538
+00:20:13,890 --> 00:20:16,950
+through its interface and once this
+
+539
+00:20:16,950 --> 00:20:19,170
+becomes muscle memory you can basically
+
+540
+00:20:19,170 --> 00:20:20,880
+edit files at the speed at which you
+
+541
+00:20:20,880 --> 00:20:22,440
+think like at least for me I don't think
+
+542
+00:20:22,440 --> 00:20:23,640
+I've been able to do this with any other
+
+543
+00:20:23,640 --> 00:20:25,320
+text editor that I've used in the past
+
+544
+00:20:25,320 --> 00:20:29,010
+but this one gets pretty close so let's
+
+545
+00:20:29,010 --> 00:20:31,380
+dig into how exactly normal mode works
+
+546
+00:20:31,380 --> 00:20:34,170
+so you can try to follow along with this
+
+547
+00:20:34,170 --> 00:20:36,140
+like open up some random file in vim and
+
+548
+00:20:36,140 --> 00:20:38,400
+follow some of the key combinations I
+
+549
+00:20:38,400 --> 00:20:40,470
+type in so one basic thing that you
+
+550
+00:20:40,470 --> 00:20:42,330
+might want to do is just navigate around
+
+551
+00:20:42,330 --> 00:20:44,010
+a buffer like move your cursor up down
+
+552
+00:20:44,010 --> 00:20:46,020
+left right and so the way you do that in
+
+553
+00:20:46,020 --> 00:20:48,510
+vim is using the hjkl keys not the arrow
+
+554
+00:20:48,510 --> 00:20:50,700
+keys though they do work by default try
+
+555
+00:20:50,700 --> 00:20:52,050
+to avoid them because you don't want to
+
+556
+00:20:52,050 --> 00:20:53,520
+have to move your hand all the way over
+
+557
+00:20:53,520 --> 00:20:54,660
+to the arrow keys like there's a ton of
+
+558
+00:20:54,660 --> 00:20:57,240
+time you're wasting right HT Cales right
+
+559
+00:20:57,240 --> 00:21:00,510
+on the home row and so J moves down K
+
+560
+00:21:00,510 --> 00:21:04,020
+moves up H moves left and L moves right
+
+561
+00:21:04,020 --> 00:21:06,390
+and this may seem a little unintuitive
+
+562
+00:21:06,390 --> 00:21:08,940
+now there was some historical reason for
+
+563
+00:21:08,940 --> 00:21:10,410
+it like the keyboard the original VI
+
+564
+00:21:10,410 --> 00:21:13,440
+developer used had the hjkl keys like
+
+565
+00:21:13,440 --> 00:21:14,910
+labeled and arranged in a way that made
+
+566
+00:21:14,910 --> 00:21:17,040
+this more reasonable but this will very
+
+567
+00:21:17,040 --> 00:21:19,260
+soon become muscle memory so this is the
+
+568
+00:21:19,260 --> 00:21:20,370
+basic way you can move your cursor
+
+569
+00:21:20,370 --> 00:21:24,270
+around while in normal mode now what
+
+570
+00:21:24,270 --> 00:21:26,070
+else can you do well if we had to move
+
+571
+00:21:26,070 --> 00:21:27,720
+around files like this it'll be really
+
+572
+00:21:27,720 --> 00:21:29,820
+slow we don't have to want to have to
+
+573
+00:21:29,820 --> 00:21:31,590
+hold down these keys and like wait for a
+
+574
+00:21:31,590 --> 00:21:33,210
+long time for them to do its thing and
+
+575
+00:21:33,210 --> 00:21:34,350
+so there are all these other different
+
+576
+00:21:34,350 --> 00:21:35,760
+key combinations for doing different
+
+577
+00:21:35,760 --> 00:21:36,650
+movements
+
+578
+00:21:36,650 --> 00:21:38,120
+also by the way this is all in the
+
+579
+00:21:38,120 --> 00:21:39,200
+lecture notes so you don't need to
+
+580
+00:21:39,200 --> 00:21:40,940
+memorize every single key and its
+
+581
+00:21:40,940 --> 00:21:43,550
+meaning right now just try to understand
+
+582
+00:21:43,550 --> 00:21:45,320
+the overall idea that bins interface is
+
+583
+00:21:45,320 --> 00:21:47,570
+a programming language so another thing
+
+584
+00:21:47,570 --> 00:21:50,000
+you can do is press the W key this moves
+
+585
+00:21:50,000 --> 00:21:52,820
+the cursor forward by one word and then
+
+586
+00:21:52,820 --> 00:21:54,620
+similarly the B key moves the cursor
+
+587
+00:21:54,620 --> 00:21:57,740
+backward by one word so this allows
+
+588
+00:21:57,740 --> 00:21:59,360
+slightly more efficient movement within
+
+589
+00:21:59,360 --> 00:22:01,820
+the line there's also the e key for
+
+590
+00:22:01,820 --> 00:22:04,010
+moving to the end of a word you're gonna
+
+591
+00:22:04,010 --> 00:22:06,620
+move this over a little bit so if I'm
+
+592
+00:22:06,620 --> 00:22:08,030
+here for example and I press the e key
+
+593
+00:22:08,030 --> 00:22:09,800
+it'll go to the end of this word end of
+
+594
+00:22:09,800 --> 00:22:12,850
+this word end of the next word and so on
+
+595
+00:22:12,850 --> 00:22:15,980
+you can also move by whole lines so zero
+
+596
+00:22:15,980 --> 00:22:17,720
+moves to the beginning of a line dollar
+
+597
+00:22:17,720 --> 00:22:19,760
+sign moves to the end of a line and the
+
+598
+00:22:19,760 --> 00:22:22,640
+caret key moves to the first non-empty
+
+599
+00:22:22,640 --> 00:22:25,790
+character on a line so let me find one
+
+600
+00:22:25,790 --> 00:22:31,730
+of those for example so here I'm on my
+
+601
+00:22:31,730 --> 00:22:33,590
+cursors right here if I press 0 my
+
+602
+00:22:33,590 --> 00:22:34,760
+cursor goes to the beginning of the line
+
+603
+00:22:34,760 --> 00:22:37,040
+dollar sign end of the current line and
+
+604
+00:22:37,040 --> 00:22:39,590
+if I press caret we're like on what
+
+605
+00:22:39,590 --> 00:22:41,270
+character will the curser end up can
+
+606
+00:22:41,270 --> 00:22:44,840
+anybody guess so caret goes to the first
+
+607
+00:22:44,840 --> 00:22:47,870
+non-empty character on a line kind of
+
+608
+00:22:47,870 --> 00:22:53,000
+like reg X carrot yeah exactly it goes
+
+609
+00:22:53,000 --> 00:22:57,200
+to this - let's talk about some more
+
+610
+00:22:57,200 --> 00:22:59,780
+movement commands there's a ways to
+
+611
+00:22:59,780 --> 00:23:01,220
+scroll up and down in a buffer so
+
+612
+00:23:01,220 --> 00:23:06,230
+control U goes up and control D scroll
+
+613
+00:23:06,230 --> 00:23:08,510
+down so this is better than holding down
+
+614
+00:23:08,510 --> 00:23:10,850
+the K or J keys for example this is a
+
+615
+00:23:10,850 --> 00:23:13,190
+lot slower than moving by entire pages
+
+616
+00:23:13,190 --> 00:23:17,720
+control D and control you there's also
+
+617
+00:23:17,720 --> 00:23:19,970
+ways to move by the entire buffer so
+
+618
+00:23:19,970 --> 00:23:22,400
+capital G moves all the way down G G
+
+619
+00:23:22,400 --> 00:23:26,420
+moves all the way up some of these
+
+620
+00:23:26,420 --> 00:23:28,490
+movement keys are mnemonics so they're
+
+621
+00:23:28,490 --> 00:23:29,600
+like a little bit easier to remember for
+
+622
+00:23:29,600 --> 00:23:31,400
+that reason right like double use word B
+
+623
+00:23:31,400 --> 00:23:33,440
+as beginning for it is end of word those
+
+624
+00:23:33,440 --> 00:23:36,230
+all seem pretty logical 0 caret and
+
+625
+00:23:36,230 --> 00:23:38,030
+dollar kind of inspired from reg X so
+
+626
+00:23:38,030 --> 00:23:39,559
+those make a little bit of sense there's
+
+627
+00:23:39,559 --> 00:23:41,120
+some other ones that like don't
+
+628
+00:23:41,120 --> 00:23:42,890
+necessarily make way too much sense but
+
+629
+00:23:42,890 --> 00:23:43,940
+there are only so many keys on your
+
+630
+00:23:43,940 --> 00:23:46,310
+keyboard so what are you going to do for
+
+631
+00:23:46,310 --> 00:23:48,590
+example the L key moves your cursor to
+
+632
+00:23:48,590 --> 00:23:49,430
+the lowest
+
+633
+00:23:49,430 --> 00:23:51,890
+line that's shown on the screen l4
+
+634
+00:23:51,890 --> 00:23:54,920
+lowest makes sense m4 middle and then h4
+
+635
+00:23:54,920 --> 00:24:01,430
+highest I guess no and there's a whole
+
+636
+00:24:01,430 --> 00:24:02,660
+bunch of other interesting movements
+
+637
+00:24:02,660 --> 00:24:04,250
+like this so we're obviously not going
+
+638
+00:24:04,250 --> 00:24:05,330
+to be able to cover all of them right
+
+639
+00:24:05,330 --> 00:24:07,070
+now but you'll be able to go through
+
+640
+00:24:07,070 --> 00:24:08,690
+them in the vim tutor exercise which is
+
+641
+00:24:08,690 --> 00:24:11,320
+exercise number one for this lecture
+
+642
+00:24:11,320 --> 00:24:15,790
+some other ones I want to talk about now
+
+643
+00:24:15,790 --> 00:24:18,080
+maybe I'll talk about one more there's
+
+644
+00:24:18,080 --> 00:24:19,640
+another movement called find this is
+
+645
+00:24:19,640 --> 00:24:21,440
+also kind of useful suppose I'm on this
+
+646
+00:24:21,440 --> 00:24:23,210
+line and I want to jump to the first
+
+647
+00:24:23,210 --> 00:24:25,340
+character that equal to something like I
+
+648
+00:24:25,340 --> 00:24:27,260
+want to jump to the first oh I can press
+
+649
+00:24:27,260 --> 00:24:31,310
+F oh and my cursor moves to the first
+
+650
+00:24:31,310 --> 00:24:33,860
+oh I've like found oh I can do FW and
+
+651
+00:24:33,860 --> 00:24:35,210
+it'll move to the first W which I think
+
+652
+00:24:35,210 --> 00:24:39,560
+is right here F C find the first C I can
+
+653
+00:24:39,560 --> 00:24:40,880
+also do the same thing but backwards if
+
+654
+00:24:40,880 --> 00:24:44,510
+I do capital F W I can find the W that's
+
+655
+00:24:44,510 --> 00:24:47,930
+before it a capital FS find the s that's
+
+656
+00:24:47,930 --> 00:24:49,760
+before that and then there's a variant
+
+657
+00:24:49,760 --> 00:24:53,450
+of F for find T for two so I can jump to
+
+658
+00:24:53,450 --> 00:24:56,690
+O and it jumps like until it's found oh
+
+659
+00:24:56,690 --> 00:24:58,520
+but not on top of it right before it and
+
+660
+00:24:58,520 --> 00:25:03,110
+capital T say T jumps backwards to the T
+
+661
+00:25:03,110 --> 00:25:04,820
+except not all the way on top of it one
+
+662
+00:25:04,820 --> 00:25:07,190
+character before and so you can already
+
+663
+00:25:07,190 --> 00:25:09,770
+see that idea I talked about of like vim
+
+664
+00:25:09,770 --> 00:25:10,970
+is a programming language you can really
+
+665
+00:25:10,970 --> 00:25:13,160
+compose these commands F and T are
+
+666
+00:25:13,160 --> 00:25:15,050
+finding two and you can say find a
+
+667
+00:25:15,050 --> 00:25:16,790
+particular character or jump to a
+
+668
+00:25:16,790 --> 00:25:20,180
+particular character so those are a
+
+669
+00:25:20,180 --> 00:25:22,400
+couple of them movement commands so any
+
+670
+00:25:22,400 --> 00:25:26,660
+questions about those so far so this is
+
+671
+00:25:26,660 --> 00:25:32,050
+yeah question right yeah okay cool so
+
+672
+00:25:32,050 --> 00:25:33,980
+those are have been movement commands
+
+673
+00:25:33,980 --> 00:25:35,540
+this is how you can navigate around a
+
+674
+00:25:35,540 --> 00:25:37,880
+file quickly in normal mode now another
+
+675
+00:25:37,880 --> 00:25:40,070
+category of useful commands are editing
+
+676
+00:25:40,070 --> 00:25:42,770
+commands so one we kind of already
+
+677
+00:25:42,770 --> 00:25:44,480
+talked about which is the eye command
+
+678
+00:25:44,480 --> 00:25:46,520
+for moving from normal mode to insert
+
+679
+00:25:46,520 --> 00:25:48,500
+mode where you can start just writing
+
+680
+00:25:48,500 --> 00:25:50,690
+text so suppose I go up here and I press
+
+681
+00:25:50,690 --> 00:25:52,490
+I now I can type in whatever text I want
+
+682
+00:25:52,490 --> 00:25:57,020
+hello world enter this back then press
+
+683
+00:25:57,020 --> 00:25:58,370
+escape to go back to normal mode and
+
+684
+00:25:58,370 --> 00:26:00,890
+I've made a change to my buffer but
+
+685
+00:26:00,890 --> 00:26:01,640
+there are a whole bunch of other
+
+686
+00:26:01,640 --> 00:26:03,740
+commands for making efficient
+
+687
+00:26:03,740 --> 00:26:05,540
+that makes sense for when you're dealing
+
+688
+00:26:05,540 --> 00:26:07,760
+with programming languages so one useful
+
+689
+00:26:07,760 --> 00:26:09,410
+command that I accidentally used earlier
+
+690
+00:26:09,410 --> 00:26:10,670
+before teaching you about it is the O
+
+691
+00:26:10,670 --> 00:26:13,280
+command so suppose my cursor is like
+
+692
+00:26:13,280 --> 00:26:16,130
+over here and if i press o from normal
+
+693
+00:26:16,130 --> 00:26:18,410
+mode what it does is it opens a new line
+
+694
+00:26:18,410 --> 00:26:19,490
+below where my cursor is
+
+695
+00:26:19,490 --> 00:26:22,040
+that's what o stands for and it so it
+
+696
+00:26:22,040 --> 00:26:23,420
+creates a new line and put me into
+
+697
+00:26:23,420 --> 00:26:24,980
+insert modes and I can start typing in
+
+698
+00:26:24,980 --> 00:26:27,290
+some text press escape and go back to
+
+699
+00:26:27,290 --> 00:26:29,600
+normal mode and then just like the O
+
+700
+00:26:29,600 --> 00:26:32,240
+command there's a capital o command so
+
+701
+00:26:32,240 --> 00:26:35,540
+if I'm here and I do capital o it puts
+
+702
+00:26:35,540 --> 00:26:37,850
+me into insert mode above where I
+
+703
+00:26:37,850 --> 00:26:41,690
+currently am there's another vim command
+
+704
+00:26:41,690 --> 00:26:44,240
+for deleting things so suppose my cursor
+
+705
+00:26:44,240 --> 00:26:47,690
+is like on top of this word right here
+
+706
+00:26:47,690 --> 00:26:51,560
+and I press the D key D for delete oh
+
+707
+00:26:51,560 --> 00:26:54,350
+nothing happens turns out that the D key
+
+708
+00:26:54,350 --> 00:26:55,970
+needs to be combined with a movement
+
+709
+00:26:55,970 --> 00:26:57,860
+command so remember we just talked about
+
+710
+00:26:57,860 --> 00:26:59,630
+different movement commands like hjkl
+
+711
+00:26:59,630 --> 00:27:02,870
+and like word and backward word and
+
+712
+00:27:02,870 --> 00:27:03,530
+things like that
+
+713
+00:27:03,530 --> 00:27:07,670
+so I press D whoops I press D and I can
+
+714
+00:27:07,670 --> 00:27:11,600
+press W and it's deleted a word so let
+
+715
+00:27:11,600 --> 00:27:13,970
+me undo that undoing vim is just you for
+
+716
+00:27:13,970 --> 00:27:16,820
+undo so notice my cursors right here I
+
+717
+00:27:16,820 --> 00:27:19,940
+do DW it's deleted a word I can move
+
+718
+00:27:19,940 --> 00:27:21,770
+around and then delete another word
+
+719
+00:27:21,770 --> 00:27:25,100
+suppose I'm keeps getting in the way
+
+720
+00:27:25,100 --> 00:27:27,620
+suppose I'm like somewhere in the middle
+
+721
+00:27:27,620 --> 00:27:29,420
+of a word and I want to delete the end
+
+722
+00:27:29,420 --> 00:27:31,130
+of a word any guesses for what
+
+723
+00:27:31,130 --> 00:27:35,630
+combination of keys I'd use for that D
+
+724
+00:27:35,630 --> 00:27:39,320
+and what de exactly delete the end of
+
+725
+00:27:39,320 --> 00:27:43,790
+the word another useful editing command
+
+726
+00:27:43,790 --> 00:27:46,790
+is the C command C stands for change so
+
+727
+00:27:46,790 --> 00:27:48,800
+change is really similar to delete
+
+728
+00:27:48,800 --> 00:27:50,840
+except change puts you in insert mode
+
+729
+00:27:50,840 --> 00:27:52,220
+because like I want to delete a thing
+
+730
+00:27:52,220 --> 00:27:54,500
+but change it to something else so if
+
+731
+00:27:54,500 --> 00:27:56,960
+I'm here and I do see e it's like change
+
+732
+00:27:56,960 --> 00:27:59,810
+to the end of the word and it gets rid
+
+733
+00:27:59,810 --> 00:28:00,950
+of the contents until the end of the
+
+734
+00:28:00,950 --> 00:28:02,630
+word and notice it put me in insert mode
+
+735
+00:28:02,630 --> 00:28:04,460
+so now whatever characters I type go
+
+736
+00:28:04,460 --> 00:28:06,740
+into the buffer if I press escape I go
+
+737
+00:28:06,740 --> 00:28:11,270
+back into normal mode and so C and D are
+
+738
+00:28:11,270 --> 00:28:13,250
+analogs they both take motions as
+
+739
+00:28:13,250 --> 00:28:15,650
+arguments and they will either delete
+
+740
+00:28:15,650 --> 00:28:17,290
+that motion or change
+
+741
+00:28:17,290 --> 00:28:20,950
+that motion so for example if you press
+
+742
+00:28:20,950 --> 00:28:24,370
+the seek there's also this pattern that
+
+743
+00:28:24,370 --> 00:28:25,990
+if you press a particular editing key
+
+744
+00:28:25,990 --> 00:28:27,880
+twice it'll have that effect on the
+
+745
+00:28:27,880 --> 00:28:30,400
+given line so if I press D D that
+
+746
+00:28:30,400 --> 00:28:32,980
+deletes the line if I press C C that
+
+747
+00:28:32,980 --> 00:28:34,360
+deletes the given line but puts me in
+
+748
+00:28:34,360 --> 00:28:35,560
+insert mode so I can replace it with
+
+749
+00:28:35,560 --> 00:28:39,760
+some other line well cover a couple
+
+750
+00:28:39,760 --> 00:28:43,360
+other editing commands because then
+
+751
+00:28:43,360 --> 00:28:44,290
+later we'll see how all these things
+
+752
+00:28:44,290 --> 00:28:46,720
+interact together so another useful one
+
+753
+00:28:46,720 --> 00:28:48,700
+is the X command so suppose my cursor is
+
+754
+00:28:48,700 --> 00:28:50,290
+over some particular character you've
+
+755
+00:28:50,290 --> 00:28:52,120
+had pressed X it just deletes that
+
+756
+00:28:52,120 --> 00:28:57,880
+character there's another command called
+
+757
+00:28:57,880 --> 00:29:00,310
+R if I'm over a particular character and
+
+758
+00:29:00,310 --> 00:29:02,260
+I press R it takes another character as
+
+759
+00:29:02,260 --> 00:29:03,940
+an argument and it replaces that
+
+760
+00:29:03,940 --> 00:29:05,440
+particular character with some other
+
+761
+00:29:05,440 --> 00:29:12,550
+character and I'll cover a couple more
+
+762
+00:29:12,550 --> 00:29:14,110
+editing commands so I think when I
+
+763
+00:29:14,110 --> 00:29:16,390
+talked about a moment ago but of course
+
+764
+00:29:16,390 --> 00:29:17,980
+you can undo changes you've made in vim
+
+765
+00:29:17,980 --> 00:29:19,360
+and the way you do that is by pressing
+
+766
+00:29:19,360 --> 00:29:21,520
+you while your normal mode so you for
+
+767
+00:29:21,520 --> 00:29:23,230
+undo is pretty easy to remember so I
+
+768
+00:29:23,230 --> 00:29:24,850
+press you a whole bunch of times it's
+
+769
+00:29:24,850 --> 00:29:26,310
+undone all the changes I've made and
+
+770
+00:29:26,310 --> 00:29:28,750
+then the opposite of undos of course
+
+771
+00:29:28,750 --> 00:29:31,000
+redo and the binding for that in vim is
+
+772
+00:29:31,000 --> 00:29:40,960
+control are all right one other editing
+
+773
+00:29:40,960 --> 00:29:42,310
+command I'm going to talk about is copy
+
+774
+00:29:42,310 --> 00:29:55,090
+and paste because oh yes question that's
+
+775
+00:29:55,090 --> 00:29:56,290
+it that's a great question so the
+
+776
+00:29:56,290 --> 00:29:58,150
+question is does undo undo everything
+
+777
+00:29:58,150 --> 00:29:59,500
+you've done since you've gone into
+
+778
+00:29:59,500 --> 00:30:00,970
+insert mode or just the last character
+
+779
+00:30:00,970 --> 00:30:02,380
+it's it's actually a little bit more
+
+780
+00:30:02,380 --> 00:30:03,280
+complicated than that
+
+781
+00:30:03,280 --> 00:30:05,860
+undo does like undoes the last change
+
+782
+00:30:05,860 --> 00:30:07,540
+you've made so if you went into insert
+
+783
+00:30:07,540 --> 00:30:08,800
+mode and typed in some stuff and went
+
+784
+00:30:08,800 --> 00:30:10,480
+back into normal mode and then press you
+
+785
+00:30:10,480 --> 00:30:12,520
+for undo it'll undo all you've done in
+
+786
+00:30:12,520 --> 00:30:14,560
+insert mode but if you've done some
+
+787
+00:30:14,560 --> 00:30:16,090
+other type of editing command like say I
+
+788
+00:30:16,090 --> 00:30:18,280
+press X to delete a character if I do
+
+789
+00:30:18,280 --> 00:30:20,140
+you for undo it'll just undo that change
+
+790
+00:30:20,140 --> 00:30:24,280
+that that editing command made now does
+
+791
+00:30:24,280 --> 00:30:26,440
+that answer the question yeah great any
+
+792
+00:30:26,440 --> 00:30:28,780
+other questions
+
+793
+00:30:28,780 --> 00:30:32,780
+cool so I'll talk about copy and paste
+
+794
+00:30:32,780 --> 00:30:35,480
+as well because that's a popular one the
+
+795
+00:30:35,480 --> 00:30:37,580
+Y command stands for copying and the P
+
+796
+00:30:37,580 --> 00:30:39,710
+command stands for pasting y for coffee
+
+797
+00:30:39,710 --> 00:30:41,810
+because yank like that's the word date
+
+798
+00:30:41,810 --> 00:30:43,370
+that's the term logic terminology that
+
+799
+00:30:43,370 --> 00:30:46,310
+vim uses for copying and these commands
+
+800
+00:30:46,310 --> 00:30:49,220
+are y also takes a motion as an argument
+
+801
+00:30:49,220 --> 00:30:52,580
+so if I do like YY it copies the current
+
+802
+00:30:52,580 --> 00:30:54,350
+line in an effect press P for paste
+
+803
+00:30:54,350 --> 00:30:56,090
+notice that now these two lines are
+
+804
+00:30:56,090 --> 00:30:57,260
+identical because I've just pasted a
+
+805
+00:30:57,260 --> 00:31:00,110
+line below you for undo but if I do
+
+806
+00:31:00,110 --> 00:31:02,330
+something like YW it's copied the word
+
+807
+00:31:02,330 --> 00:31:04,910
+and then I can do P and it just pasted
+
+808
+00:31:04,910 --> 00:31:05,450
+that word again
+
+809
+00:31:05,450 --> 00:31:08,930
+right where my cursor was one useful
+
+810
+00:31:08,930 --> 00:31:10,700
+thing especially in the context of copy
+
+811
+00:31:10,700 --> 00:31:12,530
+and paste is to be able to select a
+
+812
+00:31:12,530 --> 00:31:14,150
+block of stuff and copy it right like
+
+813
+00:31:14,150 --> 00:31:15,650
+this is probably how to used copy and
+
+814
+00:31:15,650 --> 00:31:16,940
+paste in whatever editor you were using
+
+815
+00:31:16,940 --> 00:31:19,220
+before and so that's where we get into
+
+816
+00:31:19,220 --> 00:31:21,440
+the visual modes so these are another
+
+817
+00:31:21,440 --> 00:31:23,210
+set of modes that are all related to
+
+818
+00:31:23,210 --> 00:31:24,590
+each other and that can be reached from
+
+819
+00:31:24,590 --> 00:31:26,030
+normal mode and they're used for
+
+820
+00:31:26,030 --> 00:31:28,790
+selecting chunks of text so one mode is
+
+821
+00:31:28,790 --> 00:31:31,040
+just regular visual mode you can enter
+
+822
+00:31:31,040 --> 00:31:33,140
+that by pressing V and then once you're
+
+823
+00:31:33,140 --> 00:31:34,820
+in this mode you can use most of the
+
+824
+00:31:34,820 --> 00:31:36,650
+regular normal mode commands to move
+
+825
+00:31:36,650 --> 00:31:38,450
+your point around and it selects
+
+826
+00:31:38,450 --> 00:31:39,980
+everything in between so I can use like
+
+827
+00:31:39,980 --> 00:31:42,050
+hjkl just to move the cursor or I can
+
+828
+00:31:42,050 --> 00:31:44,030
+use W to move by words or different
+
+829
+00:31:44,030 --> 00:31:45,890
+things like that and it will select a
+
+830
+00:31:45,890 --> 00:31:48,080
+block of text and once I've selected
+
+831
+00:31:48,080 --> 00:31:49,490
+this block of text there a whole bunch
+
+832
+00:31:49,490 --> 00:31:50,900
+of different types of useful things you
+
+833
+00:31:50,900 --> 00:31:52,610
+could do with it one of the most popular
+
+834
+00:31:52,610 --> 00:31:54,770
+things to do is copying this so once
+
+835
+00:31:54,770 --> 00:31:57,320
+I've selected I can do Y to copy and it
+
+836
+00:31:57,320 --> 00:31:59,630
+puts me back into normal mode and now
+
+837
+00:31:59,630 --> 00:32:01,280
+it's copied this to the to the paste
+
+838
+00:32:01,280 --> 00:32:02,810
+buffer and then if I go somewhere else
+
+839
+00:32:02,810 --> 00:32:04,850
+and press P it pastes in that whole
+
+840
+00:32:04,850 --> 00:32:07,670
+chunk of text I copied and it's similar
+
+841
+00:32:07,670 --> 00:32:10,520
+to visual mode which selects kind of a
+
+842
+00:32:10,520 --> 00:32:13,610
+contiguous stream of text there's visual
+
+843
+00:32:13,610 --> 00:32:15,560
+line mode so that can be reached by
+
+844
+00:32:15,560 --> 00:32:17,720
+pressing capital V and that selects
+
+845
+00:32:17,720 --> 00:32:19,760
+whole lines at a time and then there's
+
+846
+00:32:19,760 --> 00:32:21,470
+visual block mode which can be selected
+
+847
+00:32:21,470 --> 00:32:23,150
+by pressing control V and that can
+
+848
+00:32:23,150 --> 00:32:24,890
+select rectangular blocks of text so
+
+849
+00:32:24,890 --> 00:32:26,240
+this is something your old editor
+
+850
+00:32:26,240 --> 00:32:31,670
+couldn't do alright so there's a lot
+
+851
+00:32:31,670 --> 00:32:33,320
+more vim editing commands to learn
+
+852
+00:32:33,320 --> 00:32:35,120
+there's lots of like really weird and
+
+853
+00:32:35,120 --> 00:32:36,710
+fancy things like for example the tilde
+
+854
+00:32:36,710 --> 00:32:38,420
+command changes the case of the
+
+855
+00:32:38,420 --> 00:32:40,220
+character or the selection that you've
+
+856
+00:32:40,220 --> 00:32:41,690
+currently selected so for
+
+857
+00:32:41,690 --> 00:32:43,640
+I can take this like Visual Studio code
+
+858
+00:32:43,640 --> 00:32:45,620
+and flick the case on the whole thing by
+
+859
+00:32:45,620 --> 00:32:48,260
+selecting it and pressing tilde and
+
+860
+00:32:48,260 --> 00:32:49,430
+there's a whole bunch of other things
+
+861
+00:32:49,430 --> 00:32:50,480
+like that they get more and more
+
+862
+00:32:50,480 --> 00:32:52,160
+esoteric as you go so we're not going to
+
+863
+00:32:52,160 --> 00:32:54,050
+cover all of those but you'll get to
+
+864
+00:32:54,050 --> 00:32:56,630
+those in the exercises so those are vim
+
+865
+00:32:56,630 --> 00:32:58,490
+editing commands and a lot of them can
+
+866
+00:32:58,490 --> 00:33:00,620
+be composed with movement commands so
+
+867
+00:33:00,620 --> 00:33:02,120
+any questions about either of those so
+
+868
+00:33:02,120 --> 00:33:09,260
+far cool so moving along another
+
+869
+00:33:09,260 --> 00:33:12,680
+category of things of commands that are
+
+870
+00:33:12,680 --> 00:33:14,240
+mostly relevant to normal mode are
+
+871
+00:33:14,240 --> 00:33:16,880
+counts so you can give them a number to
+
+872
+00:33:16,880 --> 00:33:18,530
+do a particular thing some number of
+
+873
+00:33:18,530 --> 00:33:22,100
+times so suppose my cursor is here and I
+
+874
+00:33:22,100 --> 00:33:25,430
+want to move down like 1 2 3 4 lines one
+
+875
+00:33:25,430 --> 00:33:26,960
+way I can do that is by pressing J four
+
+876
+00:33:26,960 --> 00:33:29,390
+times go down four times KK KK it goes
+
+877
+00:33:29,390 --> 00:33:32,570
+up four times but rather than pressing a
+
+878
+00:33:32,570 --> 00:33:34,010
+particular key again and again I can use
+
+879
+00:33:34,010 --> 00:33:37,430
+a count so if I press four J it does J
+
+880
+00:33:37,430 --> 00:33:38,960
+four times right
+
+881
+00:33:38,960 --> 00:33:40,130
+thumbs interface is a programming
+
+882
+00:33:40,130 --> 00:33:42,290
+language if I do four K it moves up four
+
+883
+00:33:42,290 --> 00:33:45,890
+times if I am here and I press me to go
+
+884
+00:33:45,890 --> 00:33:47,600
+into visual mode okay so now I can move
+
+885
+00:33:47,600 --> 00:33:49,040
+my cursor around and select blocks of
+
+886
+00:33:49,040 --> 00:33:51,680
+text I can do like EEE to select a
+
+887
+00:33:51,680 --> 00:33:53,660
+couple of words but I could also go back
+
+888
+00:33:53,660 --> 00:33:56,600
+here v for visual mode and press three E
+
+889
+00:33:56,600 --> 00:33:59,720
+to select like three ends of words for
+
+890
+00:33:59,720 --> 00:34:03,080
+word and then of course these can also
+
+891
+00:34:03,080 --> 00:34:05,060
+be combined with editing commands so
+
+892
+00:34:05,060 --> 00:34:08,000
+like suppose I want to delete seven
+
+893
+00:34:08,000 --> 00:34:10,909
+words I can do that by moving my cursor
+
+894
+00:34:10,909 --> 00:34:13,969
+somewhere and doing seven dw7 delete
+
+895
+00:34:13,969 --> 00:34:17,659
+words and so this is particularly useful
+
+896
+00:34:17,659 --> 00:34:19,489
+for things like suppose my cursor
+
+897
+00:34:19,489 --> 00:34:21,260
+somewhere on the screen and I'm looking
+
+898
+00:34:21,260 --> 00:34:22,460
+somewhere else on the screen or I want
+
+899
+00:34:22,460 --> 00:34:24,020
+my cursor to go to that particular line
+
+900
+00:34:24,020 --> 00:34:26,239
+notice that I've set up relative line
+
+901
+00:34:26,239 --> 00:34:28,400
+numbering on the left so wherever my
+
+902
+00:34:28,400 --> 00:34:29,750
+cursor is it shows the current line
+
+903
+00:34:29,750 --> 00:34:31,580
+number but everywhere else it's just the
+
+904
+00:34:31,580 --> 00:34:33,830
+offset from where I am now suppose my
+
+905
+00:34:33,830 --> 00:34:35,870
+cursor is here but I want to move down
+
+906
+00:34:35,870 --> 00:34:38,480
+to the like Microsoft Word down here so
+
+907
+00:34:38,480 --> 00:34:40,159
+that's eight lines down so what
+
+908
+00:34:40,159 --> 00:34:41,810
+combination of keys would I press to do
+
+909
+00:34:41,810 --> 00:34:44,020
+that like what's the most efficient way
+
+910
+00:34:44,020 --> 00:34:45,560
+yeah exactly
+
+911
+00:34:45,560 --> 00:34:47,810
+let's try that out 8j and my cursor move
+
+912
+00:34:47,810 --> 00:34:50,440
+down to this line
+
+913
+00:34:51,270 --> 00:34:56,110
+okay and then one final category of key
+
+914
+00:34:56,110 --> 00:34:57,880
+meanings in BIM is something called
+
+915
+00:34:57,880 --> 00:34:59,920
+modifier so we have so far movement
+
+916
+00:34:59,920 --> 00:35:02,200
+edits counts and finally we have
+
+917
+00:35:02,200 --> 00:35:04,900
+modifiers so modifiers kind of change
+
+918
+00:35:04,900 --> 00:35:06,520
+the meaning of a movement command a
+
+919
+00:35:06,520 --> 00:35:08,830
+little bit and a couple modifiers that
+
+920
+00:35:08,830 --> 00:35:11,530
+are especially useful are the 8 and I
+
+921
+00:35:11,530 --> 00:35:15,190
+modifier so a stands for like around and
+
+922
+00:35:15,190 --> 00:35:18,010
+I stands for inside and to see where
+
+923
+00:35:18,010 --> 00:35:19,900
+this is really useful I can move my
+
+924
+00:35:19,900 --> 00:35:21,760
+cursor to somewhere like here for
+
+925
+00:35:21,760 --> 00:35:22,480
+example
+
+926
+00:35:22,480 --> 00:35:24,670
+so hopefully most of you are familiar
+
+927
+00:35:24,670 --> 00:35:26,320
+with markdown syntax and if not it
+
+928
+00:35:26,320 --> 00:35:28,240
+doesn't matter too much this is a
+
+929
+00:35:28,240 --> 00:35:30,490
+Lincoln markdown it's a text rendered in
+
+930
+00:35:30,490 --> 00:35:31,780
+square brackets and then the link in
+
+931
+00:35:31,780 --> 00:35:33,610
+parentheses suppose my cursor is inside
+
+932
+00:35:33,610 --> 00:35:35,500
+here and I want to change the text
+
+933
+00:35:35,500 --> 00:35:38,350
+corresponding to this link well one way
+
+934
+00:35:38,350 --> 00:35:40,150
+I could do that is like move back here
+
+935
+00:35:40,150 --> 00:35:43,480
+with B and like to DW and then I to go
+
+936
+00:35:43,480 --> 00:35:45,130
+into insert mode like that's one of the
+
+937
+00:35:45,130 --> 00:35:46,450
+many ways I can make this change and I
+
+938
+00:35:46,450 --> 00:35:47,950
+can type in whatever other thing I want
+
+939
+00:35:47,950 --> 00:35:51,070
+you to undo huge undo another way could
+
+940
+00:35:51,070 --> 00:35:53,410
+have done that is change two words C to
+
+941
+00:35:53,410 --> 00:35:58,030
+W and then type in some other text but
+
+942
+00:35:58,030 --> 00:35:59,950
+one final way I could do the same change
+
+943
+00:35:59,950 --> 00:36:03,280
+is using the modifier commands to talk
+
+944
+00:36:03,280 --> 00:36:05,380
+about how I want to interact with these
+
+945
+00:36:05,380 --> 00:36:07,120
+different types of grouping things like
+
+946
+00:36:07,120 --> 00:36:09,490
+parentheses and square brackets so one
+
+947
+00:36:09,490 --> 00:36:12,070
+final way of doing this is change inside
+
+948
+00:36:12,070 --> 00:36:15,610
+square brackets CI bracket and that puts
+
+949
+00:36:15,610 --> 00:36:17,440
+me into insert mode after deleting the
+
+950
+00:36:17,440 --> 00:36:20,230
+contents that are inside the brackets so
+
+951
+00:36:20,230 --> 00:36:21,400
+do you see how we can take all these
+
+952
+00:36:21,400 --> 00:36:22,690
+different ingredients like we talked
+
+953
+00:36:22,690 --> 00:36:24,310
+about change and we could combine that
+
+954
+00:36:24,310 --> 00:36:25,570
+with different movement commands we
+
+955
+00:36:25,570 --> 00:36:27,460
+talked about inside how it's a modifier
+
+956
+00:36:27,460 --> 00:36:30,100
+and then we talked about X we didn't
+
+957
+00:36:30,100 --> 00:36:32,770
+talk about parentheses but if your
+
+958
+00:36:32,770 --> 00:36:34,230
+cursor is hovering over a different
+
+959
+00:36:34,230 --> 00:36:36,070
+different types of grouping things like
+
+960
+00:36:36,070 --> 00:36:37,810
+parentheses or square brackets you can
+
+961
+00:36:37,810 --> 00:36:39,880
+press the percent movement key to jump
+
+962
+00:36:39,880 --> 00:36:40,990
+back and forth between matching
+
+963
+00:36:40,990 --> 00:36:45,340
+parentheses if I go over here and I do D
+
+964
+00:36:45,340 --> 00:36:49,510
+I parentheses I can delete the contents
+
+965
+00:36:49,510 --> 00:36:52,480
+inside these parentheses and so those
+
+966
+00:36:52,480 --> 00:36:55,780
+are vim modifiers I guess we talked
+
+967
+00:36:55,780 --> 00:36:57,550
+about I but we didn't talk about a if I
+
+968
+00:36:57,550 --> 00:37:00,310
+do D a parenthesis it deletes a whole
+
+969
+00:37:00,310 --> 00:37:02,080
+like parenthesized group including the
+
+970
+00:37:02,080 --> 00:37:04,460
+parentheses so I is inside
+
+971
+00:37:04,460 --> 00:37:10,730
+is around or including all right so
+
+972
+00:37:10,730 --> 00:37:11,839
+those are basically the different
+
+973
+00:37:11,839 --> 00:37:13,670
+categories of things you can combine
+
+974
+00:37:13,670 --> 00:37:15,890
+together when interacting with VIMS
+
+975
+00:37:15,890 --> 00:37:18,050
+interface so any questions about that or
+
+976
+00:37:18,050 --> 00:37:20,330
+the overall idea of this interface being
+
+977
+00:37:20,330 --> 00:37:28,820
+a programming language cool so let's do
+
+978
+00:37:28,820 --> 00:37:31,580
+a quick demo to kind of demonstrate the
+
+979
+00:37:31,580 --> 00:37:33,859
+power of this editor and it will kind of
+
+980
+00:37:33,859 --> 00:37:36,290
+help us see how this tool can work
+
+981
+00:37:36,290 --> 00:37:38,240
+really fast and kind of match the speed
+
+982
+00:37:38,240 --> 00:37:41,260
+at which we think so over here is a very
+
+983
+00:37:41,260 --> 00:37:43,760
+broken fizzbuzz implementation that
+
+984
+00:37:43,760 --> 00:37:44,780
+doesn't actually print anything
+
+985
+00:37:44,780 --> 00:37:46,640
+hopefully most of you have heard of
+
+986
+00:37:46,640 --> 00:37:48,680
+fizzbuzz if not I'll explain it super
+
+987
+00:37:48,680 --> 00:37:51,080
+briefly this buzz is a programming
+
+988
+00:37:51,080 --> 00:37:52,730
+exercise where you print the numbers 1
+
+989
+00:37:52,730 --> 00:37:54,290
+through n but when the number is
+
+990
+00:37:54,290 --> 00:37:56,540
+divisible by 3 you print fizz when it's
+
+991
+00:37:56,540 --> 00:37:58,700
+divisible by 5 you print buzz and when
+
+992
+00:37:58,700 --> 00:38:00,859
+it's divisible by both 3 & 5 you print
+
+993
+00:38:00,859 --> 00:38:02,839
+fizzbuzz and if none of those apply you
+
+994
+00:38:02,839 --> 00:38:05,089
+just print the number so you should
+
+995
+00:38:05,089 --> 00:38:09,290
+print like 1 2 fizz for buzz and so on
+
+996
+00:38:09,290 --> 00:38:13,460
+but if I run this program it doesn't
+
+997
+00:38:13,460 --> 00:38:16,550
+print anything here I have them on the
+
+998
+00:38:16,550 --> 00:38:20,089
+left in just a terminal on the right ok
+
+999
+00:38:20,089 --> 00:38:21,530
+so there's a bunch of issues with this
+
+1000
+00:38:21,530 --> 00:38:23,750
+one is that main is never called so
+
+1001
+00:38:23,750 --> 00:38:26,470
+let's start off with fixing that so
+
+1002
+00:38:26,470 --> 00:38:29,450
+here's how I would make this change and
+
+1003
+00:38:29,450 --> 00:38:31,960
+notice how few keystrokes this requires
+
+1004
+00:38:31,960 --> 00:38:34,250
+capital G means go to the bottom of the
+
+1005
+00:38:34,250 --> 00:38:37,609
+file o opens a new line below and now I
+
+1006
+00:38:37,609 --> 00:38:39,650
+can just type in stuff so I'm an insert
+
+1007
+00:38:39,650 --> 00:38:45,380
+mode okay so I've typed in whatever
+
+1008
+00:38:45,380 --> 00:38:47,210
+change I want to make escape to go back
+
+1009
+00:38:47,210 --> 00:38:50,480
+to normal mode if I do : W so command
+
+1010
+00:38:50,480 --> 00:38:53,540
+mode right let me go back here okay now
+
+1011
+00:38:53,540 --> 00:38:54,650
+at least my program prints something
+
+1012
+00:38:54,650 --> 00:38:56,690
+when I run it another issue with this
+
+1013
+00:38:56,690 --> 00:38:58,940
+program is that it starts at 0 instead
+
+1014
+00:38:58,940 --> 00:39:02,750
+of 1 so let's go fix that so I want to
+
+1015
+00:39:02,750 --> 00:39:05,030
+go over to this range whoops this range
+
+1016
+00:39:05,030 --> 00:39:06,950
+thing and it shouldn't be going from 0
+
+1017
+00:39:06,950 --> 00:39:08,480
+to limit it should be going from 1 to
+
+1018
+00:39:08,480 --> 00:39:11,270
+limit plus 1 1 command which I didn't
+
+1019
+00:39:11,270 --> 00:39:12,650
+show you about is how you search in vim
+
+1020
+00:39:12,650 --> 00:39:16,060
+so you press forward slash
+
+1021
+00:39:17,010 --> 00:39:19,080
+to close this and restart it if you
+
+1022
+00:39:19,080 --> 00:39:21,930
+press forward slash it starts search so
+
+1023
+00:39:21,930 --> 00:39:24,840
+if I type in range enter my cursor goes
+
+1024
+00:39:24,840 --> 00:39:26,220
+from wherever it was before to the first
+
+1025
+00:39:26,220 --> 00:39:27,810
+instance of range it found so it's a
+
+1026
+00:39:27,810 --> 00:39:28,920
+really efficient way of moving where I
+
+1027
+00:39:28,920 --> 00:39:31,680
+want to move WW to move forward two
+
+1028
+00:39:31,680 --> 00:39:33,990
+words I to go into insert mode add the
+
+1029
+00:39:33,990 --> 00:39:36,330
+one comma space escape I'm back in
+
+1030
+00:39:36,330 --> 00:39:38,310
+normal mode this is a very common
+
+1031
+00:39:38,310 --> 00:39:40,080
+pattern in vim you stay in normal mode
+
+1032
+00:39:40,080 --> 00:39:41,850
+you go somewhere you go into insert mode
+
+1033
+00:39:41,850 --> 00:39:43,260
+you make a tiny change and you jump
+
+1034
+00:39:43,260 --> 00:39:44,880
+right back to normal mode like normal
+
+1035
+00:39:44,880 --> 00:39:45,900
+mode is home and that's where you should
+
+1036
+00:39:45,900 --> 00:39:48,810
+be most of the time I also want to add a
+
+1037
+00:39:48,810 --> 00:39:51,030
+plus one so e to go to the end of this
+
+1038
+00:39:51,030 --> 00:39:55,430
+word a for a pend plus one escape
+
+1039
+00:39:55,430 --> 00:39:58,140
+alright fix that problem and other issue
+
+1040
+00:39:58,140 --> 00:40:00,810
+is that this program prints fizz for
+
+1041
+00:40:00,810 --> 00:40:02,940
+both divisible by three and five so
+
+1042
+00:40:02,940 --> 00:40:05,970
+let's fix that slash fizz searches for
+
+1043
+00:40:05,970 --> 00:40:07,920
+fizz been oppressed and it goes to the
+
+1044
+00:40:07,920 --> 00:40:11,790
+next match see I press E I quote changes
+
+1045
+00:40:11,790 --> 00:40:13,710
+what's inside the quote so it's deleted
+
+1046
+00:40:13,710 --> 00:40:15,660
+the fizz and put me in insert mode right
+
+1047
+00:40:15,660 --> 00:40:17,460
+in between those two quotes and I can
+
+1048
+00:40:17,460 --> 00:40:18,510
+type in whatever I want
+
+1049
+00:40:18,510 --> 00:40:23,460
+escape to go back to normal mode so
+
+1050
+00:40:23,460 --> 00:40:26,630
+great I've fixed that particular problem
+
+1051
+00:40:26,630 --> 00:40:28,890
+another problem with this program is
+
+1052
+00:40:28,890 --> 00:40:31,710
+that it prints fizz and Buzz on separate
+
+1053
+00:40:31,710 --> 00:40:37,710
+lines for multiples of 15 so let's let's
+
+1054
+00:40:37,710 --> 00:40:42,150
+go and fix that let me go down to this
+
+1055
+00:40:42,150 --> 00:40:42,870
+line here
+
+1056
+00:40:42,870 --> 00:40:44,580
+one way I can don't actually worry about
+
+1057
+00:40:44,580 --> 00:40:46,350
+like the actual contents of this program
+
+1058
+00:40:46,350 --> 00:40:47,430
+like this some stupid program that
+
+1059
+00:40:47,430 --> 00:40:48,690
+doesn't matter pay attention to what
+
+1060
+00:40:48,690 --> 00:40:51,000
+keys I'm pressing in vim that allow me
+
+1061
+00:40:51,000 --> 00:40:52,170
+to make changes to this program really
+
+1062
+00:40:52,170 --> 00:40:54,960
+efficiently so my cursor is on this line
+
+1063
+00:40:54,960 --> 00:40:56,790
+i press dollar to go to the end of this
+
+1064
+00:40:56,790 --> 00:40:59,460
+line i for insert mode okay and i'm
+
+1065
+00:40:59,460 --> 00:41:01,170
+typing some stuff escape to go back to
+
+1066
+00:41:01,170 --> 00:41:03,330
+normal mode now I want to make the same
+
+1067
+00:41:03,330 --> 00:41:07,050
+change the print below look at this JJ
+
+1068
+00:41:07,050 --> 00:41:11,610
+dot so what dot dozen vim is it repeats
+
+1069
+00:41:11,610 --> 00:41:13,260
+the previous editing command that was
+
+1070
+00:41:13,260 --> 00:41:15,990
+made and so this is a really nice way of
+
+1071
+00:41:15,990 --> 00:41:17,880
+doing repetitive tasks without typing
+
+1072
+00:41:17,880 --> 00:41:19,890
+the same thing over and over again so in
+
+1073
+00:41:19,890 --> 00:41:21,630
+that particular case that inserted comma
+
+1074
+00:41:21,630 --> 00:41:24,630
+end quote and so it applied the same
+
+1075
+00:41:24,630 --> 00:41:27,110
+thing on this line when I press dot and
+
+1076
+00:41:27,110 --> 00:41:29,580
+then when I guess one final part of this
+
+1077
+00:41:29,580 --> 00:41:30,690
+demo is
+
+1078
+00:41:30,690 --> 00:41:32,930
+we will fix the issue that this program
+
+1079
+00:41:32,930 --> 00:41:34,620
+maybe should take a command-line
+
+1080
+00:41:34,620 --> 00:41:35,670
+argument instead of having this
+
+1081
+00:41:35,670 --> 00:41:38,520
+hard-coded 10 down here so how do we do
+
+1082
+00:41:38,520 --> 00:41:40,440
+that I'll press GG to go to the top
+
+1083
+00:41:40,440 --> 00:41:43,170
+capital o so now I've opened a line
+
+1084
+00:41:43,170 --> 00:41:44,490
+above and I'm going to type in some text
+
+1085
+00:41:44,490 --> 00:41:47,220
+like imports this enter escape to go
+
+1086
+00:41:47,220 --> 00:41:49,710
+back to normal mode and then I want to
+
+1087
+00:41:49,710 --> 00:41:52,110
+go down to where this 10 is so slash 10
+
+1088
+00:41:52,110 --> 00:41:54,870
+makes me jump straight down there CI
+
+1089
+00:41:54,870 --> 00:41:57,540
+pren to edit what's inside the
+
+1090
+00:41:57,540 --> 00:41:59,760
+parentheses and now I can type in like
+
+1091
+00:41:59,760 --> 00:42:02,150
+whatever thing I need to type in here
+
+1092
+00:42:02,150 --> 00:42:07,080
+and then once I've done this my program
+
+1093
+00:42:07,080 --> 00:42:09,840
+does fizzbuzz correctly I think I missed
+
+1094
+00:42:09,840 --> 00:42:10,920
+one change I wanted to make but it
+
+1095
+00:42:10,920 --> 00:42:12,390
+doesn't matter this demonstrates that
+
+1096
+00:42:12,390 --> 00:42:14,540
+you can make lots of changes really fast
+
+1097
+00:42:14,540 --> 00:42:17,250
+so any questions about this demo or the
+
+1098
+00:42:17,250 --> 00:42:23,400
+overall idea we've been talking about ok
+
+1099
+00:42:23,400 --> 00:42:27,960
+so this will be covered Tuesday so the
+
+1100
+00:42:27,960 --> 00:42:29,550
+kind of outside environment I'm running
+
+1101
+00:42:29,550 --> 00:42:31,710
+vim on the left and my shell on the
+
+1102
+00:42:31,710 --> 00:42:33,630
+right and then this is team ox on the
+
+1103
+00:42:33,630 --> 00:42:38,910
+outside one variant of that question
+
+1104
+00:42:38,910 --> 00:42:39,900
+might be like how do you switch between
+
+1105
+00:42:39,900 --> 00:42:41,670
+different vim windows and you can see
+
+1106
+00:42:41,670 --> 00:42:42,840
+the lecture notes for that but there's a
+
+1107
+00:42:42,840 --> 00:42:44,250
+key binding for that so if you have the
+
+1108
+00:42:44,250 --> 00:42:45,720
+same window open or multiple things open
+
+1109
+00:42:45,720 --> 00:42:50,240
+there's a way of doing that question ah
+
+1110
+00:42:50,840 --> 00:42:54,570
+good question so delete takes a motion
+
+1111
+00:42:54,570 --> 00:42:56,520
+and then removes those contents but
+
+1112
+00:42:56,520 --> 00:42:58,110
+keeps you in normal mode so you can keep
+
+1113
+00:42:58,110 --> 00:43:00,120
+just moving around in a file what change
+
+1114
+00:43:00,120 --> 00:43:02,430
+does is very similar to delete it takes
+
+1115
+00:43:02,430 --> 00:43:03,900
+motions and treats them in the same way
+
+1116
+00:43:03,900 --> 00:43:06,150
+deletes those contents but then puts you
+
+1117
+00:43:06,150 --> 00:43:07,980
+in insert mode and so it saves you from
+
+1118
+00:43:07,980 --> 00:43:11,280
+typing one extra keystroke so if I'm
+
+1119
+00:43:11,280 --> 00:43:13,290
+here for example I want to delete main
+
+1120
+00:43:13,290 --> 00:43:16,380
+DW deletes a word but now if I press
+
+1121
+00:43:16,380 --> 00:43:18,240
+whatever key likes I press J it just
+
+1122
+00:43:18,240 --> 00:43:21,720
+moved me down if I undo that do cw4
+
+1123
+00:43:21,720 --> 00:43:23,490
+change a word now it's actually put me
+
+1124
+00:43:23,490 --> 00:43:24,810
+into insert mode and I can type in
+
+1125
+00:43:24,810 --> 00:43:28,640
+whatever I want it to insert so DWI is
+
+1126
+00:43:28,640 --> 00:43:31,890
+the same thing as CW but it saves a
+
+1127
+00:43:31,890 --> 00:43:33,810
+keystroke one thing we've linked in the
+
+1128
+00:43:33,810 --> 00:43:35,280
+resources is something called vim golf
+
+1129
+00:43:35,280 --> 00:43:37,140
+basically people have set up a game
+
+1130
+00:43:37,140 --> 00:43:39,840
+online where you can get an editing task
+
+1131
+00:43:39,840 --> 00:43:41,400
+and try to figure out the minimal number
+
+1132
+00:43:41,400 --> 00:43:43,590
+of keystrokes necessary to complete that
+
+1133
+00:43:43,590 --> 00:43:44,490
+editing
+
+1134
+00:43:44,490 --> 00:43:46,020
+it's actually really addictive so I'd
+
+1135
+00:43:46,020 --> 00:43:47,340
+only suggest going on their chest and
+
+1136
+00:43:47,340 --> 00:43:52,680
+script time I think I saw a hand for
+
+1137
+00:43:52,680 --> 00:44:00,450
+another question yeah uh period yeah one
+
+1138
+00:44:00,450 --> 00:44:02,070
+of the most useful of em commands good
+
+1139
+00:44:02,070 --> 00:44:05,750
+question any other questions
+
+1140
+00:44:06,740 --> 00:44:10,800
+cool so I think we have about five
+
+1141
+00:44:10,800 --> 00:44:13,260
+minutes left and I'm gonna briefly talk
+
+1142
+00:44:13,260 --> 00:44:14,760
+about a thing that's also covered in
+
+1143
+00:44:14,760 --> 00:44:15,990
+detail in the notes so make sure you
+
+1144
+00:44:15,990 --> 00:44:19,470
+look at the notes for this so vim is a
+
+1145
+00:44:19,470 --> 00:44:22,349
+programmers text editor and so of course
+
+1146
+00:44:22,349 --> 00:44:24,420
+it's highly programmable not only
+
+1147
+00:44:24,420 --> 00:44:25,740
+through its interface that's a
+
+1148
+00:44:25,740 --> 00:44:27,720
+programming language but also a couple
+
+1149
+00:44:27,720 --> 00:44:29,099
+of different ways there's lots of
+
+1150
+00:44:29,099 --> 00:44:31,050
+settings that you can tweak to match
+
+1151
+00:44:31,050 --> 00:44:32,970
+your preferences and you can also
+
+1152
+00:44:32,970 --> 00:44:34,740
+install plugins for them that do all
+
+1153
+00:44:34,740 --> 00:44:37,590
+sorts of useful stuff so the way vim is
+
+1154
+00:44:37,590 --> 00:44:40,380
+configured is through a file on disk
+
+1155
+00:44:40,380 --> 00:44:42,930
+called vim RC and you'll see this is a
+
+1156
+00:44:42,930 --> 00:44:45,480
+common pattern in a lot of shell based
+
+1157
+00:44:45,480 --> 00:44:47,340
+tools there'll be a plain text file that
+
+1158
+00:44:47,340 --> 00:44:49,349
+configures how the Tool Works and so if
+
+1159
+00:44:49,349 --> 00:44:50,880
+I edit this file and it may or may not
+
+1160
+00:44:50,880 --> 00:44:53,670
+exist on your machine yet but I've
+
+1161
+00:44:53,670 --> 00:44:56,310
+downloaded the we've created a kind of
+
+1162
+00:44:56,310 --> 00:44:58,170
+default vim RC for you and linked it on
+
+1163
+00:44:58,170 --> 00:44:59,430
+the course website so you can start with
+
+1164
+00:44:59,430 --> 00:45:02,190
+that one if I do vim tilde slash boom RC
+
+1165
+00:45:02,190 --> 00:45:04,859
+I can see here a bunch of comments and
+
+1166
+00:45:04,859 --> 00:45:07,080
+then particular commands like by default
+
+1167
+00:45:07,080 --> 00:45:09,060
+we want syntax highlighting on and we
+
+1168
+00:45:09,060 --> 00:45:11,280
+want line numbers if we didn't do some
+
+1169
+00:45:11,280 --> 00:45:12,750
+of these things like let me remove the
+
+1170
+00:45:12,750 --> 00:45:14,880
+stuff that sets line numbers if I remove
+
+1171
+00:45:14,880 --> 00:45:16,500
+those configurations and relaunch vim
+
+1172
+00:45:16,500 --> 00:45:17,790
+notice that I no longer have line
+
+1173
+00:45:17,790 --> 00:45:21,270
+numbers on the left but yeah so in short
+
+1174
+00:45:21,270 --> 00:45:23,099
+there's a lot of stuff you can configure
+
+1175
+00:45:23,099 --> 00:45:26,099
+with them we've given you a very basic
+
+1176
+00:45:26,099 --> 00:45:28,589
+configuration that tries to like remove
+
+1177
+00:45:28,589 --> 00:45:29,880
+some of the kind of weird behavior
+
+1178
+00:45:29,880 --> 00:45:32,160
+that's on by default in vim but we don't
+
+1179
+00:45:32,160 --> 00:45:33,480
+really try to enforce too many of our
+
+1180
+00:45:33,480 --> 00:45:35,550
+other opinions on you but of course like
+
+1181
+00:45:35,550 --> 00:45:37,080
+the three of us used them a lot and we
+
+1182
+00:45:37,080 --> 00:45:39,210
+have heavily customized VMR C's so we've
+
+1183
+00:45:39,210 --> 00:45:41,310
+linked to our personal configurations
+
+1184
+00:45:41,310 --> 00:45:42,480
+too if you want to take anything from
+
+1185
+00:45:42,480 --> 00:45:44,550
+that and also like thousands or like
+
+1186
+00:45:44,550 --> 00:45:46,050
+millions of people share their var C's
+
+1187
+00:45:46,050 --> 00:45:47,640
+on github so there's lots of places to
+
+1188
+00:45:47,640 --> 00:45:48,450
+look for inspiration
+
+1189
+00:45:48,450 --> 00:45:49,920
+there's also cool blog posts on this
+
+1190
+00:45:49,920 --> 00:45:53,040
+topic another thing you can do in vim is
+
+1191
+00:45:53,040 --> 00:45:54,810
+you can extend it with plugins that do
+
+1192
+00:45:54,810 --> 00:45:56,820
+all sorts of useful things this lets you
+
+1193
+00:45:56,820 --> 00:45:58,080
+do things like fuzzy file
+
+1194
+00:45:58,080 --> 00:45:59,730
+finding which a lot of text editors come
+
+1195
+00:45:59,730 --> 00:46:00,960
+with by default so you can get like a
+
+1196
+00:46:00,960 --> 00:46:02,790
+pop-up window you can type in a name of
+
+1197
+00:46:02,790 --> 00:46:04,710
+a file or approximately the name of a
+
+1198
+00:46:04,710 --> 00:46:07,020
+file and find it very quickly or there
+
+1199
+00:46:07,020 --> 00:46:08,480
+are things that show you like
+
+1200
+00:46:08,480 --> 00:46:10,920
+visualizations of undo history there are
+
+1201
+00:46:10,920 --> 00:46:14,970
+things that show you like file explorers
+
+1202
+00:46:14,970 --> 00:46:16,350
+things like that so we've linked to a
+
+1203
+00:46:16,350 --> 00:46:18,360
+couple of our favorite plugins on the
+
+1204
+00:46:18,360 --> 00:46:20,520
+course website and so I highly recommend
+
+1205
+00:46:20,520 --> 00:46:22,230
+becoming familiar with how to install a
+
+1206
+00:46:22,230 --> 00:46:23,340
+plug-in because it takes like three
+
+1207
+00:46:23,340 --> 00:46:24,840
+seconds and some of them are really cool
+
+1208
+00:46:24,840 --> 00:46:29,580
+and then finally the last topic I'll
+
+1209
+00:46:29,580 --> 00:46:32,130
+briefly mention before we finish today's
+
+1210
+00:46:32,130 --> 00:46:34,680
+lecture is vim mode and other programs
+
+1211
+00:46:34,680 --> 00:46:37,170
+so turns out that a lot of programmers
+
+1212
+00:46:37,170 --> 00:46:38,760
+we're really excited about VIMS
+
+1213
+00:46:38,760 --> 00:46:40,650
+interface and so they've implemented
+
+1214
+00:46:40,650 --> 00:46:42,780
+similar functionality and other tools
+
+1215
+00:46:42,780 --> 00:46:44,730
+for example like I've configured my
+
+1216
+00:46:44,730 --> 00:46:47,730
+Python repple to run in vim mode so I
+
+1217
+00:46:47,730 --> 00:46:49,530
+can like type in stuff here and if I
+
+1218
+00:46:49,530 --> 00:46:51,720
+press escape now I'm in normal mode in
+
+1219
+00:46:51,720 --> 00:46:53,250
+my Python repple and I can like move
+
+1220
+00:46:53,250 --> 00:46:55,230
+back and forth and like press X here
+
+1221
+00:46:55,230 --> 00:46:58,190
+delete a thing like CW change a word and
+
+1222
+00:46:58,190 --> 00:47:01,530
+do all those good things and it's not
+
+1223
+00:47:01,530 --> 00:47:03,210
+just the Python repple like I have my
+
+1224
+00:47:03,210 --> 00:47:05,910
+terminal behaving this way too so like I
+
+1225
+00:47:05,910 --> 00:47:07,890
+can type in whatever I want here and
+
+1226
+00:47:07,890 --> 00:47:10,050
+like escape and I'm in normal mode I can
+
+1227
+00:47:10,050 --> 00:47:11,430
+go here and like go into visual mode
+
+1228
+00:47:11,430 --> 00:47:13,320
+inside my terminal and like select
+
+1229
+00:47:13,320 --> 00:47:15,570
+blocks of text press tilde to change the
+
+1230
+00:47:15,570 --> 00:47:19,680
+case whatever so we've linked sir like
+
+1231
+00:47:19,680 --> 00:47:22,080
+how exactly you can enable vim mode for
+
+1232
+00:47:22,080 --> 00:47:25,800
+like bash z shell fish a lot of read
+
+1233
+00:47:25,800 --> 00:47:27,510
+line based programs like jupiter
+
+1234
+00:47:27,510 --> 00:47:28,710
+notebook a whole bunch of other things
+
+1235
+00:47:28,710 --> 00:47:30,330
+and if it's not another place you can
+
+1236
+00:47:30,330 --> 00:47:32,130
+probably find it by googling it because
+
+1237
+00:47:32,130 --> 00:47:33,840
+a lot of people like to have this sort
+
+1238
+00:47:33,840 --> 00:47:36,030
+of functionality and if you're really
+
+1239
+00:47:36,030 --> 00:47:37,380
+gonna like commit to learning them I
+
+1240
+00:47:37,380 --> 00:47:39,270
+think it's valuable to enable this sort
+
+1241
+00:47:39,270 --> 00:47:41,490
+of like vim emulation mode in every tool
+
+1242
+00:47:41,490 --> 00:47:43,080
+you use is like one or like make you
+
+1243
+00:47:43,080 --> 00:47:44,970
+learn the tool a lot better and to once
+
+1244
+00:47:44,970 --> 00:47:46,800
+you become good at vim like those skills
+
+1245
+00:47:46,800 --> 00:47:47,970
+will now transfer to all your other
+
+1246
+00:47:47,970 --> 00:47:53,130
+tools you use okay so I think that's it
+
+1247
+00:47:53,130 --> 00:47:54,840
+for our rapid introduction to them
+
+1248
+00:47:54,840 --> 00:47:57,060
+there's some other neat material that we
+
+1249
+00:47:57,060 --> 00:47:58,320
+weren't able to fit in today's lecture
+
+1250
+00:47:58,320 --> 00:47:59,790
+but it's in the lecture notes and then
+
+1251
+00:47:59,790 --> 00:48:01,140
+finally I highly recommend going through
+
+1252
+00:48:01,140 --> 00:48:02,880
+the exercises for today like at least
+
+1253
+00:48:02,880 --> 00:48:05,220
+for me personally I think spending time
+
+1254
+00:48:05,220 --> 00:48:07,440
+learning my text editor has been like
+
+1255
+00:48:07,440 --> 00:48:08,910
+the most beneficial thing out of like
+
+1256
+00:48:08,910 --> 00:48:10,140
+the kinds of things we're teaching in
+
+1257
+00:48:10,140 --> 00:48:11,580
+this class
+
+1258
+00:48:11,580 --> 00:48:14,020
+so yeah that's it for today's lecture
+
+1259
+00:48:14,020 --> 00:48:15,540
+and we'll see you tomorrow
+
+1260
+00:48:15,540 --> 00:48:17,530
+note that we've changed tomorrow's
+
+1261
+00:48:17,530 --> 00:48:20,320
+lecture to data wrangling Thursday and
+
+1262
+00:48:20,320 --> 00:48:22,060
+Tuesday lectures are now switched this
+
+1263
+00:48:22,060 --> 00:48:23,500
+is reflected on the course website in
+
+1264
+00:48:23,500 --> 00:48:25,000
+case anybody was going to come to one
+
+1265
+00:48:25,000 --> 00:48:27,510
+but not the other
+
