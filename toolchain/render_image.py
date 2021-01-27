@@ -65,7 +65,7 @@ def main():
     os.mkdir(rendered_images)
     # to_render = [i for i in range(6253+1)]
     # renderdata = [RenderData(i, None, -1, False) for i in range(6253+1)]
-    renderdata = [RenderData(i, None, -1, False) for i in range(0, 6253+2)]
+    renderdata = [RenderData(i, None, -1, False) for i in range(0, 6253+2)] # 为了调试，此处限定了帧率上限范围
     for item in os.listdir(subtitle_images):
         match_result = FILENAME_EXPR.match(item)
         groupdict = match_result.groupdict()
