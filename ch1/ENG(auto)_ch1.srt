@@ -1,0 +1,4084 @@
+1
+00:00:00,000 --> 00:00:03,720
+No okay welcome back and today we're
+
+2
+00:00:03,720 --> 00:00:05,580
+gonna cover kind of a couple separate
+
+3
+00:00:05,580 --> 00:00:07,140
+like two main topics straight to the
+
+4
+00:00:07,140 --> 00:00:09,120
+cell first we're gonna do some kind of
+
+5
+00:00:09,120 --> 00:00:11,190
+cell scripting mainly related to bass
+
+6
+00:00:11,190 --> 00:00:13,320
+which is like this a lot most of you
+
+7
+00:00:13,320 --> 00:00:16,560
+will start and like in Mack like like
+
+8
+00:00:16,560 --> 00:00:19,230
+most Linux systems as the beef also and
+
+9
+00:00:19,230 --> 00:00:20,550
+it's also kind of backward compatible
+
+10
+00:00:20,550 --> 00:00:22,170
+through other souls like see see it's
+
+11
+00:00:22,170 --> 00:00:23,519
+pretty nice and then we're gonna cover
+
+12
+00:00:23,519 --> 00:00:25,560
+some kind of or sell tools that are
+
+13
+00:00:25,560 --> 00:00:27,359
+really convenient when you're boy doing
+
+14
+00:00:27,359 --> 00:00:29,580
+like really repetitive tasks like
+
+15
+00:00:29,580 --> 00:00:31,890
+looking for some piece of code them for
+
+16
+00:00:31,890 --> 00:00:34,680
+some elusive file a and there are very
+
+17
+00:00:34,680 --> 00:00:36,719
+kind of really nice built-in comments
+
+18
+00:00:36,719 --> 00:00:39,120
+that will it kind of really help help
+
+19
+00:00:39,120 --> 00:00:42,300
+you to do those things and so this
+
+20
+00:00:42,300 --> 00:00:43,980
+territory kind of introduce you to the
+
+21
+00:00:43,980 --> 00:00:45,930
+cell and like kind of like some of its
+
+22
+00:00:45,930 --> 00:00:48,329
+quirks sound like how you're executing
+
+23
+00:00:48,329 --> 00:00:51,149
+commands reacting them it they're gonna
+
+24
+00:00:51,149 --> 00:00:53,610
+kind of cover more about like the syntax
+
+25
+00:00:53,610 --> 00:00:55,829
+of where like the bible's the control
+
+26
+00:00:55,829 --> 00:00:58,879
+flow functions of set so for example
+
+27
+00:00:58,879 --> 00:01:02,100
+ones you're kind of drop into a cell say
+
+28
+00:01:02,100 --> 00:01:03,750
+you want to kind of define a variable
+
+29
+00:01:03,750 --> 00:01:05,519
+which is kind of kind of like one of the
+
+30
+00:01:05,519 --> 00:01:08,610
+first things you learn to do in a in a
+
+31
+00:01:08,610 --> 00:01:10,680
+primary language here you could do
+
+32
+00:01:10,680 --> 00:01:13,830
+something like foo equals bar and now we
+
+33
+00:01:13,830 --> 00:01:16,920
+can access the value of foo by doing
+
+34
+00:01:16,920 --> 00:01:19,890
+dollar food and that's
+
+35
+00:01:19,890 --> 00:01:23,400
+bar perfect a one quick that you need to
+
+36
+00:01:23,400 --> 00:01:26,159
+be aware is that like spaces are really
+
+37
+00:01:26,159 --> 00:01:28,049
+critical when you're dealing with bus
+
+38
+00:01:28,049 --> 00:01:31,350
+mainly because spaces reserved and that
+
+39
+00:01:31,350 --> 00:01:33,840
+will be for separating arguments so for
+
+40
+00:01:33,840 --> 00:01:36,329
+example something like foo equals bar
+
+41
+00:01:36,329 --> 00:01:40,530
+won't work and the the in the soil is
+
+42
+00:01:40,530 --> 00:01:42,540
+gonna tell you why is no work is because
+
+43
+00:01:42,540 --> 00:01:44,430
+the food common is not working like if
+
+44
+00:01:44,430 --> 00:01:47,040
+food is not exist and here where it's
+
+45
+00:01:47,040 --> 00:01:48,750
+actually happening we're not assigning
+
+46
+00:01:48,750 --> 00:01:50,970
+food to are what is happening we're
+
+47
+00:01:50,970 --> 00:01:53,040
+calling the full program with the first
+
+48
+00:01:53,040 --> 00:01:55,290
+argument equal sign and the second
+
+49
+00:01:55,290 --> 00:02:00,030
+argument bar and in general whenever you
+
+50
+00:02:00,030 --> 00:02:02,280
+are having some issues some like some
+
+51
+00:02:02,280 --> 00:02:05,250
+files with the spaces we do need to be
+
+52
+00:02:05,250 --> 00:02:07,259
+careful about that about you you need to
+
+53
+00:02:07,259 --> 00:02:10,288
+be careful about like coding strings
+
+54
+00:02:10,288 --> 00:02:13,260
+that so going into that how you do is
+
+55
+00:02:13,260 --> 00:02:15,180
+strings in bus there are two ways that
+
+56
+00:02:15,180 --> 00:02:18,810
+you can define a string you can define
+
+57
+00:02:18,810 --> 00:02:22,019
+strings using double quotes and you can
+
+58
+00:02:22,019 --> 00:02:27,000
+define strings using single editor using
+
+59
+00:02:27,000 --> 00:02:31,680
+single quotes a however for literal
+
+60
+00:02:31,680 --> 00:02:33,930
+strings they are equivalent but for the
+
+61
+00:02:33,930 --> 00:02:36,180
+rest they are not equal so for example
+
+62
+00:02:36,180 --> 00:02:41,849
+if we do equals dollar value is dollar
+
+63
+00:02:41,849 --> 00:02:46,019
+full the dollar foo is has been kind of
+
+64
+00:02:46,019 --> 00:02:48,480
+like expanded like strings to delete to
+
+65
+00:02:48,480 --> 00:02:50,790
+the value of the full variable in the
+
+66
+00:02:50,790 --> 00:02:54,510
+cell whereas if we do this with a simple
+
+67
+00:02:54,510 --> 00:02:58,079
+string we are just getting the dollar
+
+68
+00:02:58,079 --> 00:03:01,170
+foo as it is unlike single quotes won't
+
+69
+00:03:01,170 --> 00:03:03,000
+be replacing and again it's really easy
+
+70
+00:03:03,000 --> 00:03:05,159
+to kind of write a scrip assume that
+
+71
+00:03:05,159 --> 00:03:07,049
+this is kind of like Python that you
+
+72
+00:03:07,049 --> 00:03:09,780
+might be more familiar with and not
+
+73
+00:03:09,780 --> 00:03:13,319
+realize all that and this is the way you
+
+74
+00:03:13,319 --> 00:03:15,599
+will assign variables then a bass or
+
+75
+00:03:15,599 --> 00:03:17,519
+walk like control flow techniques that
+
+76
+00:03:17,519 --> 00:03:20,359
+we later like for loops while loops and
+
+77
+00:03:20,359 --> 00:03:22,889
+the only thing is you can define
+
+78
+00:03:22,889 --> 00:03:26,609
+functions and a we can access like a
+
+79
+00:03:26,609 --> 00:03:29,160
+function they have define here and here
+
+80
+00:03:29,160 --> 00:03:31,650
+we have the MCD function has been
+
+81
+00:03:31,650 --> 00:03:35,160
+defined and the thing is so far we have
+
+82
+00:03:35,160 --> 00:03:37,319
+just kind of seen how to execute several
+
+83
+00:03:37,319 --> 00:03:39,239
+comments by piping in to them kind of
+
+84
+00:03:39,239 --> 00:03:42,090
+saw that briefly yesterday but a lot of
+
+85
+00:03:42,090 --> 00:03:43,769
+times you want to do where is one thing
+
+86
+00:03:43,769 --> 00:03:45,840
+and then another thing and that's kind
+
+87
+00:03:45,840 --> 00:03:49,280
+of like the the sequential execution
+
+88
+00:03:49,280 --> 00:03:52,319
+that we get here here for example we're
+
+89
+00:03:52,319 --> 00:03:57,810
+calling the MCD function and we first
+
+90
+00:03:57,810 --> 00:03:59,699
+are calling it with the make their
+
+91
+00:03:59,699 --> 00:04:02,010
+common which is like creating dessert
+
+92
+00:04:02,010 --> 00:04:05,609
+tree a heat baller one is like a special
+
+93
+00:04:05,609 --> 00:04:07,440
+viral and this is the way that bus works
+
+94
+00:04:07,440 --> 00:04:09,810
+whereas in other scripting languages
+
+95
+00:04:09,810 --> 00:04:12,930
+that will be like are to be the first
+
+96
+00:04:12,930 --> 00:04:15,810
+the first item of the array are the V we
+
+97
+00:04:15,810 --> 00:04:17,760
+contain the argument in passes dollar
+
+98
+00:04:17,760 --> 00:04:20,579
+one and you know a lot of things in bars
+
+99
+00:04:20,579 --> 00:04:22,710
+will be dollar something and will be
+
+100
+00:04:22,710 --> 00:04:25,110
+reserved we will be seeing more examples
+
+101
+00:04:25,110 --> 00:04:26,470
+later and
+
+102
+00:04:26,470 --> 00:04:29,380
+we have created the folder we CD into
+
+103
+00:04:29,380 --> 00:04:31,810
+the into that folder which is kind of
+
+104
+00:04:31,810 --> 00:04:34,210
+like a very common parent that you will
+
+105
+00:04:34,210 --> 00:04:37,420
+see we will actually type this directly
+
+106
+00:04:37,420 --> 00:04:39,190
+into our soul and it will work and it
+
+107
+00:04:39,190 --> 00:04:41,170
+will define this function but sometimes
+
+108
+00:04:41,170 --> 00:04:44,470
+is nicer to kind of grab things in the
+
+109
+00:04:44,470 --> 00:04:48,630
+file and what we can do is we can source
+
+110
+00:04:48,630 --> 00:04:52,450
+this and I will execute this script in
+
+111
+00:04:52,450 --> 00:04:55,090
+your soul and load it so now it looks
+
+112
+00:04:55,090 --> 00:04:58,360
+like nothing happened but now the NCD
+
+113
+00:04:58,360 --> 00:05:02,140
+function has been defined in torso so we
+
+114
+00:05:02,140 --> 00:05:05,020
+can now some people do like MCD test and
+
+115
+00:05:05,020 --> 00:05:08,890
+now we move from the tools directory to
+
+116
+00:05:08,890 --> 00:05:10,750
+the test directory we both like we
+
+117
+00:05:10,750 --> 00:05:13,060
+created the the folder and we move into
+
+118
+00:05:13,060 --> 00:05:19,330
+it what else so I'm a result is like we
+
+119
+00:05:19,330 --> 00:05:21,130
+can access we access the first argument
+
+120
+00:05:21,130 --> 00:05:25,090
+with dollar one there's a lot more kind
+
+121
+00:05:25,090 --> 00:05:27,670
+of reserved comments for example door
+
+122
+00:05:27,670 --> 00:05:29,440
+zero will be the name of the script
+
+123
+00:05:29,440 --> 00:05:32,680
+there are two to three dollar nine will
+
+124
+00:05:32,680 --> 00:05:34,510
+be the second through the ninth
+
+125
+00:05:34,510 --> 00:05:36,610
+arguments that the word script takes
+
+126
+00:05:36,610 --> 00:05:39,190
+some of these reserved keywords are more
+
+127
+00:05:39,190 --> 00:05:41,860
+and also kind of be reggae use in the
+
+128
+00:05:41,860 --> 00:05:45,070
+cells for example dollar interrogation
+
+129
+00:05:45,070 --> 00:05:48,669
+mark we get you the error code from the
+
+130
+00:05:48,669 --> 00:05:53,140
+previous common a and which I will also
+
+131
+00:05:53,140 --> 00:05:55,000
+explain briefly but for example dollar
+
+132
+00:05:55,000 --> 00:05:56,860
+underscore will get you the last
+
+133
+00:05:56,860 --> 00:05:59,470
+argument of the previous comment so
+
+134
+00:05:59,470 --> 00:06:03,370
+another way we will have done the issues
+
+135
+00:06:03,370 --> 00:06:06,460
+we will have say like egg came a little
+
+136
+00:06:06,460 --> 00:06:09,400
+test and instead of kind of rewriting
+
+137
+00:06:09,400 --> 00:06:12,100
+test we can access that last argument as
+
+138
+00:06:12,100 --> 00:06:17,040
+part of the using the dollar dollar
+
+139
+00:06:17,040 --> 00:06:19,840
+underscore like that will be replaced
+
+140
+00:06:19,840 --> 00:06:24,720
+with test and now we go into tests in
+
+141
+00:06:24,720 --> 00:06:26,800
+there are a lot of them this will kind
+
+142
+00:06:26,800 --> 00:06:28,240
+of familiarize with them another one I
+
+143
+00:06:28,240 --> 00:06:31,330
+often use is kind of it's called bang
+
+144
+00:06:31,330 --> 00:06:33,460
+bang you will run into this whenever you
+
+145
+00:06:33,460 --> 00:06:35,590
+for example are trying to create
+
+146
+00:06:35,590 --> 00:06:37,990
+something and you don't have enough
+
+147
+00:06:37,990 --> 00:06:40,180
+permissions then you can do suit
+
+148
+00:06:40,180 --> 00:06:43,150
+bang-bang and then that will replace the
+
+149
+00:06:43,150 --> 00:06:46,300
+common in there and now you can just try
+
+150
+00:06:46,300 --> 00:06:47,860
+doing that and now it will prompt you
+
+151
+00:06:47,860 --> 00:06:49,300
+for password because you have sudo
+
+152
+00:06:49,300 --> 00:06:55,210
+permission um before I mentioned the
+
+153
+00:06:55,210 --> 00:06:58,030
+kind of the error command yesterday we
+
+154
+00:06:58,030 --> 00:06:59,560
+saw that in general there are like
+
+155
+00:06:59,560 --> 00:07:02,530
+different ways a process can communicate
+
+156
+00:07:02,530 --> 00:07:04,150
+with kind of all our processes or
+
+157
+00:07:04,150 --> 00:07:07,060
+comments we mentioned the standard input
+
+158
+00:07:07,060 --> 00:07:09,370
+which was it was like the less than like
+
+159
+00:07:09,370 --> 00:07:11,259
+getting stuff through this entire input
+
+160
+00:07:11,259 --> 00:07:13,270
+getting putting stuff into the standard
+
+161
+00:07:13,270 --> 00:07:15,610
+output there are kind of a couple more
+
+162
+00:07:15,610 --> 00:07:16,960
+interesting things it's also like a
+
+163
+00:07:16,960 --> 00:07:19,630
+standard error a stream where you kind
+
+164
+00:07:19,630 --> 00:07:21,310
+of write errors that happen with your
+
+165
+00:07:21,310 --> 00:07:23,139
+program and you want to pollute the
+
+166
+00:07:23,139 --> 00:07:25,120
+Easterner output it's also the error
+
+167
+00:07:25,120 --> 00:07:27,759
+code which is kind of like a general
+
+168
+00:07:27,759 --> 00:07:29,650
+thing in other foreign languages of like
+
+169
+00:07:29,650 --> 00:07:31,660
+some kind of way of reporting how the
+
+170
+00:07:31,660 --> 00:07:36,190
+entire run of something when so if we do
+
+171
+00:07:36,190 --> 00:07:41,710
+something like echo hello and we like
+
+172
+00:07:41,710 --> 00:07:44,050
+wait for the value is zero and it's here
+
+173
+00:07:44,050 --> 00:07:45,940
+because everything went okay anyone
+
+174
+00:07:45,940 --> 00:07:49,300
+where any issues and a zero exit code is
+
+175
+00:07:49,300 --> 00:07:51,070
+the same as you will get in a language
+
+176
+00:07:51,070 --> 00:07:53,530
+like C like Cu means everything went
+
+177
+00:07:53,530 --> 00:07:55,510
+fine there are no errors however
+
+178
+00:07:55,510 --> 00:07:57,729
+sometimes things won't work like
+
+179
+00:07:57,729 --> 00:08:02,080
+sometimes like we try to grab for fubar
+
+180
+00:08:02,080 --> 00:08:06,729
+in or or MCD Script and now we check for
+
+181
+00:08:06,729 --> 00:08:09,190
+the value is one and that's because we
+
+182
+00:08:09,190 --> 00:08:11,889
+try to search for a fuller string in the
+
+183
+00:08:11,889 --> 00:08:13,780
+MCD script and it wasn't there
+
+184
+00:08:13,780 --> 00:08:16,990
+so like the grep doesn't bring anything
+
+185
+00:08:16,990 --> 00:08:19,750
+but lets us know the things didn't work
+
+186
+00:08:19,750 --> 00:08:22,389
+by giving us like a one error code and
+
+187
+00:08:22,389 --> 00:08:24,550
+there are some interesting comments like
+
+188
+00:08:24,550 --> 00:08:29,259
+true for example we always have zero
+
+189
+00:08:29,259 --> 00:08:33,219
+error code and false will always have
+
+190
+00:08:33,219 --> 00:08:38,078
+one error code and then there are like
+
+191
+00:08:38,078 --> 00:08:40,240
+these logical operators that you can use
+
+192
+00:08:40,240 --> 00:08:42,610
+to do some sort of like conditionals for
+
+193
+00:08:42,610 --> 00:08:45,100
+example one way you also have ifs
+
+194
+00:08:45,100 --> 00:08:47,320
+analysis that will clear but you can do
+
+195
+00:08:47,320 --> 00:08:52,510
+something like false and oops fail so
+
+196
+00:08:52,510 --> 00:08:53,810
+here we have to come
+
+197
+00:08:53,810 --> 00:08:57,680
+connected by this or appear what boss is
+
+198
+00:08:57,680 --> 00:09:00,080
+gonna do here is gonna execute the first
+
+199
+00:09:00,080 --> 00:09:04,460
+one and if the first one being working
+
+200
+00:09:04,460 --> 00:09:06,110
+just gonna execute the second one so
+
+201
+00:09:06,110 --> 00:09:08,690
+here we get it because the like it's
+
+202
+00:09:08,690 --> 00:09:10,790
+gonna try to do the logical or if the
+
+203
+00:09:10,790 --> 00:09:13,160
+first one didn't have a serial called in
+
+204
+00:09:13,160 --> 00:09:14,630
+is gonna try to do the second one
+
+205
+00:09:14,630 --> 00:09:17,930
+similarly if we instead of use false we
+
+206
+00:09:17,930 --> 00:09:20,570
+use something like true since true will
+
+207
+00:09:20,570 --> 00:09:23,029
+have a serial code then the second one
+
+208
+00:09:23,029 --> 00:09:25,760
+will be short circuit and we don't it
+
+209
+00:09:25,760 --> 00:09:34,700
+won't be printed similarly we have an an
+
+210
+00:09:34,700 --> 00:09:38,150
+operator which will only execute the
+
+211
+00:09:38,150 --> 00:09:40,400
+second part if the first one like run
+
+212
+00:09:40,400 --> 00:09:44,570
+without errors and this same thing will
+
+213
+00:09:44,570 --> 00:09:46,550
+happen if the first one fails then the
+
+214
+00:09:46,550 --> 00:09:48,980
+second part of this demon won't be
+
+215
+00:09:48,980 --> 00:09:53,360
+executed a kind of not exactly ready to
+
+216
+00:09:53,360 --> 00:09:55,790
+that but another thing that you will see
+
+217
+00:09:55,790 --> 00:10:03,560
+is that no matter what you execute then
+
+218
+00:10:03,560 --> 00:10:05,510
+you can concatenate commands using a
+
+219
+00:10:05,510 --> 00:10:08,000
+semicolon in the same line and that will
+
+220
+00:10:08,000 --> 00:10:12,589
+always spread beyond what we haven't
+
+221
+00:10:12,589 --> 00:10:14,330
+seen for example is how will you go
+
+222
+00:10:14,330 --> 00:10:17,630
+about doing kind of getting the output
+
+223
+00:10:17,630 --> 00:10:20,420
+of a common into a viable and the way we
+
+224
+00:10:20,420 --> 00:10:23,990
+can do that is doing something like this
+
+225
+00:10:23,990 --> 00:10:26,630
+where what we're doing here is we're
+
+226
+00:10:26,630 --> 00:10:29,360
+getting the output of the PWD comment
+
+227
+00:10:29,360 --> 00:10:32,030
+which is just printing the present
+
+228
+00:10:32,030 --> 00:10:33,380
+working directory where we are right now
+
+229
+00:10:33,380 --> 00:10:35,839
+and then we're storing that into the
+
+230
+00:10:35,839 --> 00:10:40,280
+full bio so we do that and then we as
+
+231
+00:10:40,280 --> 00:10:43,280
+for full we were string and more
+
+232
+00:10:43,280 --> 00:10:45,550
+generally we can do this thing called
+
+233
+00:10:45,550 --> 00:10:50,810
+common substitution or but putting it
+
+234
+00:10:50,810 --> 00:10:52,459
+into any string and since we're using
+
+235
+00:10:52,459 --> 00:10:54,500
+like double quotes instead of single
+
+236
+00:10:54,500 --> 00:10:57,800
+quotes the thing will be expanded and it
+
+237
+00:10:57,800 --> 00:11:01,130
+will tell us that m we are in this
+
+238
+00:11:01,130 --> 00:11:04,970
+working folio a another interesting
+
+239
+00:11:04,970 --> 00:11:07,610
+thing is right now what
+
+240
+00:11:07,610 --> 00:11:09,350
+this is expanding this to a string
+
+241
+00:11:09,350 --> 00:11:12,350
+instead of kind of like M this is the
+
+242
+00:11:12,350 --> 00:11:14,480
+spending as a string underneath T and
+
+243
+00:11:14,480 --> 00:11:17,060
+like lesser known tool is called process
+
+244
+00:11:17,060 --> 00:11:19,550
+substitution which is kind of similar
+
+245
+00:11:19,550 --> 00:11:25,250
+where we will do and it will hear for
+
+246
+00:11:25,250 --> 00:11:29,510
+example the less than parenthesis some
+
+247
+00:11:29,510 --> 00:11:31,670
+command and another parenthesis that
+
+248
+00:11:31,670 --> 00:11:33,410
+will do is that will execute that will
+
+249
+00:11:33,410 --> 00:11:35,390
+get the output to kind of like a
+
+250
+00:11:35,390 --> 00:11:37,550
+temporary file and you will give the
+
+251
+00:11:37,550 --> 00:11:40,459
+file handle to the common so here what
+
+252
+00:11:40,459 --> 00:11:43,160
+we're doing is we're getting where LS in
+
+253
+00:11:43,160 --> 00:11:44,690
+the directory cannot put it into a
+
+254
+00:11:44,690 --> 00:11:46,940
+temporary file doing the same thing for
+
+255
+00:11:46,940 --> 00:11:48,410
+the pine folder and then we're
+
+256
+00:11:48,410 --> 00:11:51,620
+concatenating both files and this we
+
+257
+00:11:51,620 --> 00:11:53,360
+might be really handy because some
+
+258
+00:11:53,360 --> 00:11:56,570
+comments instead of expecting the input
+
+259
+00:11:56,570 --> 00:11:58,670
+coming from the STD in they are
+
+260
+00:11:58,670 --> 00:12:01,040
+expecting things to come from some file
+
+261
+00:12:01,040 --> 00:12:05,149
+that is giving some of the arguments so
+
+262
+00:12:05,149 --> 00:12:07,760
+we get kind of both things concatenated
+
+263
+00:12:07,760 --> 00:12:14,600
+a thing like so further has been a lot
+
+264
+00:12:14,600 --> 00:12:16,310
+of information let's see kind of like a
+
+265
+00:12:16,310 --> 00:12:20,149
+simple like an example X script where we
+
+266
+00:12:20,149 --> 00:12:24,019
+see a few of these things so sample here
+
+267
+00:12:24,019 --> 00:12:27,529
+we're having like a string and we have
+
+268
+00:12:27,529 --> 00:12:30,410
+kind of this door date don't date is a
+
+269
+00:12:30,410 --> 00:12:32,209
+program so again there's a lot of
+
+270
+00:12:32,209 --> 00:12:34,670
+programs in UNIX you will kind of slowly
+
+271
+00:12:34,670 --> 00:12:36,709
+familiarize with a lot of them they just
+
+272
+00:12:36,709 --> 00:12:39,440
+prints a what the current date is and
+
+273
+00:12:39,440 --> 00:12:44,500
+you can specify different formats a then
+
+274
+00:12:44,500 --> 00:12:48,079
+we have these doors here here Toller CU
+
+275
+00:12:48,079 --> 00:12:49,880
+is the name of the script that we're
+
+276
+00:12:49,880 --> 00:12:54,500
+running then we have bowler has does the
+
+277
+00:12:54,500 --> 00:12:56,750
+number of arguments that we are giving
+
+278
+00:12:56,750 --> 00:12:59,269
+to the common and then dollar dollar is
+
+279
+00:12:59,269 --> 00:13:01,610
+the process ID of this common dairies
+
+280
+00:13:01,610 --> 00:13:04,160
+front again there's a lot of kind of
+
+281
+00:13:04,160 --> 00:13:05,720
+these dollar things they're not
+
+282
+00:13:05,720 --> 00:13:07,430
+intuitive because they don't have like a
+
+283
+00:13:07,430 --> 00:13:09,680
+mnemonic way of remember if maybe torah
+
+284
+00:13:09,680 --> 00:13:12,010
+has but it can be you just kind of have
+
+285
+00:13:12,010 --> 00:13:14,269
+really seen them and get familiar with
+
+286
+00:13:14,269 --> 00:13:14,480
+it
+
+287
+00:13:14,480 --> 00:13:17,720
+here we have this dollar at and that
+
+288
+00:13:17,720 --> 00:13:19,459
+will expand to all the arguments so
+
+289
+00:13:19,459 --> 00:13:21,680
+instead of having to assume that may
+
+290
+00:13:21,680 --> 00:13:23,930
+say we have three arguments and ready in
+
+291
+00:13:23,930 --> 00:13:26,810
+dollar one or two or three if we don't
+
+292
+00:13:26,810 --> 00:13:28,460
+know how many arguments we can put all
+
+293
+00:13:28,460 --> 00:13:31,460
+those arguments there and that has been
+
+294
+00:13:31,460 --> 00:13:33,800
+given to like a four and the four loop
+
+295
+00:13:33,800 --> 00:13:39,170
+will in time get like the file viable
+
+296
+00:13:39,170 --> 00:13:42,320
+and it will kind of be given it's one of
+
+297
+00:13:42,320 --> 00:13:45,709
+the arguments so what we're doing is for
+
+298
+00:13:45,709 --> 00:13:47,690
+every one of the arguments were given
+
+299
+00:13:47,690 --> 00:13:51,830
+then in the next line we are running the
+
+300
+00:13:51,830 --> 00:13:54,440
+grep common which is search for a
+
+301
+00:13:54,440 --> 00:13:57,050
+substring in some file and we're
+
+302
+00:13:57,050 --> 00:13:59,360
+searching for the string fubar
+
+303
+00:13:59,360 --> 00:14:04,070
+in the file here we have kind of put the
+
+304
+00:14:04,070 --> 00:14:06,680
+variables of the file to expand and
+
+305
+00:14:06,680 --> 00:14:08,990
+yesterday we saw the like if we care
+
+306
+00:14:08,990 --> 00:14:11,720
+about the output of a program we can
+
+307
+00:14:11,720 --> 00:14:13,880
+redirect it to somewhere to save it or
+
+308
+00:14:13,880 --> 00:14:15,700
+like to connect it to some other file
+
+309
+00:14:15,700 --> 00:14:19,010
+key but sometimes you want the opposite
+
+310
+00:14:19,010 --> 00:14:21,470
+sometimes here for example we care we're
+
+311
+00:14:21,470 --> 00:14:23,360
+going to care about the error code about
+
+312
+00:14:23,360 --> 00:14:24,950
+this script we're going to care whether
+
+313
+00:14:24,950 --> 00:14:27,920
+the crap run successfully or it didn't
+
+314
+00:14:27,920 --> 00:14:30,740
+so we can actually be scarred and
+
+315
+00:14:30,740 --> 00:14:33,950
+tiredly what the output like both the
+
+316
+00:14:33,950 --> 00:14:36,110
+standard output and standard error of
+
+317
+00:14:36,110 --> 00:14:39,560
+the grab comma and what we're doing is
+
+318
+00:14:39,560 --> 00:14:42,529
+we're redirecting the output to deafen
+
+319
+00:14:42,529 --> 00:14:44,930
+all which is kind of like a special
+
+320
+00:14:44,930 --> 00:14:47,600
+device in in UNIX systems where you can
+
+321
+00:14:47,600 --> 00:14:50,330
+like write and it won't it will be
+
+322
+00:14:50,330 --> 00:14:51,890
+discarded like you can drive no matter
+
+323
+00:14:51,890 --> 00:14:53,810
+how much you want to there and it will
+
+324
+00:14:53,810 --> 00:14:56,140
+be discarded and here's the kind of the
+
+325
+00:14:56,140 --> 00:14:58,339
+grate and our symbol that we should just
+
+326
+00:14:58,339 --> 00:15:00,770
+tell you for project in the output here
+
+327
+00:15:00,770 --> 00:15:03,770
+you have like a to greater than and as
+
+328
+00:15:03,770 --> 00:15:05,240
+some of you might have guessed by now
+
+329
+00:15:05,240 --> 00:15:07,400
+this is for erecting the standard error
+
+330
+00:15:07,400 --> 00:15:09,529
+because those those two streams are
+
+331
+00:15:09,529 --> 00:15:12,740
+separate and you can have to tell bus
+
+332
+00:15:12,740 --> 00:15:15,950
+what to do with each one okay so here we
+
+333
+00:15:15,950 --> 00:15:17,959
+run with check if the file has fuller
+
+334
+00:15:17,959 --> 00:15:20,810
+and if the file has fewer than it's
+
+335
+00:15:20,810 --> 00:15:23,089
+going to have a serial code if it
+
+336
+00:15:23,089 --> 00:15:24,500
+doesn't have four words gonna have a
+
+337
+00:15:24,500 --> 00:15:25,579
+non-spherical
+
+338
+00:15:25,579 --> 00:15:28,149
+so that's actually what we check in this
+
+339
+00:15:28,149 --> 00:15:32,450
+if part of the common we say get me the
+
+340
+00:15:32,450 --> 00:15:34,640
+error code again this dollar question
+
+341
+00:15:34,640 --> 00:15:35,279
+mark
+
+342
+00:15:35,279 --> 00:15:37,319
+and then we have a comparison operator
+
+343
+00:15:37,319 --> 00:15:41,730
+which is an e for not equals unlike some
+
+344
+00:15:41,730 --> 00:15:44,490
+other primal images we do have kind of
+
+345
+00:15:44,490 --> 00:15:47,790
+like equals equals behind equals these
+
+346
+00:15:47,790 --> 00:15:51,209
+symbols in Bath's they're like kind of
+
+347
+00:15:51,209 --> 00:15:53,790
+like a reserved set of comparisons and
+
+348
+00:15:53,790 --> 00:15:55,110
+it's mainly because there's a lot of
+
+349
+00:15:55,110 --> 00:15:57,660
+things you might want to test for when
+
+350
+00:15:57,660 --> 00:15:59,220
+you're in the cell here for example
+
+351
+00:15:59,220 --> 00:16:02,009
+we're just taking probably two values to
+
+352
+00:16:02,009 --> 00:16:04,110
+into your values being the same or for
+
+353
+00:16:04,110 --> 00:16:08,519
+example here the minus F check will let
+
+354
+00:16:08,519 --> 00:16:10,559
+us know if a file exists which is
+
+355
+00:16:10,559 --> 00:16:12,809
+something that you will run into very
+
+356
+00:16:12,809 --> 00:16:17,730
+very commonly I'm going back to the
+
+357
+00:16:17,730 --> 00:16:23,160
+example then what happens when we what
+
+358
+00:16:23,160 --> 00:16:26,850
+happens when we go into if the file did
+
+359
+00:16:26,850 --> 00:16:29,629
+not have fubar like there was like an
+
+360
+00:16:29,629 --> 00:16:32,129
+nonzero error code then we print like
+
+361
+00:16:32,129 --> 00:16:33,540
+this file doesn't happen if we were
+
+362
+00:16:33,540 --> 00:16:36,540
+we're going to add one and what we do is
+
+363
+00:16:36,540 --> 00:16:40,889
+we echo this like has four hoping this
+
+364
+00:16:40,889 --> 00:16:43,350
+is a comment to the file and then we're
+
+365
+00:16:43,350 --> 00:16:45,449
+using the privacy of like greater
+
+366
+00:16:45,449 --> 00:16:47,879
+gradient to append at the end of the
+
+367
+00:16:47,879 --> 00:16:51,149
+file and here since the file is has been
+
+368
+00:16:51,149 --> 00:16:53,129
+fed through the script and we don't know
+
+369
+00:16:53,129 --> 00:16:55,019
+beforehand we have to substitute the
+
+370
+00:16:55,019 --> 00:17:00,170
+Bible of the filename a we can actually
+
+371
+00:17:00,170 --> 00:17:03,899
+run this we already have like correct
+
+372
+00:17:03,899 --> 00:17:06,480
+permissions in this script and we can
+
+373
+00:17:06,480 --> 00:17:08,490
+give a few example you have like a few
+
+374
+00:17:08,490 --> 00:17:10,949
+files in this folder and CD is the one
+
+375
+00:17:10,949 --> 00:17:12,898
+we we saw the beginning for the MC
+
+376
+00:17:12,898 --> 00:17:15,209
+function like some script function and
+
+377
+00:17:15,209 --> 00:17:18,270
+we can even feed it the own like script
+
+378
+00:17:18,270 --> 00:17:20,970
+to itself to check that like it has four
+
+379
+00:17:20,970 --> 00:17:25,109
+in it and we run it and we first we can
+
+380
+00:17:25,109 --> 00:17:26,819
+see that like this different like
+
+381
+00:17:26,819 --> 00:17:29,600
+variables that we saw that we have been
+
+382
+00:17:29,600 --> 00:17:33,510
+successfully expanded we have date has
+
+383
+00:17:33,510 --> 00:17:36,840
+been replaced to the current time then
+
+384
+00:17:36,840 --> 00:17:39,240
+were running this program with three
+
+385
+00:17:39,240 --> 00:17:44,850
+arguments this random and PD and then is
+
+386
+00:17:44,850 --> 00:17:47,039
+telling us om CD doesn't have any fours
+
+387
+00:17:47,039 --> 00:17:48,310
+we are having a new
+
+388
+00:17:48,310 --> 00:17:50,590
+and this the business profile doesn't
+
+389
+00:17:50,590 --> 00:17:53,140
+have one so now for example look sue MCD
+
+390
+00:17:53,140 --> 00:17:55,950
+has big comment that we were looking for
+
+391
+00:17:55,950 --> 00:18:01,060
+and one other thing to know when you're
+
+392
+00:18:01,060 --> 00:18:05,760
+kind of executing these scripts is that
+
+393
+00:18:05,760 --> 00:18:07,900
+here we have like three completely
+
+394
+00:18:07,900 --> 00:18:10,420
+different arguments but very commonly
+
+395
+00:18:10,420 --> 00:18:13,000
+you will be given like arguments that
+
+396
+00:18:13,000 --> 00:18:16,450
+can be more succinctly given in some way
+
+397
+00:18:16,450 --> 00:18:20,320
+so for example here if we wanted to
+
+398
+00:18:20,320 --> 00:18:25,750
+refer to all the dot s8 scripts we will
+
+399
+00:18:25,750 --> 00:18:29,740
+just do something like less asterisk
+
+400
+00:18:29,740 --> 00:18:33,370
+Doris aids and this is a way of kind of
+
+401
+00:18:33,370 --> 00:18:35,920
+finding expansion that most cells have
+
+402
+00:18:35,920 --> 00:18:38,740
+is called gloving and here as you might
+
+403
+00:18:38,740 --> 00:18:40,060
+expect this is gonna say Oh
+
+404
+00:18:40,060 --> 00:18:42,700
+anything that has any kind of sort of
+
+405
+00:18:42,700 --> 00:18:46,080
+characters and end up with effects so
+
+406
+00:18:46,080 --> 00:18:48,610
+unsurprisingly we get kind of example
+
+407
+00:18:48,610 --> 00:18:52,090
+estate and insidious AIDS we also have
+
+408
+00:18:52,090 --> 00:18:54,730
+this project one and predict - and if
+
+409
+00:18:54,730 --> 00:18:57,990
+they were like we can do like a project
+
+410
+00:18:57,990 --> 00:19:01,600
+for it - for example more and now if we
+
+411
+00:19:01,600 --> 00:19:03,970
+just want to refer to the prey that have
+
+412
+00:19:03,970 --> 00:19:06,730
+a single character but not two
+
+413
+00:19:06,730 --> 00:19:08,500
+characters at the wall so like any other
+
+414
+00:19:08,500 --> 00:19:10,210
+character we can use the question mark
+
+415
+00:19:10,210 --> 00:19:13,030
+so question mark will expand to only a
+
+416
+00:19:13,030 --> 00:19:16,540
+single one and we get like enough where
+
+417
+00:19:16,540 --> 00:19:18,660
+LS in first pretty one and then a
+
+418
+00:19:18,660 --> 00:19:22,920
+project - they're all kind of like the
+
+419
+00:19:22,920 --> 00:19:25,720
+globe in can be very powerful you can
+
+420
+00:19:25,720 --> 00:19:33,250
+also kind of combine it a the a common
+
+421
+00:19:33,250 --> 00:19:35,110
+pattern is to use what is called curly
+
+422
+00:19:35,110 --> 00:19:38,560
+braces so let's say we have an image now
+
+423
+00:19:38,560 --> 00:19:40,090
+we have in this folder and we want to
+
+424
+00:19:40,090 --> 00:19:44,500
+convert this image from PNG to jpg or we
+
+425
+00:19:44,500 --> 00:19:46,570
+call it maybe like copy it or it's like
+
+426
+00:19:46,570 --> 00:19:49,120
+Greek common peroneal have two more
+
+427
+00:19:49,120 --> 00:19:50,980
+arguments are fairly similar and you
+
+428
+00:19:50,980 --> 00:19:52,960
+want to do something about something
+
+429
+00:19:52,960 --> 00:19:54,970
+with them as arguments to some common
+
+430
+00:19:54,970 --> 00:19:57,940
+you could do it this way or more
+
+431
+00:19:57,940 --> 00:20:01,470
+succinctly you can just do in
+
+432
+00:20:01,470 --> 00:20:09,529
+the open curly bracket then PNG jpg and
+
+433
+00:20:09,529 --> 00:20:11,610
+hearing it and getting kind of some
+
+434
+00:20:11,610 --> 00:20:13,710
+color feedback about what this will do
+
+435
+00:20:13,710 --> 00:20:17,730
+is click expand into the line above and
+
+436
+00:20:17,730 --> 00:20:20,279
+actually can like a cease it to do that
+
+437
+00:20:20,279 --> 00:20:24,389
+for me and that what's happening here
+
+438
+00:20:24,389 --> 00:20:26,669
+this is really powerful so for example
+
+439
+00:20:26,669 --> 00:20:29,370
+you can do something like we will do
+
+440
+00:20:29,370 --> 00:20:32,519
+that's unlike a bunch of fools and all
+
+441
+00:20:32,519 --> 00:20:37,769
+of these will be expanded you can also
+
+442
+00:20:37,769 --> 00:20:40,289
+do it at several levels and you will do
+
+443
+00:20:40,289 --> 00:20:44,789
+the Cartesian yeah we have something
+
+444
+00:20:44,789 --> 00:20:48,870
+like this a we have one group here that
+
+445
+00:20:48,870 --> 00:20:51,000
+is like one comma two and then here is
+
+446
+00:20:51,000 --> 00:20:53,370
+like one two three and this is going to
+
+447
+00:20:53,370 --> 00:20:54,960
+do kind of the Cartesian product of
+
+448
+00:20:54,960 --> 00:20:58,259
+these two expansions and it will expand
+
+449
+00:20:58,259 --> 00:21:01,669
+into all these things that we can
+
+450
+00:21:01,669 --> 00:21:07,700
+quickly touch you can also combine the
+
+451
+00:21:07,700 --> 00:21:10,909
+asterisk Club with the curly braces Club
+
+452
+00:21:10,909 --> 00:21:14,370
+you can even use kind of ranges of like
+
+453
+00:21:14,370 --> 00:21:17,789
+we can do like MKV you and we create the
+
+454
+00:21:17,789 --> 00:21:21,299
+full and there were directories and then
+
+455
+00:21:21,299 --> 00:21:24,799
+we can do something along these lines
+
+456
+00:21:24,799 --> 00:21:28,710
+this is going to expand to full a full
+
+457
+00:21:28,710 --> 00:21:31,169
+be like all these commissions through J
+
+458
+00:21:31,169 --> 00:21:34,950
+and then the same for bar like and
+
+459
+00:21:34,950 --> 00:21:36,720
+haven't really tested budget like we're
+
+460
+00:21:36,720 --> 00:21:38,730
+getting all these combinations that we
+
+461
+00:21:38,730 --> 00:21:41,970
+can touch and now if we touch something
+
+462
+00:21:41,970 --> 00:21:48,149
+there is different between these two we
+
+463
+00:21:48,149 --> 00:21:53,779
+can again so case the these subtle the
+
+464
+00:21:53,779 --> 00:21:56,009
+the process substitution that we saw
+
+465
+00:21:56,009 --> 00:21:57,629
+earlier say we want to kind of check
+
+466
+00:21:57,629 --> 00:21:59,759
+what files are different between these
+
+467
+00:21:59,759 --> 00:22:01,500
+two folders for us it's obvious video
+
+468
+00:22:01,500 --> 00:22:04,320
+soil because is x and y but we can ask
+
+469
+00:22:04,320 --> 00:22:07,289
+the cell to do this diff for us between
+
+470
+00:22:07,289 --> 00:22:10,320
+the output of one LS on your LS and of
+
+471
+00:22:10,320 --> 00:22:13,019
+unsurprisingly we're getting like X is
+
+472
+00:22:13,019 --> 00:22:14,790
+only in the first folder and why
+
+473
+00:22:14,790 --> 00:22:21,270
+only in the second polar what is more is
+
+474
+00:22:21,270 --> 00:22:24,390
+right now the the have fun kind of seen
+
+475
+00:22:24,390 --> 00:22:27,330
+baskets if you like other scripts like
+
+476
+00:22:27,330 --> 00:22:29,940
+for some task bus it's probably not best
+
+477
+00:22:29,940 --> 00:22:32,460
+it can be tricky you can actually read
+
+478
+00:22:32,460 --> 00:22:34,140
+scripts the interact with the cell
+
+479
+00:22:34,140 --> 00:22:36,270
+implement in a lot of different
+
+480
+00:22:36,270 --> 00:22:39,860
+languages so example let's see here
+
+481
+00:22:39,860 --> 00:22:43,230
+Python script you have a magic line at
+
+482
+00:22:43,230 --> 00:22:45,330
+the beginning that not explained it for
+
+483
+00:22:45,330 --> 00:22:48,630
+now then we have like import sis it's
+
+484
+00:22:48,630 --> 00:22:51,120
+kind of like the Python it's kind of not
+
+485
+00:22:51,120 --> 00:22:55,710
+by default trying to interact with the
+
+486
+00:22:55,710 --> 00:22:57,240
+cell so you will have to import some
+
+487
+00:22:57,240 --> 00:22:59,220
+library and then we're doing a really
+
+488
+00:22:59,220 --> 00:23:02,520
+silly thing of just iterating over this
+
+489
+00:23:02,520 --> 00:23:07,380
+cyst or art va1 semicolon which is door
+
+490
+00:23:07,380 --> 00:23:09,090
+art v is kind of similar to what
+
+491
+00:23:09,090 --> 00:23:10,530
+embossed we were getting us like the
+
+492
+00:23:10,530 --> 00:23:12,960
+dollar zero dollar one etc Sara it's
+
+493
+00:23:12,960 --> 00:23:14,730
+like the factor of the arguments we're
+
+494
+00:23:14,730 --> 00:23:16,590
+fading we're printing in in the reverse
+
+495
+00:23:16,590 --> 00:23:20,610
+order and the magic line at the
+
+496
+00:23:20,610 --> 00:23:23,100
+beginning is called a Steven and is the
+
+497
+00:23:23,100 --> 00:23:25,800
+way that the cell will know how to run
+
+498
+00:23:25,800 --> 00:23:29,150
+this program like you can always do
+
+499
+00:23:29,150 --> 00:23:32,070
+something like a Python script and then
+
+500
+00:23:32,070 --> 00:23:35,130
+like ABC and that will work like I
+
+501
+00:23:35,130 --> 00:23:37,860
+always like that but what if we want to
+
+502
+00:23:37,860 --> 00:23:40,650
+make this to be executable from the cell
+
+503
+00:23:40,650 --> 00:23:43,080
+the way the cell knows that it has to
+
+504
+00:23:43,080 --> 00:23:46,020
+use Python as interpreter to run this
+
+505
+00:23:46,020 --> 00:23:51,200
+file is using that the first line and
+
+506
+00:23:51,200 --> 00:23:53,910
+first line is giving it kind of the path
+
+507
+00:23:53,910 --> 00:23:57,830
+to where duckling lips
+
+508
+00:23:57,830 --> 00:23:59,910
+a-alright you mind not not like
+
+509
+00:23:59,910 --> 00:24:02,010
+different scenes will have probably
+
+510
+00:24:02,010 --> 00:24:04,200
+different places where they put Python
+
+511
+00:24:04,200 --> 00:24:06,240
+and you might not want to assume where
+
+512
+00:24:06,240 --> 00:24:08,940
+pythons install or any other interpreter
+
+513
+00:24:08,940 --> 00:24:16,500
+so one thing that you can do is use the
+
+514
+00:24:16,500 --> 00:24:19,650
+end comment so it's done you cannot you
+
+515
+00:24:19,650 --> 00:24:21,720
+can also give arguments in this event so
+
+516
+00:24:21,720 --> 00:24:24,090
+what we're doing here is specifying our
+
+517
+00:24:24,090 --> 00:24:27,270
+run the end comment that is for pretty
+
+518
+00:24:27,270 --> 00:24:28,060
+much every
+
+519
+00:24:28,060 --> 00:24:29,860
+system electronic system but like for
+
+520
+00:24:29,860 --> 00:24:31,690
+pretty much every system is called is in
+
+521
+00:24:31,690 --> 00:24:33,760
+user bin where a lot of binaries live
+
+522
+00:24:33,760 --> 00:24:36,340
+and then we're calling it with the
+
+523
+00:24:36,340 --> 00:24:38,710
+argument Python and then that we make
+
+524
+00:24:38,710 --> 00:24:42,160
+use of the a path environment variable
+
+525
+00:24:42,160 --> 00:24:43,720
+that we saw in the first lecture it's
+
+526
+00:24:43,720 --> 00:24:45,820
+gonna search in that pub for thee by the
+
+527
+00:24:45,820 --> 00:24:48,760
+memory and then is gonna use that to
+
+528
+00:24:48,760 --> 00:24:50,620
+interpret this file and that will make
+
+529
+00:24:50,620 --> 00:24:52,630
+this more portable so they can be run in
+
+530
+00:24:52,630 --> 00:24:55,690
+my machine and your machine and some
+
+531
+00:24:55,690 --> 00:25:11,220
+orbs another thing is that the bus lag
+
+532
+00:25:11,220 --> 00:25:14,380
+is not really like more than how big it
+
+533
+00:25:14,380 --> 00:25:16,480
+was developed a while ago and sometimes
+
+534
+00:25:16,480 --> 00:25:19,030
+think a bit tricky to debug and like by
+
+535
+00:25:19,030 --> 00:25:22,120
+default the the the waste will fail
+
+536
+00:25:22,120 --> 00:25:24,160
+sometimes are intuitive like the way we
+
+537
+00:25:24,160 --> 00:25:26,320
+saw before of like foo common not
+
+538
+00:25:26,320 --> 00:25:28,750
+existing sometimes is not so there's
+
+539
+00:25:28,750 --> 00:25:31,420
+like really nifty tool that we have
+
+540
+00:25:31,420 --> 00:25:34,450
+linked in the electro node which cold
+
+541
+00:25:34,450 --> 00:25:37,720
+salt tech that will kind of give you
+
+542
+00:25:37,720 --> 00:25:40,150
+both warnings and like syntactic errors
+
+543
+00:25:40,150 --> 00:25:41,920
+sort of things that you might not have
+
+544
+00:25:41,920 --> 00:25:43,390
+or it properly
+
+545
+00:25:43,390 --> 00:25:46,030
+I might misfire you have like a spaces
+
+546
+00:25:46,030 --> 00:25:48,070
+in your files so for example for
+
+547
+00:25:48,070 --> 00:25:51,250
+extremely simple em City I say it's file
+
+548
+00:25:51,250 --> 00:25:53,440
+we're getting a couple of furs saying
+
+549
+00:25:53,440 --> 00:25:55,510
+like hey so presently we're missing a
+
+550
+00:25:55,510 --> 00:25:57,300
+statement like this minor interpret
+
+551
+00:25:57,300 --> 00:25:59,770
+correctly if you're running the
+
+552
+00:25:59,770 --> 00:26:03,490
+different system also this CD is taking
+
+553
+00:26:03,490 --> 00:26:06,760
+a common and it might not expand
+
+554
+00:26:06,760 --> 00:26:09,430
+properly so instead of using CD you
+
+555
+00:26:09,430 --> 00:26:11,860
+might want to use something like CD and
+
+556
+00:26:11,860 --> 00:26:15,040
+then an or and then an exit we go back
+
+557
+00:26:15,040 --> 00:26:16,810
+to what we explained earlier what this
+
+558
+00:26:16,810 --> 00:26:19,510
+is what this will do is like if the CD
+
+559
+00:26:19,510 --> 00:26:22,120
+doesn't end correctly you cannot see D
+
+560
+00:26:22,120 --> 00:26:23,950
+into the folder because either you don't
+
+561
+00:26:23,950 --> 00:26:26,620
+have permissions doesn't exist that we
+
+562
+00:26:26,620 --> 00:26:29,430
+give an on C like a nonce your error in
+
+563
+00:26:29,430 --> 00:26:32,830
+common so you will execute exit and I
+
+564
+00:26:32,830 --> 00:26:34,420
+will like a stop the script instead of
+
+565
+00:26:34,420 --> 00:26:36,250
+like continue executing assuming you're
+
+566
+00:26:36,250 --> 00:26:38,140
+in that place that you are actually not
+
+567
+00:26:38,140 --> 00:26:40,320
+it
+
+568
+00:26:40,320 --> 00:26:43,190
+and I could have interested but the I
+
+569
+00:26:43,190 --> 00:26:47,340
+think we can check for the example set
+
+570
+00:26:47,340 --> 00:26:50,940
+and here we're getting that we still be
+
+571
+00:26:50,940 --> 00:26:53,070
+you see we should be checking the exit
+
+572
+00:26:53,070 --> 00:26:55,200
+code in a different way because it's
+
+573
+00:26:55,200 --> 00:26:58,190
+probably not the best way doing this way
+
+574
+00:26:58,190 --> 00:27:01,950
+hey one last remark I want to make is
+
+575
+00:27:01,950 --> 00:27:05,250
+that when the robust scripts they're
+
+576
+00:27:05,250 --> 00:27:07,320
+like oh like functions for them where
+
+577
+00:27:07,320 --> 00:27:09,240
+this kind of like a difference between
+
+578
+00:27:09,240 --> 00:27:12,720
+writing bass scripts in isolation like a
+
+579
+00:27:12,720 --> 00:27:14,399
+finger you're gonna run I think they're
+
+580
+00:27:14,399 --> 00:27:16,679
+you're gonna load into yourself we will
+
+581
+00:27:16,679 --> 00:27:20,190
+see some of this in the common line
+
+582
+00:27:20,190 --> 00:27:23,700
+environment lecture where we kind of be
+
+583
+00:27:23,700 --> 00:27:26,490
+tooling with the bass RC and the CC hrc
+
+584
+00:27:26,490 --> 00:27:30,120
+but you know the if you make changes to
+
+585
+00:27:30,120 --> 00:27:32,490
+for example where you are like if you CD
+
+586
+00:27:32,490 --> 00:27:34,919
+into app a script and you just execute
+
+587
+00:27:34,919 --> 00:27:37,649
+the bus trip it won't CD into the cell
+
+588
+00:27:37,649 --> 00:27:42,120
+WR right now but if you have loaded the
+
+589
+00:27:42,120 --> 00:27:44,250
+code directly into yourself for example
+
+590
+00:27:44,250 --> 00:27:47,519
+we loaded these we source the function
+
+591
+00:27:47,519 --> 00:27:49,559
+and then you execute the function then
+
+592
+00:27:49,559 --> 00:27:51,570
+you will get those side effects and the
+
+593
+00:27:51,570 --> 00:27:54,870
+same goes for defining variables into
+
+594
+00:27:54,870 --> 00:27:59,759
+the cell and now I'm gonna kind of talk
+
+595
+00:27:59,759 --> 00:28:02,779
+about some tools there are things like
+
+596
+00:28:02,779 --> 00:28:06,259
+committee when working with the solo if
+
+597
+00:28:06,259 --> 00:28:09,299
+the first we was also briefly introduced
+
+598
+00:28:09,299 --> 00:28:12,389
+yesterday how do you know like what
+
+599
+00:28:12,389 --> 00:28:14,820
+flags or like what except comments can
+
+600
+00:28:14,820 --> 00:28:16,379
+do like how I am supposed to know the
+
+601
+00:28:16,379 --> 00:28:20,940
+like LS minus L less the files in a list
+
+602
+00:28:20,940 --> 00:28:24,960
+format of like if I do move - I it's
+
+603
+00:28:24,960 --> 00:28:27,750
+gonna like prom me for stuff that what
+
+604
+00:28:27,750 --> 00:28:29,970
+you have is the man command and the man
+
+605
+00:28:29,970 --> 00:28:32,549
+command we kind of have like a lot of
+
+606
+00:28:32,549 --> 00:28:35,159
+information of how will you go about so
+
+607
+00:28:35,159 --> 00:28:37,350
+for example here we will explain for the
+
+608
+00:28:37,350 --> 00:28:41,970
+- I flag there are all these options you
+
+609
+00:28:41,970 --> 00:28:44,789
+can do and that's actually pretty useful
+
+610
+00:28:44,789 --> 00:28:46,940
+and it will work not only for kind of
+
+611
+00:28:46,940 --> 00:28:49,590
+really simple comments that kind of
+
+612
+00:28:49,590 --> 00:28:52,500
+compact it with your OS but will also
+
+613
+00:28:52,500 --> 00:28:53,850
+work with some
+
+614
+00:28:53,850 --> 00:28:55,950
+tools that you install from the internet
+
+615
+00:28:55,950 --> 00:28:58,380
+for example if the person that did the
+
+616
+00:28:58,380 --> 00:29:01,530
+installation I made it so that the man
+
+617
+00:29:01,530 --> 00:29:03,539
+pages were also installed so for example
+
+618
+00:29:03,539 --> 00:29:06,480
+of tools that were gonna cover in an a
+
+619
+00:29:06,480 --> 00:29:07,980
+bit which is called brick brick brick
+
+620
+00:29:07,980 --> 00:29:12,510
+rep and is call with Rd like this didn't
+
+621
+00:29:12,510 --> 00:29:15,059
+come with my system but it has installed
+
+622
+00:29:15,059 --> 00:29:17,370
+its own man page and I have it here and
+
+623
+00:29:17,370 --> 00:29:21,840
+I can access it a for some comments the
+
+624
+00:29:21,840 --> 00:29:25,169
+man page is useful but sometimes can be
+
+625
+00:29:25,169 --> 00:29:28,409
+tricky to decipher because it's more
+
+626
+00:29:28,409 --> 00:29:30,570
+kind of like a documentation and a
+
+627
+00:29:30,570 --> 00:29:32,820
+description of all the things the fool
+
+628
+00:29:32,820 --> 00:29:36,030
+can do but not sometimes it will have
+
+629
+00:29:36,030 --> 00:29:37,860
+example but sometimes not and sometimes
+
+630
+00:29:37,860 --> 00:29:41,760
+the tool can do a lot of things so a a
+
+631
+00:29:41,760 --> 00:29:45,299
+couple of good tools that I use commonly
+
+632
+00:29:45,299 --> 00:29:47,909
+are combat or ffs mpg which deal with
+
+633
+00:29:47,909 --> 00:29:50,549
+images and video respectively and the
+
+634
+00:29:50,549 --> 00:29:52,710
+Muppets are like enormous so it's like
+
+635
+00:29:52,710 --> 00:29:55,110
+one neat tool called the ldr that you
+
+636
+00:29:55,110 --> 00:29:58,799
+can install and it will have like some
+
+637
+00:29:58,799 --> 00:30:03,210
+nice kind of explanatory examples of how
+
+638
+00:30:03,210 --> 00:30:05,760
+you want to use this comma and you can
+
+639
+00:30:05,760 --> 00:30:08,070
+always Google for this but I find myself
+
+640
+00:30:08,070 --> 00:30:10,770
+saving like going into the browser
+
+641
+00:30:10,770 --> 00:30:13,140
+looking about some examples and coming
+
+642
+00:30:13,140 --> 00:30:15,299
+back where like the earlier are like
+
+643
+00:30:15,299 --> 00:30:17,130
+kind of community contributed and they
+
+644
+00:30:17,130 --> 00:30:19,679
+they're like figley useful then like the
+
+645
+00:30:19,679 --> 00:30:23,610
+the one for FM Vee has a lot of useful
+
+646
+00:30:23,610 --> 00:30:25,530
+examples are like more nicely formatted
+
+647
+00:30:25,530 --> 00:30:27,809
+if you don't have like a huge font size
+
+648
+00:30:27,809 --> 00:30:31,559
+for recording a poor even simple
+
+649
+00:30:31,559 --> 00:30:33,419
+commands like tired I have a lot of
+
+650
+00:30:33,419 --> 00:30:35,610
+options that you are combining so for
+
+651
+00:30:35,610 --> 00:30:37,980
+example here you can be combined into
+
+652
+00:30:37,980 --> 00:30:41,850
+three different flags and cannot be
+
+653
+00:30:41,850 --> 00:30:43,559
+obvious when you want to combine
+
+654
+00:30:43,559 --> 00:30:48,570
+different ones that's how you kind of
+
+655
+00:30:48,570 --> 00:30:50,730
+will go about kind of finding more about
+
+656
+00:30:50,730 --> 00:30:54,990
+these tools a topic of finding let's try
+
+657
+00:30:54,990 --> 00:30:58,830
+using how to find fast like you can
+
+658
+00:30:58,830 --> 00:31:03,240
+always go less unlike we can go like
+
+659
+00:31:03,240 --> 00:31:06,160
+last project one and
+
+660
+00:31:06,160 --> 00:31:08,710
+keep a lesson all the way through but
+
+661
+00:31:08,710 --> 00:31:11,860
+maybe where we already know that we want
+
+662
+00:31:11,860 --> 00:31:15,600
+to look for all the folders called
+
+663
+00:31:15,600 --> 00:31:19,120
+SRC then this is probably a bit common
+
+664
+00:31:19,120 --> 00:31:21,970
+for doing that and that's fine like fine
+
+665
+00:31:21,970 --> 00:31:25,030
+stool the prima comes if every UNIX
+
+666
+00:31:25,030 --> 00:31:31,500
+system and find we're gonna give it the
+
+667
+00:31:31,740 --> 00:31:34,750
+here we're saying we want to call find
+
+668
+00:31:34,750 --> 00:31:36,160
+in the current folder
+
+669
+00:31:36,160 --> 00:31:38,800
+remember that dot stands for the current
+
+670
+00:31:38,800 --> 00:31:41,050
+folder and we want the name to be
+
+671
+00:31:41,050 --> 00:31:44,140
+searched and we want the type to be a
+
+672
+00:31:44,140 --> 00:31:47,280
+directory and by typing that is gonna
+
+673
+00:31:47,280 --> 00:31:49,900
+recursively go through the current
+
+674
+00:31:49,900 --> 00:31:52,480
+directory and look for all these files
+
+675
+00:31:52,480 --> 00:31:54,940
+of folders in this case that match this
+
+676
+00:31:54,940 --> 00:31:58,810
+part and fine has like a lot of useful
+
+677
+00:31:58,810 --> 00:32:01,990
+flux so for example you can even test
+
+678
+00:32:01,990 --> 00:32:05,560
+for the path to be in a way here we're
+
+679
+00:32:05,560 --> 00:32:08,350
+saying oh we want some number of folders
+
+680
+00:32:08,350 --> 00:32:10,030
+we don't really care that many folders
+
+681
+00:32:10,030 --> 00:32:13,300
+and then we care about all the python
+
+682
+00:32:13,300 --> 00:32:14,890
+script like all the things with the
+
+683
+00:32:14,890 --> 00:32:17,980
+extension dot pi they are within a
+
+684
+00:32:17,980 --> 00:32:20,050
+tasteful and we also check in just in
+
+685
+00:32:20,050 --> 00:32:21,670
+cases recently but we're checking just
+
+686
+00:32:21,670 --> 00:32:24,460
+that is also a type F which stands for
+
+687
+00:32:24,460 --> 00:32:28,830
+five and we're getting all these files a
+
+688
+00:32:28,830 --> 00:32:32,140
+you can also use different flags for
+
+689
+00:32:32,140 --> 00:32:33,970
+thing they are not like the path or the
+
+690
+00:32:33,970 --> 00:32:38,140
+name you could check things that have
+
+691
+00:32:38,140 --> 00:32:40,540
+been modified like m time is for like
+
+692
+00:32:40,540 --> 00:32:42,010
+the modification time things that have
+
+693
+00:32:42,010 --> 00:32:44,530
+been modified in the last day which is
+
+694
+00:32:44,530 --> 00:32:46,480
+gonna be pretty much everything is gonna
+
+695
+00:32:46,480 --> 00:32:48,940
+print a lot of the files we create and
+
+696
+00:32:48,940 --> 00:32:51,340
+files that were already there and you
+
+697
+00:32:51,340 --> 00:32:54,430
+can even use all things like size the
+
+698
+00:32:54,430 --> 00:32:59,200
+owner permissions you name what is even
+
+699
+00:32:59,200 --> 00:33:01,660
+more powerful is fine can kind of find
+
+700
+00:33:01,660 --> 00:33:04,000
+stuff but it also can do stuff when
+
+701
+00:33:04,000 --> 00:33:09,250
+would you find those files so we could
+
+702
+00:33:09,250 --> 00:33:13,630
+look for all the files and a half like a
+
+703
+00:33:13,630 --> 00:33:17,020
+TMP extension which is like a temporary
+
+704
+00:33:17,020 --> 00:33:18,400
+extension and
+
+705
+00:33:18,400 --> 00:33:21,520
+we can't find that like for every one of
+
+706
+00:33:21,520 --> 00:33:25,480
+those files just execute the RM common
+
+707
+00:33:25,480 --> 00:33:28,059
+for them and that will just be calling
+
+708
+00:33:28,059 --> 00:33:31,350
+RM with all these files so let's first
+
+709
+00:33:31,350 --> 00:33:34,960
+execute it without and then we execute
+
+710
+00:33:34,960 --> 00:33:38,890
+it with it again as we like the common
+
+711
+00:33:38,890 --> 00:33:41,590
+line philosophy it looks like nothing
+
+712
+00:33:41,590 --> 00:33:45,550
+happened but since we have non zero
+
+713
+00:33:45,550 --> 00:33:48,190
+sorry I see your error code something
+
+714
+00:33:48,190 --> 00:33:49,720
+happen it's just like everything when
+
+715
+00:33:49,720 --> 00:33:51,610
+correct and everything is fine and now
+
+716
+00:33:51,610 --> 00:33:54,460
+if we look for these files they're in
+
+717
+00:33:54,460 --> 00:33:56,080
+there anymore
+
+718
+00:33:56,080 --> 00:34:01,510
+I know nice thing about BA about the
+
+719
+00:34:01,510 --> 00:34:03,100
+selling journal is that like there are
+
+720
+00:34:03,100 --> 00:34:06,010
+like these tools but people will keep
+
+721
+00:34:06,010 --> 00:34:08,350
+finding new ways or like alternative
+
+722
+00:34:08,350 --> 00:34:10,780
+ways of writing these tools and it's
+
+723
+00:34:10,780 --> 00:34:12,399
+kind of nice to know about it so for
+
+724
+00:34:12,399 --> 00:34:15,790
+example find if you just want to match
+
+725
+00:34:15,790 --> 00:34:19,330
+like the last like the things up and in
+
+726
+00:34:19,330 --> 00:34:22,330
+TMP can be sometimes weird to do this
+
+727
+00:34:22,330 --> 00:34:24,370
+thing like it has like a long common and
+
+728
+00:34:24,370 --> 00:34:28,239
+there is like things that I get thee for
+
+729
+00:34:28,239 --> 00:34:30,610
+example there is like a sorter comment
+
+730
+00:34:30,610 --> 00:34:32,949
+that by default we used frag X and you
+
+731
+00:34:32,949 --> 00:34:35,350
+will ignore your get file so you don't
+
+732
+00:34:35,350 --> 00:34:38,290
+like search even for them and it will
+
+733
+00:34:38,290 --> 00:34:40,810
+color code it will have like a barrier
+
+734
+00:34:40,810 --> 00:34:43,149
+Unicode support it's like nice to know
+
+735
+00:34:43,149 --> 00:34:45,520
+about some of these tools but again the
+
+736
+00:34:45,520 --> 00:34:49,870
+main idea is that in if you are aware
+
+737
+00:34:49,870 --> 00:34:52,540
+that these tools exist you can save
+
+738
+00:34:52,540 --> 00:34:54,190
+yourself a lot of time from doing kind
+
+739
+00:34:54,190 --> 00:34:58,810
+of menial and repetitive tasks another
+
+740
+00:34:58,810 --> 00:35:00,550
+comment to bear in mind is like fine
+
+741
+00:35:00,550 --> 00:35:02,320
+like for some of you may be wondering
+
+742
+00:35:02,320 --> 00:35:04,570
+like fine is probably yes it's actually
+
+743
+00:35:04,570 --> 00:35:07,450
+going through directory structure and
+
+744
+00:35:07,450 --> 00:35:10,150
+looking for the things but what if I'm
+
+745
+00:35:10,150 --> 00:35:12,100
+doing a lot of fine so they wouldn't be
+
+746
+00:35:12,100 --> 00:35:13,810
+better doing kind of like a database
+
+747
+00:35:13,810 --> 00:35:17,290
+approach and like build an index first
+
+748
+00:35:17,290 --> 00:35:20,500
+and then use the index and update it in
+
+749
+00:35:20,500 --> 00:35:22,570
+some way well actually most most UNIX
+
+750
+00:35:22,570 --> 00:35:24,880
+systems already do and this is through
+
+751
+00:35:24,880 --> 00:35:25,870
+the locate
+
+752
+00:35:25,870 --> 00:35:31,450
+comment and the way that the locate you
+
+753
+00:35:31,450 --> 00:35:31,810
+will
+
+754
+00:35:31,810 --> 00:35:35,620
+we usually will just look for paths in
+
+755
+00:35:35,620 --> 00:35:38,830
+your file system that have the substring
+
+756
+00:35:38,830 --> 00:35:41,650
+the york and i actually didn't know if
+
+757
+00:35:41,650 --> 00:35:44,830
+it will work okay working let me try to
+
+758
+00:35:44,830 --> 00:35:51,300
+do something like missing semester
+
+759
+00:35:51,990 --> 00:35:53,890
+you're gonna take awhile but the
+
+760
+00:35:53,890 --> 00:35:55,570
+suddenly like you found all these file
+
+761
+00:35:55,570 --> 00:35:57,070
+there are somewhere in my file system
+
+762
+00:35:57,070 --> 00:35:59,260
+and in the house like built and index
+
+763
+00:35:59,260 --> 00:36:03,070
+already on them is much faster and then
+
+764
+00:36:03,070 --> 00:36:06,280
+to like keep in a daily decision like
+
+765
+00:36:06,280 --> 00:36:10,180
+the update vbe comment that it is
+
+766
+00:36:10,180 --> 00:36:14,650
+running through cron to update this
+
+767
+00:36:14,650 --> 00:36:18,610
+database a finding files again is like
+
+768
+00:36:18,610 --> 00:36:20,950
+really useful sometimes you're actually
+
+769
+00:36:20,950 --> 00:36:23,380
+concerned about not the files themselves
+
+770
+00:36:23,380 --> 00:36:27,040
+but the content of the files for that
+
+771
+00:36:27,040 --> 00:36:31,570
+you can use the grep command that we
+
+772
+00:36:31,570 --> 00:36:34,420
+have seen so far so you can do something
+
+773
+00:36:34,420 --> 00:36:39,010
+like grep for in MCD is there what if
+
+774
+00:36:39,010 --> 00:36:42,010
+you want to again like find recursive
+
+775
+00:36:42,010 --> 00:36:44,530
+search through the current structure and
+
+776
+00:36:44,530 --> 00:36:46,810
+look for more files right like we don't
+
+777
+00:36:46,810 --> 00:36:49,870
+want to do this manually we produce fine
+
+778
+00:36:49,870 --> 00:36:52,690
+and the exact but actually grab has like
+
+779
+00:36:52,690 --> 00:36:55,840
+the minus capital r flag that will go
+
+780
+00:36:55,840 --> 00:37:02,400
+through the entire a directory here and
+
+781
+00:37:02,400 --> 00:37:05,050
+it's telling us that oh we have the four
+
+782
+00:37:05,050 --> 00:37:08,200
+line in example a sites of these three
+
+783
+00:37:08,200 --> 00:37:11,380
+places and in this or two places in for
+
+784
+00:37:11,380 --> 00:37:15,820
+a it this can be really convenient when
+
+785
+00:37:15,820 --> 00:37:17,920
+mainly kind of the use case for this is
+
+786
+00:37:17,920 --> 00:37:20,620
+you know you have written some code in
+
+787
+00:37:20,620 --> 00:37:23,320
+some like prime languages and you know
+
+788
+00:37:23,320 --> 00:37:25,660
+it's somewhere in your file system but
+
+789
+00:37:25,660 --> 00:37:27,340
+you actually don't know but you can
+
+790
+00:37:27,340 --> 00:37:30,310
+actually quickly search so for example i
+
+791
+00:37:30,310 --> 00:37:37,990
+can quickly search for all the Python
+
+792
+00:37:37,990 --> 00:37:41,650
+files that I have in my scratch folder
+
+793
+00:37:41,650 --> 00:37:45,580
+where I use the like request library
+
+794
+00:37:45,580 --> 00:37:47,860
+and if I run this like it's giving me
+
+795
+00:37:47,860 --> 00:37:51,040
+like through all these files exactly
+
+796
+00:37:51,040 --> 00:37:53,800
+what line it has been found and here
+
+797
+00:37:53,800 --> 00:37:56,410
+instead of using grep which is fine like
+
+798
+00:37:56,410 --> 00:37:59,290
+you could also do this I'm using Riblet
+
+799
+00:37:59,290 --> 00:38:03,190
+which is a kind of like the same idea
+
+800
+00:38:03,190 --> 00:38:05,410
+but again trying to bring some more
+
+801
+00:38:05,410 --> 00:38:09,880
+niceties like color coding or file
+
+802
+00:38:09,880 --> 00:38:13,510
+processing and all things like has also
+
+803
+00:38:13,510 --> 00:38:16,270
+very unicode support has it's also
+
+804
+00:38:16,270 --> 00:38:18,150
+pretty fast we are not playing like a
+
+805
+00:38:18,150 --> 00:38:22,980
+trade-off unlike this being slower and
+
+806
+00:38:22,980 --> 00:38:25,570
+there's a lot of useful Flags like you
+
+807
+00:38:25,570 --> 00:38:27,790
+can say oh I actually want to get some
+
+808
+00:38:27,790 --> 00:38:31,270
+context around those results know if it
+
+809
+00:38:31,270 --> 00:38:34,030
+committed so yes so I want to get like
+
+810
+00:38:34,030 --> 00:38:37,570
+five lines of context around that so you
+
+811
+00:38:37,570 --> 00:38:40,810
+can say like see where that import lists
+
+812
+00:38:40,810 --> 00:38:43,450
+and see kind of go around it here in the
+
+813
+00:38:43,450 --> 00:38:44,980
+import isn't really useful but like if
+
+814
+00:38:44,980 --> 00:38:46,390
+you are looking for where you use the
+
+815
+00:38:46,390 --> 00:38:50,500
+function for example a it will be it's
+
+816
+00:38:50,500 --> 00:38:54,130
+pretty handy we can also do things like
+
+817
+00:38:54,130 --> 00:38:59,320
+a we can see it for example here some
+
+818
+00:38:59,320 --> 00:39:04,480
+like a more advanced use we can say is
+
+819
+00:39:04,480 --> 00:39:08,530
+you is for like don don ignore like
+
+820
+00:39:08,530 --> 00:39:11,860
+hidden files a sometimes that that can
+
+821
+00:39:11,860 --> 00:39:13,870
+be then like you would tell me you want
+
+822
+00:39:13,870 --> 00:39:16,330
+to be knowing a hidden file ciphers you
+
+823
+00:39:16,330 --> 00:39:20,170
+want shirt config files of that that
+
+824
+00:39:20,170 --> 00:39:22,810
+like by default hidden then instead of
+
+825
+00:39:22,810 --> 00:39:26,470
+printing the matches we're asking to do
+
+826
+00:39:26,470 --> 00:39:28,360
+something that will be kind of hard I
+
+827
+00:39:28,360 --> 00:39:30,820
+think to do with grep out of like my
+
+828
+00:39:30,820 --> 00:39:33,100
+head which is I want you to print all
+
+829
+00:39:33,100 --> 00:39:36,430
+the files that don't match the partner
+
+830
+00:39:36,430 --> 00:39:39,220
+giving you which may be a weird thing to
+
+831
+00:39:39,220 --> 00:39:42,220
+ask you but then we keep going and this
+
+832
+00:39:42,220 --> 00:39:45,520
+parent here is like a small red X which
+
+833
+00:39:45,520 --> 00:39:47,800
+is saying no the beginning of the line I
+
+834
+00:39:47,800 --> 00:39:50,980
+have a house and a bang and that's a
+
+835
+00:39:50,980 --> 00:39:53,170
+seeming like that we're searching here
+
+836
+00:39:53,170 --> 00:39:56,200
+for all the files that don't I don't
+
+837
+00:39:56,200 --> 00:39:58,360
+have a seat and then we're giving it
+
+838
+00:39:58,360 --> 00:39:59,490
+like here like am
+
+839
+00:39:59,490 --> 00:40:02,320
+t-minus aside to only look for like a
+
+840
+00:40:02,320 --> 00:40:04,390
+sights files because maybe you're like
+
+841
+00:40:04,390 --> 00:40:07,060
+all your all your Python or text files
+
+842
+00:40:07,060 --> 00:40:09,610
+are fine we felt like a sieve and here
+
+843
+00:40:09,610 --> 00:40:11,770
+is telling us all like McD's obviously
+
+844
+00:40:11,770 --> 00:40:16,570
+missing as even a we can even they have
+
+845
+00:40:16,570 --> 00:40:18,520
+like some also tonight's flag so for
+
+846
+00:40:18,520 --> 00:40:21,220
+example if we include the status flag
+
+847
+00:40:21,220 --> 00:40:30,160
+I don't read actually it will get all
+
+848
+00:40:30,160 --> 00:40:32,080
+these colleges also but it will also
+
+849
+00:40:32,080 --> 00:40:34,240
+tell us like information about like all
+
+850
+00:40:34,240 --> 00:40:35,560
+the things that I searched for example
+
+851
+00:40:35,560 --> 00:40:37,870
+like the number of mats the matches that
+
+852
+00:40:37,870 --> 00:40:40,540
+I found max lines the file died certs
+
+853
+00:40:40,540 --> 00:40:45,010
+the writer printed etc a similar as with
+
+854
+00:40:45,010 --> 00:40:48,550
+every sometimes is not as useful mmm
+
+855
+00:40:48,550 --> 00:40:50,740
+using one specific tool or another and
+
+856
+00:40:50,740 --> 00:40:53,440
+in fact as regrip there are like several
+
+857
+00:40:53,440 --> 00:40:56,050
+other tools like AK easy or you know
+
+858
+00:40:56,050 --> 00:40:57,850
+kind of grep alternative that was
+
+859
+00:40:57,850 --> 00:41:00,820
+written it was like the silver searcher
+
+860
+00:41:00,820 --> 00:41:04,240
+ad it was another one and they're all
+
+861
+00:41:04,240 --> 00:41:05,740
+pretty much interchangeable so like
+
+862
+00:41:05,740 --> 00:41:07,780
+maybe you're a system that has one or
+
+863
+00:41:07,780 --> 00:41:09,820
+not the other just knowing that you can
+
+864
+00:41:09,820 --> 00:41:12,160
+use these things with these tools can be
+
+865
+00:41:12,160 --> 00:41:15,700
+pretty useful lastly I want to cover
+
+866
+00:41:15,700 --> 00:41:18,400
+kind of how you go about not finding
+
+867
+00:41:18,400 --> 00:41:19,930
+files or code but how do you go about
+
+868
+00:41:19,930 --> 00:41:22,660
+finding comments that you already sound
+
+869
+00:41:22,660 --> 00:41:27,070
+something like figure out and the first
+
+870
+00:41:27,070 --> 00:41:30,280
+obvious way is just using the up arrow
+
+871
+00:41:30,280 --> 00:41:32,410
+unlikely slowly going through all your
+
+872
+00:41:32,410 --> 00:41:34,660
+history like looking for these matches
+
+873
+00:41:34,660 --> 00:41:36,640
+this is actually not very efficient as
+
+874
+00:41:36,640 --> 00:41:40,840
+you probably guess so the bass has ways
+
+875
+00:41:40,840 --> 00:41:43,540
+to do this more easily there's the
+
+876
+00:41:43,540 --> 00:41:45,310
+history common that will bring your
+
+877
+00:41:45,310 --> 00:41:47,650
+history here I mean CCH and only prints
+
+878
+00:41:47,650 --> 00:41:50,320
+some of my history but if I say I want
+
+879
+00:41:50,320 --> 00:41:52,660
+you to print everything from the
+
+880
+00:41:52,660 --> 00:41:54,220
+beginning of time it will print
+
+881
+00:41:54,220 --> 00:41:56,350
+everything from the winning of whoever
+
+882
+00:41:56,350 --> 00:42:00,130
+this history is and since this is a lot
+
+883
+00:42:00,130 --> 00:42:00,730
+of results
+
+884
+00:42:00,730 --> 00:42:02,620
+maybe we care about the ones where we
+
+885
+00:42:02,620 --> 00:42:06,490
+use the combat command to go from some
+
+886
+00:42:06,490 --> 00:42:08,580
+type of file to some other type of file
+
+887
+00:42:08,580 --> 00:42:13,060
+so image sorry then we're getting all
+
+888
+00:42:13,060 --> 00:42:16,000
+this results here about like only ones
+
+889
+00:42:16,000 --> 00:42:20,920
+that like mats this substrate what what
+
+890
+00:42:20,920 --> 00:42:23,710
+else would be even more the pyramids all
+
+891
+00:42:23,710 --> 00:42:26,530
+cells before we link control our who's
+
+892
+00:42:26,530 --> 00:42:28,900
+like a cave I need to do like backward
+
+893
+00:42:28,900 --> 00:42:30,550
+shirts and here we have like backward
+
+894
+00:42:30,550 --> 00:42:33,070
+shirts where we can like type convert
+
+895
+00:42:33,070 --> 00:42:35,620
+and it's finding the common that we just
+
+896
+00:42:35,620 --> 00:42:37,690
+type and if we just keep hitting like
+
+897
+00:42:37,690 --> 00:42:40,390
+controller it will kind of go through
+
+898
+00:42:40,390 --> 00:42:43,120
+these matches and one like it will let
+
+899
+00:42:43,120 --> 00:42:47,400
+us like react secure it in in place and
+
+900
+00:42:47,400 --> 00:42:49,840
+another thing that you can do relate to
+
+901
+00:42:49,840 --> 00:42:51,640
+that is you can use this really nifty
+
+902
+00:42:51,640 --> 00:42:55,090
+tool called FC F which is like a fuzzy
+
+903
+00:42:55,090 --> 00:42:57,370
+finder like you will let you let's say
+
+904
+00:42:57,370 --> 00:42:58,960
+it will let you do kind of like an
+
+905
+00:42:58,960 --> 00:43:02,560
+interactive grep and we could do for
+
+906
+00:43:02,560 --> 00:43:07,090
+example days where we can cut or example
+
+907
+00:43:07,090 --> 00:43:10,540
+is sh command now all printer to the
+
+908
+00:43:10,540 --> 00:43:12,400
+standard output and then we can pipe it
+
+909
+00:43:12,400 --> 00:43:14,740
+through FCF and you just get in all the
+
+910
+00:43:14,740 --> 00:43:17,080
+lines and then we can interactively kind
+
+911
+00:43:17,080 --> 00:43:19,600
+of look for the string that we care
+
+912
+00:43:19,600 --> 00:43:23,380
+about and the nice thing about f c/f is
+
+913
+00:43:23,380 --> 00:43:25,420
+that if you enable the default bindings
+
+914
+00:43:25,420 --> 00:43:32,460
+will bind to your controller cell
+
+915
+00:43:32,460 --> 00:43:35,620
+execution and now you can quickly and
+
+916
+00:43:35,620 --> 00:43:38,800
+dynamically like look for all the times
+
+917
+00:43:38,800 --> 00:43:40,990
+you try to combat of Oregon in your
+
+918
+00:43:40,990 --> 00:43:44,350
+history and it's also like fuzzy
+
+919
+00:43:44,350 --> 00:43:46,600
+matching whereas like by default grab
+
+920
+00:43:46,600 --> 00:43:48,220
+all these things you cannot have to
+
+921
+00:43:48,220 --> 00:43:50,320
+write a reg X like some expression that
+
+922
+00:43:50,320 --> 00:43:53,620
+we mad with in here here I'm just typing
+
+923
+00:43:53,620 --> 00:43:56,170
+in combat on ficon and it's just trying
+
+924
+00:43:56,170 --> 00:43:58,810
+to do the best scan doing the match in
+
+925
+00:43:58,810 --> 00:44:03,220
+the lines it has a lastly I have told
+
+926
+00:44:03,220 --> 00:44:05,410
+that probably you have already seen that
+
+927
+00:44:05,410 --> 00:44:07,870
+I've been using for not retyping this
+
+928
+00:44:07,870 --> 00:44:11,170
+extremely long commands is this history
+
+929
+00:44:11,170 --> 00:44:15,220
+substring search where the as I type in
+
+930
+00:44:15,220 --> 00:44:18,970
+my cell and both F fail to mention but
+
+931
+00:44:18,970 --> 00:44:21,040
+both base which I think was really
+
+932
+00:44:21,040 --> 00:44:23,560
+introduced this concept and CCH has a
+
+933
+00:44:23,560 --> 00:44:25,659
+really nice implementation
+
+934
+00:44:25,659 --> 00:44:28,059
+we'll let you do is as you type the
+
+935
+00:44:28,059 --> 00:44:30,819
+common it will dynamically like shirts
+
+936
+00:44:30,819 --> 00:44:32,949
+back in your history to the same command
+
+937
+00:44:32,949 --> 00:44:35,889
+I have like a common prefix and then if
+
+938
+00:44:35,889 --> 00:44:41,409
+you like it will change thus the match
+
+939
+00:44:41,409 --> 00:44:43,719
+list stops working and then as you do
+
+940
+00:44:43,719 --> 00:44:46,630
+like the right arrow you can like select
+
+941
+00:44:46,630 --> 00:44:48,639
+that comment and then like three execute
+
+942
+00:44:48,639 --> 00:45:09,909
+it I've seen I want to stop a thing I
+
+943
+00:45:09,909 --> 00:45:12,279
+have a few minutes left so I'm gonna
+
+944
+00:45:12,279 --> 00:45:15,759
+cover and kind of a couple of tools to
+
+945
+00:45:15,759 --> 00:45:18,189
+do kind of really quick directory
+
+946
+00:45:18,189 --> 00:45:20,439
+listing on directories navigation so you
+
+947
+00:45:20,439 --> 00:45:24,669
+can always use the - are two kind of
+
+948
+00:45:24,669 --> 00:45:29,859
+like recursively list of some directory
+
+949
+00:45:29,859 --> 00:45:31,719
+structure but that can be like
+
+950
+00:45:31,719 --> 00:45:33,999
+suboptimal like I cannot really make
+
+951
+00:45:33,999 --> 00:45:37,089
+sense of this easily a there's like a
+
+952
+00:45:37,089 --> 00:45:40,839
+code tool called tree I will be like
+
+953
+00:45:40,839 --> 00:45:44,319
+like the Matt more like friendly formal
+
+954
+00:45:44,319 --> 00:45:46,149
+like brain all the staff they will also
+
+955
+00:45:46,149 --> 00:45:48,639
+color code based on here for example who
+
+956
+00:45:48,639 --> 00:45:51,189
+is blue because it's a directory and
+
+957
+00:45:51,189 --> 00:45:53,829
+like this is red because has execute
+
+958
+00:45:53,829 --> 00:45:56,859
+permissions but we can go even further
+
+959
+00:45:56,859 --> 00:46:00,339
+than that they're like really nice tools
+
+960
+00:46:00,339 --> 00:46:03,249
+like a recent one called brute that will
+
+961
+00:46:03,249 --> 00:46:04,809
+do the same thing but here for example
+
+962
+00:46:04,809 --> 00:46:07,419
+instead of doing this thing of listing
+
+963
+00:46:07,419 --> 00:46:09,309
+every single file for example in by we
+
+964
+00:46:09,309 --> 00:46:12,159
+have this a through J files it will say
+
+965
+00:46:12,159 --> 00:46:15,249
+out there like more unlisted here and I
+
+966
+00:46:15,249 --> 00:46:17,799
+can actually start typing and it will
+
+967
+00:46:17,799 --> 00:46:20,949
+again facili Matt's to the files that
+
+968
+00:46:20,949 --> 00:46:23,439
+are there and I can quickly select them
+
+969
+00:46:23,439 --> 00:46:27,039
+and navigate to do them so again it's
+
+970
+00:46:27,039 --> 00:46:29,169
+good to know that you're not like that
+
+971
+00:46:29,169 --> 00:46:31,239
+these things exist so you don't lose
+
+972
+00:46:31,239 --> 00:46:34,809
+unlike lots amount of time like going
+
+973
+00:46:34,809 --> 00:46:39,299
+for this five um there are also I think
+
+974
+00:46:39,299 --> 00:46:42,400
+install also like something more similar
+
+975
+00:46:42,400 --> 00:46:44,949
+to what we will expect your AOS to have
+
+976
+00:46:44,949 --> 00:46:47,079
+like now Toulouse or like one of like
+
+977
+00:46:47,079 --> 00:46:50,079
+the max finder that have like an
+
+978
+00:46:50,079 --> 00:46:55,269
+interactive input where you can just
+
+979
+00:46:55,269 --> 00:46:57,569
+like use your navigation arrows and
+
+980
+00:46:57,569 --> 00:47:01,089
+quickly explore it might be overkill but
+
+981
+00:47:01,089 --> 00:47:03,999
+you'll be surprised how quickly you can
+
+982
+00:47:03,999 --> 00:47:06,279
+make sense of some directory structure
+
+983
+00:47:06,279 --> 00:47:07,959
+but just like navigating through it and
+
+984
+00:47:07,959 --> 00:47:10,539
+pretty much all of these tools will let
+
+985
+00:47:10,539 --> 00:47:13,569
+you edit like copy files if you just
+
+986
+00:47:13,569 --> 00:47:17,009
+like look for the options for them a
+
+987
+00:47:17,009 --> 00:47:20,259
+last addendum is kind of going places
+
+988
+00:47:20,259 --> 00:47:23,289
+like we have CD and CD it's not like you
+
+989
+00:47:23,289 --> 00:47:28,269
+will give you two eller's places but
+
+990
+00:47:28,269 --> 00:47:30,880
+it's pretty handy if you can like
+
+991
+00:47:30,880 --> 00:47:35,079
+quickly go places you are either you
+
+992
+00:47:35,079 --> 00:47:37,299
+have been recently or that you go
+
+993
+00:47:37,299 --> 00:47:40,869
+frequently and you can do this in many
+
+994
+00:47:40,869 --> 00:47:42,670
+ways there's probably you can start
+
+995
+00:47:42,670 --> 00:47:44,469
+thinking oh I can make bookmarks I can
+
+996
+00:47:44,469 --> 00:47:46,809
+make like I can make aliases in the cell
+
+997
+00:47:46,809 --> 00:47:49,930
+that we will cover at some point a sim
+
+998
+00:47:49,930 --> 00:47:53,140
+links but but this point like like
+
+999
+00:47:53,140 --> 00:47:55,029
+programmers have like built all these
+
+1000
+00:47:55,029 --> 00:47:56,949
+tools so the promise have already figure
+
+1001
+00:47:56,949 --> 00:47:59,670
+out a really nice way of doing this and
+
+1002
+00:47:59,670 --> 00:48:02,079
+one way of doing this is using what is
+
+1003
+00:48:02,079 --> 00:48:04,690
+called Auto Jam which person is not
+
+1004
+00:48:04,690 --> 00:48:10,079
+loaded here this is concerning
+
+1005
+00:48:14,160 --> 00:48:17,470
+okay yeah no don't worry I will correct
+
+1006
+00:48:17,470 --> 00:48:20,320
+in the common line environment I don't
+
+1007
+00:48:20,320 --> 00:48:22,420
+know where isn't always well I think
+
+1008
+00:48:22,420 --> 00:48:24,850
+it's because I'd be say well be the
+
+1009
+00:48:24,850 --> 00:48:27,730
+controller and that also exit a fact
+
+1010
+00:48:27,730 --> 00:48:29,680
+that other parts of the script thing at
+
+1011
+00:48:29,680 --> 00:48:32,230
+this point if anyone has any questions
+
+1012
+00:48:32,230 --> 00:48:34,330
+they're like relate to this I'll be more
+
+1013
+00:48:34,330 --> 00:48:36,580
+than happy to answer them if anything
+
+1014
+00:48:36,580 --> 00:48:39,610
+was left unclear otherwise a there's
+
+1015
+00:48:39,610 --> 00:48:42,640
+like a bunch of exercises that we're all
+
+1016
+00:48:42,640 --> 00:48:44,950
+kind of touching on these topics and we
+
+1017
+00:48:44,950 --> 00:48:46,690
+encourage you to kind of try them and
+
+1018
+00:48:46,690 --> 00:48:48,760
+come to office hours where we can help
+
+1019
+00:48:48,760 --> 00:48:51,550
+you kind of figure out how to do them or
+
+1020
+00:48:51,550 --> 00:48:53,710
+like some like bass quakes they are not
+
+1021
+00:48:53,710 --> 00:48:55,920
+there
+
