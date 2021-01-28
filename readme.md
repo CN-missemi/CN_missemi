@@ -13,7 +13,7 @@
 
 > **[第一节 课程概览与 shell](https://missing-semester-cn.github.io/2020/course-shell/)**
 >
-> 翻译 [running]
+> 翻译 [√]
 > 校对 [running]
 > 打轴 [running]
 > 压制 [×]
