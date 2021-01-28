@@ -12,7 +12,8 @@ import time
 import aiofiles
 MAIN_EXPR = re.compile(r"\{(?P<begin>[0-9]+)\}\{(?P<end>[0-9]+)\}(?P<text>.+)")
 CODE_EXPR = re.compile(r"`(.+)`")
-FILENAME = "[1-56]CHN_try.sub"
+MAJOR_FILENAME = "major.sub"
+MINOR_FILENAME = "vice.sub"
 image_path = pathlib.Path("subtitle-images")
 local = os.getcwd()
 
@@ -26,25 +27,27 @@ def render_to_html(text: str) -> str:
 async def main():
     begin_time = time.time()
     subtitles = []
-    with open(FILENAME, "r", encoding="utf-8") as f:
-        for line in f.readlines()[1:]:
-            if line.strip():
-                pass
-            match_result = MAIN_EXPR.match(line)
-            assert match_result
-            groups = match_result.groupdict()
-            subtitles.append({
-                "begin": groups["begin"],
-                "end": groups["end"],
-                "text": render_to_html(groups["text"]),
-            })
+
+    def load_file(filename: str, subtitle_type: str):
+        with open(filename, "r", encoding="utf-8") as f:
+            for i, line in enumerate(f.readlines()[1:]):
+                if line.strip():
+                    pass
+                match_result = MAIN_EXPR.match(line)
+                assert match_result
+                groups = match_result.groupdict()
+                subtitles.append({
+                    "begin": groups["begin"],
+                    "end": groups["end"],
+                    "text": render_to_html(groups["text"]),
+                    "type": subtitle_type,
+                    "type_id": i+1
+                })
+    load_file(MAJOR_FILENAME, "major")
+    if MINOR_FILENAME:
+        load_file(MINOR_FILENAME, "minor")
     async with aiofiles.open("index.html", "r") as f:
         html_content = await f.read()
-    # with open("index.html", "r") as f:
-    #     html_content = f.read()
-    # new_html = html_content.replace("REPLACE-HERE", buf.getvalue())
-    # with open("curr.html", "w") as f:
-    #     f.write(new_html)
     shutil.rmtree(image_path, True)
     os.mkdir(image_path)
     broswer = await pyppeteer.launch({
@@ -54,24 +57,24 @@ async def main():
     })
 
     async def take_screen_shot(id: int, page: pyppeteer.page.Page):
-        elem = await page.querySelector(f"#subtitle-{id}")
         item = subtitles[id]
+        elem = await page.querySelector(f"#{item['type']}-subtitle-{item['type_id']}")
         begin, end = item["begin"], item["end"]
-        filename = f"subtitle-{id}-{begin}-{end}.png"
+        filename = f"{item['type']}-subtitle-{item['type_id']}-{begin}-{end}.png"
         await elem.screenshot({"path": f"{str(image_path)}/{filename}", "type": "png"})
-        print(f"{id} done.")
+        print(f"{item['type']}-{item['type_id']} done.")
 
     async def render_something(ids: typing.List[int], task_id: int):
         print(f"Task {task_id}, count = {len(ids)}")
         buf = StringIO()
         for x, item in zip(ids, (subtitles[y] for y in ids)):
             buf.write(f"""
-            <div class="major-subtitle subtitle normal-text" id="subtitle-{x}">
+            <div class="{item['type']}-subtitle subtitle normal-text" id="{item['type']}-subtitle-{item['type_id']}">
             {item["text"]}
             </div>
             """)
         new_content = html_content.replace("REPLACE-HERE", buf.getvalue())
-        async with aiofiles.open(f"render-{task_id}.html", "w") as f:
+        async with aiofiles.open(f"render-{task_id}.html", "w", encoding="utf-8") as f:
             await f.write(new_content)
         print(f"{task_id} loaded")
         page = await broswer.newPage()
@@ -81,9 +84,9 @@ async def main():
         })
 
         await page.goto(f"file:///{local}/render-{task_id}.html")
-        await asyncio.wait([
-            page.waitForSelector(f"#subtitle-{x}") for x in ids
-        ])
+        # await asyncio.wait([
+        #     page.waitForSelector(f"#subtitle-{x}") for x in ids
+        # ])
         for i in ids:
             await take_screen_shot(i, page)
         await page.close()
