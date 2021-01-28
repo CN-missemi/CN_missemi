@@ -21,7 +21,7 @@
 
 > **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
 >
-> 翻译 [×]
+> 翻译 [running]
 > 校对 [×]
 > 打轴 [×]
 > 压制 [×]
@@ -51,6 +51,8 @@ T 翻译 C 校对 L 时间轴 E 压制
 - alphaGem
 
 - GNAQ
+
+- kernel.bin
 
 时间轴：
 
