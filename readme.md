@@ -16,8 +16,8 @@
 >
 > 翻译 [√]
 > 校对 [running]
-> 打轴 [running]
-> 压制 [×]
+> 打轴 [√]
+> 压制 [running]
 
 > **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
 >
