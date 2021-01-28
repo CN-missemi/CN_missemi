@@ -15,9 +15,9 @@
 > **[第一节 课程概览与 shell](https://missing-semester-cn.github.io/2020/course-shell/)**
 >
 > 翻译 [√]
-> 校对 [running]
+> 校对 [√]
 > 打轴 [√]
-> 压制 [running]
+> 压制 [√]
 
 > **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
 >
@@ -25,6 +25,16 @@
 > 校对 [×]
 > 打轴 [×]
 > 压制 [×]
+
+### 小说明
+
+为了方便查找，请尽量用如下格式处理 branch / PR
+
+`(T/C/L/E)_ch(0,1,2...)_ID`
+
+T 翻译 C 校对 L 时间轴 E 压制
+
+例子：`C_ch5_GNAQ`
 
 ### 字幕组成员（按有贡献计入，字母序）
 

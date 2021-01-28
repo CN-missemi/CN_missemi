@@ -1,6 +1,6 @@
 ﻿{1}{1}29.970030
 {138}{262}*（The Missing Semester of Your CS Education)
-{279}{400}翻译：alphaGem, GNAQ, Zjrua  |  校对：GNAQ
+{279}{400}翻译：alphaGem, GNAQ, Zjrua  |  校对：GNAQ, kernel.bin
 {401}{519}时间轴：A179, GNAQ  |  压制：MikuNotFoundException
 {677}{869}*Teaching Assistant，助教
 {4182}{4273}*西班牙口音英语警告
@@ -9,10 +9,9 @@
 {7902}{8037}*这里用了 Visual Interfaces，一般也说 GUI （Graphical User Interface）
 {8798}{8879}*这里的 Shell 最好理解为命令行界面（CLI, Command Line Interface）
 {8880}{8955}*缩写 pwsh，Windows 7 之前没有内置 pwsh。详细请参看网络资料。
-{10905}{10971}*也就是 Shell 提示（符）/ 命令提示符
 {35113}{35322}*通常来说，这种说法意味着输出更多信息
 {45495}{45563}*对应 MacOS 的拷贝（Copy）而非 MacOS 的复制（Duplicate）
-{45748}{45778}*意味着你必须在路径的最后包含文件名
+{45748}{45778}*意味着你需要明确指定具体文件路径，这个命令没有搜索功能
 {52114}{52302}*也就是所谓的「尖角括号」
 {56302}{56384}*这里不是指中文的书名号
 {56388}{56488}*追加指向文件尾继续添加内容；覆写则清空文件
