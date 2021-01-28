@@ -1,4 +1,5 @@
-# Simplified Chinese translation of MIT The Missing Semester of Your CS Education
+![](cover_design_social/github_social_preview.png)
+
 # MIT 课程《计算机科学教育中缺失的一课》简体中文翻译
 
 ------------
