@@ -1,5 +1,5 @@
 翻译：alphaGem、GNAQ、Zjrua
-校对：alphaGem、GNAQ
+校对：GNAQ
 ----
 时间轴：A179、GNAQ
 压制：MikuNotFoundException
