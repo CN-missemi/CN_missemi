@@ -11,9 +11,9 @@ import math
 import time
 import aiofiles
 MAIN_EXPR = re.compile(r"\{(?P<begin>[0-9]+)\}\{(?P<end>[0-9]+)\}(?P<text>.+)")
-CODE_EXPR = re.compile(r"`(.+)`")
+CODE_EXPR = re.compile(r"`(.+?)`")
 MAJOR_FILENAME = "major.sub"
-MINOR_FILENAME = "vice.sub"
+MINOR_FILENAME = "minor.sub"
 image_path = pathlib.Path("subtitle-images")
 local = os.getcwd()
 

@@ -90,12 +90,10 @@ def render_to_image(data: RenderData):
 
 def main():
     begin_time = time.time()
-    # shutil.rmtree(rendered_images, True)
-    # os.mkdir(rendered_images)
-    # to_render = [i for i in range(6253+1)]
-    # renderdata = [RenderData(i, None, -1, False) for i in range(6253+1)]
+    if not os.path.exists(rendered_images):
+        os.mkdir(rendered_images)
     renderdata = [RenderData(flap=i, subtitle_img=None, subtitle_id=-1, minor_subtitle_id=-1, minor_subtitle_img=None,
-                             has_subtitle=False) for i in range(0, 67071+2)]
+                             has_subtitle=False) for i in range(0, 1000+2)] # full:67071
     for item in os.listdir(subtitle_images):
         match_result = FILENAME_EXPR.match(item)
         groupdict = match_result.groupdict()
@@ -111,13 +109,24 @@ def main():
                 if j >= len(renderdata):
                     break
                 renderdata[j] = RenderData(
-                    flap=j, subtitle_img=image_data, subtitle_id=subtitle_id, has_subtitle=True)
+                    flap=j,
+                    subtitle_img=image_data,
+                    subtitle_id=subtitle_id,
+                    minor_subtitle_id=renderdata[j].minor_subtitle_id,
+                    minor_subtitle_img=renderdata[j].minor_subtitle_img,
+                    has_subtitle=True)
         else:
             for j in range(begin, end+1):
                 if j >= len(renderdata):
                     break
                 renderdata[j] = RenderData(
-                    flap=j, minor_subtitle_img=image_data, minor_subtitle_id=subtitle_id, has_subtitle=True)
+                    flap=j,
+                    subtitle_img=renderdata[j].subtitle_img,
+                    subtitle_id=renderdata[j].subtitle_id,
+                    minor_subtitle_img=image_data,
+                    minor_subtitle_id=subtitle_id,
+                    has_subtitle=True
+                )
 
         # break
     print(f"{len(renderdata)} flaps loaded")
