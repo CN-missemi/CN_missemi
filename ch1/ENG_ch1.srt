@@ -792,7 +792,7 @@ which is kind of similar. What it will do...
 
 178
 00:11:24,360 --> 00:11:30,041
-it will, here for example, the "&lt;(",
+it will, here for example, the "<(",
 some command and another parenthesis,
 
 179
@@ -1032,12 +1032,12 @@ write no matter how much you want,
 231
 00:14:52,869 --> 00:14:57,730
 there, and it will be discarded.
-And here's the "&gt;" symbol
+And here's the ">" symbol
 
 232
 00:14:57,730 --> 00:15:02,199
 that we saw yesterday for redirecting
-output. Here you have a "2&gt;"
+output. Here you have a "2>"
 
 233
 00:15:02,198 --> 00:15:04,688
@@ -1172,7 +1172,7 @@ is a comment to the file and then we're
 
 265
 00:16:43,200 --> 00:16:47,620
-using the operator "&gt;&gt;" to append at the end of
+using the operator ">>" to append at the end of
 
 266
 00:16:47,620 --> 00:16:50,800
