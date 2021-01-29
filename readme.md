@@ -42,6 +42,8 @@ T 翻译 C 校对 L 时间轴 E 压制
 
 - alphaGem
 
+- Coelacanthus
+
 - GNAQ
 
 - Zjrua
