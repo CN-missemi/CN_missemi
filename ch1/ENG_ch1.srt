@@ -2056,7 +2056,7 @@ test folder. And we're also checking, just in
 531
 00:32:19,899 --> 00:32:21,519
 cases really but we're checking just
-
+# NOTE
 532
 00:32:21,519 --> 00:32:24,460
 that it's also a type F, which stands for
