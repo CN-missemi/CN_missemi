@@ -28,7 +28,7 @@ Missing Semester是MIT的一系列公开课，内容聚焦于讲授计算机专�
 > **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
 >
 > 翻译 [running]
-> 校对 [×]
+> 校对 [running]
 > 打轴 [×]
 > 压制 [×]
 
@@ -66,11 +66,13 @@ T 翻译 R 校对 L 时间轴 E 压制
 
 - A179
 
-- GNAQ
+- TardyPurcell
 
 技术、压制：
 
 - MikuNotFoundException
+
+联系方式：[no1061234176@outlook.com](mailto:no1061234176@outlook.com)
 
 ### 压制说明
 
