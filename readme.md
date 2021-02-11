@@ -16,6 +16,8 @@ Missing Semester是MIT的一系列公开课，内容聚焦于讲授计算机专�
 
 [第一讲 - 课程概览与 Shell](https://www.bilibili.com/video/BV1Eo4y1d7KZ)
 
+[第二讲 - Shell 工具和脚本]()
+
 ### 进度：
 
 > **[第一节 课程概览与 shell](https://missing-semester-cn.github.io/2020/course-shell/)**
@@ -29,6 +31,20 @@ Missing Semester是MIT的一系列公开课，内容聚焦于讲授计算机专�
 >
 > 翻译 [running]
 > 校对 [running]
+> 打轴 [running]
+> 压制 [×]
+
+> **[第三节 编辑器 (Vim)](https://missing-semester-cn.github.io/2020/editors/)**
+>
+> 翻译 [running]
+> 校对 [×]
+> 打轴 [×]
+> 压制 [×]
+
+> **[第四节 数据整理](https://missing-semester-cn.github.io/2020/data-wrangling/)**
+>
+> 翻译 [×]
+> 校对 [×]
 > 打轴 [×]
 > 压制 [×]
 
@@ -51,6 +67,8 @@ T 翻译 R 校对 L 时间轴 E 压制
 - Coelacanthus
 
 - GNAQ
+
+- Hypo
 
 - Zjrua
 
