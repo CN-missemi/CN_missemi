@@ -2020,11 +2020,11 @@ the remaining window becomes fullscreen.
 
 506
 00:19:05,609 --> 00:19:08,159
-I can do : Q again to close this. Now we're in
+I can do :q again to close this. Now we're in
 
 507
 00:19:08,159 --> 00:19:10,379
-the second tab that I'd opened. If I do :Q
+the second tab that I'd opened. If I do :q
 
 508
 00:19:10,379 --> 00:19:14,879
