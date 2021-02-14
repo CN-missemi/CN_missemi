@@ -1,4 +1,4 @@
-![](cover_design_social/github_social_preview.png)
+![](images/github_social_preview.png)
 
 # MIT 课程《计算机科学教育中缺失的一课》简体中文翻译
 
@@ -6,30 +6,55 @@
 
 > 源字幕文件来源于 Youtube 发布的公开网络内容。
 
-Missing Semester是MIT的一系列公开课，内容聚焦于讲授计算机专业实用的软件工具、开发技巧等。
+Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机专业实用的软件工具、开发技巧等。
 
-这一系列课程涵盖从命令行、文本编辑器到版本控制等内容。
+这一系列课程涵盖从命令行、文本编辑器、版本控制到代码调试等内容。
 
-目前，我们做了一些微小的工作，试图把这一系列课程的中文翻译完成。
+目前，我们尝试做一些微小的努力，把这一系列课程的中文翻译带给大家。
 
 ### 视频地址（已发布）：
 
-[第一讲 - 课程概览与 Shell](https://www.bilibili.com/video/BV1Eo4y1d7KZ)
+[第一讲 - 课程概览与 Shell](https://www.bilibili.com/video/BV1Eo4y1d7KZ) - 2021/01/29
 
-[第二讲 - Shell 工具和脚本]()
+[第二讲 - Shell 工具和脚本]() - 
+
+### 字幕组成员（按有贡献计入，字母序）
+
+翻译：
+
+- alphaGem
+
+- Coelacanthus
+
+- GNAQ
+
+- Hypo
+
+- Zjrua
+
+校对：
+
+- GNAQ
+
+- kernel.bin
+
+时间轴：
+
+- A179
+
+- TardyPurcell
+
+技术、压制：
+
+- MikuNotFoundException
+
+美术设计、质量总监：GNAQ - 联系方式 - [no1061234176@outlook.com](mailto:no1061234176@outlook.com)
 
 ### 进度：
 
-> **[第一节 课程概览与 shell](https://missing-semester-cn.github.io/2020/course-shell/)**
->
-> 翻译 [√]
-> 校对 [√]
-> 打轴 [√]
-> 压制 [√]
-
 > **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
 >
-> 翻译 [running]
+> 翻译 [OK]
 > 校对 [running]
 > 打轴 [running]
 > 压制 [×]
@@ -48,65 +73,16 @@ Missing Semester是MIT的一系列公开课，内容聚焦于讲授计算机专�
 > 打轴 [×]
 > 压制 [×]
 
-### 小说明
+### 题外话
 
-为了方便查找，请尽量用如下格式处理 branch / PR
+为了犒劳我们辛勤工作的组员，我们定做了一批纪念品送给他们。
 
-`(T/R/L/E)_ch(0,1,2...)_ID`
+这批纪念品包括鼠标垫、钥匙扣、书签和一些贴纸。如果有余量的话，也会在 bili 官号抽奖发放给大家。
 
-T 翻译 R 校对 L 时间轴 E 压制
+由于实物暂时还没有拿到，就只有设计图：
 
-例子：`R_ch5_GNAQ`
+![](images/bookmark.png)
 
-### 字幕组成员（按有贡献计入，字母序）
+![](images/mousepad.png)
 
-翻译：
-
-- alphaGem
-
-- Coelacanthus
-
-- GNAQ
-
-- Hypo
-
-- Zjrua
-
-校对：
-
-- alphaGem
-
-- GNAQ
-
-- kernel.bin
-
-时间轴：
-
-- A179
-
-- TardyPurcell
-
-技术、压制：
-
-- MikuNotFoundException
-
-联系方式：[no1061234176@outlook.com](mailto:no1061234176@outlook.com)
-
-### 压制说明
-
-#### Farmer's Embedding Method - Toolchain
-
-农民压制法工具链。
-
-使用 ```Chromium``` + ```Pyppeteer``` 渲染字幕图像，然后使用 ```numba``` JIT 优化过的 ```OpenCV``` 操作来将字幕逐帧附加到视频图片上，最后将视频图片拼接起来。
-
-- 准备
-
-	```plain
-	- images/ (以X.png为格式逐帧存储原视频图像)
-	- myaudio.m4a (原视频的音频文件)
-	```
-
-- 运行
-
-	在 ```render_subtitle.py``` 内，修改```FILENAME``` 为使用的字幕文件后运行```render_subtitle.py```，等待完成后运行```render_image.py```，最后运行```generate_final_video.py``` 生成最终视频。
+![](images/keychain.png)
