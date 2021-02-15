@@ -1,4 +1,4 @@
-翻译：Coelacanthus、GNAQ、Zjrua
+翻译：Coelacanthus、GNAQ、Hypo、Zjrua
 校对：GNAQ、kernel.bin
 ----
 时间轴：A179、TardyPurcell

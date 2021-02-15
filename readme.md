@@ -4,7 +4,7 @@
 
 ------------
 
-> 源字幕文件来源于 Youtube 发布的公开网络内容。
+<a href="https://github.com/GNAQ/CN_missemi/blob/master/license.md"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA-orange"></img></a> <a href="https://space.bilibili.com/1010983811/"><img src="https://img.shields.io/badge/Platform-bilibili-blue"></img></a> <a href="https://github.com/GNAQ/CN_missemi/projects/1"><img src="https://img.shields.io/badge/Schedule-GitHub%20Projects-green"></img></a>
 
 Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机专业实用的软件工具、开发技巧等。
 
@@ -18,11 +18,11 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 
 [第二讲 - Shell 工具和脚本]() - 
 
-### 协议
-
-本课程的所有内容，包括网站源代码、课程笔记、练习和课程视频均以署名-非商业性使用-相同方式共享 4.0 国际 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权。关于贡献和翻译，在[这里](license.md)获取更多信息。
-
 ### 字幕组成员（按有贡献计入，字母序）
+
+<a href="https://github.com/GNAQ/CN_missemi/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=GNAQ/CN_missemi" />
+</a>
 
 翻译：
 
@@ -54,28 +54,9 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 
 美术设计、质量总监：GNAQ - 联系方式 - [no1061234176@outlook.com](mailto:no1061234176@outlook.com)
 
-### 进度：
+### 协议
 
-> **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
->
-> 翻译 [OK]
-> 校对 [running]
-> 打轴 [running]
-> 压制 [×]
-
-> **[第三节 编辑器 (Vim)](https://missing-semester-cn.github.io/2020/editors/)**
->
-> 翻译 [running]
-> 校对 [×]
-> 打轴 [×]
-> 压制 [×]
-
-> **[第四节 数据整理](https://missing-semester-cn.github.io/2020/data-wrangling/)**
->
-> 翻译 [×]
-> 校对 [×]
-> 打轴 [×]
-> 压制 [×]
+本课程的所有内容，包括网站源代码、课程笔记、练习和课程视频均以署名-非商业性使用-相同方式共享 4.0 国际 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权。关于贡献和翻译，在[这里](license.md)获取更多信息。
 
 ### 题外话
 
