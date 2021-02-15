@@ -1,13 +1,13 @@
 1
-00:00:00,400 --> 00:00:02,860
+00:00:00,400 --> 00:00:02,859
 Okay, welcome back.
 
 2
-00:00:02,860 --> 00:00:05,920
+00:00:02,859 --> 00:00:05,919
 Today we're gonna cover a couple separate
 
 3
-00:00:05,920 --> 00:00:07,620
+00:00:05,919 --> 00:00:07,619
 two main topics related to the shell.
 
 4
@@ -25,17 +25,17 @@ in Mac, or like in most Linux systems,
 that's the default shell.
 
 7
-00:00:18,520 --> 00:00:22,720
+00:00:18,519 --> 00:00:22,719
 And it's also kind of backward compatible through
 other shells like zsh, it's pretty nice.
 
 8
-00:00:22,740 --> 00:00:25,940
+00:00:22,739 --> 00:00:25,939
 And then we're gonna cover some other shell
 tools that are really convenient,
 
 9
-00:00:26,060 --> 00:00:29,320
+00:00:26,059 --> 00:00:29,319
 so you avoid doing really repetitive tasks,
 
 10
@@ -43,7 +43,7 @@ so you avoid doing really repetitive tasks,
 like looking for some piece of code
 
 11
-00:00:31,580 --> 00:00:33,420
+00:00:31,579 --> 00:00:33,419
 or for some elusive file.
 
 12
@@ -52,7 +52,7 @@ And there are already really
 nice built-in commands
 
 13
-00:00:36,160 --> 00:00:40,960
+00:00:36,159 --> 00:00:40,959
 that will really help you to do those things.
 
 14
@@ -60,15 +60,15 @@ that will really help you to do those things.
 So yesterday we already kind of introduced
 
 15
-00:00:43,260 --> 00:00:46,160
+00:00:43,259 --> 00:00:46,159
 you to the shell and some of it's quirks,
 
 16
-00:00:46,160 --> 00:00:48,720
+00:00:46,159 --> 00:00:48,719
 and like how you start executing commands,
 
 17
-00:00:48,720 --> 00:00:50,600
+00:00:48,719 --> 00:00:50,599
 redirecting them.
 
 18
@@ -80,21 +80,21 @@ Today, we're going to kind of cover more about
 the syntax of the variables, the control flow,
 
 20
-00:00:56,120 --> 00:00:57,720
+00:00:56,119 --> 00:00:57,719
 functions of the shell.
 
 21
-00:00:57,720 --> 00:01:02,700
+00:00:57,719 --> 00:01:02,699
 So for example, once you drop
 into a shell, say you want to
 
 22
-00:01:02,760 --> 00:01:06,360
+00:01:02,759 --> 00:01:06,359
 define a variable, which is
 one of the first things you
 
 23
-00:01:06,360 --> 00:01:09,340
+00:01:06,359 --> 00:01:09,339
 learn to do in a programming language.
 
 24
@@ -102,12 +102,12 @@ learn to do in a programming language.
 Here you could do something like foo equals bar.
 
 25
-00:01:12,860 --> 00:01:18,400
+00:01:12,859 --> 00:01:18,399
 And now we can access the value
 of foo by doing "$foo".
 
 26
-00:01:18,460 --> 00:01:21,400
+00:01:18,459 --> 00:01:21,399
 And that's bar, perfect.
 
 27
@@ -125,7 +125,7 @@ Mainly because spaces are reserved, and
 that will be for separating arguments.
 
 30
-00:01:33,380 --> 00:01:36,700
+00:01:33,379 --> 00:01:36,699
 So, for example, something like foo equals bar
 
 31
@@ -154,42 +154,42 @@ with the first argument "=" and
 the second argument "bar".
 
 36
-00:01:57,520 --> 00:02:03,880
+00:01:57,519 --> 00:02:03,879
 And in general, whenever you are having
 some issues, like some files with spaces
 
 37
-00:02:03,880 --> 00:02:06,160
+00:02:03,879 --> 00:02:06,159
 you will need to be careful about that.
 
 38
-00:02:06,160 --> 00:02:10,620
+00:02:06,159 --> 00:02:10,619
 You need to be careful about quoting strings.
 
 39
-00:02:10,639 --> 00:02:16,480
+00:02:10,639 --> 00:02:16,479
 So, going into that, how you do strings in bash.
 There are two ways that you can define a string:
 
 40
-00:02:16,540 --> 00:02:24,720
+00:02:16,539 --> 00:02:24,719
 You can define strings using double quotes
 and you can define strings using single,
 
 41
-00:02:24,720 --> 00:02:26,540
+00:02:24,719 --> 00:02:26,539
 sorry,
 
 42
-00:02:26,540 --> 00:02:28,880
+00:02:26,539 --> 00:02:28,879
 using single quotes.
 
 43
-00:02:29,140 --> 00:02:32,760
+00:02:29,139 --> 00:02:32,759
 However, for literal strings they are equivalent,
 
 44
-00:02:32,760 --> 00:02:35,460
+00:02:32,759 --> 00:02:35,459
 but for the rest they are not equivalent.
 
 45
@@ -197,12 +197,12 @@ but for the rest they are not equivalent.
 So, for example, if we do value is $foo,
 
 46
-00:02:43,440 --> 00:02:48,480
+00:02:43,439 --> 00:02:48,479
 the $foo has been expanded like
 a string, substituted to the
 
 47
-00:02:48,480 --> 00:02:50,820
+00:02:48,479 --> 00:02:50,819
 value of the foo variable in the shell.
 
 48
@@ -211,7 +211,7 @@ Whereas if we do this with a simple quote,
 we are just getting the $foo as it is
 
 49
-00:02:58,940 --> 00:03:02,280
+00:02:58,939 --> 00:03:02,279
 and single quotes won't be replacing. Again,
 
 50
@@ -220,7 +220,7 @@ it's really easy to write a script, assume that
 this is kind of like Python, that you might be
 
 51
-00:03:07,290 --> 00:03:10,860
+00:03:07,289 --> 00:03:10,859
 more familiar with, and not realize all that.
 
 52
@@ -233,21 +233,21 @@ Then bash also has control flow
 techniques that we'll see later,
 
 54
-00:03:17,849 --> 00:03:24,440
+00:03:17,848 --> 00:03:24,439
 like for loops, while loops, and one main
 thing is you can define functions.
 
 55
-00:03:24,440 --> 00:03:27,820
+00:03:24,439 --> 00:03:27,819
 We can access a function I have defined here.
 
 56
-00:03:28,220 --> 00:03:34,220
+00:03:28,219 --> 00:03:34,219
 Here we have the MCD function, that
 has been defined, and the thing is
 
 57
-00:03:34,220 --> 00:03:38,400
+00:03:34,219 --> 00:03:38,399
 so far, we have just kind of seen how
 to execute several commands by piping
 
@@ -256,12 +256,12 @@ to execute several commands by piping
 into them, kind of saw that briefly yesterday.
 
 59
-00:03:40,940 --> 00:03:44,980
+00:03:40,939 --> 00:03:44,979
 But a lot of times you want to do first
 one thing and then another thing.
 
 60
-00:03:44,980 --> 00:03:47,580
+00:03:44,979 --> 00:03:47,579
 And that's kind of like the
 
 61
@@ -269,7 +269,7 @@ And that's kind of like the
 sequential execution that we get here.
 
 62
-00:03:50,880 --> 00:03:54,260
+00:03:50,879 --> 00:03:54,259
 Here, for example, we're
 calling the MCD function.
 
@@ -287,16 +287,16 @@ which is creating this directory.
 Here, $1 is like a special variable.
 
 66
-00:04:05,600 --> 00:04:07,440
+00:04:05,599 --> 00:04:07,439
 This is the way that bash works,
 
 67
-00:04:07,440 --> 00:04:12,160
+00:04:07,439 --> 00:04:12,159
 whereas in other scripting languages
 there will be like argv,
 
 68
-00:04:12,160 --> 00:04:16,620
+00:04:12,159 --> 00:04:16,619
 the first item of the array argv
 will contain the argument.
 
@@ -309,7 +309,7 @@ In bash it's $1. And in general, a lot
 of things in bash will be dollar something
 
 71
-00:04:21,640 --> 00:04:26,680
+00:04:21,639 --> 00:04:26,679
 and will be reserved, we will
 be seeing more examples later.
 
@@ -334,21 +334,21 @@ it will define this function. But sometimes
 it's nicer to write things in a file.
 
 76
-00:04:45,260 --> 00:04:50,040
+00:04:45,259 --> 00:04:50,039
 What we can do is we can source
 this. And that will
 
 77
-00:04:50,080 --> 00:04:53,960
+00:04:50,079 --> 00:04:53,959
 execute this script in our shell and load it.
 
 78
-00:04:53,960 --> 00:04:59,340
+00:04:53,959 --> 00:04:59,339
 So now it looks like nothing happened,
 but now the MCD function has
 
 79
-00:04:59,340 --> 00:05:03,460
+00:04:59,339 --> 00:05:03,459
 been defined in our shell. So
 we can now for example do
 
@@ -363,11 +363,11 @@ directory. We both created the
 folder and we moved into it.
 
 82
-00:05:15,760 --> 00:05:18,820
+00:05:15,759 --> 00:05:18,819
 What else. So a result is...
 
 83
-00:05:18,820 --> 00:05:22,160
+00:05:18,819 --> 00:05:22,159
 We can access the first argument with $1.
 
 84
@@ -379,17 +379,17 @@ There's a lot more reserved commands,
 for example $0 will be the name of the script,
 
 86
-00:05:30,020 --> 00:05:35,260
+00:05:30,019 --> 00:05:35,259
 $2 through $9 will be the second
 through the ninth arguments
 
 87
-00:05:35,260 --> 00:05:38,070
+00:05:35,259 --> 00:05:38,069
 that the bash script takes.
 Some of these reserved
 
 88
-00:05:38,070 --> 00:05:43,080
+00:05:38,069 --> 00:05:43,079
 keywords can be directly used
 in the shell, so for example
 
@@ -403,30 +403,30 @@ from the previous command,
 which I'll also explain briefly.
 
 91
-00:05:53,580 --> 00:05:58,320
+00:05:53,579 --> 00:05:58,319
 But for example, $_ will get
 you the last argument of the
 
 92
-00:05:58,320 --> 00:06:03,460
+00:05:58,319 --> 00:06:03,459
 previous command. So another way
 we could have done this is
 
 93
-00:06:03,460 --> 00:06:07,380
+00:06:03,459 --> 00:06:07,379
 we could have said like "mkdir test"
 
 94
-00:06:07,380 --> 00:06:12,020
+00:06:07,379 --> 00:06:12,019
 and instead of rewriting test, we
 can access that last argument
 
 95
-00:06:12,020 --> 00:06:18,400
+00:06:12,019 --> 00:06:18,399
 as part of the (previous command), using $_
 
 96
-00:06:18,400 --> 00:06:23,160
+00:06:18,399 --> 00:06:23,159
 like, that will be replaced with
 test and now we go into test.
 
@@ -446,11 +446,11 @@ whenever you, for example, are trying
 to create something and you don't have
 
 100
-00:06:37,320 --> 00:06:41,000
+00:06:37,319 --> 00:06:40,999
 enough permissions. Then, you can do "sudo !!"
 
 101
-00:06:41,010 --> 00:06:43,400
+00:06:41,009 --> 00:06:43,399
 and then that will replace the command in
 
 102
@@ -458,11 +458,11 @@ and then that will replace the command in
 there and now you can just try doing
 
 103
-00:06:46,440 --> 00:06:48,380
+00:06:46,439 --> 00:06:48,379
 that. And now it will prompt you for a password,
 
 104
-00:06:48,380 --> 00:06:50,080
+00:06:48,379 --> 00:06:50,079
 because you have sudo permissions.
 
 105
@@ -475,11 +475,11 @@ of the error command.
 Yesterday we saw that, in general, there are
 
 107
-00:06:59,400 --> 00:07:02,400
+00:06:59,399 --> 00:07:02,399
 different ways a process can communicate
 
 108
-00:07:02,400 --> 00:07:05,091
+00:07:02,399 --> 00:07:05,090
 with other processes or commands.
 
 109
@@ -492,25 +492,25 @@ input, which also was like
 getting stuff through the standard input,
 
 111
-00:07:11,640 --> 00:07:13,840
+00:07:11,639 --> 00:07:13,839
 putting stuff into the standard output.
 
 112
-00:07:13,840 --> 00:07:16,830
+00:07:13,839 --> 00:07:16,829
 There are a couple more interesting
 things, there's also like a
 
 113
-00:07:16,830 --> 00:07:19,837
+00:07:16,829 --> 00:07:19,836
 standard error, a stream where you write errors
 
 114
-00:07:19,837 --> 00:07:23,900
+00:07:19,836 --> 00:07:23,899
 that happen with your program and you don't
 want to pollute the standard output.
 
 115
-00:07:23,900 --> 00:07:27,420
+00:07:23,899 --> 00:07:27,419
 There's also the error code,
 which is like a general
 
@@ -519,12 +519,12 @@ which is like a general
 thing in a lot of programming languages,
 
 117
-00:07:29,520 --> 00:07:34,460
+00:07:29,519 --> 00:07:34,459
 some way of reporting how the
 entire run of something went.
 
 118
-00:07:34,460 --> 00:07:36,060
+00:07:34,459 --> 00:07:36,059
 So if we do
 
 119
@@ -532,7 +532,7 @@ So if we do
 something like echo hello and we
 
 120
-00:07:41,580 --> 00:07:43,920
+00:07:41,579 --> 00:07:43,919
 query for the value, it's zero. And it's zero
 
 121
@@ -540,7 +540,7 @@ query for the value, it's zero. And it's zero
 because everything went okay and there
 
 122
-00:07:45,840 --> 00:07:49,170
+00:07:45,839 --> 00:07:49,169
 weren't any issues. And a zero exit code is
 
 123
@@ -548,7 +548,7 @@ weren't any issues. And a zero exit code is
 the same as you will get in a language
 
 124
-00:07:50,940 --> 00:07:54,980
+00:07:50,939 --> 00:07:54,979
 like C, like 0 means everything
 went fine, there were no errors.
 
@@ -567,11 +567,11 @@ and now we check for that
 value, it's 1. And that's
 
 128
-00:08:08,130 --> 00:08:10,770
+00:08:08,129 --> 00:08:10,769
 because we tried to search for the foobar
 
 129
-00:08:10,770 --> 00:08:13,620
+00:08:10,769 --> 00:08:13,619
 string in the MCD script and it wasn't there.
 
 130
@@ -579,15 +579,15 @@ string in the MCD script and it wasn't there.
 So grep doesn't print anything, but
 
 131
-00:08:17,190 --> 00:08:19,950
+00:08:17,189 --> 00:08:19,949
 let us know that things didn't work by
 
 132
-00:08:19,950 --> 00:08:22,260
+00:08:19,949 --> 00:08:22,259
 giving us a 1 error code.
 
 133
-00:08:22,260 --> 00:08:24,420
+00:08:22,259 --> 00:08:24,419
 There are some interesting commands like
 
 134
@@ -595,7 +595,7 @@ There are some interesting commands like
 "true", for example, will always have a zero
 
 135
-00:08:29,160 --> 00:08:35,059
+00:08:29,160 --> 00:08:35,060
 error code, and false will always
 have a one error code.
 
@@ -604,7 +604,7 @@ have a one error code.
 Then there are like
 
 137
-00:08:37,919 --> 00:08:40,080
+00:08:37,918 --> 00:08:40,079
 these logical operators that you can use
 
 138
@@ -613,21 +613,21 @@ to do some sort of conditionals.
 For example, one way...
 
 139
-00:08:43,808 --> 00:08:47,160
+00:08:43,807 --> 00:08:47,159
 you also have IF's and ELSE's, that
 we will see later, but you can do
 
 140
-00:08:47,160 --> 00:08:51,920
+00:08:47,159 --> 00:08:51,919
 something like "false", and echo "Oops fail".
 
 141
-00:08:51,920 --> 00:08:56,300
+00:08:51,919 --> 00:08:56,299
 So here we have two commands connected
 by this OR operator.
 
 142
-00:08:56,300 --> 00:09:00,250
+00:08:56,299 --> 00:09:00,249
 What bash is gonna do here, it's
 gonna execute the first one
 
@@ -640,12 +640,12 @@ and if the first one didn't work, then it's
 gonna execute the second one. So here we get it,
 
 145
-00:09:07,380 --> 00:09:12,000
+00:09:07,379 --> 00:09:11,999
 because it's gonna try to do a logical
 OR. If the first one didn't have
 
 146
-00:09:12,000 --> 00:09:15,960
+00:09:12,000 --> 00:09:15,959
 a zero error code, it's gonna try to
 do the second one. Similarly, if we
 
@@ -659,7 +659,7 @@ use something like "true",
 since true will have a zero error code, then the
 
 149
-00:09:22,180 --> 00:09:24,700
+00:09:22,179 --> 00:09:24,699
 second one will be short-circuited and
 
 150
@@ -667,7 +667,7 @@ second one will be short-circuited and
 it won't be printed.
 
 151
-00:09:32,560 --> 00:09:36,970
+00:09:32,559 --> 00:09:36,969
 Similarly, we have an AND
 operator which will only
 
@@ -676,7 +676,7 @@ operator which will only
 execute the second part if the first one
 
 153
-00:09:39,430 --> 00:09:41,440
+00:09:39,429 --> 00:09:41,439
 ran without errors.
 
 154
@@ -694,7 +694,7 @@ Kind of not exactly related to that, but
 another thing that you will see is
 
 157
-00:10:00,020 --> 00:10:04,120
+00:10:00,019 --> 00:10:04,119
 that no matter what you execute,
 then you can concatenate
 
@@ -707,17 +707,17 @@ commands using a semicolon in the same line,
 and that will always print.
 
 160
-00:10:10,300 --> 00:10:13,630
+00:10:10,299 --> 00:10:13,629
 Beyond that, what we haven't
 seen, for example, is how
 
 161
-00:10:13,630 --> 00:10:19,460
+00:10:13,629 --> 00:10:19,459
 you go about getting the output
 of a command into a variable.
 
 162
-00:10:19,630 --> 00:10:24,120
+00:10:19,629 --> 00:10:24,119
 And the way we can do that is
 doing something like this.
 
@@ -746,7 +746,7 @@ So we do that and then we ask
 for foo, we view our string.
 
 168
-00:10:42,280 --> 00:10:48,460
+00:10:42,279 --> 00:10:48,459
 More generally, we can do this thing
 called command substitution
 
@@ -755,7 +755,7 @@ called command substitution
 by putting it into any string.
 
 170
-00:10:51,500 --> 00:10:55,162
+00:10:51,500 --> 00:10:55,161
 And since we're using double quotes
 instead of single quotes
 
@@ -774,11 +774,11 @@ Another interesting thing is, right now,
 what this is expanding to is a string
 
 174
-00:11:09,400 --> 00:11:10,300
+00:11:09,399 --> 00:11:10,299
 instead of
 
 175
-00:11:11,920 --> 00:11:13,320
+00:11:11,919 --> 00:11:13,319
 It's just expanding as a string.
 
 176
@@ -787,12 +787,252 @@ Another nifty and lesser known tool
 is called process substitution,
 
 177
-00:11:17,640 --> 00:11:20,540
+00:11:17,639 --> 00:11:20,539
 which is kind of similar. What it will do...
 
 178
 00:11:24,360 --> 00:11:30,041
-it will, here for example, the "" symbol
+it will, here for example, the "<(",
+some command and another parenthesis,
+
+179
+00:11:30,041 --> 00:11:34,840
+what that will do is: that will execute,
+that will get the output to
+
+180
+00:11:34,840 --> 00:11:39,120
+kind of like a temporary file and it will
+give the file handle to the command.
+
+181
+00:11:39,120 --> 00:11:42,020
+So here what we're doing is we're getting...
+
+182
+00:11:42,019 --> 00:11:45,759
+we're LS'ing the directory, putting
+it into a temporary file,
+
+183
+00:11:45,759 --> 00:11:48,039
+doing the same thing for the
+parent folder and then
+
+184
+00:11:48,039 --> 00:11:51,309
+we're concatenating both files. And this
+
+185
+00:11:51,309 --> 00:11:55,519
+will, may be really handy, because
+some commands instead of expecting
+
+186
+00:11:55,519 --> 00:11:59,499
+the input coming from the stdin,
+they are expecting things to
+
+187
+00:11:59,500 --> 00:12:03,559
+come from some file that is giving
+some of the arguments.
+
+188
+00:12:04,700 --> 00:12:07,620
+So we get both things concatenated.
+
+189
+00:12:12,879 --> 00:12:17,039
+I think so far there's been a lot of
+information, let's see a simple,
+
+190
+00:12:17,039 --> 00:12:22,919
+an example script where we
+see a few of these things.
+
+191
+00:12:23,200 --> 00:12:27,220
+So for example here we have a string and we
+
+192
+00:12:27,220 --> 00:12:30,327
+have this $date. So $date is a program.
+
+193
+00:12:30,326 --> 00:12:34,539
+Again there's a lot of programs
+in UNIX you will kind of slowly
+
+194
+00:12:34,539 --> 00:12:36,119
+familiarize with a lot of them.
+
+195
+00:12:36,120 --> 00:12:42,820
+Date just prints what the current date is
+and you can specify different formats.
+
+196
+00:12:43,799 --> 00:12:48,699
+Then, we have these $0 here. $0 is the name
+
+197
+00:12:48,700 --> 00:12:50,540
+of the script that we're running.
+
+198
+00:12:50,549 --> 00:12:56,589
+Then we have $#, that's the number
+of arguments that we are giving
+
+199
+00:12:56,590 --> 00:13:01,920
+to the command, and then $$ is the process
+ID of this command that is running.
+
+200
+00:13:01,919 --> 00:13:06,159
+Again, there's a lot of these dollar
+things, they're not intuitive
+
+201
+00:13:06,159 --> 00:13:07,689
+because they don't have like a mnemonic
+
+202
+00:13:07,690 --> 00:13:10,450
+way of remembering, maybe, $#. But
+
+203
+00:13:10,450 --> 00:13:12,880
+it can be... you will just be
+
+204
+00:13:12,879 --> 00:13:14,659
+seeing them and getting familiar with them.
+
+205
+00:13:14,659 --> 00:13:19,199
+Here we have this $@, and that will
+expand to all the arguments.
+
+206
+00:13:19,200 --> 00:13:21,480
+So, instead of having to assume that,
+
+207
+00:13:21,490 --> 00:13:25,840
+maybe say, we have three arguments
+and writing $1, $2, $3,
+
+208
+00:13:25,840 --> 00:13:29,760
+if we don't know how many arguments we
+can put all those arguments there.
+
+209
+00:13:29,759 --> 00:13:33,669
+And that has been given to a
+for loop. And the for loop
+
+210
+00:13:33,669 --> 00:13:39,019
+will, in time, get the file variable
+
+211
+00:13:39,019 --> 00:13:43,879
+and it will be giving each one of the arguments.
+
+212
+00:13:43,879 --> 00:13:47,528
+So what we're doing is, for every
+one of the arguments we're giving.
+
+213
+00:13:47,528 --> 00:13:51,698
+Then, in the next line we're running the
+
+214
+00:13:51,698 --> 00:13:56,919
+grep command which is just search for
+a substring in some file and we're
+
+215
+00:13:56,919 --> 00:14:01,379
+searching for the string foobar in the file.
+
+216
+00:14:01,379 --> 00:14:06,489
+Here, we have put the variable
+that the file took, to expand.
+
+217
+00:14:06,490 --> 00:14:11,559
+And yesterday we saw that if we care
+about the output of a program, we can
+
+218
+00:14:11,559 --> 00:14:15,679
+redirect it to somewhere, to save it
+or to connect it to some other file.
+
+219
+00:14:15,679 --> 00:14:18,938
+But sometimes you want the opposite.
+
+220
+00:14:18,938 --> 00:14:21,259
+Sometimes, here for example, we care...
+
+221
+00:14:21,259 --> 00:14:25,118
+we're gonna care about the error code. About
+this script, we're gonna care whether the
+
+222
+00:14:25,120 --> 00:14:28,440
+grep ran successfully or it didn't.
+
+223
+00:14:28,440 --> 00:14:33,220
+So we can actually discard
+entirely what the output...
+
+224
+00:14:33,220 --> 00:14:37,480
+like both the standard output and the
+standard error of the grep command.
+
+225
+00:14:37,480 --> 00:14:39,970
+And what we're doing is we're
+
+226
+00:14:39,970 --> 00:14:43,029
+redirecting the output to /dev/null which
+
+227
+00:14:43,028 --> 00:14:46,539
+is kind of like a special device in UNIX
+
+228
+00:14:46,539 --> 00:14:49,118
+systems where you can like write and
+
+229
+00:14:49,119 --> 00:14:51,129
+it will be discarded. Like you can
+
+230
+00:14:51,129 --> 00:14:52,869
+write no matter how much you want,
+
+231
+00:14:52,869 --> 00:14:57,730
+there, and it will be discarded.
+And here's the ">" symbol
 
 232
 00:14:57,730 --> 00:15:02,199
@@ -800,11 +1040,11 @@ that we saw yesterday for redirecting
 output. Here you have a "2>"
 
 233
-00:15:02,199 --> 00:15:04,689
+00:15:02,198 --> 00:15:04,688
 and, as some of you might have
 
 234
-00:15:04,689 --> 00:15:06,519
+00:15:04,688 --> 00:15:06,518
 guessed by now, this is for redirecting the
 
 235
@@ -816,7 +1056,7 @@ standard error, because those those two
 streams are separate, and you kind of have to
 
 237
-00:15:11,709 --> 00:15:14,639
+00:15:11,708 --> 00:15:14,638
 tell bash what to do with each one of them.
 
 238
@@ -824,7 +1064,7 @@ tell bash what to do with each one of them.
 So here, we run, we check if the file has
 
 239
-00:15:17,529 --> 00:15:20,649
+00:15:17,528 --> 00:15:20,648
 foobar, and if the file has foobar then it's
 
 240
@@ -832,7 +1072,7 @@ foobar, and if the file has foobar then it's
 going to have a zero code. If it
 
 241
-00:15:22,959 --> 00:15:24,369
+00:15:22,958 --> 00:15:24,368
 doesn't have foobar, it's gonna have a
 
 242
@@ -861,7 +1101,7 @@ other programming languages
 will have "==", "!=", these
 
 248
-00:15:47,650 --> 00:15:51,070
+00:15:47,649 --> 00:15:51,069
 symbols. In bash there's
 
 249
@@ -869,7 +1109,7 @@ symbols. In bash there's
 like a reserved set of comparisons and
 
 250
-00:15:53,650 --> 00:15:54,970
+00:15:53,649 --> 00:15:54,969
 it's mainly because there's a lot of
 
 251
@@ -877,7 +1117,7 @@ it's mainly because there's a lot of
 things you might want to test for when
 
 252
-00:15:57,520 --> 00:15:59,080
+00:15:57,519 --> 00:15:59,079
 you're in the shell. Here for example
 
 253
@@ -890,11 +1130,11 @@ integer values, being the same. Or for
 example here, the "-F" check will let
 
 255
-00:16:08,380 --> 00:16:10,420
+00:16:08,379 --> 00:16:10,419
 us know if a file exists, which is
 
 256
-00:16:10,420 --> 00:16:12,220
+00:16:10,419 --> 00:16:12,219
 something that you will run into very,
 
 257
@@ -902,11 +1142,11 @@ something that you will run into very,
 very commonly. I'm going back to the
 
 258
-00:16:17,530 --> 00:16:23,020
+00:16:17,529 --> 00:16:23,019
 example. Then, what happens when we
 
 259
-00:16:24,400 --> 00:16:28,600
+00:16:24,399 --> 00:16:28,599
 if the file did not have
 foobar, like there was a
 
@@ -919,11 +1159,11 @@ nonzero error code, then we print
 "this file doesn't have any foobar,
 
 262
-00:16:33,400 --> 00:16:36,400
+00:16:33,399 --> 00:16:36,399
 we're going to add one". And what we do is
 
 263
-00:16:36,400 --> 00:16:40,750
+00:16:36,399 --> 00:16:40,749
 we echo this "# foobar", hoping this
 
 264
@@ -939,7 +1179,7 @@ using the operator ">>" to append at the end of
 the file. Here since the file has
 
 267
-00:16:50,800 --> 00:16:54,490
+00:16:50,799 --> 00:16:54,489
 been fed through the script, and we don't
 know it beforehand, we have to substitute
 
@@ -949,24 +1189,24 @@ the variable of the filename. We can
 actually run this. We already have
 
 269
-00:17:03,430 --> 00:17:05,260
+00:17:03,429 --> 00:17:05,259
 correct permissions in this script and
 
 270
-00:17:05,260 --> 00:17:10,540
+00:17:05,259 --> 00:17:10,539
 we can give a few examples. We have a
 few files in this folder, "mcd" is the
 
 271
-00:17:10,540 --> 00:17:12,760
+00:17:10,539 --> 00:17:12,759
 one we saw at the beginning for the MCD
 
 272
-00:17:12,760 --> 00:17:15,040
+00:17:12,759 --> 00:17:15,039
 function, some other "script" function and
 
 273
-00:17:15,040 --> 00:17:21,700
+00:17:15,039 --> 00:17:21,699
 we can even feed the own script to itself
 to check if it has foobar in it.
 
@@ -992,15 +1232,15 @@ been replaced to the current time, then
 we're running this program, with three
 
 279
-00:17:39,100 --> 00:17:44,560
+00:17:39,099 --> 00:17:44,559
 arguments, this randomized PID, and then
 
 280
-00:17:44,560 --> 00:17:46,510
+00:17:44,559 --> 00:17:46,509
 it's telling us MCD doesn't have any
 
 281
-00:17:46,510 --> 00:17:48,169
+00:17:46,509 --> 00:17:48,168
 foobar, so we are adding a new one,
 
 282
@@ -1016,12 +1256,12 @@ have one. So now for example let's look at MCD
 and it has the comment that we were looking for.
 
 285
-00:17:59,000 --> 00:18:05,619
+00:17:59,000 --> 00:18:05,618
 One other thing to know when you're
 executing scripts is that
 
 286
-00:18:05,619 --> 00:18:07,759
+00:18:05,618 --> 00:18:07,758
 here we have like three completely
 
 287
@@ -1029,15 +1269,15 @@ here we have like three completely
 different arguments but very commonly
 
 288
-00:18:10,279 --> 00:18:12,889
+00:18:10,278 --> 00:18:12,888
 you will be giving arguments that
 
 289
-00:18:12,889 --> 00:18:16,100
+00:18:12,888 --> 00:18:16,099
 can be more succinctly given in some way.
 
 290
-00:18:16,100 --> 00:18:20,179
+00:18:16,099 --> 00:18:20,178
 So for example here if we wanted to
 
 291
@@ -1049,12 +1289,12 @@ refer to all the ".sh" scripts we
 could just do something like "ls *.sh"
 
 293
-00:18:31,120 --> 00:18:36,120
+00:18:31,119 --> 00:18:36,119
 and this is a way of filename expansion
 that most shells have
 
 294
-00:18:36,120 --> 00:18:38,450
+00:18:36,119 --> 00:18:38,449
 that's called "globbing". Here, as you
 
 295
@@ -1066,7 +1306,7 @@ might expect, this is gonna say
 anything that has any kind of sort of
 
 297
-00:18:42,559 --> 00:18:45,940
+00:18:42,558 --> 00:18:45,939
 characters and ends up with "sh".
 
 298
@@ -1084,7 +1324,7 @@ were like a... we can do a
 "project42", for example
 
 301
-00:19:00,620 --> 00:19:04,220
+00:19:00,619 --> 00:19:04,219
 And now if we just want to refer
 to the projects that have
 
@@ -1093,7 +1333,7 @@ to the projects that have
 a single character, but not two characters
 
 303
-00:19:07,279 --> 00:19:08,720
+00:19:07,278 --> 00:19:08,719
 afterwards, like any other characters,
 
 304
@@ -1106,11 +1346,11 @@ will expand to only a single one.
 And we get, LS'ing, first
 
 306
-00:19:17,360 --> 00:19:21,049
+00:19:17,359 --> 00:19:21,048
 "project1" and then "project2".
 
 307
-00:19:21,049 --> 00:19:27,580
+00:19:21,048 --> 00:19:27,579
 In general, globbing can be very powerful.
 You can also combine it.
 
@@ -1125,20 +1365,20 @@ So let's say we have an image,
 that we have in this folder
 
 310
-00:19:39,320 --> 00:19:43,620
+00:19:39,319 --> 00:19:43,619
 and we want to convert this image from PNG to JPG
 
 311
-00:19:43,620 --> 00:19:46,320
+00:19:43,619 --> 00:19:46,319
 or we could maybe copy it, or...
 
 312
-00:19:46,320 --> 00:19:49,609
+00:19:46,319 --> 00:19:49,608
 it's a really common pattern, to have
 two or more arguments that are
 
 313
-00:19:49,609 --> 00:19:55,240
+00:19:49,608 --> 00:19:55,239
 fairly similar and you want to do something
 with them as arguments to some command.
 
@@ -1148,7 +1388,7 @@ You could do it this way, or more
 succinctly, you can just do
 
 315
-00:20:01,290 --> 00:20:08,880
+00:20:01,289 --> 00:20:08,879
 "image.{png,jpg}"
 
 316
@@ -1157,11 +1397,11 @@ And here, I'm getting some color feedback,
 but what this will do, is
 
 317
-00:20:13,590 --> 00:20:17,610
+00:20:13,589 --> 00:20:17,609
 it'll expand into the line above.
 
 318
-00:20:17,610 --> 00:20:23,990
+00:20:17,609 --> 00:20:23,989
 Actually, I can ask zsh to do that for
 me. And that what's happening here.
 
@@ -1170,7 +1410,7 @@ me. And that what's happening here.
 This is really powerful. So for example
 
 320
-00:20:26,550 --> 00:20:29,220
+00:20:26,549 --> 00:20:29,219
 you can do something like... we could do...
 
 321
@@ -1179,7 +1419,7 @@ you can do something like... we could do...
 all of this will be expanded.
 
 322
-00:20:35,520 --> 00:20:41,880
+00:20:35,519 --> 00:20:41,879
 You can also do it at several levels
 and you will do the Cartesian...
 
@@ -1194,7 +1434,7 @@ and then here there's "{1,2,3}",
 and this is going to do
 
 325
-00:20:53,310 --> 00:20:54,990
+00:20:53,309 --> 00:20:54,989
 the Cartesian product of these
 
 326
@@ -1207,17 +1447,17 @@ into all these things,
 that we can quickly "touch".
 
 328
-00:21:03,540 --> 00:21:10,520
+00:21:03,539 --> 00:21:10,519
 You can also combine the asterisk
 glob with the curly braces glob.
 
 329
-00:21:10,520 --> 00:21:16,840
+00:21:10,519 --> 00:21:16,839
 You can even use kind of ranges.
 Like, we can do "mkdir"
 
 330
-00:21:16,840 --> 00:21:21,420
+00:21:16,839 --> 00:21:21,419
 and we create the "foo" and the
 "bar" directories, and then we
 
@@ -1238,16 +1478,16 @@ like all these combinations, through "j", and
 then the same for "bar". I haven't
 
 335
-00:21:35,250 --> 00:21:38,610
+00:21:35,250 --> 00:21:38,609
 really tested it... but yeah, we're getting
 all these combinations that we
 
 336
-00:21:38,610 --> 00:21:41,850
+00:21:38,609 --> 00:21:41,849
 can "touch". And now, if we touch something
 
 337
-00:21:41,850 --> 00:21:47,970
+00:21:41,849 --> 00:21:47,969
 that is different between these
 two [directories], we
 
@@ -1262,7 +1502,7 @@ earlier. Say we want to check what
 files are different between these
 
 340
-00:21:59,610 --> 00:22:03,400
+00:21:59,609 --> 00:22:03,399
 two folders. For us it's obvious,
 we just saw it, it's X and Y,
 
@@ -1280,7 +1520,7 @@ output of one LS and the other LS.
 Unsurprisingly we're getting: X is
 
 344
-00:22:12,810 --> 00:22:14,700
+00:22:12,809 --> 00:22:14,699
 only in the first folder and Y is
 
 345
@@ -1293,17 +1533,17 @@ is, right now, we have only seen
 bash scripts. If you like other
 
 347
-00:22:26,520 --> 00:22:30,260
+00:22:26,519 --> 00:22:30,259
 scripts, like for some tasks bash
 is probably not the best,
 
 348
-00:22:30,260 --> 00:22:33,119
+00:22:30,259 --> 00:22:33,118
 it can be tricky. You can actually
 write scripts that
 
 349
-00:22:33,119 --> 00:22:35,700
+00:22:33,118 --> 00:22:35,699
 interact with the shell implemented in a lot
 
 350
@@ -1316,20 +1556,20 @@ example, let's see here a
 Python script that has a magic line at the
 
 352
-00:22:43,139 --> 00:22:45,539
+00:22:43,138 --> 00:22:45,538
 beginning that I'm not explaining for now.
 
 353
-00:22:45,540 --> 00:22:48,330
+00:22:45,539 --> 00:22:48,329
 Then we have "import sys",
 
 354
-00:22:48,330 --> 00:22:53,629
+00:22:48,329 --> 00:22:53,628
 it's kind of like... Python is not,
 by default, trying to interact
 
 355
-00:22:53,629 --> 00:22:56,999
+00:22:53,628 --> 00:22:56,998
 with the shell so you will have to import
 
 356
@@ -1337,25 +1577,25 @@ with the shell so you will have to import
 some library. And then we're doing a
 
 357
-00:22:58,799 --> 00:23:01,529
+00:22:58,798 --> 00:23:01,528
 really silly thing of just iterating
 
 358
-00:23:01,529 --> 00:23:06,440
+00:23:01,528 --> 00:23:06,439
 over "sys.argv[1:]".
 
 359
 00:23:06,440 --> 00:23:12,809
 "sys.argv" is kind of similar to what
-in bash we're getting as $0, $1, &c.
+in bash we're getting as $0, $1, &amp;c.
 
 360
-00:23:12,809 --> 00:23:16,649
+00:23:12,808 --> 00:23:16,648
 Like the vector of the arguments, we're
 printing it in the reversed order.
 
 361
-00:23:16,649 --> 00:23:21,179
+00:23:16,648 --> 00:23:21,178
 And the magic line at the beginning is
 
 362
@@ -1375,7 +1615,7 @@ You can always do something like
 "python script.py", and then "a b c" and that
 
 366
-00:23:34,379 --> 00:23:36,659
+00:23:34,378 --> 00:23:36,658
 will work, always, like that. But
 
 367
@@ -1383,11 +1623,11 @@ will work, always, like that. But
 what if we want to make this to be
 
 368
-00:23:39,119 --> 00:23:41,309
+00:23:39,118 --> 00:23:41,308
 executable from the shell? The way the
 
 369
-00:23:41,309 --> 00:23:44,190
+00:23:41,308 --> 00:23:44,189
 shell knows that it has to use python as the
 
 370
@@ -1407,23 +1647,23 @@ giving it the path to where that thing lives.
 However, you might not know.
 
 374
-00:23:59,609 --> 00:24:01,830
+00:23:59,608 --> 00:24:01,829
 Like, different machines will have probably
 
 375
-00:24:01,830 --> 00:24:04,049
+00:24:01,829 --> 00:24:04,048
 different places where they put python
 
 376
-00:24:04,049 --> 00:24:06,090
+00:24:04,048 --> 00:24:06,089
 and you might not want to assume where
 
 377
-00:24:06,090 --> 00:24:08,789
+00:24:06,089 --> 00:24:08,788
 python is installed, or any other interpreter.
 
 378
-00:24:08,789 --> 00:24:16,379
+00:24:08,788 --> 00:24:16,378
 So one thing that you can do is use the
 
 379
@@ -1431,11 +1671,11 @@ So one thing that you can do is use the
 "env" command.
 
 380
-00:24:18,280 --> 00:24:21,560
+00:24:18,279 --> 00:24:21,559
 You can also give arguments in the shebang, so
 
 381
-00:24:21,570 --> 00:24:23,940
+00:24:21,569 --> 00:24:23,939
 what we're doing here is specifying
 
 382
@@ -1448,11 +1688,11 @@ system, there are some exceptions, but like for
 pretty much every system it's is in
 
 384
-00:24:31,550 --> 00:24:33,620
+00:24:31,549 --> 00:24:33,619
 "usr/bin", where a lot of binaries live,
 
 385
-00:24:33,620 --> 00:24:36,200
+00:24:33,619 --> 00:24:36,199
 and then we're calling it with the
 
 386
@@ -1460,15 +1700,15 @@ and then we're calling it with the
 argument "python". And then that will make
 
 387
-00:24:38,570 --> 00:24:42,020
+00:24:38,569 --> 00:24:42,019
 use of the path environment variable
 
 388
-00:24:42,020 --> 00:24:43,580
+00:24:42,019 --> 00:24:43,579
 that we saw in the first lecture. It's
 
 389
-00:24:43,580 --> 00:24:45,680
+00:24:43,579 --> 00:24:45,679
 gonna search in that path for the Python
 
 390
@@ -1476,7 +1716,7 @@ gonna search in that path for the Python
 binary and then it's gonna use that to
 
 391
-00:24:48,620 --> 00:24:50,480
+00:24:48,619 --> 00:24:50,479
 interpret this file. And that will make
 
 392
@@ -1489,7 +1729,7 @@ my machine, and your machine
 and some other machine.
 
 394
-00:25:08,020 --> 00:25:12,140
+00:25:08,019 --> 00:25:12,139
 Another thing is that the bash is not
 
 395
@@ -1497,11 +1737,11 @@ Another thing is that the bash is not
 really like modern, it was
 
 396
-00:25:14,300 --> 00:25:16,340
+00:25:14,299 --> 00:25:16,339
 developed a while ago. And sometimes
 
 397
-00:25:16,340 --> 00:25:18,890
+00:25:16,339 --> 00:25:18,889
 it can be tricky to debug. By
 
 398
@@ -1513,7 +1753,7 @@ default, and the ways it will fail
 sometimes are intuitive like the way we
 
 400
-00:25:24,020 --> 00:25:26,180
+00:25:24,019 --> 00:25:26,179
 saw before of like foo command not
 
 401
@@ -1521,23 +1761,23 @@ saw before of like foo command not
 existing, sometimes it's not. So there's
 
 402
-00:25:28,610 --> 00:25:31,280
+00:25:28,609 --> 00:25:31,279
 like a really nifty tool that we have
 
 403
-00:25:31,280 --> 00:25:34,310
+00:25:31,279 --> 00:25:34,309
 linked in the lecture notes, which is called
 
 404
-00:25:34,310 --> 00:25:37,580
+00:25:34,309 --> 00:25:37,579
 "shellcheck", that will kind of give you
 
 405
-00:25:37,580 --> 00:25:40,010
+00:25:37,579 --> 00:25:40,009
 both warnings and syntactic errors
 
 406
-00:25:40,010 --> 00:25:43,250
+00:25:40,009 --> 00:25:43,249
 and other things that you might
 not have quoted properly,
 
@@ -1546,12 +1786,12 @@ not have quoted properly,
 or you might have misplaced spaces in
 
 408
-00:25:46,040 --> 00:25:50,060
+00:25:46,039 --> 00:25:50,059
 your files. So for example for
 extremely simple "mcd.sh"
 
 409
-00:25:50,060 --> 00:25:51,980
+00:25:50,059 --> 00:25:51,979
 file we're getting a couple
 
 410
@@ -1559,15 +1799,15 @@ file we're getting a couple
 of errors saying hey, surprisingly,
 
 411
-00:25:54,800 --> 00:25:56,090
+00:25:54,799 --> 00:25:56,089
 we're missing a shebang, like this
 
 412
-00:25:56,090 --> 00:25:59,060
+00:25:56,089 --> 00:25:59,059
 might not interpret it correctly if you're
 
 413
-00:25:59,060 --> 00:26:02,000
+00:25:59,059 --> 00:26:01,999
 it at a different system. Also, this
 
 414
@@ -1575,7 +1815,7 @@ it at a different system. Also, this
 CD is taking a command and it might not
 
 415
-00:26:05,620 --> 00:26:08,960
+00:26:05,619 --> 00:26:08,959
 expand properly so instead of using CD
 
 416
@@ -1583,11 +1823,11 @@ expand properly so instead of using CD
 you might want to use something like CD
 
 417
-00:26:11,300 --> 00:26:14,540
+00:26:11,299 --> 00:26:14,539
 and then an OR and then an "exit". We go
 
 418
-00:26:14,540 --> 00:26:16,490
+00:26:14,539 --> 00:26:16,489
 back to what we explained earlier, what
 
 419
@@ -1599,7 +1839,7 @@ this will do is like if the
 CD doesn't end correctly, you cannot CD
 
 421
-00:26:21,860 --> 00:26:23,720
+00:26:21,859 --> 00:26:23,719
 into the folder because either you
 
 422
@@ -1607,11 +1847,11 @@ into the folder because either you
 don't have permissions, it doesn't exist...
 
 423
-00:26:25,250 --> 00:26:28,780
+00:26:25,250 --> 00:26:28,779
 That will give a nonzero error
 
 424
-00:26:28,780 --> 00:26:32,420
+00:26:28,779 --> 00:26:32,419
 command, so you will execute exit
 
 425
@@ -1623,7 +1863,7 @@ and that will stop the script
 instead of continue executing as if
 
 427
-00:26:35,810 --> 00:26:37,240
+00:26:35,809 --> 00:26:37,239
 you were in a place that you are
 
 428
@@ -1640,12 +1880,12 @@ think we can check for "example.sh"
 and here we're getting that we should be
 
 431
-00:26:50,809 --> 00:26:55,070
+00:26:50,808 --> 00:26:55,069
 checking the exit code in a
 different way, because it's
 
 432
-00:26:55,070 --> 00:26:57,710
+00:26:55,069 --> 00:26:57,709
 probably not the best way, doing it this
 
 433
@@ -1653,11 +1893,11 @@ probably not the best way, doing it this
 way. One last remark I want to make
 
 434
-00:27:01,580 --> 00:27:05,090
+00:27:01,579 --> 00:27:05,089
 is that when you're writing bash scripts
 
 435
-00:27:05,090 --> 00:27:07,159
+00:27:05,089 --> 00:27:07,158
 or functions for that matter,
 
 436
@@ -1665,36 +1905,36 @@ or functions for that matter,
 there's kind of a difference between
 
 437
-00:27:09,080 --> 00:27:12,590
+00:27:09,079 --> 00:27:12,589
 writing bash scripts in isolation like a
 
 438
-00:27:12,590 --> 00:27:14,149
+00:27:12,589 --> 00:27:14,148
 thing that you're gonna run, and a thing
 
 439
-00:27:14,149 --> 00:27:16,100
+00:27:14,148 --> 00:27:16,099
 that you're gonna load into your shell.
 
 440
-00:27:16,100 --> 00:27:19,850
+00:27:16,099 --> 00:27:19,849
 We will see some of this in the command
 
 441
-00:27:19,850 --> 00:27:23,090
+00:27:19,849 --> 00:27:23,089
 line environment lecture, where we will kind of
 
 442
-00:27:23,090 --> 00:27:29,059
+00:27:23,089 --> 00:27:29,058
 be tooling with the bashrc and the
 sshrc. But in general, if you make
 
 443
-00:27:29,059 --> 00:27:31,370
+00:27:29,058 --> 00:27:31,369
 changes to for example where you are,
 
 444
-00:27:31,370 --> 00:27:34,009
+00:27:31,369 --> 00:27:34,008
 like if you CD into a bash script and you
 
 445
@@ -1714,7 +1954,7 @@ have loaded the code directly into
 your shell, for example you load...
 
 449
-00:27:45,559 --> 00:27:48,440
+00:27:45,558 --> 00:27:48,439
 you source the function and then you execute
 
 450
@@ -1726,7 +1966,7 @@ the function then you will get those
 side effects. And the same goes for
 
 452
-00:27:52,000 --> 00:27:57,220
+00:27:52,000 --> 00:27:57,219
 defining variables into the shell.
 
 453
@@ -1739,32 +1979,32 @@ tools that I think are nifty when
 working with the shell. The first was
 
 455
-00:28:07,580 --> 00:28:09,799
+00:28:07,579 --> 00:28:09,798
 also briefly introduced yesterday.
 
 456
-00:28:09,799 --> 00:28:13,309
+00:28:09,798 --> 00:28:13,308
 How do you know what flags, or like
 
 457
-00:28:13,309 --> 00:28:15,320
+00:28:13,308 --> 00:28:15,319
 what exact commands are. Like how I am
 
 458
-00:28:15,320 --> 00:28:21,889
+00:28:15,319 --> 00:28:21,888
 supposed to know that LS minus L will list
 the files in a list format, or that
 
 459
-00:28:21,889 --> 00:28:25,789
+00:28:21,888 --> 00:28:25,788
 if I do "move - i", it's gonna like prom me
 
 460
-00:28:25,789 --> 00:28:28,639
+00:28:25,788 --> 00:28:28,638
 for stuff. For that what you have is the "man"
 
 461
-00:28:28,639 --> 00:28:30,730
+00:28:28,638 --> 00:28:30,729
 command. And the man command will kind of
 
 462
@@ -1772,15 +2012,15 @@ command. And the man command will kind of
 have like a lot of information of how
 
 463
-00:28:33,590 --> 00:28:35,809
+00:28:33,589 --> 00:28:35,808
 will you go about... so for example here it
 
 464
-00:28:35,809 --> 00:28:40,340
+00:28:35,808 --> 00:28:40,339
 will explain for the "-i" flag, there are
 
 465
-00:28:40,340 --> 00:28:43,970
+00:28:40,339 --> 00:28:43,969
 all these options you can do. That's
 
 466
@@ -1788,17 +2028,17 @@ all these options you can do. That's
 actually pretty useful and it will work
 
 467
-00:28:45,620 --> 00:28:51,540
+00:28:45,619 --> 00:28:51,539
 not only for really simple commands
 that come packaged with your OS
 
 468
-00:28:51,540 --> 00:28:55,809
+00:28:51,539 --> 00:28:55,808
 but will also work with some tools
 that you install from the internet
 
 469
-00:28:55,809 --> 00:28:58,240
+00:28:55,808 --> 00:28:58,239
 for example, if the person that did the
 
 470
@@ -1810,7 +2050,7 @@ installation made it so that the man
 package were also installed. So for example
 
 472
-00:29:03,399 --> 00:29:06,490
+00:29:03,398 --> 00:29:06,489
 a tool that we're gonna cover in a bit
 
 473
@@ -1819,7 +2059,7 @@ which is called "ripgrep" and
 is called with RG, this didn't
 
 474
-00:29:12,370 --> 00:29:14,980
+00:29:12,369 --> 00:29:14,979
 come with my system but it has installed
 
 475
@@ -1835,15 +2075,15 @@ I can access it. For some commands the
 man page is useful but sometimes it can be
 
 478
-00:29:25,029 --> 00:29:28,270
+00:29:25,028 --> 00:29:28,269
 tricky to decipher because it's more
 
 479
-00:29:28,270 --> 00:29:30,399
+00:29:28,269 --> 00:29:30,398
 kind of a documentation and a
 
 480
-00:29:30,399 --> 00:29:32,679
+00:29:30,398 --> 00:29:32,678
 description of all the things the tool
 
 481
@@ -1851,7 +2091,7 @@ description of all the things the tool
 can do. Sometimes it will have
 
 482
-00:29:35,860 --> 00:29:37,720
+00:29:35,859 --> 00:29:37,719
 examples but sometimes not, and sometimes
 
 483
@@ -1859,16 +2099,16 @@ examples but sometimes not, and sometimes
 the tool can do a lot of things so a
 
 484
-00:29:41,620 --> 00:29:45,250
+00:29:41,619 --> 00:29:45,249
 couple of good tools that I use commonly
 
 485
-00:29:45,250 --> 00:29:50,289
+00:29:45,250 --> 00:29:50,288
 are "convert" or "ffmpeg", which deal
 with images and video respectively and
 
 486
-00:29:50,289 --> 00:29:52,419
+00:29:50,288 --> 00:29:52,418
 the man pages are like enormous. So there's
 
 487
@@ -1876,7 +2116,7 @@ the man pages are like enormous. So there's
 one neat tool called "tldr" that
 
 488
-00:29:54,850 --> 00:29:58,240
+00:29:54,849 --> 00:29:58,239
 you can install and you will have like
 
 489
@@ -1892,11 +2132,11 @@ of how you want to use this command. And you
 can always Google for this, but I find
 
 492
-00:30:07,840 --> 00:30:10,120
+00:30:07,839 --> 00:30:10,119
 myself saving going into the
 
 493
-00:30:10,120 --> 00:30:12,640
+00:30:10,119 --> 00:30:12,639
 browser, looking about some examples and
 
 494
@@ -1908,7 +2148,7 @@ coming back, whereas "tldr" are
 community contributed and
 
 496
-00:30:16,870 --> 00:30:19,210
+00:30:16,869 --> 00:30:19,209
 they're fairly useful. Then,
 
 497
@@ -1916,7 +2156,7 @@ they're fairly useful. Then,
 the one for "ffmpeg" has a lot of
 
 498
-00:30:23,020 --> 00:30:24,940
+00:30:23,019 --> 00:30:24,939
 useful examples that are more nicely
 
 499
@@ -1924,11 +2164,11 @@ useful examples that are more nicely
 formatted (if you don't have a huge
 
 500
-00:30:26,799 --> 00:30:30,820
+00:30:26,798 --> 00:30:30,819
 font size for recording). Or even
 
 501
-00:30:30,820 --> 00:30:33,250
+00:30:30,819 --> 00:30:33,249
 simple commands like "tar", that have a lot
 
 502
@@ -1940,7 +2180,7 @@ of options that you are combining. So for
 example, here you can be combining 2, 3...
 
 504
-00:30:37,840 --> 00:30:41,710
+00:30:37,839 --> 00:30:41,709
 different flags and it can not be
 
 505
@@ -1957,7 +2197,7 @@ would go about finding more about these tools.
 On the topic of finding, let's try
 
 508
-00:30:54,850 --> 00:30:58,690
+00:30:54,849 --> 00:30:58,689
 learning how to find files. You can
 
 509
@@ -1965,7 +2205,7 @@ learning how to find files. You can
 always go "ls", and like you can go like
 
 510
-00:31:03,100 --> 00:31:05,950
+00:31:03,099 --> 00:31:05,949
 "ls project1", and
 
 511
@@ -1973,7 +2213,7 @@ always go "ls", and like you can go like
 keep LS'ing all the way through. But
 
 512
-00:31:08,559 --> 00:31:11,740
+00:31:08,558 --> 00:31:11,739
 maybe, if we already know that we want
 
 513
@@ -1985,7 +2225,7 @@ to look for all the folders called
 "src", then there's probably a better command
 
 515
-00:31:19,000 --> 00:31:21,400
+00:31:19,000 --> 00:31:21,399
 for doing that. And that's "find".
 
 516
@@ -2003,24 +2243,24 @@ saying we want to call find in the
 current folder, remember that "." stands
 
 519
-00:31:37,510 --> 00:31:40,149
+00:31:37,509 --> 00:31:40,148
 for the current folder, and we want the
 
 520
-00:31:40,149 --> 00:31:46,539
+00:31:40,148 --> 00:31:46,538
 name to be "src" and we want the type to
 be a directory. And by typing that it's
 
 521
-00:31:46,539 --> 00:31:49,870
+00:31:46,538 --> 00:31:49,869
 gonna recursively go through the current
 
 522
-00:31:49,870 --> 00:31:52,330
+00:31:49,869 --> 00:31:52,329
 directory and look for all these files,
 
 523
-00:31:52,330 --> 00:31:58,659
+00:31:52,329 --> 00:31:58,658
 or folders in this case, that match this
 pattern. Find has a lot of useful
 
@@ -2029,7 +2269,7 @@ pattern. Find has a lot of useful
 flags. So for example, you can even test
 
 525
-00:32:01,840 --> 00:32:05,440
+00:32:01,839 --> 00:32:05,439
 for the path to be in a way. Here we're
 
 526
@@ -2050,13 +2290,13 @@ scripts, all the things with the extension
 ".py", that are within a
 
 530
-00:32:17,830 --> 00:32:19,899
+00:32:17,829 --> 00:32:19,898
 test folder. And we're also checking, just in
 
 531
-00:32:19,899 --> 00:32:21,519
+00:32:19,898 --> 00:32:21,518
 cases really but we're checking just
-
+# NOTE
 532
 00:32:21,519 --> 00:32:24,460
 that it's also a type F, which stands for
@@ -2083,11 +2323,11 @@ modified ("-mtime" is for the modification
 time), things that have been
 
 538
-00:32:42,070 --> 00:32:44,540
+00:32:42,069 --> 00:32:44,539
 modified in the last day, which is gonna
 
 539
-00:32:44,559 --> 00:32:46,659
+00:32:44,558 --> 00:32:46,658
 be pretty much everything. So this is gonna print
 
 540
@@ -2095,11 +2335,11 @@ be pretty much everything. So this is gonna print
 a lot of the files we created and files
 
 541
-00:32:49,029 --> 00:32:51,850
+00:32:49,028 --> 00:32:51,849
 that were already there. You can even
 
 542
-00:32:51,850 --> 00:32:54,960
+00:32:51,849 --> 00:32:54,959
 use other things like size, the owner,
 
 543
@@ -2107,11 +2347,11 @@ use other things like size, the owner,
 permissions, you name it. What is even more
 
 544
-00:32:59,080 --> 00:33:01,870
+00:32:59,079 --> 00:33:01,869
 powerful is, "find" can find stuff
 
 545
-00:33:01,870 --> 00:33:04,269
+00:33:01,869 --> 00:33:04,268
 but it also can do stuff when you
 
 546
@@ -2123,7 +2363,7 @@ find those files. So we could look for all
 the files that have a TMP
 
 548
-00:33:14,080 --> 00:33:18,160
+00:33:14,079 --> 00:33:18,159
 extension, which is a temporary extension, and
 
 549
@@ -2136,19 +2376,19 @@ for every one of those files,
 just execute the "rm" command for them. And
 
 551
-00:33:26,350 --> 00:33:29,050
+00:33:26,349 --> 00:33:29,049
 that will just be calling "rm" with all
 
 552
-00:33:29,050 --> 00:33:32,350
+00:33:29,049 --> 00:33:32,349
 these files. So let's first execute it
 
 553
-00:33:32,350 --> 00:33:35,760
+00:33:32,349 --> 00:33:35,759
 without, and then we execute it with it.
 
 554
-00:33:35,760 --> 00:33:38,950
+00:33:35,759 --> 00:33:38,949
 Again, as with the command line
 
 555
@@ -2161,11 +2401,11 @@ happened. But since we have
 a zero error code, something
 
 557
-00:33:48,070 --> 00:33:49,540
+00:33:48,069 --> 00:33:49,539
 happened - just that everything went
 
 558
-00:33:49,540 --> 00:33:51,490
+00:33:49,539 --> 00:33:51,489
 correct and everything is fine. And now,
 
 559
@@ -2174,7 +2414,7 @@ if we look for these files,
 they aren't there anymore.
 
 560
-00:33:57,810 --> 00:34:02,950
+00:33:57,809 --> 00:34:02,949
 Another nice thing about the shell
 in general is that there are
 
@@ -2187,7 +2427,7 @@ these tools, but people will keep
 finding new ways, so alternative
 
 563
-00:34:08,230 --> 00:34:12,219
+00:34:08,230 --> 00:34:12,220
 ways of writing these tools. It's
 nice to know about it. So, for
 
@@ -2197,7 +2437,7 @@ example find if you just want to match
 the things that end in "tmp"
 
 565
-00:34:20,020 --> 00:34:24,190
+00:34:20,019 --> 00:34:24,189
 it can be sometimes weird to do this
 thing, it has a long command.
 
@@ -2215,33 +2455,33 @@ that by default will use regex
 and will ignore your gitfiles, so you
 
 569
-00:34:34,899 --> 00:34:38,020
+00:34:34,898 --> 00:34:38,019
 don't even search for them. It
 
 570
-00:34:38,020 --> 00:34:42,879
+00:34:38,019 --> 00:34:42,878
 will color-code, it will have better
 Unicode support... It's nice to
 
 571
-00:34:42,879 --> 00:34:45,040
+00:34:42,878 --> 00:34:45,039
 know about some of these tools. But, again,
 
 572
-00:34:45,040 --> 00:34:52,149
+00:34:45,039 --> 00:34:52,148
 the main idea is that if you are aware
 that these tools exist, you can
 
 573
-00:34:52,149 --> 00:34:53,739
+00:34:52,148 --> 00:34:53,739
 save yourself a lot of time from doing
 
 574
-00:34:53,739 --> 00:34:57,660
+00:34:53,739 --> 00:34:57,659
 kind of menial and repetitive tasks.
 
 575
-00:34:57,660 --> 00:35:00,010
+00:34:57,659 --> 00:35:00,009
 Another command to bear in mind is like
 
 576
@@ -2249,7 +2489,7 @@ Another command to bear in mind is like
 "find". Some of you may be
 
 577
-00:35:01,990 --> 00:35:04,300
+00:35:01,989 --> 00:35:04,299
 wondering, "find" is probably just
 
 578
@@ -2257,11 +2497,11 @@ wondering, "find" is probably just
 actually going through a directory
 
 579
-00:35:06,520 --> 00:35:09,580
+00:35:06,519 --> 00:35:09,579
 structure and looking for things but
 
 580
-00:35:09,580 --> 00:35:11,260
+00:35:09,579 --> 00:35:11,259
 what if I'm doing a lot of "finds" a day?
 
 581
@@ -2269,16 +2509,16 @@ what if I'm doing a lot of "finds" a day?
 Wouldn't it be better, doing kind of
 
 582
-00:35:12,850 --> 00:35:18,790
+00:35:12,849 --> 00:35:18,789
 a database approach and build an index
 first, and then use that index
 
 583
-00:35:18,790 --> 00:35:21,520
+00:35:18,789 --> 00:35:21,519
 and update it in some way. Well, actually
 
 584
-00:35:21,520 --> 00:35:23,380
+00:35:21,519 --> 00:35:23,379
 most Unix systems already do it and
 
 585
@@ -2294,11 +2534,11 @@ the way that the locate will
 be used... it will just look for paths in
 
 588
-00:35:35,470 --> 00:35:38,680
+00:35:35,469 --> 00:35:38,679
 your file system that have the substring
 
 589
-00:35:38,680 --> 00:35:44,710
+00:35:38,679 --> 00:35:44,709
 that you want. I actually don't know if it
 will work... Okay, it worked. Let me try to
 
@@ -2311,11 +2551,11 @@ do something like "missing-semester".
 You're gonna take a while but
 
 592
-00:35:53,950 --> 00:35:56,109
+00:35:53,949 --> 00:35:56,108
 it found all these files that are somewhere
 
 593
-00:35:56,109 --> 00:35:57,730
+00:35:56,108 --> 00:35:57,729
 in my file system and since it has
 
 594
@@ -2327,7 +2567,7 @@ built an index already on them, it's much
 faster. And then, to keep it updated,
 
 596
-00:36:05,680 --> 00:36:11,980
+00:36:05,679 --> 00:36:11,979
 using the "updatedb" command
 that is running through cron,
 
@@ -2336,7 +2576,7 @@ that is running through cron,
 to update this database. Finding files, again, is
 
 598
-00:36:18,490 --> 00:36:23,230
+00:36:18,489 --> 00:36:23,229
 really useful. Sometimes you're actually concerned
 about, not the files themselves,
 
@@ -2345,7 +2585,7 @@ about, not the files themselves,
 but the content of the files. For that
 
 600
-00:36:26,740 --> 00:36:31,420
+00:36:26,739 --> 00:36:31,419
 you can use the grep command that we
 
 601
@@ -2357,7 +2597,7 @@ have seen so far. So you could do
 something like grep foobar in MCD, it's there.
 
 603
-00:36:37,740 --> 00:36:43,690
+00:36:37,739 --> 00:36:43,689
 What if you want to, again, recursively
 search through the current
 
@@ -2370,11 +2610,11 @@ structure and look for more files, right?
 We don't want to do this manually.
 
 606
-00:36:48,700 --> 00:36:51,220
+00:36:48,699 --> 00:36:51,219
 We could use "find", and the "-exec", but
 
 607
-00:36:51,220 --> 00:36:58,920
+00:36:51,219 --> 00:36:58,919
 actually "grep" has the "-R" flag
 that will go through the entire
 
@@ -2383,7 +2623,7 @@ that will go through the entire
 directory, here. And it's telling us
 
 609
-00:37:03,609 --> 00:37:06,579
+00:37:03,608 --> 00:37:06,578
 that oh we have the foobar line in example.sh
 
 610
@@ -2391,11 +2631,11 @@ that oh we have the foobar line in example.sh
 at these three places and in
 
 611
-00:37:09,279 --> 00:37:14,589
+00:37:09,278 --> 00:37:14,588
 this other two places in foobar. This can be
 
 612
-00:37:14,589 --> 00:37:16,900
+00:37:14,588 --> 00:37:16,899
 really convenient. Mainly, the
 
 613
@@ -2407,23 +2647,23 @@ use case for this is you know you have
 written some code in some programming
 
 615
-00:37:21,910 --> 00:37:23,859
+00:37:21,909 --> 00:37:23,858
 language, and you know it's somewhere in
 
 616
-00:37:23,859 --> 00:37:26,200
+00:37:23,858 --> 00:37:26,199
 your file system but you actually don't
 
 617
-00:37:26,200 --> 00:37:28,599
+00:37:26,199 --> 00:37:28,598
 know. But you can actually quickly search.
 
 618
-00:37:28,600 --> 00:37:32,980
+00:37:28,599 --> 00:37:32,979
 So for example, I can quickly search
 
 619
-00:37:35,660 --> 00:37:40,320
+00:37:35,659 --> 00:37:40,319
 for all the Python files that I have in my
 
 620
@@ -2435,11 +2675,11 @@ scratch folder where I used the request library.
 And if I run this, it's giving me
 
 622
-00:37:47,589 --> 00:37:50,890
+00:37:47,588 --> 00:37:50,889
 through all these files, exactly in
 
 623
-00:37:50,890 --> 00:37:53,650
+00:37:50,889 --> 00:37:53,649
 what line it has been found. And here
 
 624
@@ -2451,7 +2691,7 @@ instead of using grep, which is fine,
 you could also do this, I'm using "ripgrep",
 
 626
-00:37:58,930 --> 00:38:05,260
+00:37:58,929 --> 00:38:05,259
 which is kind of the same idea but
 again trying to bring some more
 
@@ -2482,7 +2722,7 @@ can say, oh, I actually want to get some
 context around those results.
 
 633
-00:38:33,040 --> 00:38:36,400
+00:38:33,039 --> 00:38:36,399
 So I want to get like five
 lines of context around
 
@@ -2492,7 +2732,7 @@ that, so you can see where that import
 lives and see code around it.
 
 635
-00:38:42,819 --> 00:38:44,170
+00:38:42,818 --> 00:38:44,169
 Here in the import it's not really useful
 
 636
@@ -2500,11 +2740,11 @@ Here in the import it's not really useful
 but like if you're looking for where you
 
 637
-00:38:45,819 --> 00:38:49,720
+00:38:45,818 --> 00:38:49,719
 use the function, for example, it will
 
 638
-00:38:49,720 --> 00:38:54,010
+00:38:49,719 --> 00:38:54,009
 be very handy. We can also do things like
 
 639
@@ -2520,12 +2760,12 @@ A more advanced use, we can say,
 "-u" is for don't ignore hidden files, sometimes
 
 642
-00:39:12,520 --> 00:39:16,359
+00:39:12,519 --> 00:39:16,358
 you want to be ignoring hidden
 files, except if you want to
 
 643
-00:39:16,359 --> 00:39:23,500
+00:39:16,358 --> 00:39:23,499
 search config files, that are by default
 hidden. Then, instead of printing
 
@@ -2539,15 +2779,15 @@ that would be kind of hard, I think,
 to do with grep, out of my head, which is
 
 646
-00:39:31,390 --> 00:39:34,569
+00:39:31,389 --> 00:39:34,568
 "I want you to print all the files that
 
 647
-00:39:34,569 --> 00:39:37,750
+00:39:34,568 --> 00:39:37,749
 don't match the pattern I'm giving you", which
 
 648
-00:39:37,750 --> 00:39:40,030
+00:39:37,750 --> 00:39:40,029
 may be a weird thing to ask here but
 
 649
@@ -2559,7 +2799,7 @@ then we keep going... And this pattern here
 is a small regex which is saying
 
 651
-00:39:45,790 --> 00:39:48,099
+00:39:45,789 --> 00:39:48,098
 at the beginning of the line I have a
 
 652
@@ -2571,7 +2811,7 @@ at the beginning of the line I have a
 Like that, we're searching here for all
 
 654
-00:39:53,470 --> 00:39:56,650
+00:39:53,469 --> 00:39:56,649
 the files that don't have a shebang
 
 655
@@ -2583,12 +2823,12 @@ and then we're giving it, here,
 a "-t sh" to only look for "sh"
 
 657
-00:40:02,470 --> 00:40:07,660
+00:40:02,469 --> 00:40:07,659
 files, because maybe all your
 Python or text files are fine
 
 658
-00:40:07,660 --> 00:40:10,000
+00:40:07,659 --> 00:40:09,999
 without a shebang. And here it's telling us
 
 659
@@ -2600,15 +2840,15 @@ without a shebang. And here it's telling us
 We can even... It has like some
 
 661
-00:40:16,660 --> 00:40:19,119
+00:40:16,659 --> 00:40:19,118
 nice flags, so for example if we
 
 662
-00:40:19,120 --> 00:40:21,360
+00:40:19,119 --> 00:40:21,359
 include the "stats" flag
 
 663
-00:40:28,700 --> 00:40:34,119
+00:40:28,699 --> 00:40:34,118
 it will get all these results but it will
 also tell us information about all
 
@@ -2617,16 +2857,16 @@ also tell us information about all
 the things that it searched. For example,
 
 665
-00:40:35,410 --> 00:40:40,390
+00:40:35,409 --> 00:40:40,389
 the number of matches that it found,
 the lines, the file searched,
 
 666
-00:40:40,390 --> 00:40:44,040
-the bytes that it printed, &c.
+00:40:40,389 --> 00:40:44,039
+the bytes that it printed, &amp;c.
 
 667
-00:40:44,040 --> 00:40:47,160
+00:40:44,039 --> 00:40:47,159
 Similar as with "fd", sometimes
 it's not as useful
 
@@ -2635,7 +2875,7 @@ it's not as useful
 using one specific tool or another and
 
 669
-00:40:50,620 --> 00:40:55,780
+00:40:50,619 --> 00:40:55,779
 in fact, as ripgrep, there are several
 other tools. Like "ack",
 
@@ -2644,7 +2884,7 @@ other tools. Like "ack",
 is the original grep alternative that was
 
 671
-00:40:57,700 --> 00:41:00,670
+00:40:57,699 --> 00:41:00,669
 written. Then the silver searcher,
 
 672
@@ -2652,11 +2892,11 @@ written. Then the silver searcher,
 "ag", was another one... and they're all
 
 673
-00:41:04,089 --> 00:41:05,589
+00:41:04,088 --> 00:41:05,588
 pretty much interchangeable so
 
 674
-00:41:05,589 --> 00:41:07,630
+00:41:05,588 --> 00:41:07,629
 maybe you're at a system that has one and
 
 675
@@ -2668,11 +2908,11 @@ not the other, just knowing that you can
 use these things with these tools can be
 
 677
-00:41:12,040 --> 00:41:15,549
+00:41:12,039 --> 00:41:15,548
 fairly useful. Lastly, I want to cover
 
 678
-00:41:15,549 --> 00:41:19,780
+00:41:15,548 --> 00:41:19,779
 how you go about, not finding files
 or code, but how you go about
 
@@ -2681,21 +2921,21 @@ or code, but how you go about
 finding commands that you already
 
 680
-00:41:22,540 --> 00:41:30,160
+00:41:22,539 --> 00:41:30,159
 some time figured out. The first, obvious
 way is just using the up arrow,
 
 681
-00:41:30,160 --> 00:41:34,540
+00:41:30,159 --> 00:41:34,539
 and slowly going through all your history,
 looking for these matches.
 
 682
-00:41:34,540 --> 00:41:36,490
+00:41:34,539 --> 00:41:36,489
 This is actually not very efficient, as
 
 683
-00:41:36,490 --> 00:41:42,579
+00:41:36,489 --> 00:41:42,578
 you probably guessed. So the bash
 has ways to do this more easily.
 
@@ -2709,30 +2949,30 @@ print your history. Here I'm in zsh and
 it only prints some of my history, but
 
 686
-00:41:49,180 --> 00:41:54,069
+00:41:49,179 --> 00:41:54,068
 if I say, I want you to print everything
 from the beginning of time, it will print
 
 687
-00:41:54,069 --> 00:41:58,220
+00:41:54,068 --> 00:41:58,219
 everything from the beginning
 of whatever this history is.
 
 688
-00:41:58,220 --> 00:42:00,700
+00:41:58,219 --> 00:42:00,699
 And since this is a lot of results,
 
 689
-00:42:00,700 --> 00:42:02,589
+00:42:00,699 --> 00:42:02,588
 maybe we care about the ones where we
 
 690
-00:42:02,589 --> 00:42:08,490
+00:42:02,588 --> 00:42:08,489
 use the "convert" command to go from some
 type of file to some other type of file.
 
 691
-00:42:08,490 --> 00:42:12,940
+00:42:08,489 --> 00:42:12,939
 Some image, sorry. Then, we're getting all
 
 692
@@ -2748,7 +2988,7 @@ that match this substring.
 Even more, pretty much all shells by default will
 
 695
-00:42:24,609 --> 00:42:27,130
+00:42:24,608 --> 00:42:27,129
 link "Ctrl+R", the keybinding,
 
 696
@@ -2756,19 +2996,19 @@ link "Ctrl+R", the keybinding,
 to do backward search. Here we
 
 697
-00:42:29,680 --> 00:42:31,569
+00:42:29,679 --> 00:42:31,568
 have backward search, where we can
 
 698
-00:42:31,569 --> 00:42:34,750
+00:42:31,568 --> 00:42:34,749
 type "convert" and it's finding the
 
 699
-00:42:34,750 --> 00:42:36,609
+00:42:34,750 --> 00:42:36,608
 command that we just typed. And if we just
 
 700
-00:42:36,609 --> 00:42:38,619
+00:42:36,608 --> 00:42:38,618
 keep hitting "Ctrl+R", it will
 
 701
@@ -2776,7 +3016,7 @@ keep hitting "Ctrl+R", it will
 kind of go through these matches and
 
 702
-00:42:41,740 --> 00:42:44,260
+00:42:41,739 --> 00:42:44,259
 it will let re-execute it
 
 703
@@ -2784,11 +3024,11 @@ it will let re-execute it
 in place. Another thing that you can do,
 
 704
-00:42:49,240 --> 00:42:51,069
+00:42:49,239 --> 00:42:51,068
 related to that, is you can use this
 
 705
-00:42:51,069 --> 00:42:53,829
+00:42:51,068 --> 00:42:53,828
 really nifty tool called "fzf", which is
 
 706
@@ -2796,7 +3036,7 @@ really nifty tool called "fzf", which is
 like a fuzzy finder, like it will...
 
 707
-00:42:57,100 --> 00:42:58,480
+00:42:57,099 --> 00:42:58,479
 It will let you do kind of
 
 708
@@ -2804,7 +3044,7 @@ It will let you do kind of
 like an interactive grep. We could do
 
 709
-00:43:02,200 --> 00:43:06,369
+00:43:02,199 --> 00:43:06,368
 for example this, where we can cat our
 
 710
@@ -2816,16 +3056,16 @@ example.sh command, that will print
 print to the standard output, and then we
 
 712
-00:43:11,680 --> 00:43:14,290
+00:43:11,679 --> 00:43:14,289
 can pipe it through fzf. It's just getting
 
 713
-00:43:14,290 --> 00:43:18,490
+00:43:14,289 --> 00:43:18,489
 all the lines and then we can
 interactively look for the
 
 714
-00:43:18,490 --> 00:43:21,849
+00:43:18,489 --> 00:43:21,848
 string that we care about. And the nice
 
 715
@@ -2842,17 +3082,17 @@ your "Ctrl+R" shell execution and now
 you can quickly and dynamically like
 
 718
-00:43:36,490 --> 00:43:41,700
+00:43:36,489 --> 00:43:41,699
 look for all the times you try to
 convert a favicon in your history.
 
 719
-00:43:42,020 --> 00:43:46,375
+00:43:42,019 --> 00:43:46,374
 And it's also like fuzzy matching,
 whereas like by default in grep
 
 720
-00:43:46,375 --> 00:43:49,420
+00:43:46,375 --> 00:43:49,419
 or these things you have to write a regex or some
 
 721
@@ -2864,7 +3104,7 @@ expression that will match within here.
 Here I'm just typing "convert" and "favicon" and
 
 723
-00:43:54,609 --> 00:43:57,369
+00:43:54,608 --> 00:43:57,368
 it's just trying to do the best scan,
 
 724
@@ -2881,7 +3121,7 @@ already seen, that I've been using
 for not retyping these extremely long
 
 727
-00:44:08,410 --> 00:44:13,080
+00:44:08,409 --> 00:44:13,079
 commands is this "history
 substring search", where
 
@@ -2921,15 +3161,15 @@ that has a common prefix,
 and then, if you...
 
 736
-00:44:39,100 --> 00:44:42,100
+00:44:39,099 --> 00:44:42,099
 it will change as the match list stops
 
 737
-00:44:42,100 --> 00:44:44,110
+00:44:42,099 --> 00:44:44,109
 working and then as you do the
 
 738
-00:44:44,120 --> 00:44:49,760
+00:44:44,119 --> 00:44:49,759
 right arrow you can select that
 command and then re-execute it.
 
@@ -2943,17 +3183,17 @@ a few minutes left so I'm going
 to cover a couple of tools to do
 
 741
-00:45:16,180 --> 00:45:20,060
+00:45:16,179 --> 00:45:20,059
 really quick directory listing
 and directory navigation.
 
 742
-00:45:20,060 --> 00:45:30,020
+00:45:20,059 --> 00:45:30,019
 So you can always use the "-R" to recursively
 list some directory structure,
 
 743
-00:45:30,020 --> 00:45:35,160
+00:45:30,019 --> 00:45:35,159
 but that can be suboptimal, I cannot
 really make sense of this easily.
 
@@ -2973,21 +3213,21 @@ here for example "foo" is blue
 because it's a directory and
 
 747
-00:45:50,680 --> 00:45:55,100
+00:45:50,679 --> 00:45:55,099
 this is red because it has execute permissions.
 
 748
-00:45:55,100 --> 00:46:00,220
+00:45:55,099 --> 00:46:00,219
 But we can go even further than
 that. There's really nice tools
 
 749
-00:46:00,220 --> 00:46:04,580
+00:46:00,219 --> 00:46:04,579
 like a recent one called "broot" that
 will do the same thing but here
 
 750
-00:46:04,580 --> 00:46:07,300
+00:46:04,579 --> 00:46:07,299
 for example instead of doing
 this thing of listing
 
@@ -2996,7 +3236,7 @@ this thing of listing
 every single file, for example in bar
 
 752
-00:46:09,160 --> 00:46:11,400
+00:46:09,159 --> 00:46:11,399
 we have these "a" through "j" files,
 
 753
@@ -3004,15 +3244,15 @@ we have these "a" through "j" files,
 it will say "oh there are more, unlisted here".
 
 754
-00:46:15,080 --> 00:46:18,200
+00:46:15,079 --> 00:46:18,199
 I can actually start typing and it will again
 
 755
-00:46:18,200 --> 00:46:21,540
+00:46:18,199 --> 00:46:21,539
 again facily match to the files that are there
 
 756
-00:46:21,540 --> 00:46:24,800
+00:46:21,539 --> 00:46:24,799
 and I can quickly select them
 and navigate through them.
 
@@ -3026,7 +3266,7 @@ these things exist so you don't
 lose a large amount of time
 
 759
-00:46:34,240 --> 00:46:36,180
+00:46:34,239 --> 00:46:36,179
 going for these files.
 
 760
@@ -3034,7 +3274,7 @@ going for these files.
 There are also, I think I have it installed
 
 761
-00:46:40,500 --> 00:46:44,829
+00:46:40,500 --> 00:46:44,828
 also something more similar to what
 you would expect your OS to have,
 
@@ -3068,19 +3308,19 @@ will let you edit, copy files...
 if you just look for the options for them.
 
 768
-00:47:17,600 --> 00:47:20,100
+00:47:17,599 --> 00:47:20,099
 The last addendum is kind of going places.
 
 769
-00:47:20,100 --> 00:47:24,480
+00:47:20,099 --> 00:47:24,479
 We have "cd", and "cd" is nice, it will get you
 
 770
-00:47:26,120 --> 00:47:30,060
+00:47:26,119 --> 00:47:30,059
 to a lot of places. But it's pretty handy if
 
 771
-00:47:30,069 --> 00:47:33,190
+00:47:30,068 --> 00:47:33,189
 you can like quickly go places,
 
 772
@@ -3096,44 +3336,44 @@ you go frequently. And you can do this in
 many ways there's probably... you can start
 
 775
-00:47:42,520 --> 00:47:44,319
+00:47:42,519 --> 00:47:44,318
 thinking, oh I can make bookmarks, I can
 
 776
-00:47:44,319 --> 00:47:46,660
+00:47:44,318 --> 00:47:46,659
 make... I can make aliases in the shell,
 
 777
-00:47:46,660 --> 00:47:49,020
+00:47:46,659 --> 00:47:49,019
 that we will cover at some point,
 
 778
-00:47:49,020 --> 00:47:53,020
+00:47:49,019 --> 00:47:53,019
 symlinks... But at this point,
 
 779
-00:47:53,020 --> 00:47:54,910
+00:47:53,019 --> 00:47:54,909
 programmers have like built all these
 
 780
-00:47:54,910 --> 00:47:56,799
+00:47:54,909 --> 00:47:56,798
 tools, so programmers have already figured
 
 781
-00:47:56,799 --> 00:47:59,520
+00:47:56,798 --> 00:47:59,519
 out a really nice way of doing this.
 
 782
-00:47:59,520 --> 00:48:01,930
+00:47:59,519 --> 00:48:01,929
 One way of doing this is using what is
 
 783
-00:48:01,930 --> 00:48:05,760
+00:48:01,929 --> 00:48:05,759
 called "auto jump", which I
 think is not loaded here...
 
 784
-00:48:14,140 --> 00:48:20,100
+00:48:14,139 --> 00:48:20,099
 Okay, don't worry. I will cover it
 in the command line environment.
 
@@ -3162,12 +3402,12 @@ Otherwise, a there's a bunch of
 exercises that we wrote, kind of
 
 790
-00:48:42,859 --> 00:48:46,549
+00:48:42,858 --> 00:48:46,548
 touching on these topics and we
 encourage you to try them and
 
 791
-00:48:46,549 --> 00:48:48,559
+00:48:46,548 --> 00:48:48,558
 come to office hours, where we can help
 
 792
