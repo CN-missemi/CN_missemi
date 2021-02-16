@@ -16,7 +16,9 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 
 [第一讲 - 课程概览与 Shell](https://www.bilibili.com/video/BV1Eo4y1d7KZ) - 2021/01/29
 
-[第二讲 - Shell 工具和脚本]() - 
+[第二讲 - Shell 工具和脚本](https://www.bilibili.com/video/BV1Vv411v7FR) - 2021/02/17
+
+[第三讲 - 编辑器 (Vim)]() - 
 
 ### 字幕组成员（按有贡献计入，字母序）
 
