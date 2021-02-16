@@ -8,7 +8,7 @@ lecture of the missing semester of your
 
 3
 00:00:05,339 --> 00:00:07,500
-si a second today we're going to be
+CS education today we're going to be
 
 4
 00:00:07,500 --> 00:00:09,990
@@ -264,7 +264,7 @@ programmers and so of course like the
 
 67
 00:02:13,709 --> 00:02:13,970
-peep
+people wrote these programs
 
 68
 00:02:13,970 --> 00:02:15,200
