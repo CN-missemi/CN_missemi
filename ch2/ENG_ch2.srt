@@ -268,7 +268,7 @@ people wrote these programs
 
 68
 00:02:13,970 --> 00:02:15,200
-I wrote these tolls ran into the same
+I wrote these tools ran into the same
 
 69
 00:02:15,200 --> 00:02:17,330
@@ -364,7 +364,7 @@ developers various questions and one
 
 92
 00:03:00,320 --> 00:03:02,000
-thing to ask is which TextEdit Derk do
+thing to ask is which text editor do
 
 93
 00:03:02,000 --> 00:03:03,440
@@ -476,7 +476,7 @@ shell including things like the Python
 
 120
 00:03:59,570 --> 00:04:01,730
-repple and like Jupiter notebook and all
+repple and like Jupyter notebook and all
 
 121
 00:04:01,730 --> 00:04:03,200
