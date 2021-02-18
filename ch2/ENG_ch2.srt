@@ -696,7 +696,7 @@ is called insert mode and to go to
 
 175
 00:05:55,420 --> 00:05:57,400
-insert mode you press the key I for
+insert mode you press the key I from
 
 176
 00:05:57,400 --> 00:05:59,530
@@ -740,11 +740,11 @@ talking about bare keys like just the
 
 186
 00:06:19,270 --> 00:06:20,440
-eye key on your keyboard they'll just
+I key on your keyboard they'll just
 
 187
 00:06:20,440 --> 00:06:22,660
-say eye but for a different key
+say I but for a different key
 
 188
 00:06:22,660 --> 00:06:24,310
