@@ -2523,12 +2523,12 @@ keyboard, so what are you going to do? For
 example, the "L" key moves your cursor to
 
 632
-00:23:48,590 --> 00:23:49,430
-the lowest
+00:23:48,590 --> 00:23:48,591
+_
 
 633
-00:23:49,430 --> 00:23:51,890
-line that's shown on the screen. "L" for
+00:23:48,592 --> 00:23:51,890
+the lowest line that's shown on the screen. "L" for
 
 634
 00:23:51,890 --> 00:23:54,920
@@ -2596,7 +2596,7 @@ want to jump to the first "o". I can press
 
 650
 00:24:31,310 --> 00:24:33,860
-"o". I've like, found "o". I can do fw and
+"o". I've like, found "o". I can do "fw" and
 
 651
 00:24:33,860 --> 00:24:35,210
