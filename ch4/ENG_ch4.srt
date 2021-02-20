@@ -1,0 +1,3659 @@
+1
+00:00:00,480 --> 00:00:02,480
+Okay, can everyone hear me okay?
+
+2
+00:00:03,720 --> 00:00:06,160
+Okay, so welcome back.
+
+3
+00:00:06,160 --> 00:00:10,320
+I'm gonna address a couple of items
+in kind of the administratrivia.
+
+4
+00:00:10,640 --> 00:00:13,080
+With the end of the first week,
+
+5
+00:00:13,179 --> 00:00:16,349
+we sent an email, noticing you that
+
+6
+00:00:16,600 --> 00:00:20,219
+we have uploaded the videos for the first
+week, so you can now find them online.
+
+7
+00:00:20,470 --> 00:00:26,670
+They have all the screen recordings for the things
+that we were doing, so you can go back to them.
+
+8
+00:00:26,830 --> 00:00:31,439
+Look if you're were confused about if
+we did something quick and, again,
+
+9
+00:00:31,440 --> 00:00:37,560
+feel free to ask us any questions if anything in the
+lecture notes is not clear. We also sent you a
+
+10
+00:00:37,880 --> 00:00:42,360
+survey so you can give us feedback
+about what was not clear,
+
+11
+00:00:42,360 --> 00:00:46,280
+what items you would want a
+more thorough explanation or
+
+12
+00:00:47,110 --> 00:00:51,749
+just any other item, if you're finding
+the exercises too hard, too easy,
+
+13
+00:00:52,239 --> 00:00:55,288
+go into that URL and we'll really
+
+14
+00:00:55,960 --> 00:01:00,040
+appreciate getting that feedback, because
+that will make the course better
+
+15
+00:01:00,480 --> 00:01:03,800
+for the remaining lectures and for
+future iterations of the course.
+
+16
+00:01:05,080 --> 00:01:07,080
+With that out of the way
+
+17
+00:01:07,080 --> 00:01:10,840
+Oh, and we're gonna try to upload the
+videos in a more timely manner.
+
+18
+00:01:11,200 --> 00:01:16,040
+We don't want to kind of wait until the end of
+the week for that. So keep tuned for that.
+
+19
+00:01:18,760 --> 00:01:19,840
+That out of the way,
+
+20
+00:01:19,920 --> 00:01:20,800
+now I'm gonna
+
+21
+00:01:21,120 --> 00:01:24,960
+This lecture's called command-line
+environment and we're
+
+22
+00:01:25,160 --> 00:01:28,440
+going to cover a few different topics. So the
+
+23
+00:01:28,990 --> 00:01:30,990
+main topics we're gonna
+
+24
+00:01:32,040 --> 00:01:34,520
+cover, so you can keep track,
+
+25
+00:01:34,680 --> 00:01:36,400
+it's probably better here,
+
+26
+00:01:36,400 --> 00:01:37,720
+keep track of what I'm talking.
+
+27
+00:01:37,920 --> 00:01:41,560
+The first is gonna be job control.
+
+28
+00:01:42,040 --> 00:01:44,280
+The second one is going to be
+
+29
+00:01:44,600 --> 00:01:46,600
+terminal multiplexers.
+
+30
+00:01:51,720 --> 00:01:57,360
+Then I'm going to explain what dotfiles
+are and how to configure your shell.
+
+31
+00:01:57,360 --> 00:02:03,240
+And lastly, how to efficiently work with
+remote machines. So if things are not
+
+32
+00:02:05,110 --> 00:02:07,589
+fully clear, kind of keep the structure.
+
+33
+00:02:08,199 --> 00:02:12,320
+They all kind of interact in some
+way, of how you use your terminal,
+
+34
+00:02:12,880 --> 00:02:17,280
+but they are somewhat separate
+topics, so keep that in mind.
+
+35
+00:02:17,600 --> 00:02:23,800
+So let's go with job control. So far we have
+been using the shell in a very, kind of
+
+36
+00:02:24,800 --> 00:02:27,720
+mono-command way. Like, you
+execute a command and then
+
+37
+00:02:27,840 --> 00:02:31,800
+the command executes, then you get some output,
+and that's all about what you can do.
+
+38
+00:02:32,200 --> 00:02:36,520
+And if you want to run several
+things, it's not clear
+
+39
+00:02:36,540 --> 00:02:41,099
+how you will do it. Or if you want to stop
+the execution of a program, it's again,
+
+40
+00:02:41,099 --> 00:02:43,768
+like how do I know how to stop a program?
+
+41
+00:02:44,650 --> 00:02:47,940
+Let's showcase this with a command called sleep.
+
+42
+00:02:48,160 --> 00:02:50,320
+Sleep is a command that takes an argument,
+
+43
+00:02:50,320 --> 00:02:54,360
+and that argument is going to be an
+integer number, and it will sleep.
+
+44
+00:02:54,360 --> 00:02:58,440
+It will just kind of be there, on the
+background, for that many seconds.
+
+45
+00:02:58,440 --> 00:03:03,539
+So if we do something like sleep 20, this process
+is gonna be sleeping for 20 seconds.
+
+46
+00:03:03,539 --> 00:03:07,720
+But we don't want to wait 20 seconds
+for the command to complete.
+
+47
+00:03:08,040 --> 00:03:10,800
+So what we can do is type "Ctrl+C".
+
+48
+00:03:10,840 --> 00:03:12,580
+By typing "Ctrl+C"
+
+49
+00:03:12,580 --> 00:03:17,840
+We can see that, here, the terminal let us know,
+
+50
+00:03:18,880 --> 00:03:22,840
+and it's part of the syntax that we covered
+in the editors / Vim lecture,
+
+51
+00:03:23,000 --> 00:03:27,200
+that we typed "Ctrl+C" and it stopped
+the execution of the process.
+
+52
+00:03:27,640 --> 00:03:29,640
+What is actually going on here
+
+53
+00:03:29,880 --> 00:03:34,840
+is that this is using a UNIX communication
+mechanism called signals.
+
+54
+00:03:35,120 --> 00:03:37,360
+When we type "Ctrl+C",
+
+55
+00:03:37,800 --> 00:03:42,080
+what the terminal did for us,
+or the shell did for us,
+
+56
+00:03:42,160 --> 00:03:45,960
+is send a signal called SIGINT,
+
+57
+00:03:45,960 --> 00:03:51,320
+that stands for SIGnal INTerrupt, that
+tells the program to stop itself.
+
+58
+00:03:51,680 --> 00:03:57,520
+And there are many, many, many signals
+of this kind. If you do man signal,
+
+59
+00:03:58,880 --> 00:04:05,060
+and just go down a little bit,
+here you have a list of them.
+
+60
+00:04:05,060 --> 00:04:07,040
+They all have number identifiers,
+
+61
+00:04:07,520 --> 00:04:10,640
+they have kind of a short name
+and you can find a description.
+
+62
+00:04:10,960 --> 00:04:16,400
+So for example, the one I have just
+described is here, number 2, SIGINT.
+
+63
+00:04:16,519 --> 00:04:22,200
+This is the signal that a terminal will send to a
+program when it wants to interrupt its execution.
+
+64
+00:04:22,520 --> 00:04:25,840
+A few more to be familiar with
+
+65
+00:04:26,460 --> 00:04:28,530
+is SIGQUIT, this is
+
+66
+00:04:29,229 --> 00:04:34,409
+again, if you work from a terminal and you
+want to quit the execution of a program.
+
+67
+00:04:34,409 --> 00:04:37,720
+For most programs it will do the same thing,
+
+68
+00:04:37,720 --> 00:04:41,120
+but we're gonna showcase now a program
+which will be different,
+
+69
+00:04:41,440 --> 00:04:43,760
+and this is the signal that will be sent.
+
+70
+00:04:44,680 --> 00:04:49,229
+It can be confusing sometimes. Looking at
+these signals, for example, the SIGTERM is
+
+71
+00:04:50,080 --> 00:04:54,100
+for most cases equivalent to SIGINT and SIGQUIT
+
+72
+00:04:54,480 --> 00:04:58,380
+but it's just when it's not
+sent through a terminal.
+
+73
+00:04:59,680 --> 00:05:01,680
+A few more that we're gonna
+
+74
+00:05:01,900 --> 00:05:06,209
+cover is SIGHUP, it's when there's
+like a hang-up in the terminal.
+
+75
+00:05:06,210 --> 00:05:10,199
+So for example, when you are in your
+terminal, if you close your terminal
+
+76
+00:05:10,199 --> 00:05:13,348
+and there are still things
+running in the terminal,
+
+77
+00:05:13,480 --> 00:05:17,000
+that's the signal that the program is gonna send
+
+78
+00:05:17,000 --> 00:05:19,960
+to all the processes to tell
+that they should close,
+
+79
+00:05:19,960 --> 00:05:25,080
+like there was a hang-up in the
+command line communication
+
+80
+00:05:25,080 --> 00:05:26,800
+and they should close now.
+
+81
+00:05:28,400 --> 00:05:34,260
+Signals can do more things than just stopping, interrupting
+programs and asking them to finish.
+
+82
+00:05:34,260 --> 00:05:36,840
+You can for example use the
+
+83
+00:05:37,520 --> 00:05:43,840
+SIGSTOP to pause the execution of the
+program, and then you can use the
+
+84
+00:05:44,480 --> 00:05:50,160
+SIGCONT command for continuing, to continue the execution
+of the program at a point later in time.
+
+85
+00:05:51,160 --> 00:05:55,440
+Since all of this might be slightly too
+abstract, let's see a few examples.
+
+86
+00:05:58,040 --> 00:06:00,560
+First, let's showcase a
+
+87
+00:06:01,960 --> 00:06:06,240
+Python program. I'm going to very
+quickly go through the program.
+
+88
+00:06:06,440 --> 00:06:08,360
+This is a Python program,
+
+89
+00:06:08,720 --> 00:06:10,760
+that like most python programs,
+
+90
+00:06:11,520 --> 00:06:13,960
+is importing this signal library and
+
+91
+00:06:14,960 --> 00:06:20,400
+is defining this handler here.
+And this handler is writing,
+
+92
+00:06:20,440 --> 00:06:23,040
+"Oh, I got a SIGINT, but
+I'm not gonna stop here".
+
+93
+00:06:23,480 --> 00:06:24,960
+And after that,
+
+94
+00:06:24,960 --> 00:06:30,720
+we tell Python that we want this program,
+when it gets a SIGINT, to stop.
+
+95
+00:06:31,120 --> 00:06:34,880
+The rest of the program is a very silly program
+that is just going to be printing numbers.
+
+96
+00:06:35,060 --> 00:06:37,540
+So let's see this in action.
+
+97
+00:06:37,560 --> 00:06:39,560
+We do Python SIGINT.
+
+98
+00:06:39,880 --> 00:06:44,970
+And it's counting. We try doing
+"Ctrl+C", this sends a SIGINT,
+
+99
+00:06:44,970 --> 00:06:50,000
+but the program didn't actually stop. This
+is because we have a way in the program of
+
+100
+00:06:50,400 --> 00:06:54,600
+dealing with this exception,
+and we didn't want to exit.
+
+101
+00:06:54,760 --> 00:06:57,600
+If we send a SIGQUIT, which is done through
+
+102
+00:06:57,800 --> 00:07:03,680
+"Ctrl+\", here, we can see that since the program
+doesn't have a way of dealing with SIGQUIT,
+
+103
+00:07:03,730 --> 00:07:06,269
+it does the default operation, which is
+
+104
+00:07:06,820 --> 00:07:08,800
+terminate the program.
+
+105
+00:07:09,080 --> 00:07:11,460
+And you could use this, for example,
+
+106
+00:07:11,880 --> 00:07:15,880
+if someone Ctrl+C's your program, and your
+program is supposed to do something,
+
+107
+00:07:16,040 --> 00:07:19,320
+like you maybe want to save the intermediate
+state of your program
+
+108
+00:07:19,320 --> 00:07:21,520
+to a file, so you can recover it for later.
+
+109
+00:07:21,600 --> 00:07:25,640
+This is how you could write a handler like this.
+
+110
+00:07:29,520 --> 00:07:30,720
+Can you repeat the question?
+
+111
+00:07:30,880 --> 00:07:32,280
+What did you type right now, when it stopped?
+
+112
+00:07:32,480 --> 00:07:34,480
+So I...
+
+113
+00:07:34,630 --> 00:07:38,880
+So what I typed is, I type
+"Ctrl+C" to try to stop it
+
+114
+00:07:38,880 --> 00:07:42,869
+but it didn't, because SIGINT is captured
+by the program. Then I type
+
+115
+00:07:43,120 --> 00:07:48,040
+"Ctrl+\", which sends a SIGQUIT,
+which is a different signal,
+
+116
+00:07:49,000 --> 00:07:51,720
+and this signal is not captured by the program.
+
+117
+00:07:52,090 --> 00:07:54,869
+It's also worth mentioning
+that there is a couple of
+
+118
+00:07:54,970 --> 00:07:59,970
+signals that cannot be captured by software.
+There is a couple of signals
+
+119
+00:08:00,820 --> 00:08:02,820
+like SIGKILL
+
+120
+00:08:03,940 --> 00:08:06,600
+that cannot be captured. Like that, it will
+
+121
+00:08:06,660 --> 00:08:09,300
+terminate the execution of the
+process, no matter what.
+
+122
+00:08:09,300 --> 00:08:12,000
+And it can be sometimes harmful.
+You do not want to be using it by
+
+123
+00:08:12,000 --> 00:08:16,460
+default, because this can leave for example an
+orphan child, orphaned children processes.
+
+124
+00:08:16,470 --> 00:08:20,940
+Like if a process has other small children
+processes that it started, and you
+
+125
+00:08:21,400 --> 00:08:25,470
+SIGKILL it, all of those will
+keep running in there,
+
+126
+00:08:25,760 --> 00:08:30,800
+but they won't have a parent, and you can maybe
+have a really weird behavior going on.
+
+127
+00:08:32,039 --> 00:08:35,679
+What signal is given to the
+program if we log off?
+
+128
+00:08:35,799 --> 00:08:37,439
+If you log off?
+
+129
+00:08:37,919 --> 00:08:41,919
+That would be... so for example, if you're in an
+SSH connection and you close the connection,
+
+130
+00:08:41,919 --> 00:08:45,600
+that is the hang-up signal,
+
+131
+00:08:45,600 --> 00:08:51,200
+SIGHUP, which I'm gonna cover in an example.
+So this is what would be sent up.
+
+132
+00:08:51,560 --> 00:08:56,360
+And you could write for example, if you want
+the process to keep working even if you close
+
+133
+00:08:56,960 --> 00:09:02,560
+that, you can write a wrapper around
+that to ignore that signal.
+
+134
+00:09:04,720 --> 00:09:09,760
+Let's display what we could do
+with the stop and continue.
+
+135
+00:09:09,980 --> 00:09:16,389
+So, for example, we can start a really long process.
+Let's sleep a thousand, we're gonna take forever.
+
+136
+00:09:16,960 --> 00:09:18,920
+We can control-c,
+
+137
+00:09:18,920 --> 00:09:20,360
+"Ctrl+Z", sorry,
+
+138
+00:09:20,360 --> 00:09:25,280
+and if we do "Ctrl+Z" we can see that the
+terminal is saying "it's suspended".
+
+139
+00:09:25,400 --> 00:09:31,520
+What this actually meant is that this process
+was sent a SIGSTOP signal and now is
+
+140
+00:09:31,900 --> 00:09:36,900
+still there, you could continue its execution, but right
+now it's completely stopped and in the background
+
+141
+00:09:38,580 --> 00:09:41,720
+and we can launch a different program.
+
+142
+00:09:41,720 --> 00:09:43,680
+When we try to run this program,
+
+143
+00:09:43,680 --> 00:09:46,620
+please notice that I have included
+an "&" at the end.
+
+144
+00:09:46,820 --> 00:09:52,380
+This tells bash that I want this program
+to start running in the background.
+
+145
+00:09:52,560 --> 00:09:55,660
+This is kind of related to all these
+
+146
+00:09:55,660 --> 00:09:59,720
+concepts of running programs in
+the shell, but backgrounded.
+
+147
+00:10:00,350 --> 00:10:04,359
+And what is gonna happen is
+the program is gonna start
+
+148
+00:10:04,720 --> 00:10:07,580
+but it's not gonna take over my prompt.
+
+149
+00:10:07,580 --> 00:10:11,540
+If I just ran this command without
+this, I could not do anything.
+
+150
+00:10:11,540 --> 00:10:15,820
+I would have no access to the prompt
+until the command either finished
+
+151
+00:10:16,060 --> 00:10:19,380
+or I ended it abruptly. But if I do this,
+
+152
+00:10:19,520 --> 00:10:23,080
+it's saying "there's a new
+process which is this".
+
+153
+00:10:23,080 --> 00:10:25,180
+This is the process identifying number,
+
+154
+00:10:25,180 --> 00:10:26,940
+we can ignore this for now.
+
+155
+00:10:27,800 --> 00:10:32,919
+If I type the command "jobs", I get the
+output that I have a suspended job
+
+156
+00:10:32,920 --> 00:10:35,800
+that is the "sleep 1000" job.
+
+157
+00:10:36,040 --> 00:10:38,100
+And then I have another running job,
+
+158
+00:10:38,120 --> 00:10:42,200
+which is this "NOHUP sleep 2000".
+
+159
+00:10:42,640 --> 00:10:45,660
+Say I want to continue the first job.
+
+160
+00:10:45,660 --> 00:10:48,520
+The first job is suspended,
+it's not executing anymore.
+
+161
+00:10:48,640 --> 00:10:52,600
+I can continue that doing "BG %1"
+
+162
+00:10:53,870 --> 00:10:58,359
+That "%" is referring to the fact that
+I want to refer to this specific
+
+163
+00:11:00,280 --> 00:11:04,280
+process. And now, if I do that
+and I look at the jobs,
+
+164
+00:11:04,300 --> 00:11:06,460
+now this job is running again. Now
+
+165
+00:11:06,460 --> 00:11:08,940
+both of them are running.
+
+166
+00:11:09,300 --> 00:11:13,820
+If I wanted to stop these all,
+I can use the kill command.
+
+167
+00:11:14,040 --> 00:11:16,060
+The kill command
+
+168
+00:11:16,220 --> 00:11:18,620
+is for killing jobs,
+
+169
+00:11:19,180 --> 00:11:22,080
+which is just stopping them, intuitively,
+
+170
+00:11:22,120 --> 00:11:23,760
+but actually it's really useful.
+
+171
+00:11:23,860 --> 00:11:28,200
+The kill command just allows you
+to send any sort of Unix signal.
+
+172
+00:11:28,360 --> 00:11:32,220
+So here for example, instead
+of killing it completely,
+
+173
+00:11:32,220 --> 00:11:34,640
+we just send a stop signal.
+
+174
+00:11:34,640 --> 00:11:39,160
+Here I'm gonna send a stop signal, which
+is gonna pause the process again.
+
+175
+00:11:39,160 --> 00:11:41,280
+I still have to include the identifier,
+
+176
+00:11:41,600 --> 00:11:46,480
+because without the identifier the shell wouldn't know
+whether to stop the first one or the second one.
+
+177
+00:11:47,480 --> 00:11:52,480
+Now it's said this has been suspended,
+because there was a signal sent.
+
+178
+00:11:52,620 --> 00:11:57,360
+If I do "jobs", again, we can see
+that the second one is running
+
+179
+00:11:57,460 --> 00:12:00,740
+and the first one has been stopped.
+
+180
+00:12:01,420 --> 00:12:04,300
+Going back to one of the questions,
+
+181
+00:12:04,300 --> 00:12:06,980
+what happens when you close
+the cell, for example,
+
+182
+00:12:06,980 --> 00:12:12,860
+and why sometimes people will say that
+you should use this NOHUP command
+
+183
+00:12:12,860 --> 00:12:15,960
+before your run jobs in a remote session.
+
+184
+00:12:16,220 --> 00:12:23,120
+This is because if we try to send
+a hung up command to the first job
+
+185
+00:12:23,560 --> 00:12:27,820
+it's gonna, in a similar fashion
+as the other signals,
+
+186
+00:12:27,820 --> 00:12:32,280
+it's gonna hang it up and that's
+gonna terminate the job.
+
+187
+00:12:32,800 --> 00:12:35,960
+And the first job isn't there anymore
+
+188
+00:12:36,320 --> 00:12:39,140
+whereas we have still the second job running.
+
+189
+00:12:39,400 --> 00:12:42,920
+However, if we try to send the
+signal to the second job
+
+190
+00:12:42,920 --> 00:12:46,060
+what will happen if we close
+our terminal right now
+
+191
+00:12:47,040 --> 00:12:48,660
+is it's still running.
+
+192
+00:12:48,660 --> 00:12:52,480
+Like NOHUP, what it's doing
+is kind of encapsulating
+
+193
+00:12:52,480 --> 00:12:54,480
+whatever command you're executing and
+
+194
+00:12:54,740 --> 00:12:58,720
+ignoring wherever you get a hang up signal,
+
+195
+00:12:58,900 --> 00:13:03,680
+and just ignoring that so it can keep running.
+
+196
+00:13:05,060 --> 00:13:08,500
+And if we send the "kill"
+signal to the second job,
+
+197
+00:13:08,500 --> 00:13:12,820
+that one can't be ignored and that
+will kill the job, no matter what.
+
+198
+00:13:13,280 --> 00:13:15,780
+And we don't have any jobs anymore.
+
+199
+00:13:17,000 --> 00:13:22,540
+That kind of completes the
+section on job control.
+
+200
+00:13:22,740 --> 00:13:27,100
+Any questions so far? Anything
+that wasn't fully clear?
+
+201
+00:13:29,040 --> 00:13:30,400
+What does BG do?
+
+202
+00:13:30,960 --> 00:13:31,800
+So BG...
+
+203
+00:13:31,800 --> 00:13:36,860
+There are like two commands. Whenever you
+have a command that has been backgrounded
+
+204
+00:13:37,200 --> 00:13:41,820
+and is stopped you can use
+BG (short for background)
+
+205
+00:13:41,820 --> 00:13:44,180
+to continue that process running
+on the background.
+
+206
+00:13:44,440 --> 00:13:47,400
+That's equivalent of just kind of sending it
+
+207
+00:13:47,680 --> 00:13:50,820
+a continue signal, so it keeps running.
+
+208
+00:13:50,820 --> 00:13:54,820
+And then there's another one which
+is called FG, if you want to
+
+209
+00:13:54,860 --> 00:13:59,580
+recover it to the foreground and you want
+to reattach your standard output.
+
+210
+00:14:04,760 --> 00:14:06,760
+Okay, good.
+
+211
+00:14:07,120 --> 00:14:11,420
+Jobs are useful and in general, I
+think knowing about signals can be
+
+212
+00:14:11,420 --> 00:14:14,360
+really beneficial when dealing
+with some part of Unix
+
+213
+00:14:14,360 --> 00:14:19,420
+but most of the time what you actually want
+to do is something along the lines of
+
+214
+00:14:19,670 --> 00:14:24,099
+having your editor in one side and then
+the program in another, and maybe
+
+215
+00:14:24,720 --> 00:14:28,280
+monitoring what the resource
+consumption is in our tab.
+
+216
+00:14:28,680 --> 00:14:33,640
+We could achieve this using probably
+what you have seen a lot of the time,
+
+217
+00:14:33,640 --> 00:14:35,200
+which is just opening more windows.
+
+218
+00:14:35,200 --> 00:14:37,200
+We can keep opening terminal windows.
+
+219
+00:14:37,320 --> 00:14:41,280
+But the fact is there are kind of more
+convenient solutions to this and
+
+220
+00:14:41,280 --> 00:14:43,800
+this is what a terminal multiplexer does.
+
+221
+00:14:44,080 --> 00:14:48,520
+A terminal multiplexer like tmux
+
+222
+00:14:48,840 --> 00:14:52,160
+will let you create different workspaces
+that you can work in,
+
+223
+00:14:52,640 --> 00:14:54,280
+and quickly kind of,
+
+224
+00:14:54,280 --> 00:14:56,960
+this has a huge variety of functionality,
+
+225
+00:14:57,320 --> 00:15:02,760
+It will let you rearrange the environment and
+it will let you have different sessions.
+
+226
+00:15:03,400 --> 00:15:05,400
+There's another more...
+
+227
+00:15:05,600 --> 00:15:07,640
+older command, which is called "screen",
+
+228
+00:15:07,640 --> 00:15:09,360
+that might be more readily available.
+
+229
+00:15:09,360 --> 00:15:12,200
+But I think the concept kind
+of extrapolates to both.
+
+230
+00:15:12,600 --> 00:15:15,400
+We recommend tmux, that you go and learn it.
+
+231
+00:15:15,400 --> 00:15:17,480
+And in fact, we have exercises on it.
+
+232
+00:15:17,480 --> 00:15:20,240
+I'm gonna showcase a different
+scenario right now.
+
+233
+00:15:20,320 --> 00:15:22,000
+So whenever I talked...
+
+234
+00:15:22,320 --> 00:15:24,880
+Oh, let me make a quick note.
+
+235
+00:15:25,200 --> 00:15:28,800
+There are kind of three core concepts
+in tmux, that I'm gonna go through and
+
+236
+00:15:30,110 --> 00:15:33,130
+the main idea is that there are what is called
+
+237
+00:15:35,180 --> 00:15:37,180
+"sessions".
+
+238
+00:15:37,760 --> 00:15:40,510
+Sessions have "windows" and
+
+239
+00:15:42,019 --> 00:15:44,019
+windows have "panes".
+
+240
+00:15:45,709 --> 00:15:49,539
+It's gonna be kind of useful to
+keep this hierarchy in mind.
+
+241
+00:15:50,760 --> 00:15:57,280
+You can pretty much equate "windows" to what
+"tabs" are in other editors and others,
+
+242
+00:15:57,280 --> 00:16:00,720
+like for example your web browser.
+
+243
+00:16:01,280 --> 00:16:06,440
+I'm gonna go through the features, mainly
+what you can do at the different levels.
+
+244
+00:16:07,000 --> 00:16:10,480
+So first, when we do tmux, that starts a session.
+
+245
+00:16:11,360 --> 00:16:14,960
+And here right now it seems like nothing changed
+
+246
+00:16:14,960 --> 00:16:20,360
+but what's happening right now is we're within a shell
+that is different from the one we started before.
+
+247
+00:16:20,640 --> 00:16:24,840
+So in our shell we started
+a process, that is tmux
+
+248
+00:16:24,840 --> 00:16:28,840
+and that tmux started a different process,
+which is the shell we're currently in.
+
+249
+00:16:28,980 --> 00:16:30,400
+And the nice thing about this is that
+
+250
+00:16:30,580 --> 00:16:34,740
+that tmux process is separate from
+the original shell process.
+
+251
+00:16:34,860 --> 00:16:36,860
+So
+
+252
+00:16:40,580 --> 00:16:44,460
+here, we can do things.
+
+253
+00:16:44,480 --> 00:16:48,600
+We can do "ls -la", for example, to
+tell us what is going on in here.
+
+254
+00:16:48,920 --> 00:16:53,960
+And then we can start running our program,
+and it will start running in there
+
+255
+00:16:54,160 --> 00:16:57,880
+and we can do "Ctrl+A d", for example, to detach
+
+256
+00:17:12,760 --> 00:17:15,960
+to detach from the session.
+
+257
+00:17:16,140 --> 00:17:19,120
+And if we do "tmux a"
+
+258
+00:17:19,160 --> 00:17:21,560
+that's gonna reattach us to the session.
+
+259
+00:17:21,560 --> 00:17:22,300
+So the process,
+
+260
+00:17:22,300 --> 00:17:25,180
+we abandon the process counting numbers.
+
+261
+00:17:25,180 --> 00:17:28,300
+This really silly Python program
+that was just counting numbers,
+
+262
+00:17:28,339 --> 00:17:30,160
+we left it running there.
+
+263
+00:17:30,200 --> 00:17:31,720
+And if we tmux...
+
+264
+00:17:31,720 --> 00:17:33,760
+Hey, the process is still running there.
+
+265
+00:17:33,780 --> 00:17:37,820
+And we could close this entire
+terminal and open a new one and
+
+266
+00:17:37,880 --> 00:17:41,860
+we could still reattach because this
+tmux session is still running.
+
+267
+00:17:43,340 --> 00:17:45,340
+Again, we can...
+
+268
+00:17:46,640 --> 00:17:48,640
+Before I go any further.
+
+269
+00:17:48,920 --> 00:17:53,740
+Pretty much... Unlike Vim, where
+you have this notion of modes,
+
+270
+00:17:53,960 --> 00:17:58,180
+tmux will work in a more emacsy way, which is
+
+271
+00:17:58,180 --> 00:18:04,140
+every command, pretty much every command in tmux,
+
+272
+00:18:04,220 --> 00:18:06,020
+you could enter it through the...
+
+273
+00:18:06,020 --> 00:18:08,160
+it has a command line, that we could use.
+
+274
+00:18:08,240 --> 00:18:11,320
+But I recommend you to get familiar
+with the key bindings.
+
+275
+00:18:11,880 --> 00:18:15,080
+It can be somehow non intuitive at first,
+
+276
+00:18:15,300 --> 00:18:17,880
+but once you get used to them...
+
+277
+00:18:22,140 --> 00:18:23,020
+"Ctrl+C", yeah
+
+278
+00:18:24,440 --> 00:18:30,760
+When you get familiar with them, you will be much faster
+just using the key bindings than using the commands.
+
+279
+00:18:31,280 --> 00:18:35,980
+One note about the key bindings: all the
+key bindings have a form that is like
+
+280
+00:18:36,140 --> 00:18:39,840
+you type a prefix and then some key.
+
+281
+00:18:40,060 --> 00:18:44,000
+So for example, to detach we
+do "Ctrl+A" and then "D".
+
+282
+00:18:44,160 --> 00:18:50,140
+This means you press "Ctrl+A" first, you release
+that, and then press "D" to detach.
+
+283
+00:18:50,380 --> 00:18:54,200
+On default tmux, the prefix is "Ctrl+B",
+
+284
+00:18:54,200 --> 00:18:58,780
+but you will find that most people
+will have this remapped to "Ctrl+A"
+
+285
+00:18:58,780 --> 00:19:02,680
+because it's a much more ergonomic
+type on the keyboard.
+
+286
+00:19:02,700 --> 00:19:06,420
+You can find more about how to do these
+things in one of the exercises,
+
+287
+00:19:06,960 --> 00:19:12,780
+where we link you to the basics and how to do some
+kind of quality of life modifications to tmux.
+
+288
+00:19:13,380 --> 00:19:16,720
+Going back to the concept of sessions,
+
+289
+00:19:16,960 --> 00:19:22,120
+we can create a new session just
+doing something like tmux new
+
+290
+00:19:22,320 --> 00:19:24,540
+and we can give sessions names.
+
+291
+00:19:24,760 --> 00:19:27,220
+So we can do like "tmux new -t foobar"
+
+292
+00:19:27,220 --> 00:19:30,900
+and this is a completely different
+session, that we have started.
+
+293
+00:19:32,240 --> 00:19:36,360
+We can work here, we can detach from it.
+
+294
+00:19:36,360 --> 00:19:40,000
+"tmux ls" will tell us that we
+have two different sessions:
+
+295
+00:19:40,000 --> 00:19:43,460
+the first one is named "0", because
+I didn't give it a name,
+
+296
+00:19:43,500 --> 00:19:45,820
+and the second one is called "foobar".
+
+297
+00:19:46,580 --> 00:19:51,020
+I can attach the foobar session
+
+298
+00:19:51,020 --> 00:19:53,700
+and I can end it.
+
+299
+00:19:54,680 --> 00:19:56,340
+And it's really nice because
+
+300
+00:19:56,340 --> 00:20:00,139
+having this you can kind of work
+in completely different projects.
+
+301
+00:20:00,140 --> 00:20:04,340
+For example, having two different
+tmux sessions and different
+
+302
+00:20:04,480 --> 00:20:08,440
+editor sessions, different processes running...
+
+303
+00:20:10,160 --> 00:20:15,100
+When you are within a session, we
+start with the concept of windows.
+
+304
+00:20:15,100 --> 00:20:21,160
+Here we have a single window, but we
+can use "Ctrl+A c" (for "create")
+
+305
+00:20:21,160 --> 00:20:23,720
+to open a new window.
+
+306
+00:20:24,000 --> 00:20:26,340
+And here nothing is executing.
+
+307
+00:20:26,380 --> 00:20:29,420
+What it's doing is, tmux has
+opened a new shell for us
+
+308
+00:20:30,360 --> 00:20:34,840
+and we can start running another
+one of these programs here.
+
+309
+00:20:35,460 --> 00:20:42,460
+And to quickly jump between the tabs,
+we can do "Ctrl+A" and "previous",
+
+310
+00:20:42,460 --> 00:20:44,520
+"p" for "previous",
+
+311
+00:20:45,220 --> 00:20:48,020
+and that will go up to the previous window.
+
+312
+00:20:48,020 --> 00:20:50,920
+"Ctrl+A" "next", to go to the next window.
+
+313
+00:20:51,260 --> 00:20:56,060
+You can also use the numbers. So if we
+start opening a lot of these tabs,
+
+314
+00:20:56,200 --> 00:21:00,160
+we could use "Ctrl+A 1", to
+specifically jump to the
+
+315
+00:21:00,240 --> 00:21:04,400
+to the window that is number "1".
+
+316
+00:21:04,780 --> 00:21:08,620
+And, lastly, it's also pretty
+useful to know sometimes
+
+317
+00:21:08,660 --> 00:21:10,400
+that you can rename them.
+
+318
+00:21:10,400 --> 00:21:13,380
+For example here I'm executing
+this Python process,
+
+319
+00:21:13,580 --> 00:21:16,800
+but that might not be really
+informative and I want...
+
+320
+00:21:16,880 --> 00:21:21,160
+I maybe want to have something like
+execution or something like that and
+
+321
+00:21:21,740 --> 00:21:26,840
+that will rename the name of that window so
+you can have this really neatly organized.
+
+322
+00:21:27,080 --> 00:21:33,500
+This still doesn't solve the need when you want to
+have two things at the same time in your terminal,
+
+323
+00:21:33,680 --> 00:21:35,740
+like in the same display.
+
+324
+00:21:35,740 --> 00:21:38,320
+This is what panes are for. Right now, here
+
+325
+00:21:38,420 --> 00:21:40,420
+we have a window with a single pane
+
+326
+00:21:40,420 --> 00:21:43,540
+(all the windows that we have opened
+so far have a single pane).
+
+327
+00:21:43,640 --> 00:21:50,800
+But if we do 'Ctrl+A "'
+
+328
+00:21:51,040 --> 00:21:56,540
+this will split the current display
+into two different panes.
+
+329
+00:21:56,540 --> 00:22:01,400
+So, you see, the one we open below is a different
+shell from the one we have above,
+
+330
+00:22:01,640 --> 00:22:05,440
+and we can run any process that we want here.
+
+331
+00:22:05,620 --> 00:22:09,900
+We can keep splitting this, if we do "Ctrl+A %"
+
+332
+00:22:10,080 --> 00:22:15,000
+that will split vertically. And you can kind of
+
+333
+00:22:15,000 --> 00:22:18,220
+rearrange these tabs using a
+lot of different commands.
+
+334
+00:22:18,220 --> 00:22:22,620
+One that I find very useful, when you are
+starting and it's kind of frustrating,
+
+335
+00:22:23,540 --> 00:22:26,000
+rearranging them.
+
+336
+00:22:26,160 --> 00:22:30,160
+Before I explain that, to move
+through these panes, which is
+
+337
+00:22:30,300 --> 00:22:32,280
+something you want to be doing all the time
+
+338
+00:22:32,460 --> 00:22:37,060
+You just do "Ctrl+A" and the arrow
+keys, and that will let you quickly
+
+339
+00:22:37,460 --> 00:22:43,960
+navigate through the different
+windows, and execute again...
+
+340
+00:22:44,340 --> 00:22:46,300
+I'm doing a lot of "ls -a"
+
+341
+00:22:47,340 --> 00:22:52,780
+I can do "HTOP", that we'll explain in
+the debugging and profiling lecture.
+
+342
+00:22:53,540 --> 00:22:55,920
+And we can just navigate through them, again
+
+343
+00:22:55,920 --> 00:22:59,040
+like to rearrange there's
+another slew of commands,
+
+344
+00:22:59,080 --> 00:23:01,080
+you will go through some in the Exercises
+
+345
+00:23:02,400 --> 00:23:07,160
+"Ctrl+A" space is pretty neat, because it
+will kind of equispace the current ones
+
+346
+00:23:07,160 --> 00:23:10,260
+and let you through different layouts.
+
+347
+00:23:11,480 --> 00:23:14,260
+Some of them are too small for my current
+
+348
+00:23:14,840 --> 00:23:19,220
+terminal config, but that covers,
+I think, most of it.
+
+349
+00:23:19,440 --> 00:23:21,440
+Oh, there's also,
+
+350
+00:23:22,660 --> 00:23:29,200
+here, for example, this Vim execution
+that we have started,
+
+351
+00:23:29,200 --> 00:23:33,380
+is too small for what the current tmux pane is.
+
+352
+00:23:33,720 --> 00:23:38,240
+So one of the things that really is
+much more convenient to do in tmux,
+
+353
+00:23:39,180 --> 00:23:42,500
+in contrast to having multiple
+terminal windows, is that
+
+354
+00:23:42,560 --> 00:23:48,400
+you can zoom into this, you can ask
+by doing "Ctrl+A z", for "zoom".
+
+355
+00:23:48,400 --> 00:23:52,960
+It will expand the pane to
+take over all the space,
+
+356
+00:23:52,960 --> 00:23:56,660
+and then "Ctrl+A z", again will go back to it.
+
+357
+00:24:02,760 --> 00:24:08,080
+Any questions for terminal multiplexers,
+or like, tmux concretely?
+
+358
+00:24:14,140 --> 00:24:16,780
+Is it running all the same thing?
+
+359
+00:24:18,680 --> 00:24:22,700
+Like, is there any difference in execution
+between running it in different windows?
+
+360
+00:24:24,880 --> 00:24:28,640
+Is it really just doing it all the
+same, so that you can see it?
+
+361
+00:24:28,800 --> 00:24:34,900
+Yeah, it wouldn't be any different from having
+two terminal windows open in your computer.
+
+362
+00:24:34,920 --> 00:24:39,220
+Like both of them are gonna be running.
+Of course, when it gets to the CPU,
+
+363
+00:24:39,220 --> 00:24:41,400
+this is gonna be multiplexed again.
+
+364
+00:24:41,460 --> 00:24:44,400
+Like there's like a timesharing
+mechanism going there
+
+365
+00:24:44,480 --> 00:24:45,920
+but there's no difference.
+
+366
+00:24:46,040 --> 00:24:52,260
+tmux is just making this much more convenient
+to use by giving you this visual layout
+
+367
+00:24:52,560 --> 00:24:55,020
+that you can quickly manipulate through.
+
+368
+00:24:55,020 --> 00:24:59,860
+And one of the main advantages will come
+when we reach the remote machines
+
+369
+00:24:59,860 --> 00:25:05,300
+because you can leave one of these, we can
+detach from one of these tmux systems,
+
+370
+00:25:05,300 --> 00:25:09,120
+close the connection and even
+if we close the connection and
+
+371
+00:25:09,120 --> 00:25:11,640
+and the terminal is gonna send a hang-up signal,
+
+372
+00:25:11,680 --> 00:25:15,420
+that's not gonna close all the
+tmux's that have been started.
+
+373
+00:25:17,110 --> 00:25:19,110
+Any other questions?
+
+374
+00:25:23,620 --> 00:25:27,980
+Let me disable the key-caster.
+
+375
+00:25:33,580 --> 00:25:38,040
+So now we're gonna move into the topic
+of dotfiles and, in general,
+
+376
+00:25:38,040 --> 00:25:42,460
+how to kind of configure your shell
+to do the things you want to do
+
+377
+00:25:42,460 --> 00:25:45,580
+and mainly how to do them quicker
+and in a more convenient way.
+
+378
+00:25:46,360 --> 00:25:49,260
+I'm gonna motivate this using aliases first.
+
+379
+00:25:49,380 --> 00:25:51,060
+So what an alias is,
+
+380
+00:25:51,060 --> 00:25:54,260
+is that by now, you might be
+starting to do something like
+
+381
+00:25:54,920 --> 00:26:01,680
+a lot of the time, I just want to LS a directory and
+I want to display all the contents into a list format
+
+382
+00:26:02,180 --> 00:26:05,040
+and in a human readable thing.
+
+383
+00:26:05,260 --> 00:26:07,400
+And it's fine. Like it's not
+that long of a command.
+
+384
+00:26:07,400 --> 00:26:10,300
+But as you start building longer
+and longer commands,
+
+385
+00:26:10,320 --> 00:26:14,440
+it can become kind of bothersome having
+to retype them again and again.
+
+386
+00:26:14,440 --> 00:26:17,540
+This is one of the reasons
+why aliases are useful.
+
+387
+00:26:17,540 --> 00:26:21,740
+Alias is a command that will
+be a built-in in your shell,
+
+388
+00:26:21,960 --> 00:26:23,680
+and what it will do is
+
+389
+00:26:23,680 --> 00:26:27,540
+it will remap a short sequence of
+characters to a longer sequence.
+
+390
+00:26:27,780 --> 00:26:31,500
+So if I do, for example, here
+
+391
+00:26:31,500 --> 00:26:36,840
+alias ll="ls -lah"
+
+392
+00:26:37,440 --> 00:26:42,520
+If I execute this command, this is gonna call
+the "alias" command with this argument
+
+393
+00:26:42,520 --> 00:26:44,320
+and the LS is going to update
+
+394
+00:26:44,540 --> 00:26:49,040
+the environment in my shell
+to be aware of this mapping.
+
+395
+00:26:49,320 --> 00:26:52,920
+So if I now do LL,
+
+396
+00:26:52,920 --> 00:26:57,520
+it's executing that command without me
+having to type the entire command.
+
+397
+00:26:57,720 --> 00:27:01,180
+It can be really handy for many, many reasons.
+
+398
+00:27:01,180 --> 00:27:04,740
+One thing to note before I go any further is that
+
+399
+00:27:05,000 --> 00:27:09,960
+here, alias is not anything special
+compared to other commands,
+
+400
+00:27:09,960 --> 00:27:11,400
+it's just taking a single argument.
+
+401
+00:27:11,680 --> 00:27:15,600
+And there is no space around
+this equals and that's
+
+402
+00:27:16,020 --> 00:27:18,720
+because alias takes a single argument
+
+403
+00:27:18,720 --> 00:27:21,640
+and if you try doing
+
+404
+00:27:21,960 --> 00:27:25,120
+something like this, that's giving
+it more than one argument
+
+405
+00:27:25,120 --> 00:27:28,360
+and that's not gonna work because
+that's not the format it expects.
+
+406
+00:27:29,520 --> 00:27:33,680
+So other use cases that work for aliases,
+
+407
+00:27:34,720 --> 00:27:36,549
+as I was saying,
+
+408
+00:27:36,549 --> 00:27:39,920
+for some things it may be much more convenient,
+
+409
+00:27:40,040 --> 00:27:41,020
+like
+
+410
+00:27:41,020 --> 00:27:43,200
+one of my favorites is git status.
+
+411
+00:27:43,200 --> 00:27:47,500
+It's extremely long, and I don't like typing
+that long of a command every so often,
+
+412
+00:27:47,560 --> 00:27:48,960
+because you end up taking a lot of time.
+
+413
+00:27:49,120 --> 00:27:53,000
+So GS will replace for doing the git status
+
+414
+00:27:53,820 --> 00:27:58,620
+You can also use them to alias
+things that you mistype often,
+
+415
+00:27:58,620 --> 00:28:01,160
+so you can do "sl=ls",
+
+416
+00:28:01,160 --> 00:28:02,540
+that will work.
+
+417
+00:28:05,800 --> 00:28:10,620
+Other useful mappings are,
+
+418
+00:28:10,680 --> 00:28:15,460
+you might want to alias a command to itself
+
+419
+00:28:15,740 --> 00:28:17,520
+but with a default flag.
+
+420
+00:28:17,520 --> 00:28:21,100
+So here what is going on is I'm creating an alias
+
+421
+00:28:21,100 --> 00:28:23,100
+which is an alias for the move command,
+
+422
+00:28:23,300 --> 00:28:29,780
+which is MV and I'm aliasing it to the
+same command but adding the "-i" flag.
+
+423
+00:28:29,980 --> 00:28:34,460
+And this "-i" flag, if you go through the man page
+and look at it, it stands for "interactive".
+
+424
+00:28:34,780 --> 00:28:39,880
+And what it will do is it will prompt
+me before I do an overwrite.
+
+425
+00:28:39,880 --> 00:28:44,420
+So once I have executed this,
+I can do something like
+
+426
+00:28:44,700 --> 00:28:47,360
+I want to move "aliases" into "case".
+
+427
+00:28:47,700 --> 00:28:53,140
+By default "move" won't ask, and if "case"
+already exists, it will be over.
+
+428
+00:28:53,160 --> 00:28:55,780
+That's fine, I'm going to overwrite
+whatever that's there.
+
+429
+00:28:56,020 --> 00:28:58,580
+But here it's now expanded,
+
+430
+00:28:58,580 --> 00:29:01,660
+"move" has been expanded into this "move -i"
+
+431
+00:29:01,660 --> 00:29:03,540
+and it's using that to ask me
+
+432
+00:29:03,540 --> 00:29:07,400
+"Oh, are you sure you want to overwrite this?"
+
+433
+00:29:07,700 --> 00:29:11,780
+And I can say no, I don't want to lose that file.
+
+434
+00:29:12,180 --> 00:29:15,820
+Lastly, you can use "alias move"
+
+435
+00:29:15,820 --> 00:29:18,520
+to ask for what this alias stands for.
+
+436
+00:29:19,100 --> 00:29:22,060
+So it will tell you so you can quickly make sure
+
+437
+00:29:22,080 --> 00:29:25,400
+what the command that you
+are executing actually is.
+
+438
+00:29:27,040 --> 00:29:31,400
+One inconvenient part about, for example,
+having aliases is how will you go about
+
+439
+00:29:31,760 --> 00:29:35,340
+persisting them into your current environment?
+
+440
+00:29:35,500 --> 00:29:38,120
+Like, if I were to close this terminal now,
+
+441
+00:29:38,280 --> 00:29:40,160
+all these aliases will go away.
+
+442
+00:29:40,160 --> 00:29:43,020
+And you don't want to be kind
+of retyping these commands
+
+443
+00:29:43,020 --> 00:29:46,760
+and more generally, if you start configuring
+your shell more and more,
+
+444
+00:29:46,860 --> 00:29:50,880
+you want some way of bootstrapping
+all this configuration.
+
+445
+00:29:51,380 --> 00:29:56,780
+You will find that most shell command programs
+
+446
+00:29:56,880 --> 00:30:01,440
+will use some sort of text
+based configuration file.
+
+447
+00:30:01,440 --> 00:30:06,740
+And this is what we usually call "dotfiles", because
+they start with a dot for historical reasons.
+
+448
+00:30:07,060 --> 00:30:13,160
+So for bash in our case, which is a shell,
+
+449
+00:30:13,160 --> 00:30:15,560
+we can look at the bashrc.
+
+450
+00:30:16,180 --> 00:30:19,840
+For demonstration purposes,
+here I have been using ZSH,
+
+451
+00:30:19,900 --> 00:30:24,460
+which is a different shell, and I'm going
+to be configuring bash, and starting bash.
+
+452
+00:30:24,640 --> 00:30:29,640
+So if I create an entry here and I say
+
+453
+00:30:29,940 --> 00:30:31,960
+SL maps to LS
+
+454
+00:30:32,600 --> 00:30:36,020
+And I have modified that, and now I start bash.
+
+455
+00:30:36,540 --> 00:30:40,660
+Bash is kind of completely unconfigured,
+but now if I do SL...
+
+456
+00:30:41,360 --> 00:30:44,040
+Hm, that's unexpected.
+
+457
+00:30:46,280 --> 00:30:48,000
+Oh, good. Good getting that.
+
+458
+00:30:48,300 --> 00:30:52,200
+So it matters where you config file is,
+
+459
+00:30:52,200 --> 00:30:55,260
+your config file needs to be in your home folder.
+
+460
+00:30:55,640 --> 00:31:00,940
+So your configuration file for
+bash will live in that "~",
+
+461
+00:31:00,940 --> 00:31:03,940
+which will expand to your home directory,
+
+462
+00:31:03,940 --> 00:31:05,560
+and then bashrc.
+
+463
+00:31:06,160 --> 00:31:08,840
+And here we can create the alias
+
+464
+00:31:12,040 --> 00:31:15,840
+and now we start a bash session and we do SL.
+
+465
+00:31:15,840 --> 00:31:21,500
+Now it has been loaded, and this is
+loaded at the beginning when this
+
+466
+00:31:22,300 --> 00:31:24,300
+bash program is started.
+
+467
+00:31:24,700 --> 00:31:31,200
+All this configuration is loaded and you can, not only use
+aliases, they can have a lot of parts of configuration.
+
+468
+00:31:31,390 --> 00:31:35,729
+So for example here, I have a prompt
+which is fairly useless.
+
+469
+00:31:35,730 --> 00:31:38,429
+It has just given me the name
+of the shell, which is bash,
+
+470
+00:31:38,640 --> 00:31:43,820
+and the version, which is 5.0. I don't
+want this to be displayed and
+
+471
+00:31:44,360 --> 00:31:48,540
+as with many things in your shell, this
+is just an environment variable.
+
+472
+00:31:48,600 --> 00:31:53,120
+So the "PS1" is just the prompt string
+
+473
+00:31:53,710 --> 00:31:55,480
+for your prompt and
+
+474
+00:31:55,480 --> 00:32:02,520
+we can actually modify this
+to just be a "> " symbol.
+
+475
+00:32:02,520 --> 00:32:08,280
+and now that has been modified, and we have
+that. But if we exit and call bash again,
+
+476
+00:32:08,620 --> 00:32:15,059
+that was lost. However, if we add this
+entry and say, oh we want "PS1"
+
+477
+00:32:15,760 --> 00:32:17,230
+to be
+
+478
+00:32:17,230 --> 00:32:19,179
+this and
+
+479
+00:32:19,179 --> 00:32:24,689
+we call bash again, this has been persisted.
+And we can keep modifying this configuration.
+
+480
+00:32:25,090 --> 00:32:27,209
+So maybe we want to include
+
+481
+00:32:27,880 --> 00:32:29,880
+where the
+
+482
+00:32:30,370 --> 00:32:32,939
+working directory that we are is in, and
+
+483
+00:32:34,140 --> 00:32:37,380
+that's telling us the same information
+that we had in the other shell.
+
+484
+00:32:37,380 --> 00:32:40,480
+And there are many, many options,
+
+485
+00:32:40,780 --> 00:32:45,060
+shells are highly, highly configurable, and
+
+486
+00:32:45,700 --> 00:32:49,920
+it's not only cells that are configured
+through these files,
+
+487
+00:32:50,590 --> 00:32:55,740
+there are many other programs. As we saw for
+example in the editors lecture, Vim is also
+
+488
+00:32:55,840 --> 00:33:02,900
+configured this way. We gave you this vimrc
+file and told you to put it under your
+
+489
+00:33:03,460 --> 00:33:06,380
+home/.vimrc
+
+490
+00:33:06,380 --> 00:33:11,800
+and this is the same concept, but just
+for Vim. It's just giving it a set of
+
+491
+00:33:12,160 --> 00:33:18,340
+instructions that it should load when it's started,
+so you can keep a configuration that you want.
+
+492
+00:33:19,140 --> 00:33:21,240
+And even non...
+
+493
+00:33:21,580 --> 00:33:27,140
+kind of a lot of programs will support this. For instance,
+my terminal emulator, which is another concept,
+
+494
+00:33:27,260 --> 00:33:30,159
+which is the program that is
+
+495
+00:33:30,159 --> 00:33:35,459
+running the shell, in a way, and displaying
+this into the screen in my computer.
+
+496
+00:33:35,950 --> 00:33:38,610
+It can also be configured this way, so
+
+497
+00:33:39,940 --> 00:33:43,620
+if I modify this I can
+
+498
+00:33:46,510 --> 00:33:53,279
+change the size of the font. Like right now, for
+example, I have increased the font size a lot
+
+499
+00:33:53,279 --> 00:33:55,768
+for demonstration purposes, but
+
+500
+00:33:56,440 --> 00:34:00,360
+if I change this entry and make it for example
+
+501
+00:34:01,320 --> 00:34:06,820
+28 and write this value, you see that
+the size of the font has changed,
+
+502
+00:34:06,820 --> 00:34:12,920
+because I edited this text file that specifies
+how my terminal emulator should work.
+
+503
+00:34:19,480 --> 00:34:20,900
+Any questions so far?
+
+504
+00:34:20,900 --> 00:34:22,280
+With dotfiles.
+
+505
+00:34:28,040 --> 00:34:35,940
+Okay, it can be a bit daunting knowing that there
+is like this endless wall of configurations,
+
+506
+00:34:35,940 --> 00:34:40,600
+and how do you go about learning
+about what can be configured?
+
+507
+00:34:42,020 --> 00:34:44,300
+The good news is that
+
+508
+00:34:44,639 --> 00:34:48,899
+we have linked you to really good
+resources in the lecture notes.
+
+509
+00:34:48,960 --> 00:34:56,440
+But the main idea is that a lot of people really like
+just configuring these tools and have uploaded
+
+510
+00:34:56,639 --> 00:35:01,140
+their configuration files to GitHub, another
+different kind of repositories online.
+
+511
+00:35:01,140 --> 00:35:03,300
+So for example, here we are on GitHub,
+
+512
+00:35:03,300 --> 00:35:06,640
+we search for dotfiles, and
+can see that there are like
+
+513
+00:35:06,780 --> 00:35:12,540
+thousands of repositories of people sharing
+their configuration files. We have also...
+
+514
+00:35:12,540 --> 00:35:15,460
+Like, the class instructors
+have linked our dotfiles.
+
+515
+00:35:15,460 --> 00:35:19,420
+So if you really want to know how
+any part of our setup is working
+
+516
+00:35:19,420 --> 00:35:22,220
+you can go through it and try to figure it out.
+
+517
+00:35:22,220 --> 00:35:24,220
+You can also feel free to ask us.
+
+518
+00:35:24,380 --> 00:35:27,060
+If we go for example to this repository here
+
+519
+00:35:27,210 --> 00:35:30,649
+we can see that there's many, many
+files that you can configure.
+
+520
+00:35:30,650 --> 00:35:37,520
+For example, there is one for bash, the first couple of ones
+are for git, that will be probably be covered in the
+
+521
+00:35:38,610 --> 00:35:40,819
+version control lecture tomorrow.
+
+522
+00:35:41,400 --> 00:35:48,500
+If we go for example to the bash profile, which is
+a different form of what we saw in the bashrc,
+
+523
+00:35:49,400 --> 00:35:52,900
+it can be really useful because
+you can learn through
+
+524
+00:35:53,940 --> 00:35:58,320
+just looking at the manual page, but the
+manual pages is, a lot of the time
+
+525
+00:35:58,480 --> 00:36:03,520
+just kind of like a descriptive explanation
+of all the different options
+
+526
+00:36:03,520 --> 00:36:04,880
+and sometimes it's more helpful
+
+527
+00:36:04,880 --> 00:36:09,600
+going through examples of what people have done
+and trying to understand why they did it
+
+528
+00:36:09,600 --> 00:36:12,200
+and how it's helping their workflow.
+
+529
+00:36:12,960 --> 00:36:17,300
+We can say here that this person has
+done case-insensitive globbing.
+
+530
+00:36:17,320 --> 00:36:21,220
+We covered globbing as this
+kind of filename expansion
+
+531
+00:36:22,100 --> 00:36:25,760
+trick in the shell scripting and tools.
+
+532
+00:36:25,900 --> 00:36:28,800
+And here you say no, I don't want this to matter,
+
+533
+00:36:28,800 --> 00:36:30,760
+whether using uppercase and lowercase,
+
+534
+00:36:30,760 --> 00:36:32,760
+and just setting this option in the shell
+for these things to work this way
+
+535
+00:36:35,360 --> 00:36:38,140
+Similarly, there is for example aliases.
+
+536
+00:36:38,140 --> 00:36:42,220
+Here you can see a lot of aliases that this
+person is doing. For example, "d" for
+
+537
+00:36:44,200 --> 00:36:47,400
+"d" for "Dropbox", sorry, because
+that's just much shorter.
+
+538
+00:36:47,400 --> 00:36:49,200
+"g" for "git"...
+
+539
+00:36:49,740 --> 00:36:54,560
+Say we go, for example, with vimrc. It
+can be actually very, very informative,
+
+540
+00:36:54,560 --> 00:36:58,860
+going through this and trying
+to extract useful information.
+
+541
+00:36:59,000 --> 00:37:06,420
+We do not recommend just kind of getting one huge blob
+of this and copying this into your config files,
+
+542
+00:37:07,110 --> 00:37:12,439
+because maybe things are prettier, but you might
+not really understand what is going on.
+
+543
+00:37:15,150 --> 00:37:19,579
+Lastly one thing I want to mention
+about dotfiles is that
+
+544
+00:37:20,460 --> 00:37:23,390
+people not only try to push these
+
+545
+00:37:24,660 --> 00:37:28,849
+files into GitHub just so other
+people can read it, that's
+
+546
+00:37:29,400 --> 00:37:33,319
+one reason. They also make really sure they can
+
+547
+00:37:34,140 --> 00:37:39,440
+reproduce their setup. And to do that
+they use a slew of different tools.
+
+548
+00:37:39,440 --> 00:37:41,280
+Oops, went a little too far.
+
+549
+00:37:41,280 --> 00:37:44,840
+So GNU Stow is, for example, one of them
+
+550
+00:37:45,720 --> 00:37:49,060
+and the trick that they are doing is
+
+551
+00:37:50,280 --> 00:37:54,520
+they are kind of putting all their
+dotfiles in a folder and they are
+
+552
+00:37:55,200 --> 00:37:59,520
+faking to the system, using
+a tool called symlinks,
+
+553
+00:37:59,520 --> 00:38:02,440
+that they are actually what
+they're not. I'm gonna
+
+554
+00:38:03,150 --> 00:38:05,150
+draw really quick what I mean by that.
+
+555
+00:38:05,790 --> 00:38:10,939
+So a common folder structure might look
+like you have your home folder and
+
+556
+00:38:11,670 --> 00:38:14,300
+in this home folder you might have your
+
+557
+00:38:16,050 --> 00:38:21,380
+bashrc, that contains your bash configuration,
+you might have your vimrc and
+
+558
+00:38:22,500 --> 00:38:25,760
+it would be really great if you could
+keep this under version control.
+
+559
+00:38:26,580 --> 00:38:29,300
+But the thing is, you might not
+want to have a git repository,
+
+560
+00:38:29,300 --> 00:38:31,300
+which will be covered tomorrow,
+
+561
+00:38:31,300 --> 00:38:32,300
+in your home folder.
+
+562
+00:38:32,300 --> 00:38:37,360
+So what people usually do is they
+create a dotfiles repository,
+
+563
+00:38:38,280 --> 00:38:42,160
+and then they have entries here for their
+
+564
+00:38:43,050 --> 00:38:47,239
+bashrc and their vimrc. And
+this is where actually
+
+565
+00:38:47,820 --> 00:38:49,820
+the files are
+
+566
+00:38:50,100 --> 00:38:52,400
+and what they are doing is they're just
+
+567
+00:38:53,460 --> 00:38:56,510
+telling the OS to forward, whenever anyone
+
+568
+00:38:56,760 --> 00:39:01,849
+wants to read this file or write to this file,
+just forward this to this other file.
+
+569
+00:39:03,000 --> 00:39:05,719
+This is a concept called symlinks
+
+570
+00:39:06,690 --> 00:39:08,630
+and it's useful in this scenario,
+
+571
+00:39:08,630 --> 00:39:12,600
+but it in general it's a really
+useful tool in UNIX
+
+572
+00:39:12,700 --> 00:39:14,700
+that we haven't covered so far in the lectures
+
+573
+00:39:14,960 --> 00:39:16,740
+but you might be...
+
+574
+00:39:16,740 --> 00:39:18,740
+that you should be familiar with.
+
+575
+00:39:19,100 --> 00:39:22,840
+And in general, the syntax will be "ln -s"
+
+576
+00:39:22,840 --> 00:39:29,980
+for specifying a symbolic link and then
+you will put the path to the file
+
+577
+00:39:30,570 --> 00:39:33,049
+that you want to create and then the
+
+578
+00:39:33,780 --> 00:39:35,780
+symlink that you want to create.
+
+579
+00:39:39,390 --> 00:39:41,390
+And
+
+580
+00:39:41,880 --> 00:39:45,619
+All these all these kind of fancy tools
+that we're seeing here listed,
+
+581
+00:39:45,810 --> 00:39:52,159
+they all amount to doing some sort of this trick, so
+that you can have all your dotfiles neat and tidy
+
+582
+00:39:52,680 --> 00:39:57,829
+into a folder, and then they can be
+version-controlled, and they can be
+
+583
+00:39:58,349 --> 00:40:02,689
+symlinked so the rest of the programs can
+find them in their default locations.
+
+584
+00:40:06,720 --> 00:40:09,020
+Any questions regarding dotfiles?
+
+585
+00:40:13,200 --> 00:40:20,200
+Do you need to have the dotfiles in your home folder,
+and then also dotfiles in the version control folder?
+
+586
+00:40:20,780 --> 00:40:24,640
+So what you will have is,
+pretty much every program,
+
+587
+00:40:24,640 --> 00:40:26,180
+for example bash,
+
+588
+00:40:26,180 --> 00:40:29,560
+will always look for "home/.bashrc".
+
+589
+00:40:29,560 --> 00:40:33,480
+That's where the program is going to look for.
+
+590
+00:40:33,820 --> 00:40:40,200
+What you do when you do a symlink
+is, you place your "home/.bashrc"
+
+591
+00:40:40,200 --> 00:40:44,900
+it's just a file that is kind
+of a special file in UNIX,
+
+592
+00:40:45,150 --> 00:40:49,609
+that says oh, whenever you want to read
+this file go to this other file.
+
+593
+00:40:51,500 --> 00:40:53,440
+There's no content, like there is no...
+
+594
+00:40:53,600 --> 00:40:58,099
+your aliases are not part of this dotfile. That file
+is just kind of like a pointer, saying now you should
+
+595
+00:40:58,100 --> 00:40:59,400
+go that other way.
+
+596
+00:40:59,400 --> 00:41:02,600
+And by doing that you can have your other file
+
+597
+00:41:02,600 --> 00:41:04,400
+in that other folder.
+
+598
+00:41:04,560 --> 00:41:06,360
+If version controlling is not useful, think about
+
+599
+00:41:06,360 --> 00:41:10,740
+what if you want to have them in your Dropbox
+folder, so they're synced to the cloud,
+
+600
+00:41:10,759 --> 00:41:15,019
+for example. That's kind of another use case
+where like symlinks could be really useful
+
+601
+00:41:16,240 --> 00:41:21,040
+So you don't need the folder dotfiles
+to be in the home directory, right?
+
+602
+00:41:21,040 --> 00:41:23,820
+Because you can just use the symlink,
+that points somewhere else.
+
+603
+00:41:23,960 --> 00:41:29,760
+As long as you have a way for the default path
+to resolve wherever you have it, yeah.
+
+604
+00:41:35,100 --> 00:41:38,000
+Last thing I want to cover in the lecture...
+
+605
+00:41:38,000 --> 00:41:40,380
+Oh, sorry, any other questions about dotfiles?
+
+606
+00:41:49,200 --> 00:41:52,580
+Last thing I want to cover in the lecture
+is working with remote machines,
+
+607
+00:41:52,580 --> 00:41:55,549
+which is a thing that you will run into,
+
+608
+00:41:55,559 --> 00:41:56,900
+sooner or later.
+
+609
+00:41:56,900 --> 00:42:02,238
+And there are a few things that will make your life
+much easier when dealing with remote machines
+
+610
+00:42:03,180 --> 00:42:05,180
+if you know about them.
+
+611
+00:42:05,220 --> 00:42:08,380
+Right now maybe because you are
+using the Athena cluster,
+
+612
+00:42:08,380 --> 00:42:10,740
+but later on, during your programming career,
+
+613
+00:42:10,740 --> 00:42:11,960
+it's pretty sure that
+
+614
+00:42:11,960 --> 00:42:15,400
+there is a fairly ubiquitous
+concept of having your
+
+615
+00:42:15,400 --> 00:42:20,380
+local working environment and then having some
+production server that is actually running the
+
+616
+00:42:20,970 --> 00:42:23,239
+code, so it is really good to get familiar
+
+617
+00:42:24,480 --> 00:42:26,749
+about how to work in/with remote machines.
+
+618
+00:42:27,420 --> 00:42:35,180
+So the main command for working
+with remote machines is SSH.
+
+619
+00:42:37,760 --> 00:42:43,900
+SSH is just like a secure shell, it's
+just gonna take the responsibility for
+
+620
+00:42:43,900 --> 00:42:46,540
+reaching wherever we want or tell it to go
+
+621
+00:42:47,560 --> 00:42:50,700
+and trying to open a session there.
+
+622
+00:42:50,700 --> 00:42:52,400
+So here the syntax is:
+
+623
+00:42:53,130 --> 00:42:56,660
+"JJGO" is the user that I want
+to use in the remote machine,
+
+624
+00:42:56,660 --> 00:42:58,430
+and this is because the user is
+
+625
+00:42:58,529 --> 00:43:03,460
+different from the one I have my local machine,
+which will be the case a lot of the time,
+
+626
+00:43:03,460 --> 00:43:07,400
+then the "@" is telling the
+terminal that this separates
+
+627
+00:43:07,400 --> 00:43:12,540
+what the user is from what the address is.
+
+628
+00:43:12,540 --> 00:43:16,540
+And here I'm using an IP address because
+what I'm actually doing is
+
+629
+00:43:16,540 --> 00:43:20,500
+I have a virtual machine in my computer,
+
+630
+00:43:20,500 --> 00:43:23,240
+that is the one that is remote right now.
+
+631
+00:43:23,240 --> 00:43:26,400
+And I'm gonna be SSH'ing into it. This is the
+
+632
+00:43:26,580 --> 00:43:27,880
+URL that I'm using,
+
+633
+00:43:27,880 --> 00:43:29,860
+sorry, the IP that I'm using,
+
+634
+00:43:29,860 --> 00:43:32,280
+but you might also see things like
+
+635
+00:43:32,360 --> 00:43:36,820
+oh I want to SSH as "JJGO"
+
+636
+00:43:36,820 --> 00:43:39,840
+at "foobar.mit.edu"
+
+637
+00:43:39,840 --> 00:43:42,960
+That's probably something more
+common, if you are using some
+
+638
+00:43:42,960 --> 00:43:47,260
+remote server that has a DNS name.
+
+639
+00:43:48,180 --> 00:43:51,860
+So going back to a regular command,
+
+640
+00:43:53,220 --> 00:43:56,580
+we try to SSH, it asks us for a password,
+
+641
+00:43:56,580 --> 00:43:58,180
+really common thing.
+
+642
+00:43:58,190 --> 00:43:59,480
+And now we're there. We have...
+
+643
+00:43:59,480 --> 00:44:02,629
+we're still in our same terminal emulator
+
+644
+00:44:02,630 --> 00:44:09,529
+but right now SSH is kind of forwarding the
+entire virtual display to display what the
+
+645
+00:44:09,869 --> 00:44:14,358
+remote shell is displaying. And
+we can execute commands here and
+
+646
+00:44:15,630 --> 00:44:17,630
+we'll see the remote files
+
+647
+00:44:18,390 --> 00:44:22,819
+A couple of handy things to know about
+SSH, that were briefly covered in the
+
+648
+00:44:23,220 --> 00:44:27,080
+data wrangling lecture, is that
+SSH is not only good for just
+
+649
+00:44:28,280 --> 00:44:33,760
+opening connections. It will also let
+you just execute commands remotely.
+
+650
+00:44:33,770 --> 00:44:36,979
+So for example, if I do that, it's gonna ask me
+
+651
+00:44:37,710 --> 00:44:39,020
+what is my password?, again.
+
+652
+00:44:39,020 --> 00:44:41,059
+And it's executing this command
+
+653
+00:44:41,279 --> 00:44:43,420
+then coming back to my terminal
+
+654
+00:44:43,420 --> 00:44:47,420
+and piping the output of what that
+command was, in the remote machine,
+
+655
+00:44:47,420 --> 00:44:50,480
+through the standard output in my current cell.
+
+656
+00:44:50,480 --> 00:44:53,940
+And I could have this in...
+
+657
+00:44:58,100 --> 00:45:00,480
+I could have this in a pipe, and
+
+658
+00:45:00,980 --> 00:45:03,580
+this will work and we'll just
+
+659
+00:45:03,600 --> 00:45:06,100
+drop all this output and then have a local pipe
+
+660
+00:45:06,100 --> 00:45:07,879
+where I can keep working.
+
+661
+00:45:08,640 --> 00:45:12,140
+So far, it has been kind of inconvenient,
+having to type our password.
+
+662
+00:45:12,630 --> 00:45:14,820
+There's one really good trick for this.
+
+663
+00:45:14,820 --> 00:45:16,880
+It's we can use something called "SSH keys".
+
+664
+00:45:17,140 --> 00:45:20,660
+SSH keys just use public key encryption
+
+665
+00:45:20,660 --> 00:45:24,980
+to create a pair of SSH keys, a public
+key and a private key, and then
+
+666
+00:45:25,170 --> 00:45:29,320
+you can give the server the
+public part of the key.
+
+667
+00:45:29,320 --> 00:45:32,810
+So you copy the public key and
+then whenever you try to
+
+668
+00:45:33,390 --> 00:45:37,129
+authenticate instead of using your password,
+it's gonna use the private key to
+
+669
+00:45:37,820 --> 00:45:40,800
+prove to the server that you are
+actually who you say you are.
+
+670
+00:45:43,860 --> 00:45:48,020
+We can quickly showcase how you will go
+
+671
+00:45:48,020 --> 00:45:49,400
+about doing this.
+
+672
+00:45:49,400 --> 00:45:53,180
+Right now I don't have any SSH keys,
+so I'm gonna create a couple of them.
+
+673
+00:45:53,940 --> 00:45:58,250
+First thing, it's just gonna ask
+me where I want this key to live.
+
+674
+00:45:58,980 --> 00:46:00,640
+Unsurprisingly, it's doing this.
+
+675
+00:46:00,640 --> 00:46:04,820
+This is my home folder and then
+it's using this ".ssh" path,
+
+676
+00:46:05,460 --> 00:46:08,750
+which refers back to the same concept
+that we covered earlier about having
+
+677
+00:46:08,850 --> 00:46:12,439
+dotfiles. Like ".ssh" is a folder
+that contains a lot of the
+
+678
+00:46:13,320 --> 00:46:16,540
+configuration files for how
+you want SSH to behave.
+
+679
+00:46:17,060 --> 00:46:19,420
+So it will ask us a passphrase.
+
+680
+00:46:19,680 --> 00:46:23,120
+The passphrase is to encrypt
+the private part of the key
+
+681
+00:46:23,120 --> 00:46:27,160
+because if someone gets your private key,
+if you don't have a password protected
+
+682
+00:46:27,920 --> 00:46:29,580
+private key, if they get that key
+
+683
+00:46:29,580 --> 00:46:32,240
+they can use that key to impersonate
+you in any server.
+
+684
+00:46:32,310 --> 00:46:34,360
+Whereas if you add a passphrase,
+
+685
+00:46:34,360 --> 00:46:37,640
+they will have to know what the passphrase
+is to actually use the key.
+
+686
+00:46:40,800 --> 00:46:51,740
+It has created a keeper. We can check that
+these two files are now under ssh.
+
+687
+00:46:51,740 --> 00:46:53,920
+And we can see...
+
+688
+00:46:57,720 --> 00:47:02,960
+We have these two files: we have
+the 25519 and the public key.
+
+689
+00:47:03,320 --> 00:47:06,300
+And if we "cat" through the output,
+
+690
+00:47:06,300 --> 00:47:09,760
+that key is actually not like
+any fancy binary file, it's
+
+691
+00:47:15,430 --> 00:47:20,760
+just a text file that has the contents
+of the public key and some
+
+692
+00:47:23,050 --> 00:47:26,729
+alias name for it, so we can
+know what this public key is.
+
+693
+00:47:26,950 --> 00:47:32,220
+The way we can tell the server that
+we're authorized to SSH there
+
+694
+00:47:32,260 --> 00:47:38,400
+is by just actually copying this file,
+like copying this string into a file,
+
+695
+00:47:38,400 --> 00:47:41,540
+that is ".ssh/authorized_keys".
+
+696
+00:47:42,100 --> 00:47:46,160
+So here what I'm doing is I'm
+
+697
+00:47:46,960 --> 00:47:49,770
+catting the output of this file
+
+698
+00:47:49,800 --> 00:47:53,920
+which is just this line of
+text that we want to copy
+
+699
+00:47:53,920 --> 00:47:57,440
+and I'm piping that into SSH and then remotely
+
+700
+00:47:57,960 --> 00:48:02,080
+I'm asking "tee" to dump the contents
+of the standard input
+
+701
+00:48:02,080 --> 00:48:05,220
+into ".ssh/authorized_keys".
+
+702
+00:48:05,440 --> 00:48:10,360
+And if we do that, obviously it's
+gonna ask us for a password.
+
+703
+00:48:14,800 --> 00:48:18,740
+It was copied, and now we
+can check that if we try
+
+704
+00:48:19,690 --> 00:48:21,690
+to SSH again,
+
+705
+00:48:21,960 --> 00:48:24,840
+It's going to first ask us for a passphrase
+
+706
+00:48:24,840 --> 00:48:29,100
+but you can arrange that so that
+it's saved in the session
+
+707
+00:48:29,460 --> 00:48:34,840
+and we didn't actually have to
+type the key for the server.
+
+708
+00:48:34,840 --> 00:48:36,840
+And I can kind of show that again.
+
+709
+00:48:45,820 --> 00:48:47,540
+More things that are useful.
+
+710
+00:48:47,540 --> 00:48:49,040
+Oh, we can do...
+
+711
+00:48:49,220 --> 00:48:51,880
+If that command seemed a little bit janky,
+
+712
+00:48:51,980 --> 00:48:55,000
+you can actually use this command
+that is built for this,
+
+713
+00:48:55,000 --> 00:49:00,640
+so you don't have to kind of
+craft this "ssh t" command.
+
+714
+00:49:00,640 --> 00:49:03,800
+That is just called "ssh-copy-id".
+
+715
+00:49:05,000 --> 00:49:08,080
+And we can do the same
+
+716
+00:49:08,080 --> 00:49:09,660
+and it's gonna copy the key.
+
+717
+00:49:09,660 --> 00:49:14,280
+And now, if we try to SSH,
+
+718
+00:49:14,500 --> 00:49:18,320
+we can SSH without actually
+typing any key at all,
+
+719
+00:49:18,860 --> 00:49:20,320
+or any password.
+
+720
+00:49:20,660 --> 00:49:21,520
+More things.
+
+721
+00:49:21,520 --> 00:49:23,520
+We will probably want to copy files.
+
+722
+00:49:23,740 --> 00:49:25,310
+You cannot use "CP"
+
+723
+00:49:25,310 --> 00:49:29,720
+but you can use "SCP", for "SSH copy".
+
+724
+00:49:29,720 --> 00:49:34,500
+And here we can specify that we want
+to copy this local file called notes
+
+725
+00:49:34,500 --> 00:49:36,880
+and the syntax is kind of similar.
+
+726
+00:49:36,880 --> 00:49:39,760
+We want to copy to this remote and
+
+727
+00:49:39,920 --> 00:49:44,020
+then we have a semicolon to separate
+what the path is going to be.
+
+728
+00:49:44,020 --> 00:49:45,040
+And then we have
+
+729
+00:49:45,040 --> 00:49:46,620
+oh, we want to copy this as notes
+
+730
+00:49:46,620 --> 00:49:51,000
+but we could also copy this as foobar.
+
+731
+00:49:51,740 --> 00:49:55,600
+And if we do that, it has been executed
+
+732
+00:49:55,780 --> 00:49:59,280
+and it's telling us that all the
+contents have been copied there.
+
+733
+00:49:59,540 --> 00:50:02,200
+If you're gonna be copying a lot of files,
+
+734
+00:50:02,200 --> 00:50:05,100
+there is a better command
+that you should be using
+
+735
+00:50:05,100 --> 00:50:07,740
+that is called "RSYNC". For example, here
+
+736
+00:50:07,900 --> 00:50:10,780
+just by specifying these three flags,
+
+737
+00:50:10,820 --> 00:50:15,960
+I'm telling RSYNC to kind of preserve
+all the permissions whenever possible
+
+738
+00:50:16,240 --> 00:50:19,740
+to try to check if the file
+has already been copied.
+
+739
+00:50:19,740 --> 00:50:24,100
+For example, SCP will try to copy
+files that are already there.
+
+740
+00:50:24,200 --> 00:50:26,440
+This will happen for example
+if you are trying to copy
+
+741
+00:50:26,440 --> 00:50:29,060
+and the connection interrupts
+in the middle of it.
+
+742
+00:50:29,120 --> 00:50:32,060
+SCP will start from the very beginning,
+trying to copy every file,
+
+743
+00:50:32,080 --> 00:50:36,600
+whereas RSYNC will continue
+from where it stopped.
+
+744
+00:50:37,240 --> 00:50:38,440
+And here,
+
+745
+00:50:39,060 --> 00:50:42,760
+we ask it to copy the entire folder and
+
+746
+00:50:43,780 --> 00:50:46,560
+it's just really quickly
+copied the entire folder.
+
+747
+00:50:48,080 --> 00:50:54,100
+One of the other things to know about SSH is that
+
+748
+00:50:54,320 --> 00:50:59,860
+the equivalent of the dot file
+for SSH is the "SSH config".
+
+749
+00:50:59,860 --> 00:51:06,340
+So if we edit the SSH config to be
+
+750
+00:51:13,120 --> 00:51:17,940
+If I edit the SSH config to
+look something like this,
+
+751
+00:51:17,940 --> 00:51:22,900
+instead of having to, every
+time, type "ssh jjgo",
+
+752
+00:51:23,040 --> 00:51:27,760
+having this really long string so I can
+like refer to this specific remote,
+
+753
+00:51:27,760 --> 00:51:30,140
+I want to refer, with the specific user name,
+
+754
+00:51:30,140 --> 00:51:32,760
+I can have something here that says
+
+755
+00:51:33,160 --> 00:51:35,680
+this is the username, this
+is the host name, that this
+
+756
+00:51:36,860 --> 00:51:40,540
+host is referring to and you should
+use this identity file.
+
+757
+00:51:41,460 --> 00:51:43,960
+And if I copy this,
+
+758
+00:51:43,960 --> 00:51:46,100
+this is right now in my local folder,
+
+759
+00:51:46,100 --> 00:51:49,000
+I can copy this into ssh.
+
+760
+00:51:49,600 --> 00:51:53,520
+Now, instead of having to do this really
+long command, I can just say
+
+761
+00:51:53,520 --> 00:51:57,100
+I just want to SSH into the host called VM.
+
+762
+00:51:58,260 --> 00:52:03,220
+And by doing that, it's grabbing all that
+configuration from the SSH config
+
+763
+00:52:03,220 --> 00:52:05,220
+and applying it here.
+
+764
+00:52:05,240 --> 00:52:10,060
+This solution is much better than something
+like creating an alias for SSH,
+
+765
+00:52:10,360 --> 00:52:13,360
+because other programs like SCP and RSYNC
+
+766
+00:52:13,360 --> 00:52:19,440
+also know about the dotfiles for SSH and
+will use them whenever they are there.
+
+767
+00:52:22,820 --> 00:52:30,400
+Last thing I want to cover about remote machines is
+that here, for example, we'll have tmux and we can,
+
+768
+00:52:31,760 --> 00:52:35,780
+like I was saying before, we
+can start editing some file
+
+769
+00:52:39,160 --> 00:52:44,500
+and we can start running some job.
+
+770
+00:52:54,200 --> 00:52:56,180
+For example, something like HTOP.
+
+771
+00:52:56,180 --> 00:52:58,720
+And this is running here, we can
+
+772
+00:52:59,320 --> 00:53:01,320
+detach from it,
+
+773
+00:53:01,430 --> 00:53:03,430
+close the connection and
+
+774
+00:53:03,740 --> 00:53:07,780
+then SSH back. And then, if you do "tmux a",
+
+775
+00:53:07,780 --> 00:53:11,340
+everything is as you left it, like
+nothing has really changed.
+
+776
+00:53:11,340 --> 00:53:15,220
+And if you have things executing there in
+the background, they will keep executing.
+
+777
+00:53:17,500 --> 00:53:23,300
+I think that, pretty much, ends
+all I have to say for this tool.
+
+778
+00:53:23,300 --> 00:53:26,420
+Any questions related to remote machines?
+
+779
+00:53:32,860 --> 00:53:36,780
+That's a really good question.
+So what I do for that,
+
+780
+00:53:38,700 --> 00:53:39,460
+Oh, yes, sorry.
+
+781
+00:53:39,460 --> 00:53:44,880
+So the question is, how do you deal with
+trying to use tmux in your local machine,
+
+782
+00:53:44,880 --> 00:53:47,640
+and also trying to use tmux
+in the remote machine?
+
+783
+00:53:48,400 --> 00:53:50,760
+There are a couple of tricks
+for dealing with that.
+
+784
+00:53:50,760 --> 00:53:53,220
+The first one is changing the prefix.
+
+785
+00:53:53,360 --> 00:53:55,340
+So what I do, for example, is
+
+786
+00:53:55,340 --> 00:54:00,020
+in my local machine the prefix I have
+changed from "Ctrl+B" to "Ctrl+A" and
+
+787
+00:54:00,220 --> 00:54:02,580
+then in remove machines this is still "Ctrl+B".
+
+788
+00:54:02,800 --> 00:54:05,580
+So I can kind of swap between,
+
+789
+00:54:05,580 --> 00:54:09,840
+if I want to do things to the
+local tmux I will do "Ctrl+A"
+
+790
+00:54:09,840 --> 00:54:13,460
+and if I want to do things to the
+remote tmux I would do "Ctrl+B".
+
+791
+00:54:15,080 --> 00:54:19,900
+Another thing is that you
+can have separate configs,
+
+792
+00:54:20,080 --> 00:54:24,100
+so I can do something like this, and then...
+
+793
+00:54:27,260 --> 00:54:31,040
+Ah, because I don't have my own ssh config, yeah.
+
+794
+00:54:32,240 --> 00:54:33,000
+But if you...
+
+795
+00:54:33,000 --> 00:54:34,420
+Um, I can SSH "VM".
+
+796
+00:54:36,820 --> 00:54:38,900
+Here, what you see,
+
+797
+00:54:38,900 --> 00:54:41,000
+the difference between these
+two bars, for example,
+
+798
+00:54:41,000 --> 00:54:43,680
+is because the tmux config is different.
+
+799
+00:54:44,380 --> 00:54:48,500
+As you will see in the exercises,
+the tmux configuration is in
+
+800
+00:54:50,320 --> 00:54:53,780
+the tmux.conf
+
+801
+00:54:56,720 --> 00:54:58,140
+And in tmux.conf,
+
+802
+00:54:58,140 --> 00:55:02,020
+here you can do a lot of things like changing
+the color depending on the host you are
+
+803
+00:55:02,210 --> 00:55:06,879
+so you can get like quick visual
+feedback about where you are, or
+
+804
+00:55:06,880 --> 00:55:10,240
+if you have a nested session. Also, tmux will,
+
+805
+00:55:10,520 --> 00:55:15,280
+if you're in the same host and you
+try to tmux within a tmux session,
+
+806
+00:55:15,290 --> 00:55:18,759
+it will kind of prevent you from doing
+it so you don't run into issues.
+
+807
+00:55:21,700 --> 00:55:25,400
+Any other questions related, to kind
+of all the topics we have covered.
+
+808
+00:55:29,100 --> 00:55:32,720
+Another answer to that question is
+also, if you type the prefix twice,
+
+809
+00:55:32,880 --> 00:55:35,760
+it sends it once to the underlying shell.
+
+810
+00:55:35,920 --> 00:55:40,100
+So the local binding is "Ctrl+A" and
+the remote binding is "Ctrl+A",
+
+811
+00:55:40,100 --> 00:55:45,260
+You could type "Ctrl+A", "Ctrl+A" and then "D", for
+example, detaches from the remote, basically.
+
+812
+00:55:52,480 --> 00:55:59,660
+I think that ends the class for today, there's a bunch
+of exercises related to all these main topics and
+
+813
+00:56:00,380 --> 00:56:05,410
+we're gonna be holding office hours today, too.
+So feel free to come and ask us any questions.
+

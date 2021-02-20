@@ -1,0 +1,4476 @@
+1
+00:00:01,310 --> 00:00:04,440
+all right so welcome to today's lecture
+
+2
+00:00:04,440 --> 00:00:06,420
+which is going to be on data wrangling
+
+3
+00:00:06,420 --> 00:00:08,760
+and data wrangling might be a phrase it
+
+4
+00:00:08,760 --> 00:00:10,620
+sounds a little bit odd to you but the
+
+5
+00:00:10,620 --> 00:00:12,630
+basic idea of data wrangling is that you
+
+6
+00:00:12,630 --> 00:00:14,940
+have data in one format and you want it
+
+7
+00:00:14,940 --> 00:00:16,800
+in some different format and this
+
+8
+00:00:16,800 --> 00:00:18,930
+happens all of the time I'm not just
+
+9
+00:00:18,930 --> 00:00:20,820
+talking about like converting images but
+
+10
+00:00:20,820 --> 00:00:22,859
+it could be like you have a text file or
+
+11
+00:00:22,859 --> 00:00:25,080
+a log file and what you really want this
+
+12
+00:00:25,080 --> 00:00:27,480
+data in some other format like you want
+
+13
+00:00:27,480 --> 00:00:29,429
+a graph or you want statistics over the
+
+14
+00:00:29,429 --> 00:00:32,399
+data anything that goes from one piece
+
+15
+00:00:32,399 --> 00:00:35,160
+of data to another representation of
+
+16
+00:00:35,160 --> 00:00:37,110
+that data is what I would call data
+
+17
+00:00:37,110 --> 00:00:40,079
+wrangling we've seen some examples of
+
+18
+00:00:40,079 --> 00:00:42,180
+this kind of data wrangling already
+
+19
+00:00:42,180 --> 00:00:43,739
+previously in the semester like
+
+20
+00:00:43,739 --> 00:00:45,750
+basically whenever you use the pipe
+
+21
+00:00:45,750 --> 00:00:48,000
+operator that lets you sort of take
+
+22
+00:00:48,000 --> 00:00:49,739
+output from one program and feed it
+
+23
+00:00:49,739 --> 00:00:51,449
+through another program you are doing
+
+24
+00:00:51,449 --> 00:00:54,149
+data wrangling in one way or another but
+
+25
+00:00:54,149 --> 00:00:55,289
+we're going to do in this lecture is
+
+26
+00:00:55,289 --> 00:00:57,960
+take a look at some of the fancier ways
+
+27
+00:00:57,960 --> 00:00:59,850
+you can do data wrangling and some of
+
+28
+00:00:59,850 --> 00:01:01,859
+the really useful ways you can do data
+
+29
+00:01:01,859 --> 00:01:05,640
+wrangling in order to do any kind of
+
+30
+00:01:05,640 --> 00:01:06,990
+data wrangling though you need a data
+
+31
+00:01:06,990 --> 00:01:09,000
+source you need some data to operate on
+
+32
+00:01:09,000 --> 00:01:12,240
+in the first place and there are a lot
+
+33
+00:01:12,240 --> 00:01:14,400
+of good candidates for that kind of data
+
+34
+00:01:14,400 --> 00:01:16,560
+we give some examples in the exercise
+
+35
+00:01:16,560 --> 00:01:18,930
+section for today's lecture notes in
+
+36
+00:01:18,930 --> 00:01:20,580
+this particular one though I'm going to
+
+37
+00:01:20,580 --> 00:01:23,400
+be using a system log so I have a server
+
+38
+00:01:23,400 --> 00:01:25,500
+that's running somewhere the Netherlands
+
+39
+00:01:25,500 --> 00:01:27,180
+because that seemed like a reasonable
+
+40
+00:01:27,180 --> 00:01:29,750
+thing at the time and on that server
+
+41
+00:01:29,750 --> 00:01:32,790
+it's running sort of a regular logging
+
+42
+00:01:32,790 --> 00:01:34,380
+daemon that comes with system Deeb's
+
+43
+00:01:34,380 --> 00:01:36,630
+it's a sort of relatively standard Linux
+
+44
+00:01:36,630 --> 00:01:39,030
+logging mechanism and there's a command
+
+45
+00:01:39,030 --> 00:01:41,880
+called journal CTL on Linux systems that
+
+46
+00:01:41,880 --> 00:01:44,700
+will let you view the system log and so
+
+47
+00:01:44,700 --> 00:01:46,439
+what I'm gonna do is I'm gonna do some
+
+48
+00:01:46,439 --> 00:01:48,689
+transformations over that log and see if
+
+49
+00:01:48,689 --> 00:01:50,009
+we can extract something interesting
+
+50
+00:01:50,009 --> 00:01:52,829
+from it you'll see though that if I run
+
+51
+00:01:52,829 --> 00:01:56,280
+this command I end up with a lot of data
+
+52
+00:01:56,280 --> 00:01:59,329
+because this is a log that has just like
+
+53
+00:01:59,329 --> 00:02:01,979
+there's a lot of stuff in it right a lot
+
+54
+00:02:01,979 --> 00:02:03,360
+of things have happened on my server and
+
+55
+00:02:03,360 --> 00:02:06,299
+this goes back to like January first and
+
+56
+00:02:06,299 --> 00:02:08,250
+their logs that go even further back on
+
+57
+00:02:08,250 --> 00:02:10,560
+this there's a lot of stuff so the first
+
+58
+00:02:10,560 --> 00:02:12,120
+thing we're gonna do is try to limit it
+
+59
+00:02:12,120 --> 00:02:13,440
+down to you only
+
+60
+00:02:13,440 --> 00:02:16,260
+one piece of content and here the grep
+
+61
+00:02:16,260 --> 00:02:18,060
+command is your friend so we're gonna
+
+62
+00:02:18,060 --> 00:02:19,830
+pipe this through grep and we're gonna
+
+63
+00:02:19,830 --> 00:02:23,220
+pipe for SSH right so SSH we haven't
+
+64
+00:02:23,220 --> 00:02:24,810
+really talked to you about yet but it is
+
+65
+00:02:24,810 --> 00:02:26,760
+a way to access computers remotely
+
+66
+00:02:26,760 --> 00:02:28,560
+through the command line and in
+
+67
+00:02:28,560 --> 00:02:30,780
+particular what happens when you put a
+
+68
+00:02:30,780 --> 00:02:32,190
+server on the public Internet is that
+
+69
+00:02:32,190 --> 00:02:34,080
+lots and lots of people around the world
+
+70
+00:02:34,080 --> 00:02:35,700
+to try to connect to it and log in and
+
+71
+00:02:35,700 --> 00:02:37,530
+take over your server and so I want to
+
+72
+00:02:37,530 --> 00:02:39,360
+see how those people are trying to do
+
+73
+00:02:39,360 --> 00:02:41,480
+that and so I'm going to grep for SSH
+
+74
+00:02:41,480 --> 00:02:44,850
+and you'll see pretty quickly that this
+
+75
+00:02:44,850 --> 00:02:47,700
+also generates a bunch of content at
+
+76
+00:02:47,700 --> 00:02:51,270
+least in theory this is gonna be real
+
+77
+00:02:51,270 --> 00:02:55,980
+slow there we go so this generates tons
+
+78
+00:02:55,980 --> 00:02:58,650
+and tons and tons of content and it's
+
+79
+00:02:58,650 --> 00:03:00,240
+really hard to even just visualize
+
+80
+00:03:00,240 --> 00:03:01,860
+what's going on here so let's look at
+
+81
+00:03:01,860 --> 00:03:05,070
+only what user names people have used to
+
+82
+00:03:05,070 --> 00:03:06,660
+try to log into my server so you'll see
+
+83
+00:03:06,660 --> 00:03:09,780
+some of these lines say disconnected
+
+84
+00:03:09,780 --> 00:03:12,540
+disconnected from invalid user and then
+
+85
+00:03:12,540 --> 00:03:14,940
+some user name I want only those lines
+
+86
+00:03:14,940 --> 00:03:17,430
+that's all I really care about I'm gonna
+
+87
+00:03:17,430 --> 00:03:19,080
+make one more change here though which
+
+88
+00:03:19,080 --> 00:03:21,750
+is if you think about how this pipeline
+
+89
+00:03:21,750 --> 00:03:26,459
+does if I here do this connected from so
+
+90
+00:03:26,459 --> 00:03:29,160
+this pipeline at the bottom here what
+
+91
+00:03:29,160 --> 00:03:31,320
+that will do is it will send the entire
+
+92
+00:03:31,320 --> 00:03:33,420
+log file over the network to my machine
+
+93
+00:03:33,420 --> 00:03:36,209
+and then locally run grep to find only
+
+94
+00:03:36,209 --> 00:03:38,250
+the lines to contained ssh and then
+
+95
+00:03:38,250 --> 00:03:40,530
+locally filter them further this seems a
+
+96
+00:03:40,530 --> 00:03:42,150
+little bit wasteful because i don't care
+
+97
+00:03:42,150 --> 00:03:44,220
+about most of these lines and the remote
+
+98
+00:03:44,220 --> 00:03:45,959
+site is also running a shell so what I
+
+99
+00:03:45,959 --> 00:03:48,900
+can actually do is I can have that
+
+100
+00:03:48,900 --> 00:03:51,510
+entire command run on the server right
+
+101
+00:03:51,510 --> 00:03:53,519
+so I'm telling you SSH the command I
+
+102
+00:03:53,519 --> 00:03:55,200
+want you to run on the server is this
+
+103
+00:03:55,200 --> 00:03:57,420
+pipeline of three things and then what I
+
+104
+00:03:57,420 --> 00:04:01,230
+get back I want to pipe through less so
+
+105
+00:04:01,230 --> 00:04:02,700
+what does this do well it's gonna do
+
+106
+00:04:02,700 --> 00:04:04,260
+that same filtering that we did but it's
+
+107
+00:04:04,260 --> 00:04:06,150
+gonna do it on the server side and the
+
+108
+00:04:06,150 --> 00:04:08,280
+server is only going to send me those
+
+109
+00:04:08,280 --> 00:04:11,730
+lines that I care about and then when I
+
+110
+00:04:11,730 --> 00:04:13,290
+pipe it locally through the program
+
+111
+00:04:13,290 --> 00:04:16,320
+called less less is a pager you'll see
+
+112
+00:04:16,320 --> 00:04:17,519
+some examples of this you've actually
+
+113
+00:04:17,519 --> 00:04:19,290
+seen some of them already like when you
+
+114
+00:04:19,290 --> 00:04:21,899
+type man and some command that opens in
+
+115
+00:04:21,899 --> 00:04:24,180
+a pager and a pagers is a convenient way
+
+116
+00:04:24,180 --> 00:04:26,669
+to take a long piece of content and fit
+
+117
+00:04:26,669 --> 00:04:27,389
+it into your term
+
+118
+00:04:27,389 --> 00:04:29,759
+window and have you scrolled down and
+
+119
+00:04:29,759 --> 00:04:31,889
+scroll up and navigate it so that it
+
+120
+00:04:31,889 --> 00:04:33,150
+doesn't just like scroll past your
+
+121
+00:04:33,150 --> 00:04:36,120
+screen and so if I run this it still
+
+122
+00:04:36,120 --> 00:04:37,409
+takes a little while because it has to
+
+123
+00:04:37,409 --> 00:04:40,800
+parse through a lot of log files and in
+
+124
+00:04:40,800 --> 00:04:42,919
+particular grep is buffering and
+
+125
+00:04:42,919 --> 00:04:45,930
+therefore it decides to be relatively
+
+126
+00:04:45,930 --> 00:04:46,919
+unhelpful
+
+127
+00:04:46,919 --> 00:04:56,039
+I may do this without let's see if
+
+128
+00:04:56,039 --> 00:05:01,259
+that's more helpful why doesn't it want
+
+129
+00:05:01,259 --> 00:05:05,189
+to be helpful to me fine I'm gonna cheat
+
+130
+00:05:05,189 --> 00:05:09,949
+a little just ignore me
+
+131
+00:05:17,380 --> 00:05:20,570
+or the internet is really slow those are
+
+132
+00:05:20,570 --> 00:05:22,520
+two possible options luckily there's a
+
+133
+00:05:22,520 --> 00:05:27,140
+fix for that because previously I have
+
+134
+00:05:27,140 --> 00:05:30,470
+run the following command so this
+
+135
+00:05:30,470 --> 00:05:33,080
+command just takes the output of that
+
+136
+00:05:33,080 --> 00:05:34,340
+command and sticks it into a file
+
+137
+00:05:34,340 --> 00:05:36,560
+locally on my computer alright so I ran
+
+138
+00:05:36,560 --> 00:05:38,660
+this when I was up in my office and so
+
+139
+00:05:38,660 --> 00:05:40,970
+what this did is it downloaded all of
+
+140
+00:05:40,970 --> 00:05:43,490
+the SSH log entries that matched
+
+141
+00:05:43,490 --> 00:05:45,530
+disconnect from so I have those locally
+
+142
+00:05:45,530 --> 00:05:47,330
+and this is really handy right there's
+
+143
+00:05:47,330 --> 00:05:49,070
+no reason for me to stream the full log
+
+144
+00:05:49,070 --> 00:05:50,990
+every single time because I know that
+
+145
+00:05:50,990 --> 00:05:52,640
+that starting pattern is what I'm going
+
+146
+00:05:52,640 --> 00:05:55,220
+to want anyway so we can take a look at
+
+147
+00:05:55,220 --> 00:05:57,260
+SSH dot log and you will see there are
+
+148
+00:05:57,260 --> 00:05:59,480
+lots and lots and lots of lines that all
+
+149
+00:05:59,480 --> 00:06:01,760
+say disconnected from invalid user
+
+150
+00:06:01,760 --> 00:06:04,940
+authenticating users etc right so these
+
+151
+00:06:04,940 --> 00:06:06,230
+are the lines that we have to work on
+
+152
+00:06:06,230 --> 00:06:08,870
+and this also means that going forward
+
+153
+00:06:08,870 --> 00:06:10,550
+we don't have to go through this whole
+
+154
+00:06:10,550 --> 00:06:12,500
+SSH process we can just cat that file
+
+155
+00:06:12,500 --> 00:06:16,220
+and then operate it on it directly so
+
+156
+00:06:16,220 --> 00:06:18,080
+here I can also demonstrate this pager
+
+157
+00:06:18,080 --> 00:06:21,680
+so if I do cat s is a cat SSH dot log
+
+158
+00:06:21,680 --> 00:06:23,720
+and I pipe it through less it gives me a
+
+159
+00:06:23,720 --> 00:06:25,220
+pager where I can scroll up and down
+
+160
+00:06:25,220 --> 00:06:28,850
+make that a little bit smaller maybe so
+
+161
+00:06:28,850 --> 00:06:30,560
+I can scroll this file screw through
+
+162
+00:06:30,560 --> 00:06:33,320
+this file and I can do so with what are
+
+163
+00:06:33,320 --> 00:06:36,260
+roughly vim bindings so control you to
+
+164
+00:06:36,260 --> 00:06:37,820
+scroll up control D to scroll down and
+
+165
+00:06:37,820 --> 00:06:42,770
+cue to exit this is still a lot of
+
+166
+00:06:42,770 --> 00:06:45,169
+content though and these lines contain a
+
+167
+00:06:45,169 --> 00:06:47,000
+bunch of garbage that I'm not really
+
+168
+00:06:47,000 --> 00:06:48,440
+interested in what I really want to see
+
+169
+00:06:48,440 --> 00:06:50,030
+is what are what are these user names
+
+170
+00:06:50,030 --> 00:06:52,610
+and here the tool that we're going to
+
+171
+00:06:52,610 --> 00:06:55,790
+start using is one called sent said is a
+
+172
+00:06:55,790 --> 00:06:59,210
+stream editor that's modify or it's it's
+
+173
+00:06:59,210 --> 00:07:01,040
+a modification of a much earlier program
+
+174
+00:07:01,040 --> 00:07:04,100
+called edie which was a really weird
+
+175
+00:07:04,100 --> 00:07:05,540
+editor that none of you will probably
+
+176
+00:07:05,540 --> 00:07:12,320
+want to use yeah Oh tsp is the name of
+
+177
+00:07:12,320 --> 00:07:16,270
+my the remote computer I'm connecting to
+
+178
+00:07:16,390 --> 00:07:19,850
+so said is a stream editor and it
+
+179
+00:07:19,850 --> 00:07:23,720
+basically lets you make changes to the
+
+180
+00:07:23,720 --> 00:07:26,060
+contents of a stream you can think of it
+
+181
+00:07:26,060 --> 00:07:28,490
+a little bit like doing replacements but
+
+182
+00:07:28,490 --> 00:07:29,870
+it's actually a full programming
+
+183
+00:07:29,870 --> 00:07:30,410
+language
+
+184
+00:07:30,410 --> 00:07:33,440
+over the stream that is given one of the
+
+185
+00:07:33,440 --> 00:07:35,180
+most common things you do with said
+
+186
+00:07:35,180 --> 00:07:38,060
+though is to just run replacement
+
+187
+00:07:38,060 --> 00:07:40,610
+expressions on an input stream what do
+
+188
+00:07:40,610 --> 00:07:44,590
+these looks like well let me show you
+
+189
+00:07:45,160 --> 00:07:47,780
+here I'm gonna pipe this sue said and
+
+190
+00:07:47,780 --> 00:07:50,000
+I'm going to say that I want to remove
+
+191
+00:07:50,000 --> 00:07:52,540
+everything that comes before
+
+192
+00:07:52,540 --> 00:07:58,370
+disconnected from so this might look a
+
+193
+00:07:58,370 --> 00:08:00,980
+little weird the observation is that the
+
+194
+00:08:00,980 --> 00:08:03,950
+date and the host name and the sort of
+
+195
+00:08:03,950 --> 00:08:06,230
+process ID of the SSH daemon I don't
+
+196
+00:08:06,230 --> 00:08:07,310
+care about I can just remove that
+
+197
+00:08:07,310 --> 00:08:09,740
+straightaway and I can also remove that
+
+198
+00:08:09,740 --> 00:08:11,930
+like disconnected from bit because that
+
+199
+00:08:11,930 --> 00:08:13,580
+seems to be present in every single log
+
+200
+00:08:13,580 --> 00:08:15,170
+entry so I just want to get rid of it
+
+201
+00:08:15,170 --> 00:08:18,200
+and so what I write is a set expression
+
+202
+00:08:18,200 --> 00:08:20,360
+in this particular case it's an S
+
+203
+00:08:20,360 --> 00:08:21,980
+expression which is a substitute
+
+204
+00:08:21,980 --> 00:08:25,730
+expression it takes two arguments that
+
+205
+00:08:25,730 --> 00:08:27,620
+are basically enclosed in these slashes
+
+206
+00:08:27,620 --> 00:08:30,590
+so the first one is the search string
+
+207
+00:08:30,590 --> 00:08:32,360
+and the second one which is currently
+
+208
+00:08:32,360 --> 00:08:34,429
+empty is a replacement string so here
+
+209
+00:08:34,429 --> 00:08:36,470
+I'm saying search for the following
+
+210
+00:08:36,470 --> 00:08:39,559
+pattern and replace it with blank and
+
+211
+00:08:39,559 --> 00:08:40,820
+then I'm gonna pipe it into less at the
+
+212
+00:08:40,820 --> 00:08:43,099
+end do you see that now what it's done
+
+213
+00:08:43,099 --> 00:08:45,380
+is trim off the beginning of all these
+
+214
+00:08:45,380 --> 00:08:49,760
+lines and that seems really handy but
+
+215
+00:08:49,760 --> 00:08:52,220
+you might wonder what is this pattern
+
+216
+00:08:52,220 --> 00:08:54,740
+that I've built up here right this is
+
+217
+00:08:54,740 --> 00:08:57,890
+this dot star what does that mean this
+
+218
+00:08:57,890 --> 00:08:59,480
+is an example of a regular expression
+
+219
+00:08:59,480 --> 00:09:01,820
+and regular expressions are something
+
+220
+00:09:01,820 --> 00:09:03,620
+that you may have come across in
+
+221
+00:09:03,620 --> 00:09:04,970
+programming in the past
+
+222
+00:09:04,970 --> 00:09:06,710
+but it's something that once you go into
+
+223
+00:09:06,710 --> 00:09:08,030
+the command line you will find yourself
+
+224
+00:09:08,030 --> 00:09:09,920
+using a lot especially for this kind of
+
+225
+00:09:09,920 --> 00:09:12,550
+data wrangling regular expressions are
+
+226
+00:09:12,550 --> 00:09:16,040
+essentially a powerful way to match text
+
+227
+00:09:16,040 --> 00:09:18,080
+you can use it for other things than
+
+228
+00:09:18,080 --> 00:09:19,580
+text too but Texas the most common
+
+229
+00:09:19,580 --> 00:09:23,030
+example and in regular expressions you
+
+230
+00:09:23,030 --> 00:09:26,840
+have a number of special characters that
+
+231
+00:09:26,840 --> 00:09:29,810
+say don't just match this character but
+
+232
+00:09:29,810 --> 00:09:31,580
+match for example a particular type of
+
+233
+00:09:31,580 --> 00:09:34,210
+character or a particular set of options
+
+234
+00:09:34,210 --> 00:09:36,980
+it essentially generates a program for
+
+235
+00:09:36,980 --> 00:09:39,770
+you that searches the given text dot for
+
+236
+00:09:39,770 --> 00:09:42,040
+example means any single
+
+237
+00:09:42,040 --> 00:09:46,000
+character and star if you follow a
+
+238
+00:09:46,000 --> 00:09:48,730
+character with a star it means zero or
+
+239
+00:09:48,730 --> 00:09:51,910
+more of that character and so in this
+
+240
+00:09:51,910 --> 00:09:54,399
+case is pattern of saying zero or more
+
+241
+00:09:54,399 --> 00:09:57,579
+of any character followed by the literal
+
+242
+00:09:57,579 --> 00:10:00,490
+string disconnected from I'm saying
+
+243
+00:10:00,490 --> 00:10:02,680
+match that and then replace it with
+
+244
+00:10:02,680 --> 00:10:05,560
+blank regular expressions have a number
+
+245
+00:10:05,560 --> 00:10:07,660
+of these kind of special characters that
+
+246
+00:10:07,660 --> 00:10:09,310
+have various meanings you can take
+
+247
+00:10:09,310 --> 00:10:11,500
+advantage of I talked about star which
+
+248
+00:10:11,500 --> 00:10:12,459
+is zero or more
+
+249
+00:10:12,459 --> 00:10:14,560
+there's also Plus which is one or more
+
+250
+00:10:14,560 --> 00:10:16,149
+right so this is saying I want the
+
+251
+00:10:16,149 --> 00:10:17,620
+previous expression to match at least
+
+252
+00:10:17,620 --> 00:10:19,139
+once
+
+253
+00:10:19,139 --> 00:10:22,509
+you also have square brackets so square
+
+254
+00:10:22,509 --> 00:10:24,910
+brackets let you match one of many
+
+255
+00:10:24,910 --> 00:10:27,180
+different characters so here let us
+
+256
+00:10:27,180 --> 00:10:29,800
+build up a string list something like a
+
+257
+00:10:29,800 --> 00:10:36,370
+BA and I want to substitute a and B with
+
+258
+00:10:36,370 --> 00:10:41,680
+nothing okay so here what I'm telling
+
+259
+00:10:41,680 --> 00:10:43,899
+the pattern to do is to replace any
+
+260
+00:10:43,899 --> 00:10:46,540
+character that is either A or B with
+
+261
+00:10:46,540 --> 00:10:50,079
+nothing so if I make the first character
+
+262
+00:10:50,079 --> 00:10:52,810
+B it will still produce BA you might
+
+263
+00:10:52,810 --> 00:10:54,100
+wonder though why did it only replace
+
+264
+00:10:54,100 --> 00:10:56,019
+once well it's because what regular
+
+265
+00:10:56,019 --> 00:10:57,699
+expressions will do especially in this
+
+266
+00:10:57,699 --> 00:11:00,160
+default mode is they will just match the
+
+267
+00:11:00,160 --> 00:11:01,569
+pattern once and then apply the
+
+268
+00:11:01,569 --> 00:11:04,269
+replacement once per line that is what's
+
+269
+00:11:04,269 --> 00:11:07,360
+said normally does you can provide the G
+
+270
+00:11:07,360 --> 00:11:09,279
+modifier which says do this as many
+
+271
+00:11:09,279 --> 00:11:12,250
+times as it keeps matching which in this
+
+272
+00:11:12,250 --> 00:11:14,139
+case would erase the entire line because
+
+273
+00:11:14,139 --> 00:11:15,790
+every single character is either an A or
+
+274
+00:11:15,790 --> 00:11:18,699
+a B if I added a C here and remove
+
+275
+00:11:18,699 --> 00:11:21,100
+everything but the C if I added other
+
+276
+00:11:21,100 --> 00:11:23,019
+characters in the middle of this string
+
+277
+00:11:23,019 --> 00:11:24,370
+somewhere they would all be preserved
+
+278
+00:11:24,370 --> 00:11:26,260
+but anything that is an A or and B is
+
+279
+00:11:26,260 --> 00:11:34,209
+removed you can also do things like add
+
+280
+00:11:34,209 --> 00:11:37,889
+modifiers to this for example
+
+281
+00:11:42,330 --> 00:11:46,720
+what would this do this is saying I want
+
+282
+00:11:46,720 --> 00:11:51,730
+zero or more of the string a B and I'm
+
+283
+00:11:51,730 --> 00:11:52,800
+gonna replace them with nothing
+
+284
+00:11:52,800 --> 00:11:55,270
+this means that if I have a standalone a
+
+285
+00:11:55,270 --> 00:11:57,400
+it will not be replaced if I have a
+
+286
+00:11:57,400 --> 00:11:59,560
+standalone B it will not be replaced but
+
+287
+00:11:59,560 --> 00:12:01,540
+if I have the string a B it will be
+
+288
+00:12:01,540 --> 00:12:09,580
+removed which yeah what are they said is
+
+289
+00:12:09,580 --> 00:12:11,940
+stupid
+
+290
+00:12:12,340 --> 00:12:15,160
+the - a here is because said is a really
+
+291
+00:12:15,160 --> 00:12:18,250
+old tool and so it supports only a very
+
+292
+00:12:18,250 --> 00:12:19,930
+old version of very cool expressions
+
+293
+00:12:19,930 --> 00:12:22,270
+generally you will want to run it with -
+
+294
+00:12:22,270 --> 00:12:24,070
+capital e which makes it use a more
+
+295
+00:12:24,070 --> 00:12:25,810
+modern syntax that supports more things
+
+296
+00:12:25,810 --> 00:12:28,620
+if you are in a place where you can't
+
+297
+00:12:28,620 --> 00:12:30,940
+you have to prefix these with back
+
+298
+00:12:30,940 --> 00:12:33,160
+slashes to say I want the special
+
+299
+00:12:33,160 --> 00:12:35,650
+meaning of parenthesis otherwise they
+
+300
+00:12:35,650 --> 00:12:37,180
+were just match a literal parenthesis
+
+301
+00:12:37,180 --> 00:12:39,990
+which is probably not what you want so
+
+302
+00:12:39,990 --> 00:12:43,510
+notice how this replaced the a B here
+
+303
+00:12:43,510 --> 00:12:46,390
+and it replaced the a be here but it
+
+304
+00:12:46,390 --> 00:12:48,790
+left this C and it also left the a at
+
+305
+00:12:48,790 --> 00:12:51,040
+the end because that a does not match
+
+306
+00:12:51,040 --> 00:12:54,100
+this pattern anymore and you can group
+
+307
+00:12:54,100 --> 00:12:55,740
+these patterns in whatever ways you want
+
+308
+00:12:55,740 --> 00:12:58,180
+you also have things like alternations
+
+309
+00:12:58,180 --> 00:13:00,850
+you can say anything that matches a b or
+
+310
+00:13:00,850 --> 00:13:07,420
+b c i want to remove and here you'll
+
+311
+00:13:07,420 --> 00:13:10,510
+notice that this a b got removed this bc
+
+312
+00:13:10,510 --> 00:13:12,220
+did not get removed even though it
+
+313
+00:13:12,220 --> 00:13:14,740
+matches the pattern because the a b had
+
+314
+00:13:14,740 --> 00:13:17,950
+already been removed this a b is removed
+
+315
+00:13:17,950 --> 00:13:20,500
+right but the c stays in place this a b
+
+316
+00:13:20,500 --> 00:13:22,960
+is removed and this c states because it
+
+317
+00:13:22,960 --> 00:13:25,870
+still does not match that if I made this
+
+318
+00:13:25,870 --> 00:13:29,470
+if I remove this a then now this a B
+
+319
+00:13:29,470 --> 00:13:31,750
+pattern will not match this B so it'll
+
+320
+00:13:31,750 --> 00:13:34,000
+be preserved and then BC will match BC
+
+321
+00:13:34,000 --> 00:13:36,280
+and it'll go away
+
+322
+00:13:36,280 --> 00:13:37,810
+Regulus presence can be all sorts of
+
+323
+00:13:37,810 --> 00:13:39,940
+complicated when you first encounter
+
+324
+00:13:39,940 --> 00:13:41,530
+them and even once you get more
+
+325
+00:13:41,530 --> 00:13:42,790
+experience with them they can be
+
+326
+00:13:42,790 --> 00:13:45,160
+daunting to look at and this is why very
+
+327
+00:13:45,160 --> 00:13:47,770
+often you want to use something like a
+
+328
+00:13:47,770 --> 00:13:49,600
+regular expression debugger which we'll
+
+329
+00:13:49,600 --> 00:13:51,700
+look at in a little bit but first let's
+
+330
+00:13:51,700 --> 00:13:52,560
+try to make up a
+
+331
+00:13:52,560 --> 00:13:55,500
+pattern that will match the logs and and
+
+332
+00:13:55,500 --> 00:13:57,300
+match the logs that we've been working
+
+333
+00:13:57,300 --> 00:14:00,390
+with so far so here I'm gonna just sort
+
+334
+00:14:00,390 --> 00:14:02,070
+of extract a couple of lines from this
+
+335
+00:14:02,070 --> 00:14:04,680
+file let's say the first five so these
+
+336
+00:14:04,680 --> 00:14:08,910
+lines all now look like this right and
+
+337
+00:14:08,910 --> 00:14:12,300
+what we want to do is we want to only
+
+338
+00:14:12,300 --> 00:14:15,360
+have the user name okay so what might
+
+339
+00:14:15,360 --> 00:14:21,210
+this look like well here's one thing we
+
+340
+00:14:21,210 --> 00:14:30,120
+could try to do actually let me show you
+
+341
+00:14:30,120 --> 00:14:32,670
+one except one thing first let me take a
+
+342
+00:14:32,670 --> 00:14:34,370
+line that says something like
+
+343
+00:14:34,370 --> 00:14:38,990
+disconnected from invalid user
+
+344
+00:14:38,990 --> 00:14:44,279
+disconnected from maybe four to one one
+
+345
+00:14:44,279 --> 00:14:46,620
+whatever okay so this is an example of a
+
+346
+00:14:46,620 --> 00:14:49,740
+login line where someone tried to login
+
+347
+00:14:49,740 --> 00:14:54,200
+with the username disconnected from
+
+348
+00:14:54,500 --> 00:15:03,200
+missing an S disconnected thank you
+
+349
+00:15:03,200 --> 00:15:05,400
+you'll notice that this actually removed
+
+350
+00:15:05,400 --> 00:15:08,310
+the username as well and this is because
+
+351
+00:15:08,310 --> 00:15:10,770
+when you use dot star and any of these
+
+352
+00:15:10,770 --> 00:15:11,940
+sort of range expressions indirect
+
+353
+00:15:11,940 --> 00:15:14,490
+expressions they are greedy they will
+
+354
+00:15:14,490 --> 00:15:17,070
+match as much as they can so in this
+
+355
+00:15:17,070 --> 00:15:19,890
+case this was the username that we
+
+356
+00:15:19,890 --> 00:15:22,130
+wanted to retain but this pattern
+
+357
+00:15:22,130 --> 00:15:24,930
+actually matched all the way up until
+
+358
+00:15:24,930 --> 00:15:27,060
+the second occurrence of it or the last
+
+359
+00:15:27,060 --> 00:15:28,620
+occurrence of it and so everything
+
+360
+00:15:28,620 --> 00:15:30,960
+before it including the username itself
+
+361
+00:15:30,960 --> 00:15:33,000
+got removed and so we need to come up
+
+362
+00:15:33,000 --> 00:15:34,470
+with a slightly clever or matching
+
+363
+00:15:34,470 --> 00:15:36,150
+strategy than just saying sort of dot
+
+364
+00:15:36,150 --> 00:15:38,190
+star because it means that if we have
+
+365
+00:15:38,190 --> 00:15:39,959
+particularly adversarial input we might
+
+366
+00:15:39,959 --> 00:15:41,339
+end up with something that we didn't
+
+367
+00:15:41,339 --> 00:15:44,430
+expect okay so let's see how we might
+
+368
+00:15:44,430 --> 00:15:47,670
+try to match these lines let's just do a
+
+369
+00:15:47,670 --> 00:15:56,850
+head first well let's try to construct
+
+370
+00:15:56,850 --> 00:16:00,660
+this up from the beginning we first of
+
+371
+00:16:00,660 --> 00:16:02,970
+all know that we want - capital e right
+
+372
+00:16:02,970 --> 00:16:05,190
+because we want to not have to put all
+
+373
+00:16:05,190 --> 00:16:07,170
+these back slashes everywhere
+
+374
+00:16:07,170 --> 00:16:09,839
+these lines look like they say from and
+
+375
+00:16:09,839 --> 00:16:14,880
+then some of them say invalid but some
+
+376
+00:16:14,880 --> 00:16:16,769
+of them do not right this line has
+
+377
+00:16:16,769 --> 00:16:19,170
+invalid that one does not question mark
+
+378
+00:16:19,170 --> 00:16:21,690
+here is saying zero or one so I want
+
+379
+00:16:21,690 --> 00:16:26,029
+zero or zero or one of invalid space
+
+380
+00:16:26,029 --> 00:16:31,320
+user what else well that's going to be a
+
+381
+00:16:31,320 --> 00:16:34,320
+double space so we can't have that and
+
+382
+00:16:34,320 --> 00:16:36,529
+then there's gonna be some username and
+
+383
+00:16:36,529 --> 00:16:40,440
+then there's gonna be what exactly is
+
+384
+00:16:40,440 --> 00:16:43,160
+gonna be what looks like an IP address
+
+385
+00:16:43,160 --> 00:16:46,290
+so here we can use our range syntax and
+
+386
+00:16:46,290 --> 00:16:50,190
+say zero to nine and a dot right that's
+
+387
+00:16:50,190 --> 00:16:53,490
+what IP addresses are and we want many
+
+388
+00:16:53,490 --> 00:16:58,170
+of those then it says porch so we're
+
+389
+00:16:58,170 --> 00:17:00,300
+just going to match a literal port and
+
+390
+00:17:00,300 --> 00:17:03,060
+then another number zero to nine and
+
+391
+00:17:03,060 --> 00:17:07,980
+we're going to wand plus of that the
+
+392
+00:17:07,980 --> 00:17:09,150
+other thing we're going to do here is
+
+393
+00:17:09,150 --> 00:17:10,049
+we're going to do what's known as
+
+394
+00:17:10,049 --> 00:17:11,880
+anchoring the regular expression so
+
+395
+00:17:11,880 --> 00:17:13,439
+there are two special characters and
+
+396
+00:17:13,439 --> 00:17:15,780
+regular expressions there's carrot or
+
+397
+00:17:15,780 --> 00:17:17,699
+hat which matches the beginning of a
+
+398
+00:17:17,699 --> 00:17:19,799
+line and there's dollar which matches
+
+399
+00:17:19,799 --> 00:17:22,439
+the end of a line so here we're gonna
+
+400
+00:17:22,439 --> 00:17:24,839
+say that this regression has to match
+
+401
+00:17:24,839 --> 00:17:27,990
+the complete line the reason we do this
+
+402
+00:17:27,990 --> 00:17:29,760
+is because imagine that someone made
+
+403
+00:17:29,760 --> 00:17:33,290
+their username the entire log string
+
+404
+00:17:33,290 --> 00:17:35,250
+then now if you try to match this
+
+405
+00:17:35,250 --> 00:17:38,460
+pattern it would match the username
+
+406
+00:17:38,460 --> 00:17:40,730
+itself which is not what we want
+
+407
+00:17:40,730 --> 00:17:42,990
+generally you will want to try to anchor
+
+408
+00:17:42,990 --> 00:17:44,490
+your patterns wherever you can to avoid
+
+409
+00:17:44,490 --> 00:17:46,860
+those kind of oddities okay let's see
+
+410
+00:17:46,860 --> 00:17:49,919
+what that gave us that removed many of
+
+411
+00:17:49,919 --> 00:17:51,960
+the lines but not all of them so this
+
+412
+00:17:51,960 --> 00:17:54,360
+one for example includes this pre off at
+
+413
+00:17:54,360 --> 00:17:56,880
+the end so we'll want to cut that off if
+
+414
+00:17:56,880 --> 00:18:02,760
+there's a space pre off square brackets
+
+415
+00:18:02,760 --> 00:18:04,549
+our specials we need to escape them
+
+416
+00:18:04,549 --> 00:18:07,350
+right now let's see what happens if we
+
+417
+00:18:07,350 --> 00:18:10,650
+try more lines of this no it still gets
+
+418
+00:18:10,650 --> 00:18:12,360
+something weird some of these lines are
+
+419
+00:18:12,360 --> 00:18:13,710
+not empty right which means that the
+
+420
+00:18:13,710 --> 00:18:16,740
+pattern did not match this one for
+
+421
+00:18:16,740 --> 00:18:18,990
+example it says authenticating user
+
+422
+00:18:18,990 --> 00:18:20,010
+instead of invalid
+
+423
+00:18:20,010 --> 00:18:24,690
+user okay so as to match invalid or
+
+424
+00:18:24,690 --> 00:18:27,300
+authenticated zero or one time before
+
+425
+00:18:27,300 --> 00:18:30,900
+user how about now okay that looks
+
+426
+00:18:30,900 --> 00:18:34,530
+pretty promising but this output is not
+
+427
+00:18:34,530 --> 00:18:36,990
+particularly helpful right here we've
+
+428
+00:18:36,990 --> 00:18:38,880
+just erased every line of our log files
+
+429
+00:18:38,880 --> 00:18:41,360
+successfully which is not very helpful
+
+430
+00:18:41,360 --> 00:18:43,890
+instead what we really wanted to do is
+
+431
+00:18:43,890 --> 00:18:46,110
+when we match the username right over
+
+432
+00:18:46,110 --> 00:18:48,780
+here we really wanted to remember what
+
+433
+00:18:48,780 --> 00:18:50,310
+that username was because that is what
+
+434
+00:18:50,310 --> 00:18:53,310
+we want to print out and the way we can
+
+435
+00:18:53,310 --> 00:18:55,770
+do that in regular expressions is using
+
+436
+00:18:55,770 --> 00:19:00,300
+something like capture groups so capture
+
+437
+00:19:00,300 --> 00:19:03,630
+groups are a way to say that I want to
+
+438
+00:19:03,630 --> 00:19:06,570
+remember this value and reuse it later
+
+439
+00:19:06,570 --> 00:19:10,350
+and in regular expressions any bracketed
+
+440
+00:19:10,350 --> 00:19:12,180
+expression any parenthesis expression is
+
+441
+00:19:12,180 --> 00:19:14,460
+going to be such a capture group so we
+
+442
+00:19:14,460 --> 00:19:16,770
+already actually have one here which is
+
+443
+00:19:16,770 --> 00:19:18,570
+this first group and now we're creating
+
+444
+00:19:18,570 --> 00:19:20,850
+a second one here notice that these
+
+445
+00:19:20,850 --> 00:19:22,590
+parentheses don't do anything to the
+
+446
+00:19:22,590 --> 00:19:24,870
+matching right because they're just
+
+447
+00:19:24,870 --> 00:19:27,210
+saying this expression as a unit but we
+
+448
+00:19:27,210 --> 00:19:28,800
+don't have any modifiers after it so
+
+449
+00:19:28,800 --> 00:19:32,550
+it's just match one-time and then the
+
+450
+00:19:32,550 --> 00:19:34,980
+reason matching groups are are useful or
+
+451
+00:19:34,980 --> 00:19:36,810
+capture groups are useful is because you
+
+452
+00:19:36,810 --> 00:19:38,370
+can refer back to them in the
+
+453
+00:19:38,370 --> 00:19:40,920
+replacement so in the replacement here I
+
+454
+00:19:40,920 --> 00:19:43,800
+can say backslash two this is the way
+
+455
+00:19:43,800 --> 00:19:45,630
+that you refer to the name of a capture
+
+456
+00:19:45,630 --> 00:19:47,760
+group in this say I'm in this case I'm
+
+457
+00:19:47,760 --> 00:19:50,250
+saying match the entire line and then in
+
+458
+00:19:50,250 --> 00:19:53,340
+the replacement put in the value you
+
+459
+00:19:53,340 --> 00:19:55,380
+captured in the second capture group
+
+460
+00:19:55,380 --> 00:19:57,330
+right remember this is the first capture
+
+461
+00:19:57,330 --> 00:20:00,020
+group and this is the second one and
+
+462
+00:20:00,020 --> 00:20:03,330
+this gives me all the usernames now if
+
+463
+00:20:03,330 --> 00:20:05,670
+you look back at what we wrote this is
+
+464
+00:20:05,670 --> 00:20:08,580
+pretty complicated right it might make
+
+465
+00:20:08,580 --> 00:20:10,050
+sense now that we walk through it and
+
+466
+00:20:10,050 --> 00:20:12,000
+why it had to be the way it was but this
+
+467
+00:20:12,000 --> 00:20:14,130
+is like not obvious that this is how
+
+468
+00:20:14,130 --> 00:20:16,140
+these lines work and this is where a
+
+469
+00:20:16,140 --> 00:20:19,680
+regular expression debugger can come in
+
+470
+00:20:19,680 --> 00:20:22,260
+really really handy so we have one here
+
+471
+00:20:22,260 --> 00:20:25,410
+there are many online but here I've sort
+
+472
+00:20:25,410 --> 00:20:27,510
+of pre filled in this expression that we
+
+473
+00:20:27,510 --> 00:20:31,710
+just used and notice that it it tells me
+
+474
+00:20:31,710 --> 00:20:34,380
+all the matching does in fact now this
+
+475
+00:20:34,380 --> 00:20:37,470
+window is a little small with this font
+
+476
+00:20:37,470 --> 00:20:42,950
+size but if I do hear this explanation
+
+477
+00:20:42,950 --> 00:20:45,620
+says dot star matches any character
+
+478
+00:20:45,620 --> 00:20:48,320
+between zero and unlimited times
+
+479
+00:20:48,320 --> 00:20:52,170
+followed by disconnected from literally
+
+480
+00:20:52,170 --> 00:20:54,270
+followed by a capture group and then
+
+481
+00:20:54,270 --> 00:20:56,790
+walks you through all the stuff and
+
+482
+00:20:56,790 --> 00:20:59,190
+that's one thing but it also lets you've
+
+483
+00:20:59,190 --> 00:21:00,960
+given a test string and then matches the
+
+484
+00:21:00,960 --> 00:21:03,510
+pattern against every single test string
+
+485
+00:21:03,510 --> 00:21:05,370
+that you give and highlights what the
+
+486
+00:21:05,370 --> 00:21:07,460
+different capture groups for example are
+
+487
+00:21:07,460 --> 00:21:11,490
+so here we made user a capture group
+
+488
+00:21:11,490 --> 00:21:15,060
+right so it'll say okay the full string
+
+489
+00:21:15,060 --> 00:21:16,980
+matched right the whole thing is blue so
+
+490
+00:21:16,980 --> 00:21:19,110
+it matched Green is the first capture
+
+491
+00:21:19,110 --> 00:21:21,180
+group red is the second capture group
+
+492
+00:21:21,180 --> 00:21:23,370
+and this is the third because preauth
+
+493
+00:21:23,370 --> 00:21:26,130
+was also put into parenthesis and this
+
+494
+00:21:26,130 --> 00:21:27,750
+can be a handy way to try to debug your
+
+495
+00:21:27,750 --> 00:21:31,020
+regular expressions for example if I put
+
+496
+00:21:31,020 --> 00:21:35,610
+disconnected from and let's add a new
+
+497
+00:21:35,610 --> 00:21:41,070
+line here and I make the username
+
+498
+00:21:41,070 --> 00:21:45,240
+disconnected from now that line already
+
+499
+00:21:45,240 --> 00:21:46,530
+had the username be disconnect from
+
+500
+00:21:46,530 --> 00:21:49,950
+great here me of thinking ahead you'll
+
+501
+00:21:49,950 --> 00:21:54,150
+notice that with this pattern this was
+
+502
+00:21:54,150 --> 00:21:56,010
+no longer a problem because it got
+
+503
+00:21:56,010 --> 00:21:58,740
+matched the username what happens if we
+
+504
+00:21:58,740 --> 00:22:02,580
+take this entire line or this entire
+
+505
+00:22:02,580 --> 00:22:07,170
+line and make that the username now what
+
+506
+00:22:07,170 --> 00:22:13,830
+happens it gets really confused right so
+
+507
+00:22:13,830 --> 00:22:15,180
+this is where regular expressions can be
+
+508
+00:22:15,180 --> 00:22:18,390
+a pain to get right because it now tries
+
+509
+00:22:18,390 --> 00:22:21,780
+to match it matches the first place
+
+510
+00:22:21,780 --> 00:22:23,970
+where username appears or the first
+
+511
+00:22:23,970 --> 00:22:27,420
+invalid in this case the second invalid
+
+512
+00:22:27,420 --> 00:22:29,700
+because this is greedy we can make this
+
+513
+00:22:29,700 --> 00:22:31,830
+non greedy by putting a question mark
+
+514
+00:22:31,830 --> 00:22:36,360
+here so if you suffix a plus or a star
+
+515
+00:22:36,360 --> 00:22:38,520
+with a question mark it becomes a non
+
+516
+00:22:38,520 --> 00:22:40,860
+greedy match so it will not try to match
+
+517
+00:22:40,860 --> 00:22:42,540
+as much as possible and then you see
+
+518
+00:22:42,540 --> 00:22:43,820
+that this actually gets parsed correctly
+
+519
+00:22:43,820 --> 00:22:46,030
+because this dots
+
+520
+00:22:46,030 --> 00:22:47,950
+we'll stop at the first disconnected
+
+521
+00:22:47,950 --> 00:22:49,480
+from which is the one that's actually
+
+522
+00:22:49,480 --> 00:22:52,450
+emitted by SSH the one that actually
+
+523
+00:22:52,450 --> 00:22:57,070
+appears in our logs as you can probably
+
+524
+00:22:57,070 --> 00:22:58,720
+tell from the explanation of this so far
+
+525
+00:22:58,720 --> 00:23:00,790
+regular expressions can get really
+
+526
+00:23:00,790 --> 00:23:03,130
+complicated and there are all sorts of
+
+527
+00:23:03,130 --> 00:23:05,320
+weird modifiers that you might have to
+
+528
+00:23:05,320 --> 00:23:07,330
+apply in your pattern the only way to
+
+529
+00:23:07,330 --> 00:23:09,130
+really learn them is to start with
+
+530
+00:23:09,130 --> 00:23:10,750
+simple ones and then build them up until
+
+531
+00:23:10,750 --> 00:23:12,970
+they match what you need often you're
+
+532
+00:23:12,970 --> 00:23:14,860
+just doing some like one-off job like
+
+533
+00:23:14,860 --> 00:23:16,150
+when we're hacking out the user names
+
+534
+00:23:16,150 --> 00:23:17,770
+here and you don't need to care about
+
+535
+00:23:17,770 --> 00:23:19,870
+all the special conditions right you
+
+536
+00:23:19,870 --> 00:23:21,610
+don't have to care about someone having
+
+537
+00:23:21,610 --> 00:23:24,190
+the SSH username perfectly match your
+
+538
+00:23:24,190 --> 00:23:26,020
+login format that's probably not
+
+539
+00:23:26,020 --> 00:23:27,430
+something that matters because you're
+
+540
+00:23:27,430 --> 00:23:29,440
+just trying to find the usernames but
+
+541
+00:23:29,440 --> 00:23:30,730
+regular expressions are really powerful
+
+542
+00:23:30,730 --> 00:23:32,710
+and you want to be careful if you're
+
+543
+00:23:32,710 --> 00:23:33,730
+doing something where it actually
+
+544
+00:23:33,730 --> 00:23:36,870
+matters you had a question
+
+545
+00:23:41,380 --> 00:23:43,510
+regular expressions by default only
+
+546
+00:23:43,510 --> 00:23:47,560
+match per line anyway they will not
+
+547
+00:23:47,560 --> 00:23:58,630
+match across new lines so so the way
+
+548
+00:23:58,630 --> 00:24:01,210
+that said works is that it operates per
+
+549
+00:24:01,210 --> 00:24:04,680
+line and so said we'll do this
+
+550
+00:24:04,680 --> 00:24:10,390
+expression for every line okay questions
+
+551
+00:24:10,390 --> 00:24:12,250
+about regular sessions or this pattern
+
+552
+00:24:12,250 --> 00:24:14,410
+so far it is a complicated pattern so if
+
+553
+00:24:14,410 --> 00:24:16,390
+it if it feels confusing like don't be
+
+554
+00:24:16,390 --> 00:24:17,560
+worried about it look at it in the
+
+555
+00:24:17,560 --> 00:24:31,450
+debugger later yep so so keep in mind
+
+556
+00:24:31,450 --> 00:24:33,550
+that the we're assuming here that the
+
+557
+00:24:33,550 --> 00:24:36,130
+user only has control over their
+
+558
+00:24:36,130 --> 00:24:38,590
+username right so the worst that they
+
+559
+00:24:38,590 --> 00:24:41,800
+could do is take like this entire entry
+
+560
+00:24:41,800 --> 00:24:43,510
+and make that the username let's see
+
+561
+00:24:43,510 --> 00:24:48,490
+what happens right so that's the works
+
+562
+00:24:48,490 --> 00:24:51,490
+and the reason for this is this question
+
+563
+00:24:51,490 --> 00:24:53,710
+mark means that the moment we hit the
+
+564
+00:24:53,710 --> 00:24:56,200
+disconnect keyword we start parsing the
+
+565
+00:24:56,200 --> 00:24:58,820
+rest of the pattern right and the
+
+566
+00:24:58,820 --> 00:25:00,769
+first occurrence of disconnected is
+
+567
+00:25:00,769 --> 00:25:03,200
+printed by SSH before anything the user
+
+568
+00:25:03,200 --> 00:25:05,720
+controls so in this particular instance
+
+569
+00:25:05,720 --> 00:25:08,210
+even this will not confuse the pattern
+
+570
+00:25:08,210 --> 00:25:21,049
+yep if well so if you're writing a this
+
+571
+00:25:21,049 --> 00:25:24,919
+sort of odd matching will in general
+
+572
+00:25:24,919 --> 00:25:26,149
+when you're doing data wrangling is like
+
+573
+00:25:26,149 --> 00:25:29,120
+not security it's not security related
+
+574
+00:25:29,120 --> 00:25:31,370
+but it might mean that you get really
+
+575
+00:25:31,370 --> 00:25:33,889
+weird data back and so if you're doing
+
+576
+00:25:33,889 --> 00:25:35,299
+something like plotting data you might
+
+577
+00:25:35,299 --> 00:25:37,399
+drop data points that matter you might
+
+578
+00:25:37,399 --> 00:25:39,559
+parse out the wrong number and then like
+
+579
+00:25:39,559 --> 00:25:41,450
+your plot suddenly have data points that
+
+580
+00:25:41,450 --> 00:25:43,370
+weren't in the original data and so it's
+
+581
+00:25:43,370 --> 00:25:45,559
+more that if you find yourself writing a
+
+582
+00:25:45,559 --> 00:25:47,419
+complicated regular expression like
+
+583
+00:25:47,419 --> 00:25:49,070
+double check that it's actually matching
+
+584
+00:25:49,070 --> 00:25:51,710
+what you think it's matching and even if
+
+585
+00:25:51,710 --> 00:25:56,570
+it's not security related and as you can
+
+586
+00:25:56,570 --> 00:25:58,220
+imagine these patterns can get really
+
+587
+00:25:58,220 --> 00:26:00,950
+complicated like for example there's a
+
+588
+00:26:00,950 --> 00:26:02,809
+big debate about how do you match an
+
+589
+00:26:02,809 --> 00:26:04,210
+email address with a regular expression
+
+590
+00:26:04,210 --> 00:26:06,230
+and you might think of something like
+
+591
+00:26:06,230 --> 00:26:08,870
+this so this is a very straightforward
+
+592
+00:26:08,870 --> 00:26:10,850
+one that just says letters and numbers
+
+593
+00:26:10,850 --> 00:26:13,909
+and rotor scores some percent followed
+
+594
+00:26:13,909 --> 00:26:15,620
+by a plus because in Gmail you can have
+
+595
+00:26:15,620 --> 00:26:17,799
+pluses in email addresses with a suffix
+
+596
+00:26:17,799 --> 00:26:22,100
+in this case the plus is just for any
+
+597
+00:26:22,100 --> 00:26:24,620
+number of these but at least one because
+
+598
+00:26:24,620 --> 00:26:25,730
+you can't have an email address that
+
+599
+00:26:25,730 --> 00:26:26,929
+doesn't have anything before the ad and
+
+600
+00:26:26,929 --> 00:26:29,269
+then similarly after the domain right
+
+601
+00:26:29,269 --> 00:26:31,789
+and the top-level domain has to be at
+
+602
+00:26:31,789 --> 00:26:33,139
+least two characters and can't include
+
+603
+00:26:33,139 --> 00:26:35,059
+digits right you can have it calm but
+
+604
+00:26:35,059 --> 00:26:38,000
+you can't have adopt seven it turns out
+
+605
+00:26:38,000 --> 00:26:40,039
+this is not really correct right there
+
+606
+00:26:40,039 --> 00:26:42,139
+are a bunch of valid email addresses
+
+607
+00:26:42,139 --> 00:26:43,220
+that will not be matched by this and
+
+608
+00:26:43,220 --> 00:26:44,360
+they're a bunch of invalid email
+
+609
+00:26:44,360 --> 00:26:45,559
+addresses that will be matched by this
+
+610
+00:26:45,559 --> 00:26:50,629
+so there are many many suggestions and
+
+611
+00:26:50,629 --> 00:26:52,399
+there are people who've built like full
+
+612
+00:26:52,399 --> 00:26:54,529
+test suites to try to see which regular
+
+613
+00:26:54,529 --> 00:26:58,460
+expression is best and this is this
+
+614
+00:26:58,460 --> 00:27:00,889
+particular one is for URLs there are
+
+615
+00:27:00,889 --> 00:27:02,899
+similar ones for email where they found
+
+616
+00:27:02,899 --> 00:27:06,470
+that the best one is this one I don't
+
+617
+00:27:06,470 --> 00:27:07,909
+recommend you trying to understand this
+
+618
+00:27:07,909 --> 00:27:10,790
+pattern but this one apparently will all
+
+619
+00:27:10,790 --> 00:27:13,720
+most perfectly match the what the like
+
+620
+00:27:13,720 --> 00:27:15,830
+internet standard for email addresses
+
+621
+00:27:15,830 --> 00:27:17,840
+says as a valid email address and that
+
+622
+00:27:17,840 --> 00:27:20,000
+includes all sorts of weird Unicode code
+
+623
+00:27:20,000 --> 00:27:22,250
+points this is just to say regular
+
+624
+00:27:22,250 --> 00:27:24,440
+expressions can be really hairy and if
+
+625
+00:27:24,440 --> 00:27:26,060
+you end up somewhere like this there's
+
+626
+00:27:26,060 --> 00:27:28,880
+probably a better way to do it for
+
+627
+00:27:28,880 --> 00:27:30,620
+example if you find yourself trying to
+
+628
+00:27:30,620 --> 00:27:35,320
+parse HTML or something or parse like
+
+629
+00:27:35,320 --> 00:27:38,300
+parse JSON where they're expressions you
+
+630
+00:27:38,300 --> 00:27:40,310
+should probably use a different tool and
+
+631
+00:27:40,310 --> 00:27:42,230
+there is an exercise that has you do
+
+632
+00:27:42,230 --> 00:27:44,480
+this not with the regular sessions point
+
+633
+00:27:44,480 --> 00:27:49,960
+you yeah that it's there's all sorts of
+
+634
+00:27:49,960 --> 00:27:53,180
+suggestions and they give you deep deep
+
+635
+00:27:53,180 --> 00:27:54,740
+dives into how they works if you want to
+
+636
+00:27:54,740 --> 00:27:56,660
+look that up it's it's in the lecture
+
+637
+00:27:56,660 --> 00:28:01,670
+notes okay so now we have the sister of
+
+638
+00:28:01,670 --> 00:28:04,280
+user names so let's go back to data
+
+639
+00:28:04,280 --> 00:28:05,960
+wrangling right like this list of user
+
+640
+00:28:05,960 --> 00:28:08,210
+names is still not that interesting to
+
+641
+00:28:08,210 --> 00:28:10,250
+me right let's let's see how many lines
+
+642
+00:28:10,250 --> 00:28:15,790
+there are so if I do WC - oh there are
+
+643
+00:28:15,910 --> 00:28:18,320
+one hundred and ninety eight thousand
+
+644
+00:28:18,320 --> 00:28:21,470
+lines so WC is the word count program -
+
+645
+00:28:21,470 --> 00:28:23,260
+L makes it count the number of lines
+
+646
+00:28:23,260 --> 00:28:26,030
+this is a lot of lines then if I start
+
+647
+00:28:26,030 --> 00:28:27,530
+scrolling through them that still
+
+648
+00:28:27,530 --> 00:28:29,690
+doesn't really help me right like I need
+
+649
+00:28:29,690 --> 00:28:31,730
+statistics over this I need aggregates
+
+650
+00:28:31,730 --> 00:28:37,130
+of some kind and the send tool is like
+
+651
+00:28:37,130 --> 00:28:38,450
+useful for many things it gives you a
+
+652
+00:28:38,450 --> 00:28:40,100
+full programming language it can do
+
+653
+00:28:40,100 --> 00:28:43,010
+weird things like insert text or only
+
+654
+00:28:43,010 --> 00:28:45,020
+print matching lines but it's not
+
+655
+00:28:45,020 --> 00:28:46,400
+necessarily the perfect tool for
+
+656
+00:28:46,400 --> 00:28:48,560
+everything right like sometimes there
+
+657
+00:28:48,560 --> 00:28:50,330
+are better tools like for example you
+
+658
+00:28:50,330 --> 00:28:53,420
+could write a line counter instead you
+
+659
+00:28:53,420 --> 00:28:55,400
+just should never said it's a terrible
+
+660
+00:28:55,400 --> 00:28:56,840
+programming language except for
+
+661
+00:28:56,840 --> 00:29:00,440
+searching and replacing but there are
+
+662
+00:29:00,440 --> 00:29:02,740
+other useful tools so for example
+
+663
+00:29:02,740 --> 00:29:07,940
+there's a tool called sort so sort this
+
+664
+00:29:07,940 --> 00:29:09,710
+is also not going to be very helpful but
+
+665
+00:29:09,710 --> 00:29:12,080
+sort takes a bunch of lines of input
+
+666
+00:29:12,080 --> 00:29:13,850
+sorts them and then prints them to your
+
+667
+00:29:13,850 --> 00:29:16,940
+output so in this case I now get the
+
+668
+00:29:16,940 --> 00:29:19,130
+sorted output of that list it is still
+
+669
+00:29:19,130 --> 00:29:20,540
+two hundred thousand lines long so it's
+
+670
+00:29:20,540 --> 00:29:23,840
+still not very helpful to me but now I
+
+671
+00:29:23,840 --> 00:29:24,760
+can combine it
+
+672
+00:29:24,760 --> 00:29:27,340
+the tool called unique so unique we'll
+
+673
+00:29:27,340 --> 00:29:30,550
+look at a sorted list of lines and it
+
+674
+00:29:30,550 --> 00:29:33,130
+will only print those that are unique so
+
+675
+00:29:33,130 --> 00:29:34,930
+if you have multiple instances of any
+
+676
+00:29:34,930 --> 00:29:37,090
+given line it will only print it once
+
+677
+00:29:37,090 --> 00:29:40,750
+and then I can say unique - C so this is
+
+678
+00:29:40,750 --> 00:29:44,290
+gonna say count the number of duplicates
+
+679
+00:29:44,290 --> 00:29:46,030
+for any lines that are duplicated and
+
+680
+00:29:46,030 --> 00:29:48,010
+eliminate them what does this look like
+
+681
+00:29:48,010 --> 00:29:52,000
+well if I run it it's gonna take a while
+
+682
+00:29:52,000 --> 00:29:56,050
+there were thirteen zze user names there
+
+683
+00:29:56,050 --> 00:29:59,710
+were ten ZX VF user names etc there and
+
+684
+00:29:59,710 --> 00:30:01,240
+I can scroll through this this is still
+
+685
+00:30:01,240 --> 00:30:03,460
+a very long list right but at least now
+
+686
+00:30:03,460 --> 00:30:06,130
+it's a little bit more collated than it
+
+687
+00:30:06,130 --> 00:30:08,200
+was let's see how many lines I'm dumped
+
+688
+00:30:08,200 --> 00:30:10,770
+in now okay
+
+689
+00:30:13,480 --> 00:30:15,460
+twenty-four thousand lines it's still
+
+690
+00:30:15,460 --> 00:30:17,380
+too much it's not useful information to
+
+691
+00:30:17,380 --> 00:30:19,810
+me but I can keep burning down this with
+
+692
+00:30:19,810 --> 00:30:22,960
+more tools for example what I might care
+
+693
+00:30:22,960 --> 00:30:24,730
+about is which user names have been used
+
+694
+00:30:24,730 --> 00:30:29,050
+the most well I can do sort again and I
+
+695
+00:30:29,050 --> 00:30:31,330
+can say I want a numeric sort on the
+
+696
+00:30:31,330 --> 00:30:35,560
+first column of the input so - n says
+
+697
+00:30:35,560 --> 00:30:38,980
+numeric sort - K lets you select a white
+
+698
+00:30:38,980 --> 00:30:41,320
+space separated column from the input to
+
+699
+00:30:41,320 --> 00:30:43,720
+sort my and the reason I'm giving one
+
+700
+00:30:43,720 --> 00:30:45,760
+comma one here is because I want to
+
+701
+00:30:45,760 --> 00:30:47,680
+start at the first column and stop at
+
+702
+00:30:47,680 --> 00:30:49,690
+the first column alternatively I could
+
+703
+00:30:49,690 --> 00:30:52,150
+say I want you to sort by this list of
+
+704
+00:30:52,150 --> 00:30:54,130
+columns but in this case I just want to
+
+705
+00:30:54,130 --> 00:30:58,300
+sort by that column and then I want only
+
+706
+00:30:58,300 --> 00:31:01,840
+the ten last lines so sort by default
+
+707
+00:31:01,840 --> 00:31:06,720
+will output in ascending order so the
+
+708
+00:31:06,720 --> 00:31:08,890
+the ones with the highest counts are
+
+709
+00:31:08,890 --> 00:31:10,330
+gonna be at the bottom and then I want
+
+710
+00:31:10,330 --> 00:31:14,560
+only lost ten lines and now when I run
+
+711
+00:31:14,560 --> 00:31:17,470
+this I actually get a useful bit of data
+
+712
+00:31:17,470 --> 00:31:20,590
+right it tells me there were eleven
+
+713
+00:31:20,590 --> 00:31:21,730
+thousand login attempts with the
+
+714
+00:31:21,730 --> 00:31:24,730
+username root there were four thousand
+
+715
+00:31:24,730 --> 00:31:26,500
+with one two three four five six isn't
+
+716
+00:31:26,500 --> 00:31:29,530
+username etc and this is pretty handy
+
+717
+00:31:29,530 --> 00:31:33,790
+right and now suddenly this giant log
+
+718
+00:31:33,790 --> 00:31:36,040
+file actually produces useful
+
+719
+00:31:36,040 --> 00:31:38,230
+information for me this is what I really
+
+720
+00:31:38,230 --> 00:31:40,540
+from that log file now maybe I want to
+
+721
+00:31:40,540 --> 00:31:44,230
+just like do a quick disabling of root
+
+722
+00:31:44,230 --> 00:31:46,530
+for example for SSH login on my machine
+
+723
+00:31:46,530 --> 00:31:50,610
+which I recommend you will do by the way
+
+724
+00:31:51,210 --> 00:31:53,410
+in this particular case we don't
+
+725
+00:31:53,410 --> 00:31:56,559
+actually need the k4 sort because sort
+
+726
+00:31:56,559 --> 00:31:58,510
+by default will sort by the entire line
+
+727
+00:31:58,510 --> 00:32:00,850
+and the number happens to come first but
+
+728
+00:32:00,850 --> 00:32:01,990
+it's useful to know about these
+
+729
+00:32:01,990 --> 00:32:04,059
+additional flags and you might wonder
+
+730
+00:32:04,059 --> 00:32:06,010
+well how would I know that these flags
+
+731
+00:32:06,010 --> 00:32:07,330
+exist how would I know that these
+
+732
+00:32:07,330 --> 00:32:08,559
+programs even exist
+
+733
+00:32:08,559 --> 00:32:11,410
+well the programs usually pick up just
+
+734
+00:32:11,410 --> 00:32:12,850
+from being told about them in classes
+
+735
+00:32:12,850 --> 00:32:15,900
+like here the flags are usually like I
+
+736
+00:32:15,900 --> 00:32:19,030
+want to sort by something that is not
+
+737
+00:32:19,030 --> 00:32:22,299
+the full line your first instinct should
+
+738
+00:32:22,299 --> 00:32:24,160
+be to type man sort and then read
+
+739
+00:32:24,160 --> 00:32:25,929
+through the page and then very quickly
+
+740
+00:32:25,929 --> 00:32:27,669
+will tell you here's how to select a
+
+741
+00:32:27,669 --> 00:32:29,230
+pretty good column here's how to sort by
+
+742
+00:32:29,230 --> 00:32:35,919
+a number etc okay what if now that I
+
+743
+00:32:35,919 --> 00:32:38,490
+have this like top let's say top 20 list
+
+744
+00:32:38,490 --> 00:32:40,419
+let's say I don't actually care about
+
+745
+00:32:40,419 --> 00:32:42,790
+the counts I just want like a comma
+
+746
+00:32:42,790 --> 00:32:45,010
+separated list of the user names because
+
+747
+00:32:45,010 --> 00:32:47,470
+I'm gonna like send it to myself by
+
+748
+00:32:47,470 --> 00:32:49,510
+email every day or something like that
+
+749
+00:32:49,510 --> 00:32:53,410
+like these are the top 20 usernames well
+
+750
+00:32:53,410 --> 00:32:56,910
+I can do this
+
+751
+00:32:58,290 --> 00:33:01,360
+ok that's a lot more weird commands but
+
+752
+00:33:01,360 --> 00:33:02,559
+their commands that are useful to know
+
+753
+00:33:02,559 --> 00:33:07,330
+about so awk is a column based stream
+
+754
+00:33:07,330 --> 00:33:09,880
+processor so we talked about said which
+
+755
+00:33:09,880 --> 00:33:12,429
+is a stream editor so it tries to edit
+
+756
+00:33:12,429 --> 00:33:15,640
+text primarily in the inputs awk on the
+
+757
+00:33:15,640 --> 00:33:18,820
+other hand also lets you edit text it is
+
+758
+00:33:18,820 --> 00:33:20,650
+still a full programming language but
+
+759
+00:33:20,650 --> 00:33:23,290
+it's more focused on columnar data so in
+
+760
+00:33:23,290 --> 00:33:25,660
+this case awk by default will parse its
+
+761
+00:33:25,660 --> 00:33:28,390
+input in white space separated columns
+
+762
+00:33:28,390 --> 00:33:30,190
+and then that you operate on those
+
+763
+00:33:30,190 --> 00:33:32,169
+columns separately in this case I'm
+
+764
+00:33:32,169 --> 00:33:33,429
+saying just print the second column
+
+765
+00:33:33,429 --> 00:33:38,320
+which is the user name right paste is a
+
+766
+00:33:38,320 --> 00:33:40,299
+command that takes a bunch of lines and
+
+767
+00:33:40,299 --> 00:33:43,030
+paste them together into a single line
+
+768
+00:33:43,030 --> 00:33:46,350
+that's the - s with the delimiter comma
+
+769
+00:33:46,350 --> 00:33:49,450
+so in this case for on this I want to
+
+770
+00:33:49,450 --> 00:33:51,740
+get a comma separated list of the top
+
+771
+00:33:51,740 --> 00:33:53,929
+user names which I can then do whatever
+
+772
+00:33:53,929 --> 00:33:56,120
+useful thing I might want maybe I want
+
+773
+00:33:56,120 --> 00:33:57,500
+to stick this in a config file of
+
+774
+00:33:57,500 --> 00:33:59,149
+disallowed usernames or something along
+
+775
+00:33:59,149 --> 00:34:00,429
+those lines
+
+776
+00:34:00,429 --> 00:34:04,039
+um awk is worth talking a little bit
+
+777
+00:34:04,039 --> 00:34:05,720
+more about because it turns out to be a
+
+778
+00:34:05,720 --> 00:34:08,510
+really powerful language for this kind
+
+779
+00:34:08,510 --> 00:34:12,859
+of data wrangling we mentioned briefly
+
+780
+00:34:12,859 --> 00:34:16,190
+what this print dollar 2 does but it
+
+781
+00:34:16,190 --> 00:34:19,010
+turns out the for awk you can do some
+
+782
+00:34:19,010 --> 00:34:21,020
+really really fancy things so for
+
+783
+00:34:21,020 --> 00:34:22,849
+example let's go back to here where we
+
+784
+00:34:22,849 --> 00:34:25,129
+just have the usernames I say let's
+
+785
+00:34:25,129 --> 00:34:29,418
+still do sort and unique because we
+
+786
+00:34:29,418 --> 00:34:31,668
+don't otherwise the list gets far too
+
+787
+00:34:31,668 --> 00:34:32,089
+long
+
+788
+00:34:32,089 --> 00:34:34,040
+and let's say that I only want to print
+
+789
+00:34:34,040 --> 00:34:36,800
+the usernames that match a particular
+
+790
+00:34:36,800 --> 00:34:40,760
+pattern let's say for example that I
+
+791
+00:34:40,760 --> 00:34:51,440
+want to see I want all of the usernames
+
+792
+00:34:51,440 --> 00:34:56,570
+that only appear once and that start
+
+793
+00:34:56,570 --> 00:34:59,599
+with a C and end with an e there's a
+
+794
+00:34:59,599 --> 00:35:02,359
+really weird thing to look for but in
+
+795
+00:35:02,359 --> 00:35:04,310
+all this is really simple to express I
+
+796
+00:35:04,310 --> 00:35:06,410
+can say I want the first column to be 1
+
+797
+00:35:06,410 --> 00:35:11,200
+and I want the second column to match
+
+798
+00:35:11,200 --> 00:35:15,190
+the following regular expression
+
+799
+00:35:20,480 --> 00:35:26,119
+hey this could probably just be dot and
+
+800
+00:35:26,119 --> 00:35:32,030
+then I want to print the whole line so
+
+801
+00:35:32,030 --> 00:35:33,920
+unless I mess something up this will
+
+802
+00:35:33,920 --> 00:35:36,230
+give me all the usernames that start
+
+803
+00:35:36,230 --> 00:35:38,900
+with a C end with an e and only appear
+
+804
+00:35:38,900 --> 00:35:42,859
+once in my log now that might not be a
+
+805
+00:35:42,859 --> 00:35:44,780
+very useful thing to do with the data
+
+806
+00:35:44,780 --> 00:35:46,640
+what I'm trying to do in this lecture is
+
+807
+00:35:46,640 --> 00:35:48,230
+show you the kind of tools that are
+
+808
+00:35:48,230 --> 00:35:49,940
+available and in this particular case
+
+809
+00:35:49,940 --> 00:35:51,619
+this pattern is like not that
+
+810
+00:35:51,619 --> 00:35:53,180
+complicated even though what we're doing
+
+811
+00:35:53,180 --> 00:35:54,980
+is sort of weird and this is because
+
+812
+00:35:54,980 --> 00:35:58,339
+very often on Linux with Linux tools in
+
+813
+00:35:58,339 --> 00:35:59,570
+particular and command-line tools in
+
+814
+00:35:59,570 --> 00:36:02,570
+general the tools are built to be based
+
+815
+00:36:02,570 --> 00:36:04,609
+on lines of input and lines of output
+
+816
+00:36:04,609 --> 00:36:06,440
+and very often those lines are going to
+
+817
+00:36:06,440 --> 00:36:09,079
+be have multiple columns and awk is
+
+818
+00:36:09,079 --> 00:36:18,079
+great for operating over columns now awk
+
+819
+00:36:18,079 --> 00:36:22,160
+is is not just able to do things like
+
+820
+00:36:22,160 --> 00:36:26,750
+match per line but it lets you do things
+
+821
+00:36:26,750 --> 00:36:29,060
+like let's say I want the number of
+
+822
+00:36:29,060 --> 00:36:31,220
+these right I want to know how many user
+
+823
+00:36:31,220 --> 00:36:32,900
+names match this pattern well I can do
+
+824
+00:36:32,900 --> 00:36:36,829
+WCHL that works just fine all right
+
+825
+00:36:36,829 --> 00:36:39,710
+there are 31 such user names but awk is
+
+826
+00:36:39,710 --> 00:36:41,990
+a programming language this is something
+
+827
+00:36:41,990 --> 00:36:44,780
+that you will probably never end up
+
+828
+00:36:44,780 --> 00:36:46,819
+doing yourself but it's important to
+
+829
+00:36:46,819 --> 00:36:49,430
+know that you can every now and again it
+
+830
+00:36:49,430 --> 00:36:53,200
+is actually useful to know about these
+
+831
+00:36:53,619 --> 00:36:57,140
+this might be hard to read on my screen
+
+832
+00:36:57,140 --> 00:37:02,420
+I just realized let me try to fix that
+
+833
+00:37:02,420 --> 00:37:04,960
+in a second
+
+834
+00:37:07,299 --> 00:37:14,469
+let's do yeah apparently fish does not
+
+835
+00:37:14,469 --> 00:37:17,649
+want me to do that um so here begin is a
+
+836
+00:37:17,649 --> 00:37:19,749
+special pattern that only matches the
+
+837
+00:37:19,749 --> 00:37:22,539
+zeroth line end is a special pattern
+
+838
+00:37:22,539 --> 00:37:25,779
+that only matches after the last line
+
+839
+00:37:25,779 --> 00:37:28,179
+and then this is gonna be a normal
+
+840
+00:37:28,179 --> 00:37:29,619
+pattern that's matched against every
+
+841
+00:37:29,619 --> 00:37:32,019
+line so what I'm saying here is on the
+
+842
+00:37:32,019 --> 00:37:34,149
+zeroth line set the variable rose to
+
+843
+00:37:34,149 --> 00:37:36,579
+zero on every line that matches this
+
+844
+00:37:36,579 --> 00:37:40,419
+pattern increment rose and after you
+
+845
+00:37:40,419 --> 00:37:42,309
+have matched the last line print the
+
+846
+00:37:42,309 --> 00:37:44,919
+value of rose and this will have the
+
+847
+00:37:44,919 --> 00:37:47,499
+same effect as running WCHL but all
+
+848
+00:37:47,499 --> 00:37:50,259
+within awk his particular instance like
+
+849
+00:37:50,259 --> 00:37:52,809
+WCHL is just fine but sometimes you want
+
+850
+00:37:52,809 --> 00:37:55,599
+to do things like you want to might want
+
+851
+00:37:55,599 --> 00:37:57,429
+to keep a dictionary or a map of some
+
+852
+00:37:57,429 --> 00:37:59,109
+kind you might want to compute
+
+853
+00:37:59,109 --> 00:38:01,119
+statistics you might want to do things
+
+854
+00:38:01,119 --> 00:38:03,219
+like I want the second match of this
+
+855
+00:38:03,219 --> 00:38:05,469
+pattern so you need a stateful matcher
+
+856
+00:38:05,469 --> 00:38:07,630
+like ignore the first match but then
+
+857
+00:38:07,630 --> 00:38:09,099
+print everything following the second
+
+858
+00:38:09,099 --> 00:38:11,140
+match and for that this kind of simple
+
+859
+00:38:11,140 --> 00:38:12,639
+programming in all can be useful to know
+
+860
+00:38:12,639 --> 00:38:18,489
+about in fact we could in this pattern
+
+861
+00:38:18,489 --> 00:38:22,929
+get rid of said and sort and unique and
+
+862
+00:38:22,929 --> 00:38:24,789
+grep that we originally used to produce
+
+863
+00:38:24,789 --> 00:38:26,799
+this file and do it all in awk
+
+864
+00:38:26,799 --> 00:38:28,209
+but you probably don't want to do that
+
+865
+00:38:28,209 --> 00:38:30,880
+it would be probably too painful to be
+
+866
+00:38:30,880 --> 00:38:34,539
+worth it it's worth talking a little bit
+
+867
+00:38:34,539 --> 00:38:37,359
+about the other kinds of tools that you
+
+868
+00:38:37,359 --> 00:38:38,999
+might want to use on the command line
+
+869
+00:38:38,999 --> 00:38:41,169
+the first of these is a really handy
+
+870
+00:38:41,169 --> 00:38:45,039
+program called BC so BC is the Berkeley
+
+871
+00:38:45,039 --> 00:38:49,929
+calculator I believe man BC I think BC
+
+872
+00:38:49,929 --> 00:38:51,449
+is originally from Berkeley calculator
+
+873
+00:38:51,449 --> 00:38:54,069
+anyway it is a very simple command-line
+
+874
+00:38:54,069 --> 00:38:56,169
+calculator but instead of giving you a
+
+875
+00:38:56,169 --> 00:38:58,959
+prompt it reads from standard in so I
+
+876
+00:38:58,959 --> 00:39:00,759
+can do something like echo 1 plus 2 and
+
+877
+00:39:00,759 --> 00:39:04,899
+pipe it to BC - shell because many of
+
+878
+00:39:04,899 --> 00:39:06,789
+these programs normally operate in like
+
+879
+00:39:06,789 --> 00:39:11,319
+a stupid mode where they're unhelpful so
+
+880
+00:39:11,319 --> 00:39:15,699
+here it prints 3 Wow very impressive but
+
+881
+00:39:15,699 --> 00:39:17,469
+it turns out this can be really handy
+
+882
+00:39:17,469 --> 00:39:19,779
+imagine you have a file with a bunch of
+
+883
+00:39:19,779 --> 00:39:21,100
+lines
+
+884
+00:39:21,100 --> 00:39:26,340
+let's say something like oh I don't know
+
+885
+00:39:26,340 --> 00:39:32,020
+this file and let's say I want to sum up
+
+886
+00:39:32,020 --> 00:39:35,020
+the number of logins the number of user
+
+887
+00:39:35,020 --> 00:39:36,910
+names that have not been used only once
+
+888
+00:39:36,910 --> 00:39:40,030
+all right so the ones where the count is
+
+889
+00:39:40,030 --> 00:39:43,870
+not equal to one I want to print just
+
+890
+00:39:43,870 --> 00:39:48,550
+the count right this is me give me the
+
+891
+00:39:48,550 --> 00:39:50,950
+counts for all the non single-use user
+
+892
+00:39:50,950 --> 00:39:52,930
+names and then I want to know how many
+
+893
+00:39:52,930 --> 00:39:55,180
+are there of these notice that I can't
+
+894
+00:39:55,180 --> 00:39:56,740
+just count the lines that wouldn't work
+
+895
+00:39:56,740 --> 00:39:59,110
+right because there are numbers on each
+
+896
+00:39:59,110 --> 00:40:02,200
+ran I want to sum well I can use paste
+
+897
+00:40:02,200 --> 00:40:05,950
+to paste by plus so this paste every
+
+898
+00:40:05,950 --> 00:40:08,100
+line together into a plus expression
+
+899
+00:40:08,100 --> 00:40:12,040
+right and this is now an arithmetic
+
+900
+00:40:12,040 --> 00:40:14,200
+expression so I can pipe it through BCL
+
+901
+00:40:14,200 --> 00:40:18,910
+and now there have been hundred and
+
+902
+00:40:18,910 --> 00:40:20,920
+ninety one thousand logins that share to
+
+903
+00:40:20,920 --> 00:40:22,720
+username with at least one other login
+
+904
+00:40:22,720 --> 00:40:25,540
+again probably not something you really
+
+905
+00:40:25,540 --> 00:40:27,700
+care about but this is just to show you
+
+906
+00:40:27,700 --> 00:40:29,560
+that you can extract this data pretty
+
+907
+00:40:29,560 --> 00:40:34,360
+easily and there's all sort of other
+
+908
+00:40:34,360 --> 00:40:36,070
+stuff you can do with this for example
+
+909
+00:40:36,070 --> 00:40:37,810
+there are tools so that you compute
+
+910
+00:40:37,810 --> 00:40:40,810
+statistics over inputs so for example
+
+911
+00:40:40,810 --> 00:40:43,660
+for this list of numbers that's that I
+
+912
+00:40:43,660 --> 00:40:45,850
+just took the numbers and just print it
+
+913
+00:40:45,850 --> 00:40:49,590
+out just the distribution of numbers I
+
+914
+00:40:49,590 --> 00:40:54,880
+could do things like use our our is the
+
+915
+00:40:54,880 --> 00:40:56,080
+separate programming language that's
+
+916
+00:40:56,080 --> 00:40:57,640
+specifically built for a statistical
+
+917
+00:40:57,640 --> 00:41:02,230
+analysis and I can say let's see if I
+
+918
+00:41:02,230 --> 00:41:03,570
+got this right
+
+919
+00:41:03,570 --> 00:41:06,280
+this is again a different programming
+
+920
+00:41:06,280 --> 00:41:10,440
+language that you would have to learn
+
+921
+00:41:10,440 --> 00:41:13,210
+but if you already know R or you can
+
+922
+00:41:13,210 --> 00:41:14,200
+pipe them through all their languages
+
+923
+00:41:14,200 --> 00:41:23,860
+too like so so this gives me summary
+
+924
+00:41:23,860 --> 00:41:26,380
+statistics over that input stream of
+
+925
+00:41:26,380 --> 00:41:30,160
+numbers so the median number of login
+
+926
+00:41:30,160 --> 00:41:33,310
+attempts per user name is 3 the max is
+
+927
+00:41:33,310 --> 00:41:34,330
+10,000 that was route
+
+928
+00:41:34,330 --> 00:41:35,980
+we saw before I'll tell me the average
+
+929
+00:41:35,980 --> 00:41:39,250
+was 8 for this might not matter in this
+
+930
+00:41:39,250 --> 00:41:40,600
+particular instance like this might not
+
+931
+00:41:40,600 --> 00:41:42,040
+be interesting numbers but if you're
+
+932
+00:41:42,040 --> 00:41:43,660
+looking at things like output from your
+
+933
+00:41:43,660 --> 00:41:45,790
+benchmarking script or something else
+
+934
+00:41:45,790 --> 00:41:46,780
+where you have some numerical
+
+935
+00:41:46,780 --> 00:41:48,520
+distribution and you want to look at
+
+936
+00:41:48,520 --> 00:41:52,900
+them these tools are really handy we can
+
+937
+00:41:52,900 --> 00:41:54,250
+even do some simple plotting if we
+
+938
+00:41:54,250 --> 00:41:57,640
+wanted to right so this has a bunch of
+
+939
+00:41:57,640 --> 00:42:01,330
+numbers let's do let's go back to our
+
+940
+00:42:01,330 --> 00:42:06,220
+sort and k-11 and look at only the two
+
+941
+00:42:06,220 --> 00:42:11,860
+top 5 new plot is a plotter that lets
+
+942
+00:42:11,860 --> 00:42:17,770
+you take things from standard in I'm not
+
+943
+00:42:17,770 --> 00:42:19,150
+expecting you to know all of these
+
+944
+00:42:19,150 --> 00:42:22,480
+programming languages because they
+
+945
+00:42:22,480 --> 00:42:23,950
+really are programming languages in
+
+946
+00:42:23,950 --> 00:42:25,810
+their own right but is it just show you
+
+947
+00:42:25,810 --> 00:42:30,580
+what is possible right so this is now a
+
+948
+00:42:30,580 --> 00:42:34,360
+histogram of how many times each of the
+
+949
+00:42:34,360 --> 00:42:37,360
+top 5 user names have been used for my
+
+950
+00:42:37,360 --> 00:42:41,020
+server since January 1st and it's just
+
+951
+00:42:41,020 --> 00:42:43,810
+one command line it's somewhat
+
+952
+00:42:43,810 --> 00:42:45,340
+complicated command line but it's just
+
+953
+00:42:45,340 --> 00:42:48,570
+one command line thing that you can do
+
+954
+00:42:50,520 --> 00:42:53,590
+there are two sort of special types of
+
+955
+00:42:53,590 --> 00:42:54,790
+data wrangling that I want to talk to
+
+956
+00:42:54,790 --> 00:42:56,290
+you about in the in the last little bit
+
+957
+00:42:56,290 --> 00:42:58,420
+of time that we have and the first one
+
+958
+00:42:58,420 --> 00:43:01,980
+is command line argument wrangling
+
+959
+00:43:01,980 --> 00:43:07,750
+sometimes you might have something that
+
+960
+00:43:07,750 --> 00:43:09,220
+actually we looked at in the last
+
+961
+00:43:09,220 --> 00:43:11,140
+lecture like you have things like find
+
+962
+00:43:11,140 --> 00:43:14,170
+that produces a list of files or maybe
+
+963
+00:43:14,170 --> 00:43:17,760
+something that produces a list of
+
+964
+00:43:19,380 --> 00:43:21,940
+arguments for your benchmarking script
+
+965
+00:43:21,940 --> 00:43:23,080
+like you want to run it with a
+
+966
+00:43:23,080 --> 00:43:24,670
+particular distribution of arguments
+
+967
+00:43:24,670 --> 00:43:26,020
+like let's say you had a script that
+
+968
+00:43:26,020 --> 00:43:28,810
+printed the number of iterations to run
+
+969
+00:43:28,810 --> 00:43:29,980
+a particular project and you wanted like
+
+970
+00:43:29,980 --> 00:43:31,630
+an exponential distribution or something
+
+971
+00:43:31,630 --> 00:43:33,520
+and this prints the number of iterations
+
+972
+00:43:33,520 --> 00:43:35,500
+on each line and you were to run your
+
+973
+00:43:35,500 --> 00:43:37,960
+benchmark for each one well here is a
+
+974
+00:43:37,960 --> 00:43:39,190
+tool called X args
+
+975
+00:43:39,190 --> 00:43:43,420
+that's your friend so X args takes lines
+
+976
+00:43:43,420 --> 00:43:46,210
+of input and turns them into arguments
+
+977
+00:43:46,210 --> 00:43:47,620
+and this is my
+
+978
+00:43:47,620 --> 00:43:50,170
+look a little weird see if I can come
+
+979
+00:43:50,170 --> 00:43:52,270
+with a good example for this so I
+
+980
+00:43:52,270 --> 00:43:55,480
+program in rust and rust lets you
+
+981
+00:43:55,480 --> 00:43:56,770
+install multiple versions of the
+
+982
+00:43:56,770 --> 00:43:58,540
+compiler so in this case you can see
+
+983
+00:43:58,540 --> 00:44:01,360
+that I have stable beta I have a couple
+
+984
+00:44:01,360 --> 00:44:04,420
+of earlier stable releases and I've
+
+985
+00:44:04,420 --> 00:44:05,860
+launched a different dated Knightley's
+
+986
+00:44:05,860 --> 00:44:08,980
+and this is all very well but over time
+
+987
+00:44:08,980 --> 00:44:12,010
+like I don't really need the nightly
+
+988
+00:44:12,010 --> 00:44:14,140
+version from like March of last year
+
+989
+00:44:14,140 --> 00:44:14,890
+anymore
+
+990
+00:44:14,890 --> 00:44:16,450
+I can probably delete that every now and
+
+991
+00:44:16,450 --> 00:44:17,710
+again and maybe I want to clean these up
+
+992
+00:44:17,710 --> 00:44:21,550
+a little well this is a list of lines so
+
+993
+00:44:21,550 --> 00:44:25,330
+I can get for nightly I can get rid of
+
+994
+00:44:25,330 --> 00:44:29,770
+so - V is don't match I don't want to
+
+995
+00:44:29,770 --> 00:44:32,170
+match to the current nightly okay so
+
+996
+00:44:32,170 --> 00:44:34,540
+this is al a list of dated Knightley's
+
+997
+00:44:34,540 --> 00:44:37,810
+maybe I want only the ones from 2019
+
+998
+00:44:37,810 --> 00:44:42,730
+and now I want to remove each of these
+
+999
+00:44:42,730 --> 00:44:45,370
+tool chains for my machine I could copy
+
+1000
+00:44:45,370 --> 00:44:48,340
+paste each one into so there's a rust up
+
+1001
+00:44:48,340 --> 00:44:52,630
+tool chain remove or uninstall maybe
+
+1002
+00:44:52,630 --> 00:44:56,110
+tool chain uninstall right so I could
+
+1003
+00:44:56,110 --> 00:44:58,060
+manually type out the name of each one
+
+1004
+00:44:58,060 --> 00:44:59,470
+or copy/paste them but that's getting
+
+1005
+00:44:59,470 --> 00:45:01,030
+gets annoying really quickly because I
+
+1006
+00:45:01,030 --> 00:45:03,700
+have the list right here so instead how
+
+1007
+00:45:03,700 --> 00:45:10,660
+about I said away this sort of this
+
+1008
+00:45:10,660 --> 00:45:14,890
+suffix that it adds right so now it's
+
+1009
+00:45:14,890 --> 00:45:17,770
+just that and then I use ex args so ex
+
+1010
+00:45:17,770 --> 00:45:20,800
+args takes a list of inputs and turns
+
+1011
+00:45:20,800 --> 00:45:23,770
+them into arguments so I want this to
+
+1012
+00:45:23,770 --> 00:45:27,060
+become arguments to rust up tool chain
+
+1013
+00:45:27,060 --> 00:45:30,730
+uninstall and just for my own sanity
+
+1014
+00:45:30,730 --> 00:45:32,710
+sake I'm gonna make this echo just so
+
+1015
+00:45:32,710 --> 00:45:33,910
+it's going to show which command it's
+
+1016
+00:45:33,910 --> 00:45:36,460
+gonna run well it's relatively unhelpful
+
+1017
+00:45:36,460 --> 00:45:39,460
+but are hard to read at least you see
+
+1018
+00:45:39,460 --> 00:45:41,770
+the command it's going to execute if I
+
+1019
+00:45:41,770 --> 00:45:43,990
+remove this echo is rust up tool chain
+
+1020
+00:45:43,990 --> 00:45:45,550
+uninstall and then the list of
+
+1021
+00:45:45,550 --> 00:45:47,520
+Knightley's as arguments to that program
+
+1022
+00:45:47,520 --> 00:45:51,130
+and so if I run this it on installs
+
+1023
+00:45:51,130 --> 00:45:52,630
+every tool chain instead of me having to
+
+1024
+00:45:52,630 --> 00:45:56,110
+copy paste them so this is one example
+
+1025
+00:45:56,110 --> 00:45:57,520
+where this kind of data wrangling
+
+1026
+00:45:57,520 --> 00:45:59,110
+actually can be useful for other tasks
+
+1027
+00:45:59,110 --> 00:46:00,670
+than just looking at data it's just
+
+1028
+00:46:00,670 --> 00:46:01,480
+going from one
+
+1029
+00:46:01,480 --> 00:46:04,420
+format to another you can also wrangle
+
+1030
+00:46:04,420 --> 00:46:07,150
+binary data so a good example of this is
+
+1031
+00:46:07,150 --> 00:46:09,550
+stuff like videos and images where you
+
+1032
+00:46:09,550 --> 00:46:11,710
+might actually want to operate over them
+
+1033
+00:46:11,710 --> 00:46:14,770
+in some interesting way so for example
+
+1034
+00:46:14,770 --> 00:46:17,109
+there's a tool called ffmpeg ffmpeg is
+
+1035
+00:46:17,109 --> 00:46:19,720
+for encoding and decoding video and to
+
+1036
+00:46:19,720 --> 00:46:23,079
+some extent images I'm gonna set its log
+
+1037
+00:46:23,079 --> 00:46:24,310
+level to panic because otherwise it
+
+1038
+00:46:24,310 --> 00:46:26,800
+prints a bunch of stuff I want it to
+
+1039
+00:46:26,800 --> 00:46:30,730
+read from dev video 0 which is my video
+
+1040
+00:46:30,730 --> 00:46:34,570
+of my webcam video device and I wanted
+
+1041
+00:46:34,570 --> 00:46:37,300
+to take the first frame so I just wanted
+
+1042
+00:46:37,300 --> 00:46:40,420
+to take a picture and I wanted to take
+
+1043
+00:46:40,420 --> 00:46:42,670
+an image rather than a single frame
+
+1044
+00:46:42,670 --> 00:46:45,790
+video file and I wanted to print its
+
+1045
+00:46:45,790 --> 00:46:48,070
+output so the image it captures to
+
+1046
+00:46:48,070 --> 00:46:50,410
+standard output - is usually the way you
+
+1047
+00:46:50,410 --> 00:46:52,570
+tell the program to use standard input
+
+1048
+00:46:52,570 --> 00:46:54,430
+or output rather than a given file so
+
+1049
+00:46:54,430 --> 00:46:56,200
+here it expects a file name and the file
+
+1050
+00:46:56,200 --> 00:46:58,930
+name - means standard output in this
+
+1051
+00:46:58,930 --> 00:47:00,790
+context and then I want to pipe that
+
+1052
+00:47:00,790 --> 00:47:02,550
+through a parameter called convert
+
+1053
+00:47:02,550 --> 00:47:05,500
+convert is a image manipulation program
+
+1054
+00:47:05,500 --> 00:47:08,170
+I want to tell convert to read from
+
+1055
+00:47:08,170 --> 00:47:12,280
+standard input and turn the image into
+
+1056
+00:47:12,280 --> 00:47:16,050
+the color space gray and then write the
+
+1057
+00:47:16,050 --> 00:47:19,390
+resulting image into the file - which is
+
+1058
+00:47:19,390 --> 00:47:22,119
+standard output and I don't want to pipe
+
+1059
+00:47:22,119 --> 00:47:25,119
+that into gzip we're just gonna compress
+
+1060
+00:47:25,119 --> 00:47:28,720
+this image file and that's also going to
+
+1061
+00:47:28,720 --> 00:47:30,579
+just operate on standard input standard
+
+1062
+00:47:30,579 --> 00:47:33,450
+output and then I'm going to pipe that
+
+1063
+00:47:33,450 --> 00:47:37,780
+to my remote server and on that I'm
+
+1064
+00:47:37,780 --> 00:47:41,349
+going to decode that image and then I'm
+
+1065
+00:47:41,349 --> 00:47:44,050
+gonna store a copy of that image so
+
+1066
+00:47:44,050 --> 00:47:46,839
+remember T reads input prints it to
+
+1067
+00:47:46,839 --> 00:47:49,030
+standard out and to a file this is gonna
+
+1068
+00:47:49,030 --> 00:47:51,250
+make a copy of the decoded image file
+
+1069
+00:47:51,250 --> 00:47:55,750
+ass copy about PNG and then it's gonna
+
+1070
+00:47:55,750 --> 00:47:58,210
+continue to stream that out so now I'm
+
+1071
+00:47:58,210 --> 00:48:00,550
+gonna bring that back into a local
+
+1072
+00:48:00,550 --> 00:48:04,990
+stream and here I'm going to display
+
+1073
+00:48:04,990 --> 00:48:07,240
+that in an image display err let's see
+
+1074
+00:48:07,240 --> 00:48:08,550
+if that works
+
+1075
+00:48:08,550 --> 00:48:13,240
+Hey right so this now did a round-trip
+
+1076
+00:48:13,240 --> 00:48:15,050
+to my server
+
+1077
+00:48:15,050 --> 00:48:18,340
+and then came back over pipes and
+
+1078
+00:48:18,340 --> 00:48:21,380
+there's now a computer there's a
+
+1079
+00:48:21,380 --> 00:48:23,060
+decompressed version of this file at
+
+1080
+00:48:23,060 --> 00:48:25,820
+least in theory on my server let's see
+
+1081
+00:48:25,820 --> 00:48:29,360
+if that's there a CPT's p copy PNG 2
+
+1082
+00:48:29,360 --> 00:48:38,180
+here and CP 8 yeah hey same file ended
+
+1083
+00:48:38,180 --> 00:48:40,900
+up on the server so our pipeline worked
+
+1084
+00:48:40,900 --> 00:48:43,580
+again this is a sort of silly example
+
+1085
+00:48:43,580 --> 00:48:45,890
+but let's you see the power of building
+
+1086
+00:48:45,890 --> 00:48:48,290
+these pipelines where it doesn't have to
+
+1087
+00:48:48,290 --> 00:48:50,150
+be textual data it's just go taking data
+
+1088
+00:48:50,150 --> 00:48:52,310
+from any format to any other like for
+
+1089
+00:48:52,310 --> 00:48:55,100
+example if I wanted to I can do cat dev
+
+1090
+00:48:55,100 --> 00:48:58,280
+video 0 and then pipe that to a server
+
+1091
+00:48:58,280 --> 00:49:00,710
+that like Anish controls and then he
+
+1092
+00:49:00,710 --> 00:49:02,660
+could watch that video stream by piping
+
+1093
+00:49:02,660 --> 00:49:05,420
+it into a video player on his machine if
+
+1094
+00:49:05,420 --> 00:49:08,900
+we wanted to write it just need to know
+
+1095
+00:49:08,900 --> 00:49:13,100
+that these thing exist there are a bunch
+
+1096
+00:49:13,100 --> 00:49:15,200
+of exercises for this lab and some of
+
+1097
+00:49:15,200 --> 00:49:17,180
+them rely on you having a data source
+
+1098
+00:49:17,180 --> 00:49:19,310
+that looks a little bit like a log on
+
+1099
+00:49:19,310 --> 00:49:21,110
+Mac OS and Linux we give you some
+
+1100
+00:49:21,110 --> 00:49:22,460
+commands you can try to experiment with
+
+1101
+00:49:22,460 --> 00:49:24,590
+but keep in mind that it's not it's not
+
+1102
+00:49:24,590 --> 00:49:26,630
+that important exactly what data source
+
+1103
+00:49:26,630 --> 00:49:28,970
+you use this is more find some data
+
+1104
+00:49:28,970 --> 00:49:30,290
+source that where you think there might
+
+1105
+00:49:30,290 --> 00:49:32,240
+be an interesting signal and then try to
+
+1106
+00:49:32,240 --> 00:49:33,680
+extract something interesting from it
+
+1107
+00:49:33,680 --> 00:49:35,510
+that is what all of the exercises are
+
+1108
+00:49:35,510 --> 00:49:38,660
+about we will not have class on Monday
+
+1109
+00:49:38,660 --> 00:49:41,240
+because it's MLK Day so next lecture
+
+1110
+00:49:41,240 --> 00:49:43,370
+will be Tuesday on command line
+
+1111
+00:49:43,370 --> 00:49:45,440
+environments any questions about what
+
+1112
+00:49:45,440 --> 00:49:47,420
+we've guarded so far or the pipelines or
+
+1113
+00:49:47,420 --> 00:49:51,410
+regular expressions I really recommend
+
+1114
+00:49:51,410 --> 00:49:52,790
+that you look into regular expressions
+
+1115
+00:49:52,790 --> 00:49:54,800
+and try to learn them they are extremely
+
+1116
+00:49:54,800 --> 00:49:57,230
+handy both for this and in programming
+
+1117
+00:49:57,230 --> 00:49:59,300
+in general and if you have any questions
+
+1118
+00:49:59,300 --> 00:50:00,440
+come to office hours and we'll help you
+
+1119
+00:50:00,440 --> 00:50:02,560
+up
+
