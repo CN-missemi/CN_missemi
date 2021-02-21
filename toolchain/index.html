@@ -6,6 +6,10 @@
         integrity="sha256-jl1+DOsSs9uABTKppOJ2GF8kXoc3XQzBtFFyS0i9Xoo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+        integrity="sha256-1qhJwAgsSPVSSjlQVTewHS49eaoAbOz651dveUANVBI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+        integrity="sha256-tn6hZ2YGDv0w1/DaFL4MiUoXuAVclrtFZs13ch3TB9M=" crossorigin="anonymous">
     <style>
         @font-face {
             src: url("FiraCode-Regular.ttf");
@@ -13,11 +17,11 @@
         }
 
         .major-subtitle {
-            font-size: 38;
+            font-size: 33;
         }
 
         .minor-subtitle {
-            font-size: 32;
+            font-size: 29;
         }
 
         .subtitle {
@@ -42,6 +46,10 @@
     </style>
     <script>
         $(document).ready(() => {
+            const htmlDecode = input => {
+                let doc = new DOMParser().parseFromString(input, "text/html");
+                return doc.documentElement.textContent;
+            };
             const classMap = {
                 code: "code"
             };
@@ -52,7 +60,24 @@
                     replace: `<${key} class="${classMap[key]}" $1>`
                 }));
             const converter = new showdown.Converter({
-                extensions: [...bindings],
+                extensions: [{
+                    type: 'output', regex: /\$\$([\S\s]+?)\$\$/g, replace: (x, y) => {
+                        let result = katex.renderToString(htmlDecode(y), {
+                            throwOnError: false,
+                            displayMode: true
+                        });
+                        return result;
+                    }
+                },
+                {
+                    type: 'output', regex: /\$([\S\s]+?)\$/g, replace: (x, y) => {
+                        let result = katex.renderToString(htmlDecode(y), {
+                            throwOnError: false,
+                            displayMode: false
+                        });
+                        return result;
+                    }
+                }, ...bindings],
                 literalMidWordUnderscores: true,
                 strikethrough: true
             });
