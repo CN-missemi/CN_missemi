@@ -39,7 +39,7 @@ async def main():
                 subtitles.append({
                     "begin": groups["begin"],
                     "end": groups["end"],
-                    "text": render_to_html(groups["text"]),
+                    "text": groups["text"],
                     "type": subtitle_type,
                     "type_id": i+1
                 })
@@ -70,7 +70,7 @@ async def main():
         for x, item in zip(ids, (subtitles[y] for y in ids)):
             buf.write(f"""
             <div class="{item['type']}-subtitle subtitle normal-text" id="{item['type']}-subtitle-{item['type_id']}">
-            {item["text"]}
+                <div class="markdown-required">{item["text"]}</div>
             </div>
             """)
         new_content = html_content.replace("REPLACE-HERE", buf.getvalue())
@@ -87,6 +87,7 @@ async def main():
         # await asyncio.wait([
         #     page.waitForSelector(f"#subtitle-{x}") for x in ids
         # ])
+        await page.waitForSelector(".finish-signal")
         for i in ids:
             await take_screen_shot(i, page)
         await page.close()
