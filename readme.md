@@ -1,48 +1,30 @@
-![](cover_design_social/github_social_preview.png)
+![](images/github_social_preview.png)
 
 # MIT 课程《计算机科学教育中缺失的一课》简体中文翻译
 
 ------------
 
-> 源字幕文件来源于 Youtube 发布的公开网络内容。
+<a href="https://github.com/GNAQ/CN_missemi/blob/master/license.md"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA-orange"></img></a> <a href="https://space.bilibili.com/1010983811/"><img src="https://img.shields.io/badge/Platform-bilibili-blue"></img></a> <a href="https://github.com/GNAQ/CN_missemi/projects/1"><img src="https://img.shields.io/badge/Schedule-GitHub%20Projects-green"></img></a>
 
-Missing Semester是MIT的一系列公开课，内容聚焦于讲授计算机专业实用的软件工具、开发技巧等。
+Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机专业实用的软件工具、开发技巧等。
 
-这一系列课程涵盖从命令行、文本编辑器到版本控制等内容。
+这一系列课程涵盖从命令行、文本编辑器、版本控制到代码调试等内容。
 
-目前，我们做了一些微小的工作，试图把这一系列课程的中文翻译完成。
+目前，我们尝试做一些微小的努力，把这一系列课程的中文翻译带给大家。
 
 ### 视频地址（已发布）：
 
-[第一讲 - 课程概览与 Shell](https://www.bilibili.com/video/BV1Eo4y1d7KZ)
+[第一讲 - 课程概览与 Shell](https://www.bilibili.com/video/BV1Eo4y1d7KZ) - 2021/01/29
 
-### 进度：
+[第二讲 - Shell 工具和脚本](https://www.bilibili.com/video/BV1Vv411v7FR) - 2021/02/17
 
-> **[第一节 课程概览与 shell](https://missing-semester-cn.github.io/2020/course-shell/)**
->
-> 翻译 [√]
-> 校对 [√]
-> 打轴 [√]
-> 压制 [√]
-
-> **[第二节 Shell 工具和脚本](https://missing-semester-cn.github.io/2020/shell-tools/)**
->
-> 翻译 [running]
-> 校对 [running]
-> 打轴 [×]
-> 压制 [×]
-
-### 小说明
-
-为了方便查找，请尽量用如下格式处理 branch / PR
-
-`(T/R/L/E)_ch(0,1,2...)_ID`
-
-T 翻译 R 校对 L 时间轴 E 压制
-
-例子：`R_ch5_GNAQ`
+[第三讲 - 编辑器 (Vim)]() - 
 
 ### 字幕组成员（按有贡献计入，字母序）
+
+<a href="https://github.com/GNAQ/CN_missemi/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=GNAQ/CN_missemi" />
+</a>
 
 翻译：
 
@@ -52,15 +34,19 @@ T 翻译 R 校对 L 时间轴 E 压制
 
 - GNAQ
 
+- Hypo
+
+- ksyx
+
 - Zjrua
 
 校对：
 
-- alphaGem
-
 - GNAQ
 
 - kernel.bin
+
+- Zjrua
 
 时间轴：
 
@@ -72,23 +58,22 @@ T 翻译 R 校对 L 时间轴 E 压制
 
 - MikuNotFoundException
 
-联系方式：[no1061234176@outlook.com](mailto:no1061234176@outlook.com)
+美术设计、质量总监：GNAQ - 联系方式 - [no1061234176@outlook.com](mailto:no1061234176@outlook.com)
 
-### 压制说明
+### 协议
 
-#### Farmer's Embedding Method - Toolchain
+本课程的所有内容，包括网站源代码、课程笔记、练习和课程视频均以署名-非商业性使用-相同方式共享 4.0 国际 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权。关于贡献和翻译，在[这里](license.md)获取更多信息。
 
-农民压制法工具链。
+### 题外话
 
-使用 ```Chromium``` + ```Pyppeteer``` 渲染字幕图像，然后使用 ```numba``` JIT 优化过的 ```OpenCV``` 操作来将字幕逐帧附加到视频图片上，最后将视频图片拼接起来。
+为了犒劳我们辛勤工作的组员，我们定做了一批纪念品送给他们。
 
-- 准备
+这批纪念品包括鼠标垫、钥匙扣、书签和一些贴纸。如果有余量的话，也会在 bili 官号抽奖发放给大家。
 
-	```plain
-	- images/ (以X.png为格式逐帧存储原视频图像)
-	- myaudio.m4a (原视频的音频文件)
-	```
+![](images/bookmark.png)
 
-- 运行
+![](images/mousepad.png)
 
-	在 ```render_subtitle.py``` 内，修改```FILENAME``` 为使用的字幕文件后运行```render_subtitle.py```，等待完成后运行```render_image.py```，最后运行```generate_final_video.py``` 生成最终视频。
+![](images/keychain.png)
+
+![](images/sticker.png)
