@@ -1,6 +1,0 @@
-opencv-python
-numpy
-numba
-ujson
-pyppeteer
-aiofiles
