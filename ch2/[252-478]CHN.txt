@@ -391,7 +391,7 @@ Normal 模式的优越性是什么？
 
 我认为是一些高阶的关于
 
-【450】Vim 的 buffer，window 与 tab 的模型 # REVIEW - 从此下至 446 行
+【450】Vim 的 buffer，window 与 tab 的模型
 
 很可能是这种情况，就是
 
@@ -443,6 +443,6 @@ Vim 提供一组打开的 buffer
 
 所以我在上边儿有个 window，下边儿又有一个
 
-注意，两个 window 打开了同一个文件  # REVIEW （继承上步）
+注意，两个 window 打开了同一个文件
 
 如果我在这里做一些编辑
