@@ -44,11 +44,11 @@ a log file and what you really want this
 
 12
 00:00:25,080 --> 00:00:27,480
-data in some other format like you want
+data in some other format like you wanna
 
 13
 00:00:27,480 --> 00:00:29,429
-a graph or you want statistics over the
+graph or you want statistics over the
 
 14
 00:00:29,429 --> 00:00:32,399
@@ -176,7 +176,7 @@ logging mechanism and there's a command
 
 45
 00:01:39,030 --> 00:01:41,880
-called journal CTL on Linux systems that
+called journalctl on Linux systems that
 
 46
 00:01:41,880 --> 00:01:44,700
@@ -352,7 +352,7 @@ is if you think about how this pipeline
 
 89
 00:03:21,750 --> 00:03:26,459
-does if I here do this connected from so
+does if I here do disconnected from so
 
 90
 00:03:26,459 --> 00:03:29,160
@@ -380,7 +380,7 @@ locally filter them further this seems a
 
 96
 00:03:40,530 --> 00:03:42,150
-little bit wasteful because i don't care
+little bit wasteful because I don't care
 
 97
 00:03:42,150 --> 00:03:44,220
@@ -596,7 +596,7 @@ say disconnected from invalid user
 
 150
 00:06:01,760 --> 00:06:04,940
-authenticating users etc right so these
+authenticated users etc right so these
 
 151
 00:06:04,940 --> 00:06:06,230
@@ -624,7 +624,7 @@ here I can also demonstrate this pager
 
 157
 00:06:18,080 --> 00:06:21,680
-so if I do cat s is a cat SSH dot log
+so if I do cat ss uh cat SSH dot log
 
 158
 00:06:21,680 --> 00:06:23,720
@@ -640,7 +640,7 @@ make that a little bit smaller maybe so
 
 161
 00:06:28,850 --> 00:06:30,560
-I can scroll this file screw through
+I can scroll this file scroll through
 
 162
 00:06:30,560 --> 00:06:33,320
@@ -648,7 +648,7 @@ this file and I can do so with what are
 
 163
 00:06:33,320 --> 00:06:36,260
-roughly vim bindings so control you to
+roughly vim bindings so control U to
 
 164
 00:06:36,260 --> 00:06:37,820
@@ -680,7 +680,7 @@ and here the tool that we're going to
 
 171
 00:06:52,610 --> 00:06:55,790
-start using is one called sent said is a
+start using is one called sed sed is a
 
 172
 00:06:55,790 --> 00:06:59,210
@@ -700,7 +700,10 @@ editor that none of you will probably
 
 176
 00:07:05,540 --> 00:07:12,320
-want to use yeah Oh tsp is the name of
+want to use yeah 
+sorry you may have said this already
+what is the tsp ...
+Oh tsp is the name of
 
 177
 00:07:12,320 --> 00:07:16,270
@@ -708,7 +711,7 @@ my the remote computer I'm connecting to
 
 178
 00:07:16,390 --> 00:07:19,850
-so said is a stream editor and it
+so sed is a stream editor and it
 
 179
 00:07:19,850 --> 00:07:23,720
@@ -752,7 +755,7 @@ these looks like well let me show you
 
 189
 00:07:45,160 --> 00:07:47,780
-here I'm gonna pipe this sue said and
+here I'm gonna pipe this through sed and
 
 190
 00:07:47,780 --> 00:07:50,000
@@ -800,11 +803,11 @@ entry so I just want to get rid of it
 
 201
 00:08:15,170 --> 00:08:18,200
-and so what I write is a set expression
+and so what I write is a sed expression
 
 202
 00:08:18,200 --> 00:08:20,360
-in this particular case it's an S
+in this particular case it's an sed
 
 203
 00:08:20,360 --> 00:08:21,980
