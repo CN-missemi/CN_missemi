@@ -908,7 +908,7 @@ you can use it for other things than
 
 228
 00:09:18,080 --> 00:09:19,580
-text too but Texas the most common
+text too but texts are the most common
 
 229
 00:09:19,580 --> 00:09:23,030
@@ -1020,11 +1020,11 @@ different characters so here let us
 
 256
 00:10:27,180 --> 00:10:29,800
-build up a string list something like a
+build up a string with something like aba
 
 257
 00:10:29,800 --> 00:10:36,370
-BA and I want to substitute a and B with
+and I want to substitute a and b with
 
 258
 00:10:36,370 --> 00:10:41,680
@@ -1036,7 +1036,7 @@ the pattern to do is to replace any
 
 260
 00:10:43,899 --> 00:10:46,540
-character that is either A or B with
+character that is either a or b with
 
 261
 00:10:46,540 --> 00:10:50,079
@@ -1044,7 +1044,7 @@ nothing so if I make the first character
 
 262
 00:10:50,079 --> 00:10:52,810
-B it will still produce BA you might
+b it will still produce ba you might
 
 263
 00:10:52,810 --> 00:10:54,100
@@ -1072,7 +1072,7 @@ replacement once per line that is what's
 
 269
 00:11:04,269 --> 00:11:07,360
-said normally does you can provide the G
+said normally does you can provide the 'g'
 
 270
 00:11:07,360 --> 00:11:09,279
@@ -1088,15 +1088,15 @@ case would erase the entire line because
 
 273
 00:11:14,139 --> 00:11:15,790
-every single character is either an A or
+every single character is either an 'a' or
 
 274
 00:11:15,790 --> 00:11:18,699
-a B if I added a C here and remove
+a 'b' if I added a 'c' here and remove
 
 275
 00:11:18,699 --> 00:11:21,100
-everything but the C if I added other
+everything but the 'c' if I added other
 
 276
 00:11:21,100 --> 00:11:23,019
@@ -1108,7 +1108,7 @@ somewhere they would all be preserved
 
 278
 00:11:24,370 --> 00:11:26,260
-but anything that is an A or and B is
+but anything that is an 'a' or and 'b' is
 
 279
 00:11:26,260 --> 00:11:34,209
@@ -1124,7 +1124,7 @@ what would this do this is saying I want
 
 282
 00:11:46,720 --> 00:11:51,730
-zero or more of the string a B and I'm
+zero or more of the string ab and I'm
 
 283
 00:11:51,730 --> 00:11:52,800
@@ -1144,11 +1144,11 @@ standalone B it will not be replaced but
 
 287
 00:11:59,560 --> 00:12:01,540
-if I have the string a B it will be
+if I have the string ab it will be
 
 288
 00:12:01,540 --> 00:12:09,580
-removed which yeah what are they said is
+removed which yeah what about set this
 
 289
 00:12:09,580 --> 00:12:11,940
@@ -1156,7 +1156,7 @@ stupid
 
 290
 00:12:12,340 --> 00:12:15,160
-the - a here is because said is a really
+the -E here is because sed is a really
 
 291
 00:12:15,160 --> 00:12:18,250
@@ -1164,11 +1164,11 @@ old tool and so it supports only a very
 
 292
 00:12:18,250 --> 00:12:19,930
-old version of very cool expressions
+old version of regular expressions
 
 293
 00:12:19,930 --> 00:12:22,270
-generally you will want to run it with -
+generally you will want to run it with dash 
 
 294
 00:12:22,270 --> 00:12:24,070
@@ -1204,15 +1204,15 @@ which is probably not what you want so
 
 302
 00:12:39,990 --> 00:12:43,510
-notice how this replaced the a B here
+notice how this replaced the ab here
 
 303
 00:12:43,510 --> 00:12:46,390
-and it replaced the a be here but it
+and it replaced the ab here but it
 
 304
 00:12:46,390 --> 00:12:48,790
-left this C and it also left the a at
+left this c and it also left the a at
 
 305
 00:12:48,790 --> 00:12:51,040
@@ -1232,15 +1232,15 @@ you also have things like alternations
 
 309
 00:12:58,180 --> 00:13:00,850
-you can say anything that matches a b or
+you can say anything that matches ab or
 
 310
 00:13:00,850 --> 00:13:07,420
-b c i want to remove and here you'll
+bc i want to remove and here you'll
 
 311
 00:13:07,420 --> 00:13:10,510
-notice that this a b got removed this bc
+notice that this ab got removed this bc
 
 312
 00:13:10,510 --> 00:13:12,220
@@ -1248,19 +1248,19 @@ did not get removed even though it
 
 313
 00:13:12,220 --> 00:13:14,740
-matches the pattern because the a b had
+matches the pattern because the ab had
 
 314
 00:13:14,740 --> 00:13:17,950
-already been removed this a b is removed
+already been removed this ab is removed
 
 315
 00:13:17,950 --> 00:13:20,500
-right but the c stays in place this a b
+right but the c stays in place this ab
 
 316
 00:13:20,500 --> 00:13:22,960
-is removed and this c states because it
+is removed and this c stays because it
 
 317
 00:13:22,960 --> 00:13:25,870
@@ -1268,11 +1268,11 @@ still does not match that if I made this
 
 318
 00:13:25,870 --> 00:13:29,470
-if I remove this a then now this a B
+if I remove this a then now this ab
 
 319
 00:13:29,470 --> 00:13:31,750
-pattern will not match this B so it'll
+pattern will not match this b so it'll
 
 320
 00:13:31,750 --> 00:13:34,000
@@ -1284,7 +1284,7 @@ and it'll go away
 
 322
 00:13:36,280 --> 00:13:37,810
-Regulus presence can be all sorts of
+regular expressions can be all sorts of
 
 323
 00:13:37,810 --> 00:13:39,940
@@ -1360,7 +1360,7 @@ could try to do actually let me show you
 
 341
 00:14:30,120 --> 00:14:32,670
-one except one thing first let me take a
+one exa(mple) one thing first let me take a
 
 342
 00:14:32,670 --> 00:14:34,370
@@ -1372,7 +1372,7 @@ disconnected from invalid user
 
 344
 00:14:38,990 --> 00:14:44,279
-disconnected from maybe four to one one
+disconnected from 84 211
 
 345
 00:14:44,279 --> 00:14:46,620
@@ -1444,7 +1444,7 @@ got removed and so we need to come up
 
 362
 00:15:33,000 --> 00:15:34,470
-with a slightly clever or matching
+with a slightly cleverer matching
 
 363
 00:15:34,470 --> 00:15:36,150
@@ -1480,7 +1480,7 @@ this up from the beginning we first of
 
 371
 00:16:00,660 --> 00:16:02,970
-all know that we want - capital e right
+all know that we want -E right
 
 372
 00:16:02,970 --> 00:16:05,190
@@ -1548,7 +1548,7 @@ what IP addresses are and we want many
 
 388
 00:16:53,490 --> 00:16:58,170
-of those then it says porch so we're
+of those then it says port so we're
 
 389
 00:16:58,170 --> 00:17:00,300
@@ -1560,7 +1560,7 @@ then another number zero to nine and
 
 391
 00:17:03,060 --> 00:17:07,980
-we're going to wand plus of that the
+we're gonna want plus of that the
 
 392
 00:17:07,980 --> 00:17:09,150
@@ -1644,7 +1644,7 @@ the lines but not all of them so this
 
 412
 00:17:51,960 --> 00:17:54,360
-one for example includes this pre off at
+one for example includes this preauth at
 
 413
 00:17:54,360 --> 00:17:56,880
@@ -1652,7 +1652,7 @@ the end so we'll want to cut that off if
 
 414
 00:17:56,880 --> 00:18:02,760
-there's a space pre off square brackets
+there's a space preauth square brackets
 
 415
 00:18:02,760 --> 00:18:04,549
@@ -1680,7 +1680,7 @@ pattern did not match this one for
 
 421
 00:18:16,740 --> 00:18:18,990
-example it says authenticating user
+example it says authenticated user
 
 422
 00:18:18,990 --> 00:18:20,010
