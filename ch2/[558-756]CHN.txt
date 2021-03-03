@@ -22,7 +22,7 @@
 * Vim 的全称为 Vi IMproved，即 Vi 的“升级版”
 
 会是一个挺合理的样子[*]
-* Vi 诞生的 ADM-3A 终端机的键盘上，方向键位于 HJKL 的位置，使用 Ctrl+HJKL 移动光标，ESC 位于如今 Tab 的位置
+* Vi 诞生的 ADM-3A 终端机的键盘上，方向键位于 HJKL 的位置，使用 Ctrl+HJKL 移动光标，Esc 位于如今 Tab 的位置
 
 但是这个布局很快就会成为一种肌肉记忆
 
