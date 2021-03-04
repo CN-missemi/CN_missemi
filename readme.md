@@ -46,6 +46,8 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 
 - kernel.bin
 
+- ksyx
+
 - Zjrua
 
 时间轴：
@@ -63,17 +65,3 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 ### 协议
 
 本课程的所有内容，包括网站源代码、课程笔记、练习和课程视频均以署名-非商业性使用-相同方式共享 4.0 国际 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权。关于贡献和翻译，在[这里](license.md)获取更多信息。
-
-### 题外话
-
-为了犒劳我们辛勤工作的组员，我们定做了一批纪念品送给他们。
-
-这批纪念品包括鼠标垫、钥匙扣、书签和一些贴纸。
-
-![](images/bookmark.png)
-
-![](images/mousepad.png)
-
-![](images/keychain.png)
-
-![](images/sticker.png)
