@@ -1,5 +1,5 @@
 翻译：Coelacanthus、GNAQ、Hypo、ksyx、Zjrua
 校对：GNAQ、ksyx、kernel.bin、Zjrua
 ----
-时间轴：A179、TardyPurcell
+时间轴：A179、GNAQ、TardyPurcell
 压制：GNAQ、MikuNotFoundException
