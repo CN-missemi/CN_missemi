@@ -4860,7 +4860,7 @@ for example like I've configured my
 
 1216
 00:46:44,730 --> 00:46:47,730
-Python repple to run in vim mode so I
+Python REPL to run in vim mode so I
 
 1217
 00:46:47,730 --> 00:46:49,530
@@ -4872,7 +4872,7 @@ press escape now I'm in normal mode in
 
 1219
 00:46:51,720 --> 00:46:53,250
-my Python repple and I can like move
+my Python REPL and I can like move
 
 1220
 00:46:53,250 --> 00:46:55,230
@@ -4888,7 +4888,7 @@ do all those good things and it's not
 
 1223
 00:47:01,530 --> 00:47:03,210
-just the Python repple like I have my
+just the Python REPL like I have my
 
 1224
 00:47:03,210 --> 00:47:05,910
