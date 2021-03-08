@@ -10,7 +10,7 @@
 
 所以说 `i` 是内部（inside）
 
-`a` 是周围（around或者包含（including）的意思
+`a` 是周围、包含的意思（around/including）
 
 【972】好，所以这基本就是你在 Vim 的接口里
 
