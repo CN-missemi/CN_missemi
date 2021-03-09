@@ -3939,7 +3939,7 @@ of earlier stable releases and I've
 
 985
 00:44:04,420 --> 00:44:05,860
-launched a different dated Knightley's
+launched a different dated nightlys
 
 986
 00:44:05,860 --> 00:44:08,980
@@ -3971,7 +3971,7 @@ a little well this is a list of lines so
 
 993
 00:44:21,550 --> 00:44:25,330
-I can get for nightly I can get rid of
+I can grep for nightly I can get rid of
 
 994
 00:44:25,330 --> 00:44:29,770
@@ -3983,7 +3983,7 @@ match to the current nightly okay so
 
 996
 00:44:32,170 --> 00:44:34,540
-this is al a list of dated Knightley's
+this is a list of dated nightlys
 
 997
 00:44:34,540 --> 00:44:37,810
@@ -3999,7 +3999,7 @@ tool chains for my machine I could copy
 
 1000
 00:44:45,370 --> 00:44:48,340
-paste each one into so there's a rust up
+paste each one into so there's a rustup
 
 1001
 00:44:48,340 --> 00:44:52,630
@@ -4027,7 +4027,7 @@ have the list right here so instead how
 
 1007
 00:45:03,700 --> 00:45:10,660
-about I said away this sort of this
+about I sed away this sort of this
 
 1008
 00:45:10,660 --> 00:45:14,890
@@ -4035,11 +4035,11 @@ suffix that it adds right so now it's
 
 1009
 00:45:14,890 --> 00:45:17,770
-just that and then I use ex args so ex
+just that and then I use xargs so 
 
 1010
 00:45:17,770 --> 00:45:20,800
-args takes a list of inputs and turns
+xargs takes a list of inputs and turns
 
 1011
 00:45:20,800 --> 00:45:23,770
@@ -4047,7 +4047,7 @@ them into arguments so I want this to
 
 1012
 00:45:23,770 --> 00:45:27,060
-become arguments to rust up tool chain
+become arguments to rustup tool chain
 
 1013
 00:45:27,060 --> 00:45:30,730
@@ -4075,7 +4075,7 @@ the command it's going to execute if I
 
 1019
 00:45:41,770 --> 00:45:43,990
-remove this echo is rust up tool chain
+remove this echo is rustup tool chain
 
 1020
 00:45:43,990 --> 00:45:45,550
@@ -4083,11 +4083,11 @@ uninstall and then the list of
 
 1021
 00:45:45,550 --> 00:45:47,520
-Knightley's as arguments to that program
+nightlys as arguments to that program
 
 1022
 00:45:47,520 --> 00:45:51,130
-and so if I run this it on installs
+and so if I run this it uninstalls
 
 1023
 00:45:51,130 --> 00:45:52,630
@@ -4155,7 +4155,7 @@ prints a bunch of stuff I want it to
 
 1039
 00:46:26,800 --> 00:46:30,730
-read from dev video 0 which is my video
+read from /dev/video0 which is my video
 
 1040
 00:46:30,730 --> 00:46:34,570
@@ -4183,7 +4183,7 @@ output so the image it captures to
 
 1046
 00:46:48,070 --> 00:46:50,410
-standard output - is usually the way you
+standard output dash is usually the way you
 
 1047
 00:46:50,410 --> 00:46:52,570
@@ -4199,7 +4199,7 @@ here it expects a file name and the file
 
 1050
 00:46:56,200 --> 00:46:58,930
-name - means standard output in this
+name dash means standard output in this
 
 1051
 00:46:58,930 --> 00:47:00,790
@@ -4263,7 +4263,7 @@ gonna store a copy of that image so
 
 1066
 00:47:44,050 --> 00:47:46,839
-remember T reads input prints it to
+remember tee reads input prints it to
 
 1067
 00:47:46,839 --> 00:47:49,030
@@ -4323,11 +4323,11 @@ least in theory on my server let's see
 
 1081
 00:48:25,820 --> 00:48:29,360
-if that's there a CPT's p copy PNG 2
+if that's there scp copy png 
 
 1082
 00:48:29,360 --> 00:48:38,180
-here and CP 8 yeah hey same file ended
+here ahh scp yeah hey same file ended
 
 1083
 00:48:38,180 --> 00:48:40,900
@@ -4355,11 +4355,11 @@ from any format to any other like for
 
 1089
 00:48:52,310 --> 00:48:55,100
-example if I wanted to I can do cat dev
+example if I wanted to I can do cat
 
 1090
 00:48:55,100 --> 00:48:58,280
-video 0 and then pipe that to a server
+/dev/video0 and then pipe that to a server
 
 1091
 00:48:58,280 --> 00:49:00,710
@@ -4447,7 +4447,7 @@ environments any questions about what
 
 1112
 00:49:45,440 --> 00:49:47,420
-we've guarded so far or the pipelines or
+we've covered so far or the pipelines or
 
 1113
 00:49:47,420 --> 00:49:51,410
