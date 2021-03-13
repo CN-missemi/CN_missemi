@@ -2,6 +2,8 @@
 
 # MIT 课程《计算机科学教育中缺失的一课》简体中文翻译
 
+### **开源课程资料 源地址**：[https://github.com/missing-semester/missing-semester](https://github.com/missing-semester/missing-semester)
+
 ------------
 
 <a href="https://github.com/GNAQ/CN_missemi/blob/master/license.md"><img src="https://img.shields.io/badge/License-CC--BY--NC--SA-orange"></img></a> <a href="https://space.bilibili.com/1010983811/"><img src="https://img.shields.io/badge/Platform-bilibili-blue"></img></a> <a href="https://github.com/GNAQ/CN_missemi/projects/1"><img src="https://img.shields.io/badge/Schedule-GitHub%20Projects-green"></img></a>
