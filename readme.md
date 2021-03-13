@@ -2,7 +2,7 @@
 
 # MIT 课程《计算机科学教育中缺失的一课》简体中文翻译
 
-### **开源课程资料 源地址**：[https://github.com/missing-semester/missing-semester](https://github.com/missing-semester/missing-semester)
+### **开源课程资料 - CC BY-NC-SA 4.0 协议 - 源地址**：[https://github.com/missing-semester/missing-semester](https://github.com/missing-semester/missing-semester)
 
 ------------
 
@@ -20,7 +20,11 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 
 [第二讲 - Shell 工具和脚本](https://www.bilibili.com/video/BV1Vv411v7FR) - 2021/02/17
 
-[第三讲 - 编辑器 (Vim)]() - 
+[第三讲 - 编辑器 (Vim)](https://www.bilibili.com/video/BV1Dy4y1a7BW) - 2021/03/08
+
+### 协议
+
+本课程的所有内容，包括网站源代码、课程笔记、练习和课程视频均以署名-非商业性使用-相同方式共享 4.0 国际 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权。关于贡献和翻译，在[这里](license.md)获取更多信息。
 
 ### 字幕组成员（按有贡献计入，字母序）
 
@@ -63,7 +67,3 @@ Missing Semester 是 MIT 的一系列公开课，内容聚焦于讲授计算机�
 - MikuNotFoundException
 
 美术设计、质量总监：GNAQ - 联系方式 - [no1061234176@outlook.com](mailto:no1061234176@outlook.com)
-
-### 协议
-
-本课程的所有内容，包括网站源代码、课程笔记、练习和课程视频均以署名-非商业性使用-相同方式共享 4.0 国际 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权。关于贡献和翻译，在[这里](license.md)获取更多信息。
