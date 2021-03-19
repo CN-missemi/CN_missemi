@@ -38,7 +38,7 @@
 
 我也可以 `mv` 回去
 
-也有一个 `cp` 命令，或者打 `copy`
+也有一个 `cp` 命令，也就是复制（Copy）
 
 `cp` 让你复制[*]文件，用法很相似的
 *对应 MacOS 的拷贝（Copy）而非 MacOS 的复制（Duplicate）
