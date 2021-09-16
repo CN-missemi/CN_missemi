@@ -55,7 +55,7 @@
 
 你可以好好运用
 
-我说了 `*`
+我们已经谈过了 `*`
 
 它匹配零或多个字符
 
@@ -391,7 +391,7 @@ _（学生）第一个 `Disconnected`_
 
 好吧
 
-改成 `authenticating` 或者 `invalid` 之一
+改成 `invalid` 或者 `authenticating` 之一
 
 匹配零次或一次
 
