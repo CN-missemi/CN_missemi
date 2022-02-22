@@ -180,7 +180,7 @@ group of people on a software project
 
 46
 00:01:41,509 --> 00:01:43,920
-Virna control systems track changes to a
+Version control systems track changes to a
 
 47
 00:01:43,920 --> 00:01:46,350
@@ -248,7 +248,7 @@ change made
 
 63
 00:02:13,560 --> 00:02:14,849
-and slow version control systems
+and so version control systems
 
 64
 00:02:14,849 --> 00:02:16,620
@@ -264,7 +264,7 @@ attach extra messages to these snapshots
 
 67
 00:02:21,180 --> 00:02:24,030
-and things like that and so why is
+and things like that this is why is
 
 68
 00:02:24,030 --> 00:02:25,440
@@ -344,7 +344,7 @@ our research or larger software projects
 
 87
 00:03:01,920 --> 00:03:05,099
-and then of course version control is a
+and of course version control is a
 
 88
 00:03:05,099 --> 00:03:06,930
@@ -468,7 +468,7 @@ know exactly when this regression was
 
 118
 00:04:01,560 --> 00:04:03,630
-introduced well written control systems
+introduced well version control systems
 
 119
 00:04:03,630 --> 00:04:05,579
@@ -516,7 +516,7 @@ there are a number of version control
 
 130
 00:04:27,730 --> 00:04:30,070
-systems out there and get has become
+systems out there and git has become
 
 131
 00:04:30,070 --> 00:04:31,720
@@ -552,7 +552,7 @@ read it out loud for you
 
 139
 00:04:52,080 --> 00:04:55,030
-this is good it tries collaborative work
+this is git it tracks collaborative work
 
 140
 00:04:55,030 --> 00:04:56,590
@@ -616,7 +616,7 @@ have to do this anymore unfortunately as
 
 155
 00:05:27,460 --> 00:05:31,840
-this comic illustrates gets interface is
+this comic illustrates git interface is
 
 156
 00:05:31,840 --> 00:05:34,120
@@ -692,7 +692,7 @@ underlying git can actually be
 
 174
 00:06:09,880 --> 00:06:12,280
-understood and once you understand gets
+understood and once you understand git's
 
 175
 00:06:12,280 --> 00:06:14,620
@@ -724,7 +724,7 @@ manipulate the underlying data model and
 
 182
 00:06:27,610 --> 00:06:29,230
-so the way we're going to teach get
+so the way we're going to teach git
 
 183
 00:06:29,230 --> 00:06:31,450
@@ -752,11 +752,11 @@ then after that we'll walk you through
 
 189
 00:06:40,000 --> 00:06:42,009
-some get commands and then finally in
+some git commands and then finally in
 
 190
 00:06:42,009 --> 00:06:43,900
-the resources and exercises will link
+the resources and exercises we'll link
 
 191
 00:06:43,900 --> 00:06:45,580
@@ -804,7 +804,7 @@ folder we have a bunch of different
 
 202
 00:07:08,380 --> 00:07:10,240
-files corresponding system software
+files corresponding some software
 
 203
 00:07:10,240 --> 00:07:11,770
@@ -888,7 +888,7 @@ I certainly have still a decent number
 
 223
 00:07:47,349 --> 00:07:52,210
-of you get let's us not do this sort of
+of you git let's us not do this sort of
 
 224
 00:07:52,210 --> 00:07:52,539
@@ -896,11 +896,11 @@ thing
 
 225
 00:07:52,539 --> 00:07:55,210
-it is a well-thought-out model that kind
+it is a well-thought-out model that can
 
 226
 00:07:55,210 --> 00:07:56,470
-of facilitates these sorts of
+facilitates these sorts of
 
 227
 00:07:56,470 --> 00:07:58,360
@@ -932,7 +932,7 @@ merging changes from other people all
 
 234
 00:08:09,970 --> 00:08:13,060
-sorts of neat stuff get models history
+sorts of neat stuff git models history
 
 235
 00:08:13,060 --> 00:08:14,560
@@ -1008,7 +1008,7 @@ it all right
 
 253
 00:08:58,990 --> 00:09:01,750
-simple enough the terminology get uses
+simple enough the terminology git uses
 
 254
 00:09:01,750 --> 00:09:03,010
@@ -1028,7 +1028,7 @@ then these things what we normally call
 
 258
 00:09:18,940 --> 00:09:27,040
-files are called blogs all right ok so
+files are called blobs all right ok so
 
 259
 00:09:27,040 --> 00:09:29,010
@@ -1144,7 +1144,7 @@ actually not all that complicated
 
 287
 00:10:29,460 --> 00:10:33,220
-so in get each snapshot has some number
+so in git each snapshot has some number
 
 288
 00:10:33,220 --> 00:10:35,290
@@ -1284,7 +1284,7 @@ git has its way of branching the history
 
 322
 00:11:49,010 --> 00:11:50,810
-into two separate Forks and working on
+into two separate forks and working on
 
 323
 00:11:50,810 --> 00:11:53,270
@@ -1396,7 +1396,7 @@ and my bug fix so does it make sense why
 
 350
 00:12:58,250 --> 00:13:00,380
-get models history in a way that's a
+git models history in a way that's a
 
 351
 00:13:00,380 --> 00:13:02,120
