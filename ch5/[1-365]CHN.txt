@@ -24,7 +24,7 @@
 一开始我先想了解下
 你们这些人
 之前用没用过版本控制系统
-如果你之前用过`git`、`subversion`、`mercurial`
+如果你之前用过 `git`、`subversion`、`mercurial`
 或者其他的版本控制系统
 那你就举个手
 啊好，看来用过的人还不少
