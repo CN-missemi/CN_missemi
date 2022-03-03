@@ -264,7 +264,7 @@ attach extra messages to these snapshots
 
 67
 00:02:21,180 --> 00:02:24,030
-and things like that this is why is
+and things like that this why is
 
 68
 00:02:24,030 --> 00:02:25,440
