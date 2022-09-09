@@ -1,0 +1,2251 @@
+417
+00:28:05,800 --> 00:28:10,620
+Other useful mappings are,
+还有另一些有用的映射
+
+418
+00:28:10,680 --> 00:28:15,460
+you might want to alias a command to itself
+比如 你可能想给指令本身添加一个别名
+
+419
+00:28:15,740 --> 00:28:17,520
+but with a default flag.
+但是带有缺省的参数
+
+420
+00:28:17,520 --> 00:28:21,100
+So here what is going on is I'm creating an alias
+所以接下来 我要给 `mv` 创建一个别名
+
+421
+00:28:21,100 --> 00:28:23,100
+which is an alias for the move command,
+用来代替它自己
+
+422
+00:28:23,300 --> 00:28:29,780
+which is MV and I'm aliasing it to the
+same command but adding the "-i" flag.
+它依然写作 mv 但多了一个参数 `-i` 
+
+423
+00:28:29,980 --> 00:28:34,460
+And this "-i" flag, if you go through the man page
+and look at it, it stands for "interactive".
+查阅 man 手册可知 参数 `-i` 代表 interactive
+
+424
+00:28:34,780 --> 00:28:39,880
+And what it will do is it will prompt
+me before I do an overwrite.
+它会在覆盖文件之前弹出一个提示
+
+425
+00:28:39,880 --> 00:28:44,420
+So once I have executed this,
+I can do something like
+在我执行这个指令的时候，我可以做一些操作，比如
+
+426
+00:28:44,700 --> 00:28:47,360
+I want to move "aliases" into "case".
+我想把 aliases 移动到 case
+
+427
+00:28:47,700 --> 00:28:53,140
+By default "move" won't ask, and if "case"
+already exists, it will be over.
+缺省状态下， 如果已经存在一个文件叫 case, mv 不会询问而是直接覆盖
+
+428
+00:28:53,160 --> 00:28:55,780
+That's fine, I'm going to overwrite
+whatever that's there.
+这没什么问题，我会把这个文件直接覆盖掉
+
+429
+00:28:56,020 --> 00:28:58,580
+But here it's now expanded,
+但现在这个别名不只是 mv 了
+
+430
+00:28:58,580 --> 00:29:01,660
+"mv" has been expanded into this "mv -i"
+mv 变成 mv -i 了
+
+431
+00:29:01,660 --> 00:29:03,540
+and it's using that to ask me
+现在它提示我
+
+432
+00:29:03,540 --> 00:29:07,400
+"Oh, are you sure you want to overwrite this?"
+哦 你真的要覆盖这个吗
+
+433
+00:29:07,700 --> 00:29:11,780
+And I can say no, I don't want to lose that file.
+我如果不想失去原来的文件，就可以拒绝
+
+434
+00:29:12,180 --> 00:29:15,820
+Lastly, you can use "alias move"
+最后 你可以执行 alias mv 
+
+435
+00:29:15,820 --> 00:29:18,520
+to ask for what this alias stands for.
+得知这一别名代表什么
+
+436
+00:29:19,100 --> 00:29:22,060
+So it will tell you so you can quickly make sure
+你就可以很快确定
+
+437
+00:29:22,080 --> 00:29:25,400
+what the command that you
+are executing actually is.
+实际被执行的指令是什么
+
+438
+00:29:27,040 --> 00:29:31,400
+One inconvenient part about, for example,
+having aliases is how will you go about
+但这也有不便之处 比如
+你该如何让别名
+
+439
+00:29:31,760 --> 00:29:35,340
+persisting them into your current environment?
+在你的环境中始终有效
+
+440
+00:29:35,500 --> 00:29:38,120
+Like, if I were to close this terminal now,
+比方说 如果我关掉这个终端
+
+441
+00:29:38,280 --> 00:29:40,160
+all these aliases will go away.
+刚才设置的别名就会失效
+
+442
+00:29:40,160 --> 00:29:43,020
+And you don't want to be kind
+of retyping these commands
+你也不想一次又一次重新设置它们
+
+443
+00:29:43,020 --> 00:29:46,760
+and more generally, if you start configuring
+your shell more and more,
+往大了说，如果你开始折腾终端的配置
+
+444
+00:29:46,860 --> 00:29:50,880
+you want some way of bootstrapping
+all this configuration.
+就会希望所有配置能够自己加载好
+
+445
+00:29:51,380 --> 00:29:56,780
+You will find that most shell command programs
+你会发现，大多数命令行软件
+
+446
+00:29:56,880 --> 00:30:01,440
+will use some sort of text
+based configuration file.
+都会使用某种文本配置文件
+
+447
+00:30:01,440 --> 00:30:06,740
+And this is what we usually call "dotfiles", because
+they start with a dot for historical reasons.
+它们通常被称为点文件
+因为历史包袱让它们的文件名以点开头
+
+448
+00:30:07,060 --> 00:30:13,160
+So for bash in our case, which is a shell,
+我们以 bash 这种 shell 为例
+
+449
+00:30:13,160 --> 00:30:15,560
+we can look at the bashrc.
+它的配置文件在 .bashrc
+
+450
+00:30:16,180 --> 00:30:19,840
+For demonstration purposes,
+here I have been using ZSH,
+这是为了演示
+我刚才一直在用 zsh
+
+451
+00:30:19,900 --> 00:30:24,460
+which is a different shell, and I'm going
+to be configuring bash, and starting bash.
+那是另一种 shell
+我接下来要配置 bash 并且启动它
+
+452
+00:30:24,640 --> 00:30:29,640
+So if I create an entry here and I say
+我可以在这里写一行
+
+453
+00:30:29,940 --> 00:30:31,960
+SL maps to LS
+把 sl 映射到 ls
+
+454
+00:30:32,600 --> 00:30:36,020
+And I have modified that, and now I start bash.
+改完了，然后启动 bash
+
+455
+00:30:36,540 --> 00:30:40,660
+Bash is kind of completely unconfigured,
+but now if I do SL...
+这里的 bash 没怎么被配置过
+但是如果我执行 sl
+
+456
+00:30:41,360 --> 00:30:44,040
+Hm, that's unexpected.
+emm... 怎么会这样呢
+
+00:30:44,040 --> 00:30:46,280
+- You are not in your home directory.
+- 这里不是家目录
+
+457
+00:30:46,280 --> 00:30:48,000
+Oh, good. Good getting that.
+恩，是，说得好
+
+458
+00:30:48,300 --> 00:30:52,200
+So it matters where you config file is,
+配置文件的位置很重要
+
+459
+00:30:52,200 --> 00:30:55,260
+your config file needs to be in your home folder.
+你的配置文件在家目录才能生效
+
+460
+00:30:55,640 --> 00:31:00,940
+So your configuration file for
+bash will live in that "~",
+bash 的配置文件在 ~ 
+
+461
+00:31:00,940 --> 00:31:03,940
+which will expand to your home directory,
+~ 会自动补全成你的家目录
+
+462
+00:31:03,940 --> 00:31:05,560
+and then bashrc.
+然后是 .bashrc
+
+463
+00:31:06,160 --> 00:31:08,840
+And here we can create the alias
+我们重新创建这个别名
+
+464
+00:31:12,040 --> 00:31:15,840
+and now we start a bash session and we do SL.
+然后开一个 bash 执行 sl
+
+465
+00:31:15,840 --> 00:31:21,500
+Now it has been loaded, and this is
+loaded at the beginning when this
+现在就加载上了
+这些配置会在 bash 启动时就被加载
+
+466
+00:31:22,300 --> 00:31:24,300
+bash program is started.
+
+467
+00:31:24,700 --> 00:31:31,200
+All this configuration is loaded and you can, not only use
+aliases, they can have a lot of parts of configuration.
+所有配置都加载好了
+而你不仅可以配置别名，还有很多可以配置的选项
+
+468
+00:31:31,390 --> 00:31:35,729
+So for example here, I have a prompt
+which is fairly useless.
+比如说 我觉得这个提示符相当没用
+
+469
+00:31:35,730 --> 00:31:38,429
+It has just given me the name
+of the shell, which is bash,
+它只是告诉我这个 shell 的名字，显然是 bash
+
+470
+00:31:38,640 --> 00:31:43,820
+and the version, which is 5.0. I don't
+want this to be displayed and
+还有它的版本， 5.0
+我不想看见这些信息
+
+471
+00:31:44,360 --> 00:31:48,540
+as with many things in your shell, this
+is just an environment variable.
+和 shell 中的许多东西一样，这就是个环境变量
+
+472
+00:31:48,600 --> 00:31:53,120
+So the "PS1" is just the prompt string
+变量 PS1 就是 shell 的提示符
+
+473
+00:31:53,710 --> 00:31:55,480
+for your prompt and
+并且
+
+474
+00:31:55,480 --> 00:32:02,520
+we can actually modify this
+to just be a "> " symbol.
+我们其实可以把它改成一个大于号
+
+475
+00:32:02,520 --> 00:32:08,280
+and now that has been modified, and we have
+that. But if we exit and call bash again,
+现在我们就改好了 
+可如果我们重启 bash 的话
+
+476
+00:32:08,620 --> 00:32:15,059
+that was lost. However, if we add this
+entry and say, oh we want "PS1"
+这个设置就丢失了
+如果我们在 bashrc 里面添加 PS1 的配置
+
+477
+00:32:15,760 --> 00:32:17,230
+to be
+把它改成
+
+478
+00:32:17,230 --> 00:32:19,179
+this and
+这样
+
+479
+00:32:19,179 --> 00:32:24,689
+we call bash again, this has been persisted.
+And we can keep modifying this configuration.
+我们重启 bash 以后，设置依然有效
+然后我们就可以继续修改配置
+
+480
+00:32:25,090 --> 00:32:27,209
+So maybe we want to include
+或许我们想要把
+
+481
+00:32:27,880 --> 00:32:29,880
+where the
+
+482
+00:32:30,370 --> 00:32:32,939
+working directory that we are is in, and
+当前的工作目录显示出来
+
+483
+00:32:34,140 --> 00:32:37,380
+that's telling us the same information
+that we had in the other shell.
+这就是我们在其他 shell 里面也会看到的信息
+
+484
+00:32:37,380 --> 00:32:40,480
+And there are many, many options,
+此外还有很多很多的选项
+
+485
+00:32:40,780 --> 00:32:45,060
+shells are highly, highly configurable, and
+shell 的可配置性非常强
+
+486
+00:32:45,700 --> 00:32:49,920
+it's not only shells that are configured
+through these files,
+不只是 shell 可以用文件配置
+
+487
+00:32:50,590 --> 00:32:55,740
+there are many other programs. As we saw for
+example in the editors lecture, Vim is also
+许多其他的程序也是如此
+就像编辑器一课中的 vim
+
+488
+00:32:55,840 --> 00:33:02,900
+configured this way. We gave you this vimrc
+file and told you to put it under your
+vim 也是这样配置的
+只要提供一个 vimrc 文件并且放在
+
+489
+00:33:03,460 --> 00:33:06,380
+home/.vimrc
+~/.vimrc 中
+
+490
+00:33:06,380 --> 00:33:11,800
+and this is the same concept, but just
+for Vim. It's just giving it a set of
+同样的道理 但这是对 vim 有效
+
+491
+00:33:12,160 --> 00:33:18,340
+instructions that it should load when it's started,
+so you can keep a configuration that you want.
+它提供了 vim 启动时应当加载的指令
+所以你可以保存一份自己想要的配置
+
+492
+00:33:19,140 --> 00:33:21,240
+And even non...
+甚至连...
+
+493
+00:33:21,580 --> 00:33:27,140
+kind of a lot of programs will support this. For instance,
+my terminal emulator, which is another concept,
+很多的程序都支持这一类配置
+比如 我的终端模拟器 当然这又是另一样玩意
+
+494
+00:33:27,260 --> 00:33:30,159
+which is the program that is
+也就是运行 shell
+
+495
+00:33:30,159 --> 00:33:35,459
+running the shell, in a way, and displaying
+this into the screen in my computer.
+并且将 shell 显示在电脑屏幕上的程序
+
+496
+00:33:35,950 --> 00:33:38,610
+It can also be configured this way, so
+也可以通过这种方式配置
+
+497
+00:33:39,940 --> 00:33:43,620
+if I modify this I can
+如果我修改配置
+
+498
+00:33:46,510 --> 00:33:53,279
+change the size of the font. Like right now, for
+example, I have increased the font size a lot
+我就可以修改字体的大小
+比如 我现在就把字体调大了很多
+
+499
+00:33:53,279 --> 00:33:55,768
+for demonstration purposes, but
+这仅仅是演示一下
+
+500
+00:33:56,440 --> 00:34:00,360
+if I change this entry and make it for example
+但如果我修改这一行 然后调成...比如说
+
+501
+00:34:01,320 --> 00:34:06,820
+28 and write this value, you see that
+the size of the font has changed,
+28 然后保存
+你可以看到字体的大小改变了
+
+502
+00:34:06,820 --> 00:34:12,920
+because I edited this text file that specifies
+how my terminal emulator should work.
+因为我修改了终端模拟器的配置文件
+
+503
+00:34:19,480 --> 00:34:20,900
+Any questions so far?
+有疑问吗
+
+504
+00:34:20,900 --> 00:34:22,280
+With dotfiles.
+关于点文件
+
+505
+00:34:28,040 --> 00:34:35,940
+Okay, it can be a bit daunting knowing that there
+is like this endless wall of configurations,
+没关系 面对浩如烟海的配置
+
+506
+00:34:35,940 --> 00:34:40,600
+and how do you go about learning
+about what can be configured?
+还要学习配置它们的方法
+肯定会有点害怕
+
+507
+00:34:42,020 --> 00:34:44,300
+The good news is that
+好消息是
+
+508
+00:34:44,639 --> 00:34:48,899
+we have linked you to really good
+resources in the lecture notes.
+我们在课堂笔记中提供了很棒的资源
+
+509
+00:34:48,960 --> 00:34:56,440
+But the main idea is that a lot of people really like
+just configuring these tools and have uploaded
+主要是有很多人喜欢折腾这些工具的配置
+
+510
+00:34:56,639 --> 00:35:01,140
+their configuration files to GitHub, another
+different kind of repositories online.
+还把他们的配置传到 GitHub 上
+这是另一种在线代码仓库
+
+511
+00:35:01,140 --> 00:35:03,300
+So for example, here we are on GitHub,
+比如说 我们在 GitHub 
+
+512
+00:35:03,300 --> 00:35:06,640
+we search for dotfiles, and
+can see that there are like
+搜索 dotfiles 就会有结果显示出来
+
+513
+00:35:06,780 --> 00:35:12,540
+thousands of repositories of people sharing
+their configuration files. We have also...
+数以千计的代码仓库 都是其他人分享的配置
+
+514
+00:35:12,540 --> 00:35:15,460
+Like, the class instructors
+have linked our dotfiles.
+比如 这门课程的导师就提供了我们的 dotfile
+
+515
+00:35:15,460 --> 00:35:19,420
+So if you really want to know how
+any part of our setup is working
+所以你如果很想知道我们设置中的任何部分是如何工作的
+
+516
+00:35:19,420 --> 00:35:22,220
+you can go through it and try to figure it out.
+你可以自己去翻看 尝试想明白
+
+517
+00:35:22,220 --> 00:35:24,220
+You can also feel free to ask us.
+你也可以随时来问我们
+
+518
+00:35:24,380 --> 00:35:27,060
+If we go for example to this repository here
+我们看看这个仓库
+
+519
+00:35:27,210 --> 00:35:30,649
+we can see that there's many, many
+files that you can configure.
+可以看到有很多文件可供配置
+
+520
+00:35:30,650 --> 00:35:37,520
+For example, there is one for bash, the first couple of ones
+are for git, that will be probably be covered in the
+比如 这里有个 bashrc 
+最前面的几个是 git 的配置
+大概在下堂课
+
+521
+00:35:38,610 --> 00:35:40,819
+version control lecture tomorrow.
+讲版本控制系统的时候提到
+
+522
+00:35:41,400 --> 00:35:48,500
+If we go for example to the bash profile, which is
+a different form of what we saw in the bashrc,
+我们看看这个 .bash_profile 
+它的形式不同于 bashrc 
+
+523
+00:35:49,400 --> 00:35:52,900
+it can be really useful because
+you can learn through
+它很有用 因为你只要
+
+524
+00:35:53,940 --> 00:35:58,320
+just looking at the manual page, but the
+manual pages is, a lot of the time
+看看手册就能学会
+但是手册对选项的解释 只是大篇幅地
+
+525
+00:35:58,480 --> 00:36:03,520
+just kind of like a descriptive explanation
+of all the different options
+把所有选项本身描述了一遍
+
+526
+00:36:03,520 --> 00:36:04,880
+and sometimes it's more helpful
+有时 更有用的反而是
+
+527
+00:36:04,880 --> 00:36:09,600
+going through examples of what people have done
+and trying to understand why they did it
+阅读其他人已经写好的示例
+并且尝试理解他们这样写的原因
+
+528
+00:36:09,600 --> 00:36:12,200
+and how it's helping their workflow.
+以及这对他们工作流有何帮助
+
+529
+00:36:12,960 --> 00:36:17,300
+We can say here that this person has
+done case-insensitive globbing.
+可以发现 这个人设置了大小无关的通配符
+
+530
+00:36:17,320 --> 00:36:21,220
+We covered globbing as this
+kind of filename expansion
+这在脚本和工具中是一种通配符技巧
+
+531
+00:36:22,100 --> 00:36:25,760
+trick in the shell scripting and tools.
+可以用来匹配文件名
+
+532
+00:36:25,900 --> 00:36:28,800
+And here you say no, I don't want this to matter,
+看到这你可能会说 我不希望
+
+533
+00:36:28,800 --> 00:36:30,760
+whether using uppercase and lowercase,
+大小写会影响通配符
+
+534
+00:36:30,760 --> 00:36:35,360
+and just setting this option in the shell
+for these things to work this way
+那只要这样设置 shell 就可以让它们这样工作
+
+535
+00:36:35,360 --> 00:36:38,140
+Similarly, there is for example aliases.
+类似地 也有关于别名的示例
+
+536
+00:36:38,140 --> 00:36:42,220
+Here you can see a lot of aliases that this
+person is doing. For example, "d" for
+你可以看到这人设置了很多别名
+
+537
+00:36:44,200 --> 00:36:47,400
+"d" for "Dropbox", sorry, because
+that's just much shorter.
+比如 d 代表 Dropbox
+抱歉 但这真的短多了
+
+538
+00:36:47,400 --> 00:36:49,200
+"g" for "git"...
+g 代表 git
+
+539
+00:36:49,740 --> 00:36:54,560
+Say we go, for example, with vimrc. It
+can be actually very, very informative,
+这些文件的信息量会很大
+比如 vimrc
+
+540
+00:36:54,560 --> 00:36:58,860
+going through this and trying
+to extract useful information.
+可以从中提炼出有用的信息
+
+541
+00:36:59,000 --> 00:37:06,420
+We do not recommend just kind of getting one huge blob
+of this and copying this into your config files,
+我们不推荐把这些例子大段大段地复制粘贴到你自己的配置里
+
+542
+00:37:07,110 --> 00:37:12,439
+because maybe things are prettier, but you might
+not really understand what is going on.
+因为虽然效果会很好
+但你可能无法真正理解它们的作用
+
+543
+00:37:15,150 --> 00:37:19,579
+Lastly one thing I want to mention
+about dotfiles is that
+关于点文件我最后想说说
+
+544
+00:37:20,460 --> 00:37:23,390
+people not only try to push these
+人们把这些配置传上去
+
+545
+00:37:24,660 --> 00:37:28,849
+files into GitHub just so other
+people can read it, that's
+不只是为了让别人看到
+
+546
+00:37:29,400 --> 00:37:33,319
+one reason. They also make really sure they can
+还以此确保能够复现自己的设置
+
+547
+00:37:34,140 --> 00:37:39,440
+reproduce their setup. And to do that
+they use a slew of different tools.
+为了做到这件事 他们会用很多不同的工具
+
+548
+00:37:39,440 --> 00:37:41,280
+Oops, went a little too far.
+哦 扯得有点远了
+
+549
+00:37:41,280 --> 00:37:44,840
+So GNU Stow is, for example, one of them
+比如说 GNU Stow 就是一种
+
+550
+00:37:45,720 --> 00:37:49,060
+and the trick that they are doing is
+他们还用了一个技巧
+
+551
+00:37:50,280 --> 00:37:54,520
+they are kind of putting all their
+dotfiles in a folder and they are
+把点文件都放在同一个文件夹中
+
+552
+00:37:55,200 --> 00:37:59,520
+faking to the system, using
+a tool called symlinks,
+然后用软链接来欺骗系统
+
+553
+00:37:59,520 --> 00:38:02,440
+that they are actually what
+they're not. I'm gonna
+让系统认为默认路径中有文件
+
+554
+00:38:03,150 --> 00:38:05,150
+draw really quick what I mean by that.
+我来画个图解释一下
+
+555
+00:38:05,790 --> 00:38:10,939
+So a common folder structure might look
+like you have your home folder and
+通常的文件夹结构长这样
+
+556
+00:38:11,670 --> 00:38:14,300
+in this home folder you might have your
+在家目录里 你可能会有
+
+557
+00:38:16,050 --> 00:38:21,380
+bashrc, that contains your bash configuration,
+you might have your vimrc and
+bash 的配置文件 bashrc
+也可能有 vimrc
+
+558
+00:38:22,500 --> 00:38:25,760
+it would be really great if you could
+keep this under version control.
+如果能用版本管理系统去管理它们就好了
+
+559
+00:38:26,580 --> 00:38:29,300
+But the thing is, you might not
+want to have a git repository,
+但问题是 你不会想在家目录下开 git 仓库
+
+560
+00:38:29,300 --> 00:38:31,300
+which will be covered tomorrow,
+我们明天会提到这个
+
+561
+00:38:31,300 --> 00:38:32,300
+in your home folder.
+
+562
+00:38:32,300 --> 00:38:37,360
+So what people usually do is they
+create a dotfiles repository,
+所以人们通常单独建一个仓库
+
+563
+00:38:38,280 --> 00:38:42,160
+and then they have entries here for their
+用来存放配置文件
+
+564
+00:38:43,050 --> 00:38:47,239
+bashrc and their vimrc. And
+this is where actually
+比如 bashrc 和 vimrc
+这才是这些文件
+
+565
+00:38:47,820 --> 00:38:49,820
+the files are
+实际所在的位置
+
+566
+00:38:50,100 --> 00:38:52,400
+and what they are doing is they're just
+然后他们要做的就是
+
+567
+00:38:53,460 --> 00:38:56,510
+telling the OS to forward, whenever anyone
+告诉 OS 转发所有
+
+568
+00:38:56,760 --> 00:39:01,849
+wants to read this file or write to this file,
+just forward this to this other file.
+想要读写这个文件的请求到这个实际的文件
+
+569
+00:39:03,000 --> 00:39:05,719
+This is a concept called symlinks
+这一概念称作软链接
+
+570
+00:39:06,690 --> 00:39:08,630
+and it's useful in this scenario,
+在这种情形下 十分实用
+
+571
+00:39:08,630 --> 00:39:12,600
+but it in general it's a really
+useful tool in UNIX
+但总的来说 它在 UNIX 中是个十分好用的工具
+
+572
+00:39:12,700 --> 00:39:14,700
+that we haven't covered so far in the lectures
+我们这堂课讲不了那么多
+
+573
+00:39:14,960 --> 00:39:16,740
+but you might be...
+但是你可能
+
+574
+00:39:16,740 --> 00:39:18,740
+that you should be familiar with.
+应当很熟悉这个工具
+
+575
+00:39:19,100 --> 00:39:22,840
+And in general, the syntax will be "ln -s"
+总的来说 它的写法是用 ln -s 
+
+576
+00:39:22,840 --> 00:39:29,980
+for specifying a symbolic link and then
+you will put the path to the file
+来指定一个符号链接 然后是一个路径
+
+577
+00:39:30,570 --> 00:39:33,049
+that you want to create and then the
+你的文件实际所在的位置
+
+578
+00:39:33,780 --> 00:39:35,780
+symlink that you want to create.
+接着是你要创建的软链接的位置
+
+579
+00:39:39,390 --> 00:39:41,390
+And
+并且
+
+580
+00:39:41,880 --> 00:39:45,619
+All these all these kind of fancy tools
+that we're seeing here listed,
+这里列出了刚才的所有炫酷工具
+
+581
+00:39:45,810 --> 00:39:52,159
+they all amount to doing some sort of this trick, so
+that you can have all your dotfiles neat and tidy
+它们都可以用于这一技巧
+这样你就可以使自己的点文件干净整齐
+
+582
+00:39:52,680 --> 00:39:57,829
+into a folder, and then they can be
+version-controlled, and they can be
+放在同一个文件夹中 带有版本控制
+
+583
+00:39:58,349 --> 00:40:02,689
+symlinked so the rest of the programs can
+find them in their default locations.
+还能用软链接让其他程序在默认位置找到它们
+
+584
+00:40:06,720 --> 00:40:09,020
+Any questions regarding dotfiles?
+对点文件有任何疑问吗
+
+585
+00:40:13,200 --> 00:40:20,200
+Do you need to have the dotfiles in your home folder,
+and then also dotfiles in the version control folder?
+需要在家目录保留点文件的同时 在另一个仓库文件夹里存放一样的点文件吗
+
+586
+00:40:20,780 --> 00:40:24,640
+So what you will have is,
+pretty much every program,
+情况是这样的
+几乎所有的程序
+
+587
+00:40:24,640 --> 00:40:26,180
+for example bash,
+比如说 bash
+
+588
+00:40:26,180 --> 00:40:29,560
+will always look for "home/.bashrc".
+bash 会始终寻找 ~/.bashrc
+
+589
+00:40:29,560 --> 00:40:33,480
+That's where the program is going to look for.
+这是它会寻找的文件
+
+590
+00:40:33,820 --> 00:40:40,200
+What you do when you do a symlink
+is, you place your "home/.bashrc"
+你在添加软链接的时候 是在 ~/.bashrc 这个位置
+
+591
+00:40:40,200 --> 00:40:44,900
+it's just a file that is kind
+of a special file in UNIX,
+它是 UNIX 的一种特殊文件
+
+592
+00:40:45,150 --> 00:40:49,609
+that says oh, whenever you want to read
+this file go to this other file.
+它会告诉系统 你要读这个文件的时候 得去找另一个某某文件
+
+593
+00:40:51,500 --> 00:40:53,440
+There's no content, like there is no...
+它本身没有内容 就像
+
+594
+00:40:53,600 --> 00:40:58,099
+your aliases are not part of this dotfile. That file
+is just kind of like a pointer, saying now you should
+你的别名一样 软链接不是文件本身的一部分 
+软链接文件就像是指针 告诉你应该
+
+595
+00:40:58,100 --> 00:40:59,400
+go that other way.
+去找另一条路
+
+596
+00:40:59,400 --> 00:41:02,600
+And by doing that you can have your other file
+这样一来 你就可以让其他文件
+
+597
+00:41:02,600 --> 00:41:04,400
+in that other folder.
+也可以在这里读写
+
+598
+00:41:04,560 --> 00:41:06,360
+If version controlling is not useful, think about
+如果版本控制不大好理解
+
+599
+00:41:06,360 --> 00:41:10,740
+what if you want to have them in your Dropbox
+folder, so they're synced to the cloud,
+你就想想 如果你想把它们同步到 Dropbox 文件夹
+这样就把它们同步到云端了
+
+600
+00:41:10,759 --> 00:41:15,019
+for example. That's kind of another use case
+where like symlinks could be really useful
+这也是软链接的一个使用情形
+
+601
+00:41:16,240 --> 00:41:21,040
+So you don't need the folder dotfiles
+to be in the home directory, right?
+这样你就不用真的在家目录存放点文件了 对吧
+
+602
+00:41:21,040 --> 00:41:23,820
+Because you can just use the symlink,
+that points somewhere else.
+因为你可以只用软链接指到其他地方
+
+603
+00:41:23,960 --> 00:41:29,760
+As long as you have a way for the default path
+to resolve wherever you have it, yeah.
+只要你有办法让默认目录解析到实际的目录就行
+
+604
+00:41:35,100 --> 00:41:38,000
+Last thing I want to cover in the lecture...
+这堂课的最后，我想说一说...
+
+605
+00:41:38,000 --> 00:41:40,380
+Oh, sorry, any other questions about dotfiles?
+哦 抱歉 还有关于 dotfile 的问题吗
+
+606
+00:41:49,200 --> 00:41:52,580
+Last thing I want to cover in the lecture
+is working with remote machines,
+这堂课最后一个内容 是使用远程机器
+
+607
+00:41:52,580 --> 00:41:55,549
+which is a thing that you will run into,
+这种情况 你迟早会遇上的
+
+608
+00:41:55,559 --> 00:41:56,900
+sooner or later.
+
+609
+00:41:56,900 --> 00:42:02,238
+And there are a few things that will make your life
+much easier when dealing with remote machines
+并且有些小玩意可以让你更容易使用远程机器
+
+610
+00:42:03,180 --> 00:42:05,180
+if you know about them.
+只要你了解它们
+
+611
+00:42:05,220 --> 00:42:08,380
+Right now maybe because you are
+using the Athena cluster,
+现在你可能在用 Athena 集群
+
+612
+00:42:08,380 --> 00:42:10,740
+but later on, during your programming career,
+但是以后 在你的编程生涯中
+
+613
+00:42:10,740 --> 00:42:11,960
+it's pretty sure that
+可以确信
+
+614
+00:42:11,960 --> 00:42:15,400
+there is a fairly ubiquitous
+concept of having your
+一种相当普遍的观念是
+
+615
+00:42:15,400 --> 00:42:20,380
+local working environment and then having some
+production server that is actually running the
+你有自己本地的工作环境
+但代码实际上在服务器的生产环境中运行
+
+616
+00:42:20,970 --> 00:42:23,239
+code, so it is really good to get familiar
+所以熟悉如何应付远程服务器
+
+617
+00:42:24,480 --> 00:42:26,749
+about how to work in/with remote machines.
+是很好的一件事
+
+618
+00:42:27,420 --> 00:42:35,180
+So the main command for working
+with remote machines is SSH.
+使用远程服务器的主要指令是 ssh
+
+619
+00:42:37,760 --> 00:42:43,900
+SSH is just like a secure shell, it's
+just gonna take the responsibility for
+ssh 就是一种安全的 shell
+它负责
+
+620
+00:42:43,900 --> 00:42:46,540
+reaching wherever we want or tell it to go
+连到我们要它连接的地方
+
+621
+00:42:47,560 --> 00:42:50,700
+and trying to open a session there.
+然后尝试在上面开一个会话
+
+622
+00:42:50,700 --> 00:42:52,400
+So here the syntax is:
+它的用法如下
+
+623
+00:42:53,130 --> 00:42:56,660
+"JJGO" is the user that I want
+to use in the remote machine,
+“JJGO” 是我要在远程服务器上使用的用户名
+
+624
+00:42:56,660 --> 00:42:58,430
+and this is because the user is
+这是因为这个用户名
+
+625
+00:42:58,529 --> 00:43:03,460
+different from the one I have my local machine,
+which will be the case a lot of the time,
+和我本地的用户名不一样
+很多时候都是如此
+
+626
+00:43:03,460 --> 00:43:07,400
+then the "@" is telling the
+terminal that this separates
+然后 这个 @ 告诉终端
+
+627
+00:43:07,400 --> 00:43:12,540
+what the user is from what the address is.
+在何处分开用户名和主机名
+
+628
+00:43:12,540 --> 00:43:16,540
+And here I'm using an IP address because
+what I'm actually doing is
+这里我用了一个 IP 地址
+因为我实际上
+
+629
+00:43:16,540 --> 00:43:20,500
+I have a virtual machine in my computer,
+有一台虚拟机在我的电脑里
+
+630
+00:43:20,500 --> 00:43:23,240
+that is the one that is remote right now.
+这台虚拟机就是我要连接的远程机器
+
+631
+00:43:23,240 --> 00:43:26,400
+And I'm gonna be SSH'ing into it. This is the
+我要用 ssh 连过去
+
+632
+00:43:26,580 --> 00:43:27,880
+URL that I'm using,
+这就是我用的 URL
+
+633
+00:43:27,880 --> 00:43:29,860
+sorry, the IP that I'm using,
+抱歉 是指我用的 IP
+
+634
+00:43:29,860 --> 00:43:32,280
+but you might also see things like
+但你还会看到一些比如
+
+635
+00:43:32,360 --> 00:43:36,820
+oh I want to SSH as "JJGO"
+哦 我想以 JJGO 的身份
+
+636
+00:43:36,820 --> 00:43:39,840
+at "foobar.mit.edu"
+连到 "foobar.mit.edu"
+
+637
+00:43:39,840 --> 00:43:42,960
+That's probably something more
+common, if you are using some
+这会是更为常见的情况 
+
+638
+00:43:42,960 --> 00:43:47,260
+remote server that has a DNS name.
+你的远程机器可能有个域名
+
+639
+00:43:48,180 --> 00:43:51,860
+So going back to a regular command,
+回到正常的指令
+
+640
+00:43:53,220 --> 00:43:56,580
+we try to SSH, it asks us for a password,
+我们尝试 ssh 连接 
+它现在要求我们提供密码
+
+641
+00:43:56,580 --> 00:43:58,180
+really common thing.
+再正常不过了
+
+642
+00:43:58,190 --> 00:43:59,480
+And now we're there. We have...
+好 登上了
+
+643
+00:43:59,480 --> 00:44:02,629
+we're still in our same terminal emulator
+我们仍然在自己的终端模拟器里
+
+644
+00:44:02,630 --> 00:44:09,529
+but right now SSH is kind of forwarding the
+entire virtual display to display what the
+但现在 ssh 把整个虚拟显示器转发了过来
+
+645
+00:44:09,869 --> 00:44:14,358
+remote shell is displaying. And
+we can execute commands here and
+这就是远程机器上 shell 的内容
+我们执行指令
+
+646
+00:44:15,630 --> 00:44:17,630
+we'll see the remote files
+远程机器上的文件就显示出来了
+
+647
+00:44:18,390 --> 00:44:22,819
+A couple of handy things to know about
+SSH, that were briefly covered in the
+还有些很顺手的 ssh 技巧
+
+648
+00:44:23,220 --> 00:44:27,080
+data wrangling lecture, is that
+SSH is not only good for just
+曾在数据整理一课中简要提到过
+ssh 不止很适合连接
+
+649
+00:44:28,280 --> 00:44:33,760
+opening connections. It will also let
+you just execute commands remotely.
+它还可以让你远程执行指令
+
+650
+00:44:33,770 --> 00:44:36,979
+So for example, if I do that, it's gonna ask me
+比如说 如果我这样做 终端就会再次询问我的密码
+
+651
+00:44:37,710 --> 00:44:39,020
+what is my password?, again.
+
+652
+00:44:39,020 --> 00:44:41,059
+And it's executing this command
+然后它就会执行代码
+
+653
+00:44:41,279 --> 00:44:43,420
+then coming back to my terminal
+再回到我的终端
+
+654
+00:44:43,420 --> 00:44:47,420
+and piping the output of what that
+command was, in the remote machine,
+输出远程机器的输出
+
+655
+00:44:47,420 --> 00:44:50,480
+through the standard output in my current shell.
+到我这个 shell 的标准用户输出里
+
+656
+00:44:50,480 --> 00:44:53,940
+And I could have this in...
+我还可以把这个...
+
+657
+00:44:58,100 --> 00:45:00,480
+I could have this in a pipe, and
+我还可以把这个灌进管道
+
+658
+00:45:00,980 --> 00:45:03,580
+this will work and we'll just
+这是行得通的
+
+659
+00:45:03,600 --> 00:45:06,100
+drop all this output and then have a local pipe
+我们可以把远端的输出放进本地的管道
+
+660
+00:45:06,100 --> 00:45:07,879
+where I can keep working.
+这样我就可以在本地继续工作
+
+661
+00:45:08,640 --> 00:45:12,140
+So far, it has been kind of inconvenient,
+having to type our password.
+到现在为止 有点麻烦的是要输入密码
+
+662
+00:45:12,630 --> 00:45:14,820
+There's one really good trick for this.
+有个很妙的技巧来对付这个
+
+663
+00:45:14,820 --> 00:45:16,880
+It's we can use something called "SSH keys".
+我们如果用一种叫做 "SSH 密钥" 的东西
+
+664
+00:45:17,140 --> 00:45:20,660
+SSH keys just use public key encryption
+SSH 密钥使用了非对称加密
+
+665
+00:45:20,660 --> 00:45:24,980
+to create a pair of SSH keys, a public
+key and a private key, and then
+来产生一对 SSH 密钥
+一个公钥和一个私钥
+
+666
+00:45:25,170 --> 00:45:29,320
+you can give the server the
+public part of the key.
+然后你可以把公钥存到远程服务器上
+
+667
+00:45:29,320 --> 00:45:32,810
+So you copy the public key and
+then whenever you try to
+把公钥复制过去以后
+
+668
+00:45:33,390 --> 00:45:37,129
+authenticate instead of using your password,
+it's gonna use the private key to
+然后你不想用密码的时候
+你的机器就会用私钥
+
+669
+00:45:37,820 --> 00:45:40,800
+prove to the server that you are
+actually who you say you are.
+向服务器证明你确实是你宣称的身份
+
+670
+00:45:43,860 --> 00:45:48,020
+We can quickly showcase how you will go
+这里快速演示一下你要如何使用
+
+671
+00:45:48,020 --> 00:45:49,400
+about doing this.
+这一种认证方式
+
+672
+00:45:49,400 --> 00:45:53,180
+Right now I don't have any SSH keys,
+so I'm gonna create a couple of them.
+现在我没有 SSH 密钥
+所以我要生成一对
+
+673
+00:45:53,940 --> 00:45:58,250
+First thing, it's just gonna ask
+me where I want this key to live.
+首先
+程序会询问存放密钥的位置
+
+674
+00:45:58,980 --> 00:46:00,640
+Unsurprisingly, it's doing this.
+它这样做很符合预期
+
+675
+00:46:00,640 --> 00:46:04,820
+This is my home folder and then
+it's using this ".ssh" path,
+这是我的家目录
+它会使用其中的 .ssh 文件夹
+
+676
+00:46:05,460 --> 00:46:08,750
+which refers back to the same concept
+that we covered earlier about having
+这与我们刚刚提到的点文件的概念是一致的
+
+677
+00:46:08,850 --> 00:46:12,439
+dotfiles. Like ".ssh" is a folder
+that contains a lot of the
+.ssh 是一个存放着许多
+
+678
+00:46:13,320 --> 00:46:16,540
+configuration files for how
+you want SSH to behave.
+配置文件的文件夹
+这些文件控制 SSH 的行为
+
+679
+00:46:17,060 --> 00:46:19,420
+So it will ask us a passphrase.
+接着 我们要提供一个密码
+
+680
+00:46:19,680 --> 00:46:23,120
+The passphrase is to encrypt
+the private part of the key
+这个密码是用来加密私钥的
+
+681
+00:46:23,120 --> 00:46:27,160
+because if someone gets your private key,
+if you don't have a password protected
+当你的私钥落入他人手中
+如果你的私钥没有密码的保护
+
+682
+00:46:27,920 --> 00:46:29,580
+private key, if they get that key
+得到私钥的人
+
+683
+00:46:29,580 --> 00:46:32,240
+they can use that key to impersonate
+you in any server.
+就可以用你的私钥冒充你的身份
+
+684
+00:46:32,310 --> 00:46:34,360
+Whereas if you add a passphrase,
+而当你添加了密码以后
+
+685
+00:46:34,360 --> 00:46:37,640
+they will have to know what the passphrase
+is to actually use the key.
+他们在使用私钥之前会被要求提供密码
+
+686
+00:46:40,800 --> 00:46:51,740
+It has created a keypair. We can check that
+these two files are now under ssh.
+密钥对已经创建好了
+我们可以在 .ssh 文件夹里查看它们
+
+687
+00:46:51,740 --> 00:46:53,920
+And we can see...
+我们还可以看到
+
+688
+00:46:57,720 --> 00:47:02,960
+We have these two files: we have
+the 25519 and the public key.
+我们有两个文件
+我们有这个 25519 和一个公钥文件
+
+689
+00:47:03,320 --> 00:47:06,300
+And if we "cat" through the output,
+如果我们 cat 一下这两个文件
+
+690
+00:47:06,300 --> 00:47:09,760
+that key is actually not like
+any fancy binary file, it's
+就会发现它们不是二进制的
+
+691
+00:47:15,430 --> 00:47:20,760
+just a text file that has the contents
+of the public key and some
+而是写着公钥本体的文本
+
+692
+00:47:23,050 --> 00:47:26,729
+alias name for it, so we can
+know what this public key is.
+还有它的别名
+这样我们就能知道这个公钥的归属
+
+693
+00:47:26,950 --> 00:47:32,220
+The way we can tell the server that
+we're authorized to SSH there
+这样就能告诉服务器
+我们有权限用 ssh 连过去
+
+694
+00:47:32,260 --> 00:47:38,400
+is by just actually copying this file,
+like copying this string into a file,
+只要把公钥复制到
+比如复制进一个文件
+
+695
+00:47:38,400 --> 00:47:41,540
+that is ".ssh/authorized_keys".
+也就是 .ssh/authorized_keys
+
+696
+00:47:42,100 --> 00:47:46,160
+So here what I'm doing is I'm
+接下来我要做的是
+
+697
+00:47:46,960 --> 00:47:49,770
+catting the output of this file
+把 cat 输出的文件内容
+
+698
+00:47:49,800 --> 00:47:53,920
+which is just this line of
+text that we want to copy
+也就是我们想要拷贝的这一行公钥
+
+699
+00:47:53,920 --> 00:47:57,440
+and I'm piping that into SSH and then remotely
+用管道灌进 ssh
+送到服务器上 
+
+700
+00:47:57,960 --> 00:48:02,080
+I'm asking "tee" to dump the contents
+of the standard input
+我执行了 tee 来获取标准用户输入的内容
+
+701
+00:48:02,080 --> 00:48:05,220
+into ".ssh/authorized_keys".
+转存到 .ssh/authorized_keys 里
+
+702
+00:48:05,440 --> 00:48:10,360
+And if we do that, obviously it's
+gonna ask us for a password.
+如果我们那样做
+ssh 显然会要我们提供密码
+
+703
+00:48:14,800 --> 00:48:18,740
+It was copied, and now we
+can check that if we try
+复制完了
+现在我们可以试着再连一次 ssh 来验证
+
+704
+00:48:19,690 --> 00:48:21,690
+to SSH again,
+
+705
+00:48:21,960 --> 00:48:24,840
+It's going to first ask us for a passphrase
+我们需要提供私钥的密码
+
+706
+00:48:24,840 --> 00:48:29,100
+but you can arrange that so that
+it's saved in the session
+但你可以配置有效时间
+这样它就能在整个会话期间被缓存
+
+707
+00:48:29,460 --> 00:48:34,840
+and we didn't actually have to
+type the key for the server.
+这样就不用输入服务器的密码了
+
+708
+00:48:34,840 --> 00:48:36,840
+And I can kind of show that again.
+我可以再演示一次
+
+709
+00:48:45,820 --> 00:48:47,540
+More things that are useful.
+还有更多有用的小玩具
+
+710
+00:48:47,540 --> 00:48:49,040
+Oh, we can do...
+哦 我们可以
+
+711
+00:48:49,220 --> 00:48:51,880
+If that command seemed a little bit janky,
+如果刚才的指令看起来有点灵
+
+712
+00:48:51,980 --> 00:48:55,000
+you can actually use this command
+that is built for this,
+你可以用这个指令
+他是专为传送公钥准备的
+
+713
+00:48:55,000 --> 00:49:00,640
+so you don't have to kind of
+craft this "ssh t" command.
+这样你就不用自己写 ssh tee 的指令了
+
+714
+00:49:00,640 --> 00:49:03,800
+That is just called "ssh-copy-id".
+这个指令写作 ssh-copy-id
+
+715
+00:49:05,000 --> 00:49:08,080
+And we can do the same
+我们一样可以试一下
+
+716
+00:49:08,080 --> 00:49:09,660
+and it's gonna copy the key.
+然后它就会发送我的公钥
+
+717
+00:49:09,660 --> 00:49:14,280
+And now, if we try to SSH,
+随后我们尝试 ssh 连接
+
+718
+00:49:14,500 --> 00:49:18,320
+we can SSH without actually
+typing any key at all,
+就可以直接登录 不用给私钥输密码
+
+719
+00:49:18,860 --> 00:49:20,320
+or any password.
+也不用输入服务器的密码了
+
+720
+00:49:20,660 --> 00:49:21,520
+More things.
+再说一点
+
+721
+00:49:21,520 --> 00:49:23,520
+We will probably want to copy files.
+我们可能会想在机器之间拷贝一些文件
+
+722
+00:49:23,740 --> 00:49:25,310
+You cannot use "CP"
+这时候没法用 cp
+
+723
+00:49:25,310 --> 00:49:29,720
+but you can use "SCP", for "SSH copy".
+但是可以用 scp 也就是 ssh copy
+
+724
+00:49:29,720 --> 00:49:34,500
+And here we can specify that we want
+to copy this local file called notes
+这里 我们可以指定要拷贝的本地文件的名字
+比如这个 notes
+
+725
+00:49:34,500 --> 00:49:36,880
+and the syntax is kind of similar.
+它的用法和 cp 很像
+
+726
+00:49:36,880 --> 00:49:39,760
+We want to copy to this remote and
+我们想把它拷贝到远程机器上
+
+727
+00:49:39,920 --> 00:49:44,020
+then we have a semicolon to separate
+what the path is going to be.
+然后我们用冒号把主机名和目标路径隔开
+
+728
+00:49:44,020 --> 00:49:45,040
+And then we have
+然后我们
+
+729
+00:49:45,040 --> 00:49:46,620
+oh, we want to copy this as notes
+哦 我们想让它依然叫做 notes
+
+730
+00:49:46,620 --> 00:49:51,000
+but we could also copy this as foobar.
+但我们也可以换个文件名 比如 foobar
+
+731
+00:49:51,740 --> 00:49:55,600
+And if we do that, it has been executed
+我们执行一下这个指令
+一下就跑完了 很快啊
+
+732
+00:49:55,780 --> 00:49:59,280
+and it's telling us that all the
+contents have been copied there.
+它还会告诉我们所有的内容已经复制过去了
+
+733
+00:49:59,540 --> 00:50:02,200
+If you're gonna be copying a lot of files,
+如果你要复制很多文件
+
+734
+00:50:02,200 --> 00:50:05,100
+there is a better command
+that you should be using
+那你该用一个更好的指令
+
+735
+00:50:05,100 --> 00:50:07,740
+that is called "RSYNC". For example, here
+叫做 rsync
+比如说
+
+736
+00:50:07,900 --> 00:50:10,780
+just by specifying these three flags,
+只要指定这三个参数
+
+737
+00:50:10,820 --> 00:50:15,960
+I'm telling RSYNC to kind of preserve
+all the permissions whenever possible
+就能让 rsync 尽可能保留这些文件的访问权限
+
+738
+00:50:16,240 --> 00:50:19,740
+to try to check if the file
+has already been copied.
+并且检查文件是否已经被复制过
+
+739
+00:50:19,740 --> 00:50:24,100
+For example, SCP will try to copy
+files that are already there.
+而 scp 会尝试复制已经存在的目标文件
+
+740
+00:50:24,200 --> 00:50:26,440
+This will happen for example
+if you are trying to copy
+这种情况会发生在你的复制过程中途
+
+741
+00:50:26,440 --> 00:50:29,060
+and the connection interrupts
+in the middle of it.
+连接突然断开的时候
+
+742
+00:50:29,120 --> 00:50:32,060
+SCP will start from the very beginning,
+trying to copy every file,
+scp 会从起始处重新复制
+尝试复制每一个文件
+
+743
+00:50:32,080 --> 00:50:36,600
+whereas RSYNC will continue
+from where it stopped.
+而 rsync 会从进度中断处继续
+
+744
+00:50:37,240 --> 00:50:38,440
+And here,
+接下来
+
+745
+00:50:39,060 --> 00:50:42,760
+we ask it to copy the entire folder and
+我们要求它复制整个文件夹
+
+746
+00:50:43,780 --> 00:50:46,560
+it's just really quickly
+copied the entire folder.
+它很快就能完整复制
+
+747
+00:50:48,080 --> 00:50:54,100
+One of the other things to know about SSH is that
+关于 ssh 还有一个要知道的
+
+748
+00:50:54,320 --> 00:50:59,860
+the equivalent of the dot file
+for SSH is the "SSH config".
+就是 ssh 的配置文件在 ~/.ssh/config
+
+749
+00:50:59,860 --> 00:51:06,340
+So if we edit the SSH config to be
+所以如果我们修改它
+
+750
+00:51:13,120 --> 00:51:17,940
+If I edit the SSH config to
+look something like this,
+比方说我把它改成这个样子
+
+751
+00:51:17,940 --> 00:51:22,900
+instead of having to, every
+time, type "ssh jjgo",
+与其每次都要键入 ssh jjgo
+
+752
+00:51:23,040 --> 00:51:27,760
+having this really long string so I can
+like refer to this specific remote,
+用那么长的一串来代表我要连接的机器
+
+753
+00:51:27,760 --> 00:51:30,140
+I want to refer, with the specific user name,
+还有我的用户名
+
+754
+00:51:30,140 --> 00:51:32,760
+I can have something here that says
+我不如直接在这写好
+
+755
+00:51:33,160 --> 00:51:35,680
+this is the username, this
+is the host name, that this
+这是用户名
+这是主机名
+
+756
+00:51:36,860 --> 00:51:40,540
+host is referring to and you should
+use this identity file.
+还有应当使用的鉴权密钥
+
+757
+00:51:41,460 --> 00:51:43,960
+And if I copy this,
+我要把这个复制过去
+
+758
+00:51:43,960 --> 00:51:46,100
+this is right now in my local folder,
+它现在在这个目录下面
+
+759
+00:51:46,100 --> 00:51:49,000
+I can copy this into ssh.
+我可以把它复制到 .ssh
+
+760
+00:51:49,600 --> 00:51:53,520
+Now, instead of having to do this really
+long command, I can just say
+现在我就不用敲那么长的指令了
+我可以直接写
+
+761
+00:51:53,520 --> 00:51:57,100
+I just want to SSH into the host called VM.
+我想要连接到这个叫 vm 的主机
+
+762
+00:51:58,260 --> 00:52:03,220
+And by doing that, it's grabbing all that
+configuration from the SSH config
+这样 它就会从 .ssh/config 读取所有的配置
+
+763
+00:52:03,220 --> 00:52:05,220
+and applying it here.
+然后在这里使用
+
+764
+00:52:05,240 --> 00:52:10,060
+This solution is much better than something
+like creating an alias for SSH,
+这就像是给 ssh 创建别名一样
+
+765
+00:52:10,360 --> 00:52:13,360
+because other programs like SCP and RSYNC
+而其他程序 比如 scp 和 rsync
+
+766
+00:52:13,360 --> 00:52:19,440
+also know about the dotfiles for SSH and
+will use them whenever they are there.
+它们也会用 ssh 的 dotfile
+也会在被调用的时候读取它
+
+767
+00:52:22,820 --> 00:52:30,400
+Last thing I want to cover about remote machines is
+that here, for example, we'll have tmux and we can,
+关于远程机器 我最后要讲的一个东西是
+我们可以用 tmux 之类的软件
+
+768
+00:52:31,760 --> 00:52:35,780
+like I was saying before, we
+can start editing some file
+就像我之前说的
+可以在里面编辑文件
+
+769
+00:52:39,160 --> 00:52:44,500
+and we can start running some job.
+还可以在里面运行一些任务
+
+770
+00:52:54,200 --> 00:52:56,180
+For example, something like HTOP.
+比如说 htop 什么的
+
+771
+00:52:56,180 --> 00:52:58,720
+And this is running here, we can
+它在正常运作的时候
+
+772
+00:52:59,320 --> 00:53:01,320
+detach from it,
+我们可以暂时离开它
+
+773
+00:53:01,430 --> 00:53:03,430
+close the connection and
+关掉连接以后
+
+774
+00:53:03,740 --> 00:53:07,780
+then SSH back. And then, if you do "tmux a",
+再连回去
+执行一下 tmux a
+
+775
+00:53:07,780 --> 00:53:11,340
+everything is as you left it, like
+nothing has really changed.
+所有的东西都还在
+就好像什么都发生一样
+
+776
+00:53:11,340 --> 00:53:15,220
+And if you have things executing there in
+the background, they will keep executing.
+如果你把它们留在后台
+那它们就会一直运行
+
+777
+00:53:17,500 --> 00:53:23,300
+I think that, pretty much, ends
+all I have to say for this tool.
+我觉得 关于这个工具 说这么多应该够了
+
+778
+00:53:23,300 --> 00:53:26,420
+Any questions related to remote machines?
+还有关于远程机器的问题吗
+
+779
+00:53:32,860 --> 00:53:36,780
+That's a really good question.
+So what I do for that,
+好问题
+我实际上做的是
+
+780
+00:53:38,700 --> 00:53:39,460
+Oh, yes, sorry.
+哦 是 抱歉
+
+781
+00:53:39,460 --> 00:53:44,880
+So the question is, how do you deal with
+trying to use tmux in your local machine,
+所以 问题是
+要如何在自己的机器上使用 tmux 的同时
+
+782
+00:53:44,880 --> 00:53:47,640
+and also trying to use tmux
+in the remote machine?
+也在远程机器上使用 tmux
+
+783
+00:53:48,400 --> 00:53:50,760
+There are a couple of tricks
+for dealing with that.
+有很多技巧处理这个问题
+
+784
+00:53:50,760 --> 00:53:53,220
+The first one is changing the prefix.
+其一是修改快捷键
+
+785
+00:53:53,360 --> 00:53:55,340
+So what I do, for example, is
+我要做的是 
+
+786
+00:53:55,340 --> 00:54:00,020
+in my local machine the prefix I have
+changed from "Ctrl+B" to "Ctrl+A" and
+在我的本地机器上把脱离的快捷键从 Ctrl+B 改成 Ctrl+A
+
+787
+00:54:00,220 --> 00:54:02,580
+then in remove machines this is still "Ctrl+B".
+然后脱离远程机器的 tmux 时仍然使用 Ctrl+B
+
+788
+00:54:02,800 --> 00:54:05,580
+So I can kind of swap between,
+这样我就可以自由切换了
+
+789
+00:54:05,580 --> 00:54:09,840
+if I want to do things to the
+local tmux I will do "Ctrl+A"
+如果想在本地做事 就按 Ctrl+A
+
+790
+00:54:09,840 --> 00:54:13,460
+and if I want to do things to the
+remote tmux I would do "Ctrl+B".
+如果想在远程机器上做事 就按 Ctrl+B
+
+791
+00:54:15,080 --> 00:54:19,900
+Another thing is that you
+can have separate configs,
+此外 你还可以给它们指定不同的配置
+
+792
+00:54:20,080 --> 00:54:24,100
+so I can do something like this, and then...
+然后就能做一些...
+
+793
+00:54:27,260 --> 00:54:31,040
+Ah, because I don't have my own ssh config, yeah.
+啊 我好像没有自己的 .ssh/config
+
+794
+00:54:32,240 --> 00:54:33,000
+But if you...
+但如果你
+
+795
+00:54:33,000 --> 00:54:34,420
+Um, I can SSH "VM".
+恩 我可以连到 vm 上
+
+796
+00:54:36,820 --> 00:54:38,900
+Here, what you see,
+看这里
+
+797
+00:54:38,900 --> 00:54:41,000
+the difference between these
+two bars, for example,
+这两个状态栏就是不一样的
+
+798
+00:54:41,000 --> 00:54:43,680
+is because the tmux config is different.
+因为它们的配置不同
+
+799
+00:54:44,380 --> 00:54:48,500
+As you will see in the exercises,
+the tmux configuration is in
+在练习题里你会看到
+tmux 的配置文件在
+
+800
+00:54:50,320 --> 00:54:53,780
+the tmux.conf
+~/.tmux.conf
+
+801
+00:54:56,720 --> 00:54:58,140
+And in tmux.conf,
+而在 .tmux.conf 中
+
+802
+00:54:58,140 --> 00:55:02,020
+here you can do a lot of things like changing
+the color depending on the host you are
+你可以做很多事情
+比如根据所在的主机改变状态栏的颜色
+
+803
+00:55:02,210 --> 00:55:06,879
+so you can get like quick visual
+feedback about where you are, or
+这样你就可以很快得到视觉反馈
+知道你在哪台机器上
+
+804
+00:55:06,880 --> 00:55:10,240
+if you have a nested session. Also, tmux will,
+在你堆叠了很多 tmux 的时候很好用
+此外
+
+805
+00:55:10,520 --> 00:55:15,280
+if you're in the same host and you
+try to tmux within a tmux session,
+在你尝试在同一台机器上套娃 tmux 的时候
+
+806
+00:55:15,290 --> 00:55:18,759
+it will kind of prevent you from doing
+it so you don't run into issues.
+它会阻止你这样做 以避免出现问题
+
+807
+00:55:21,700 --> 00:55:25,400
+Any other questions related, to kind
+of all the topics we have covered.
+对于我们刚才提到的所有东西 还有任何疑问吗
+
+808
+00:55:29,100 --> 00:55:32,720
+Another answer to that question is
+also, if you type the prefix twice,
+这问题还有另一个解法
+如果你连续两次按快捷键
+
+809
+00:55:32,880 --> 00:55:35,760
+it sends it once to the underlying shell.
+它会先给底下的 shell 发送
+
+810
+00:55:35,920 --> 00:55:40,100
+So the local binding is "Ctrl+A" and
+the remote binding is "Ctrl+A",
+比如 如果本地和远端都绑定了 Ctrl+A 快捷键
+
+811
+00:55:40,100 --> 00:55:45,260
+You could type "Ctrl+A", "Ctrl+A" and then "D", for
+example, detaches from the remote, basically.
+可以按两次 Ctrl+A 后按 D
+就可以只脱离远程机器的 tmux
+
+812
+00:55:52,480 --> 00:55:59,660
+I think that ends the class for today, there's a bunch
+of exercises related to all these main topics and
+我觉得今天的课就到这里了
+我们安排了一些练习 它们与刚才提到的几个话题相关
+
+813
+00:56:00,380 --> 00:56:05,410
+we're gonna be holding office hours today, too.
+So feel free to come and ask us any questions.
+我们今天也会在办公室值班答疑
+你可以随时来问我们任何问题
